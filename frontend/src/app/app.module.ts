@@ -8,6 +8,8 @@ import { AdminComponent } from './admin/admin.component';
 import { PublicComponent } from './public/public.component';
 import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './registration/registration.component';
+import { ResturantloginComponent } from './resturantlogin/resturantlogin.component';
+import { RestaurantregComponent } from './restaurantreg/restaurantreg.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { RegistrationComponent } from './registration/registration.component';
     LoginComponent,
     AdminComponent,
     PublicComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ResturantloginComponent,
+    RestaurantregComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +40,14 @@ import { RegistrationComponent } from './registration/registration.component';
       {
         path: 'registration',
         component: RegistrationComponent
+      },
+      {
+        path: 'resturantlogin',
+        component: ResturantloginComponent
+      },
+      {
+        path: 'restaurantreg',
+        component: RestaurantregComponent
       }
     ])
   ],

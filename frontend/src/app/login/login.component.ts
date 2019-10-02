@@ -8,7 +8,8 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(/*private Auth: AuthService*/) { }
+  timesSubmitted = 0;
+  constructor() { }
 
   ngOnInit() {
   }
@@ -16,6 +17,11 @@ export class LoginComponent implements OnInit {
   logUserIn(event){
     event.preventDefault()
     console.log(event)
+    this.timesSubmitted += 1
+    console.log(this.timesSubmitted)
+    if (this.timesSubmitted > 1){
+      console.log("captcha has been prompted")
+    }
     //const target = event.target
     //console.log(target.srcElement['0'])
     //const email = target.querySelector('email').value
