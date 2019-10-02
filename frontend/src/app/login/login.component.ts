@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
     event.preventDefault()
     console.log(event)
     this.timesSubmitted += 1
-    console.log(this.timesSubmitted)
     if (this.timesSubmitted > 1){
       console.log("captcha has been prompted")
     }

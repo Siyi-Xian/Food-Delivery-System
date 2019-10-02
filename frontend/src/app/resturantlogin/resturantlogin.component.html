@@ -1,1 +1,22 @@
-<p>resturantlogin works!</p>
+<h1>Food-O-Holic</h1>
+<h3>Delivery made easy</h3>
+
+<br>
+<br>
+<!-- Bootstrap CDN scripts -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<h2>Restaurant Login</h2>
+
+<form method="post"action='192.168.137.1:3000/sign' (submit) = logRestIn($event)>
+    Email address<br>
+        <input type = "text" required = "required" placeholder="Email" id="Email"><br>
+        <br>
+        Password<br>
+        <input type = "password" required = "required" placeholder="password" id="password"><br><br>
+        <button type="submit" value = "submit" class="btn btn-primary btn-lg">Login</button>
+</form>
+
+<button type = "button" class = "btn btn-success btn-sm" routerLink="/restaurantreg">Register your restaurant</button>

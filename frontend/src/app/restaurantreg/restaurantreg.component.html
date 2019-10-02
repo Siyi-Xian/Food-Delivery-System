@@ -1,1 +1,29 @@
-<p>restaurantreg works!</p>
+<!-- Bootstrap CDN scripts -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!-- reCaptha api -->
+<script src="https://www.google.com/reCAPTCHA/api.js" async defer></script>
+
+
+<h2>Register your Restaurant!</h2>
+
+
+
+<form method="POST" action="connect to server" (submit) = newRest($event)>
+    Full Name<br>
+    <input type = "text" required="required" placeholder="John Doe" id="FullName"><br>
+    Email Address
+    <br>
+    <input type = "text" required="required" placeholder="johndoe@gmail.com" id="Email"><br>
+    Restaurant/Company Name<br>
+    <input type = "text" required="required" placeholder="John Doe's Burgers" id="RestaurantName"><br>
+    Password<br>
+    <input type = "password" required="required" placeholder="password" id="password"><br>
+    Confirm Password<br>
+    <input type = "password" required="required" placeholder="confirm password" id="confirmpass"><br>
+    <br>
+    Captcha will be here<br>
+    <button type = "submit" value="submit" class="btn btn-primary btn-lg">Register your Restaurant</button>
+</form>

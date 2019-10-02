@@ -16,8 +16,6 @@ export class RegistrationComponent implements OnInit {
     event.preventDefault()
     const password = event.target.password.value
     const confirmpass = event.target.confirmpass.value
-    console.log(password)
-    console.log(confirmpass)
     if(password == confirmpass){
       console.log("User info submitted")
       return true
