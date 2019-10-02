@@ -1,4 +1,4 @@
-<p>registration works!</p>
+
 
 <!-- Bootstrap CDN scripts -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -7,12 +7,17 @@
 
 <h2>New User Registration</h2>
 
+
+
 <form method="POST" action="connect to server" (submit) = newUser($event)>
     Full Name<br>
     <input type = "text" required="required" placeholder="John Doe" id="FullName"><br>
-    Email Address<br>
+    Email Address
+    <br>
     <input type = "text" required="required" placeholder="johndoe@gmail.com" id="Email"><br>
     Password<br>
-    <input type = "text" required="required" placeholder="password" id="password"><br>
+    <input type = "password" required="required" placeholder="password" id="password"><br>
+    Confirm Password<br>
+    <input type = "password" required="required" placeholder="confirm password" id="confirmpass"><br>
     <button type = "submit" value="submit" class="btn btn-primary btn-lg">Register</button>
 </form>
