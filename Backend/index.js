@@ -24,16 +24,21 @@ app.use(bodyParser.json());
 
 
 app.get('/verify/:email/:token', function(req, res){
-    // console.log(req.body.email)
-    db.collection('user_data').find({email: req.body.email}, function(err, data){
+    const new_vals = {
+        $set: {
+            is_verified: true
+        }
+    }
+    db.collection('user_data').findOneAndUpdate({email: req.params.email, token: parseInt(req.params.token)}, new_vals, function(err, data){
         if(err){
             console.log(err);
-
+            res.send("Invalid URL");
         }
-        console.log(data)
-    })
-    // console.log(data.email);
-
+        else{
+            console.log(data);
+            res.send("Hii! You're verified");
+        }
+    })    
 });
 
 
@@ -63,7 +68,7 @@ app.post('/sign_up', function(req, res){
     var email_text = "Click on the link to verify your account " + "localhost:3000/verify/" + req.body.email + '/' + token;
     
     var mailOptions = {
-        from: 'rajnandu2711@gmail.com',
+        from: '',
         to: receiver,
         subject: "Food-o-Holic User Verification",
         text: email_text
