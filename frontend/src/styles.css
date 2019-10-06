@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.login-background {
+  background-image: url("/assets/img/LoginBackground.jpg");
+  background-repeat: no-repeat;
+  background-position: 0px 50px;
+  background-size: cover;
+}
+
+nav {
+  background-color: #FFCA28;
+}
+
+.form-style {
+  background-color: #FFF8E1
+}

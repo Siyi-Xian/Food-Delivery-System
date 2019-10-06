@@ -13,7 +13,7 @@
   <script src="../../styles.css"></script>
 </head>
 <body>
-<nav class="navbar navbar-light" style="background-color: #F1F8E9;">
+<nav class="navbar navbar-light">
   <!-- Navbar content -->
   <!-- Just an image -->
   <a class="navbar-brand" routerLink="/public" style="padding: 0;">
@@ -29,22 +29,22 @@
       <h2>Register Now!</h2>
     </div>
     <div class="container" style="padding: 30px; font-size: 15px">
-      <form method="post"action='192.168.137.1:3000/sign' (submit) = newRest($event)>
+      <form method="post" [formGroup]="restaurantResgistrationForm" (ngSubmit) = onSubmit(restaurantResgistrationForm.value)>
         <div class="container" style="padding-bottom: 20px">
           <div>Full Name::</div>
-          <div><input type = "text" required="required" placeholder="John Doe" id="FullName" style="width: 100%"></div>
+          <div><input type = "text" required="required" formControlName="name" placeholder="John Doe" id="FullName" style="width: 100%"></div>
         </div>
         <div class="container" style="padding-bottom: 20px">
           <div>Email Address:</div>
-          <div><input type = "text" required = "required" placeholder="johndoe@foodoholic.com" id="Email" style="width: 100%"></div>
+          <div><input type = "text" required = "required" formControlName="email" placeholder="johndoe@foodoholic.com" id="Email" style="width: 100%"></div>
         </div>
         <div class="container" style="padding-bottom: 20px">
           <div>Restaurant/Company Name:</div>
-          <div><input type = "text" required="required" placeholder="John Doe's Burgers" id="RestaurantName" style="width: 100%"></div>
+          <div><input type = "text" required="required" formControlName="restaurant_name" placeholder="John Doe's Burgers" id="RestaurantName" style="width: 100%"></div>
         </div>
         <div class="container" style="padding-bottom: 20px">
           <div>Password:</div>
-          <div><input type = "password" required="required" placeholder="*******************" id="password" style="width: 100%"></div>
+          <div><input type = "password" required="required" formControlName="password" placeholder="*******************" id="password" style="width: 100%"></div>
         </div>
         <div class="container">
           <div>Confirm Password:</div>
