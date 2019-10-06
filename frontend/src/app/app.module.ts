@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +12,7 @@ import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './registration/registration.component';
 import { ResturantloginComponent } from './resturantlogin/resturantlogin.component';
 import { RestaurantregComponent } from './restaurantreg/restaurantreg.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,11 +21,13 @@ import { RestaurantregComponent } from './restaurantreg/restaurantreg.component'
     PublicComponent,
     RegistrationComponent,
     ResturantloginComponent,
-    RestaurantregComponent
-  ],
+    RestaurantregComponent  ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path: '',

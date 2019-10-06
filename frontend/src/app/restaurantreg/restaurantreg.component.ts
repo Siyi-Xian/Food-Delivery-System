@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {LoginService} from '../login.service'
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-restaurantreg',
@@ -6,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./restaurantreg.component.css']
 })
 export class RestaurantregComponent implements OnInit {
-
-  constructor() { }
+  SERVER_URL = "http://localhost:3000/sign_up/restaurant";
+  restaurantRegistrationForm;
+  constructor(
+    private loginService: LoginService,
+    private formBuilder: FormBuilder
+  ) { 
+    this.restaurantRegistrationForm = this.formBuilder.group({
+      name: '',
+      email: '',
+      password: '',
+      restaurant_name: ''
+    })
+  }
 
   ngOnInit() {
   }
@@ -24,6 +37,11 @@ export class RestaurantregComponent implements OnInit {
       alert("Passwords do not match")
       return false
     }
+  }
+
+  onSubmit(userData){
+    console.log(userData);
+    console.log(this.loginService.sendRequest(userData, this.SERVER_URL));
   }
 
 }
