@@ -24,12 +24,12 @@
   </ul>
 </nav>
 <div class="container" style="width: 400px; margin-top: 5%; margin-bottom: 5%">
-  <div class="jumbotron" style="padding: 0; background-color: #DCEDC8">
-    <div class="container" style="text-align: center; padding: 20px; border-bottom: #C5E1A5 2px solid">
+  <div class="jumbotron" style="padding: 0; background-color: #FFF8E1">
+    <div class="container" style="text-align: center; padding: 20px; border-bottom: #FFE082 2px solid">
       <h2>Register Now!</h2>
     </div>
     <div class="container" style="padding: 30px; font-size: 15px">
-      <form method="post" [formGroup]="restaurantResgistrationForm" (ngSubmit) = onSubmit(restaurantResgistrationForm.value)>
+      <form method="post" [formGroup]="restaurantRegistrationForm" (ngSubmit) = onSubmit(restaurantRegistrationForm.value)>
         <div class="container" style="padding-bottom: 20px">
           <div>Full Name::</div>
           <div><input type = "text" required="required" formControlName="name" placeholder="John Doe" id="FullName" style="width: 100%"></div>
