@@ -2,6 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser=require("body-parser");
 var nodemailer = require('nodemailer');
+var ObjectId = require('mongoose').Types.ObjectId; 
+
+
 const Bcrypt = require("bcryptjs");
 let jwt = require('jsonwebtoken');
 let config = require('./config');
@@ -91,7 +94,7 @@ app.post('/login/:collection_name', function(req, res){
                 // console.log("Inside verifieed")
                 // console.log(data)
                 // res.send("authenticated")
-                let token = jwt.sign({_id: data._id}, config.secret, {expiresIn: '168h'});
+                // let token = jwt.sign({_id: data._id}, config.secret, {expiresIn: '168h'});
                 const otp = Math.floor(Math.random() * (999999 - 100000 + 1) + 100000);
                 const otp_data = {
                     $set: {
@@ -117,8 +120,8 @@ app.post('/login/:collection_name', function(req, res){
                 res.json({
                     auth: true,
                     message: 'Auth Successful',
-                    _id: data._id,
-                    token: token,
+                    _id: data._id
+                    // token: token,
 
                 });
                 return
@@ -172,11 +175,49 @@ app.get('/verify/:email/:token/:collection_name', function(req, res){
 });
 
 // Continue working here
-app.post('/verifyotp', middleware.checkToken, function(req, res){
-    console.log("Inside verify")
+app.post('/verifyotp/:collection_name', function(req, res){
+    // console.log("Inside verify")
     // console.log(req.headers['x-access-token'] || req.headers['authorization']);
     // console.log(req.cookies);
-    res.send({message: "Token success"})
+    // console.log(req.decoded)
+    var collection_name = req.params.collection_name;
+    if(collection_name == 'user'){
+        collection_name = "user_data"
+    }
+    else if(collection_name == 'restaurant'){
+        collection_name = "restaurant_data"
+    }
+    else{
+        // res.redirect('*')
+        res.status(404).send("Page Not Found");
+        return;
+    }
+    console.log(req.body._id)
+    console.log(req.body.otp)
+    var query = {
+        $and: [
+            {_id: req.body._id},
+            {otp: req.body.otp}
+        ]
+    }
+    db.collection(collection_name).findOne({_id: new ObjectId(req.body._id)}, function(err, data){
+        if(err){
+            res.send({auth: "false"})
+        }
+        else{
+            let token = jwt.sign({_id: data._id}, config.secret, {expiresIn: '168h'});
+            res.send({
+                auth: "true",
+                jwttoken: token
+        })  
+            
+        }
+        console.log(data)
+    });
+
+
+
+    // res.send({message: "Token success"})
 });
 
 

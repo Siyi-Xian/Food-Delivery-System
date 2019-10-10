@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     // this.cookie.set("userid", "123")
       // console.log(this.response)
     const payload = {
-      jwttoken: this.cookie.get("jwttoken", )
+      jwttoken: this.cookie.get("jwttoken")
     }
     console.log(payload)
     console.log(this.cookie.get("jwttoken"))
