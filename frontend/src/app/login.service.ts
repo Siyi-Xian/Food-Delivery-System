@@ -19,15 +19,19 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
   
   sendRequest(data, url){
-    console.log(data)
-    return this.httpClient.post(url, data, this.httpOptions).subscribe(
-      (res)=>{
-        console.log(res)
-      },
-      (err)=> {
-        console.log(err)
-      }
-    );
+    // console.log(data)
+    // return this.httpClient.post(url, data, this.httpOptions).subscribe(
+    //   (res)=>{
+    //     console.log(res)
+    //     return res
+    //   },
+    //   (err)=> {
+    //     console.log(err)
+    //     return err
+    //   }
+    // );
+    return this.httpClient.post(url, data)
+    
   }
 
 }

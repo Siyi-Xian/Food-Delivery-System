@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { AuthService } from '../auth.service';
 import {FormBuilder} from '@angular/forms';
 import {LoginService} from '../login.service'
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,12 +10,13 @@ import {LoginService} from '../login.service'
 })
 export class LoginComponent implements OnInit {
   userLoginForm;
-
+  response: any
 
   timesSubmitted = 0;
   constructor(
     private loginService: LoginService,
-    private formBuilder: FormBuilder) { 
+    private formBuilder: FormBuilder,
+    private cookie: CookieService) { 
       this.userLoginForm = this.formBuilder.group({
         email: "",
         password: ""
@@ -26,7 +28,26 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(userData){
-    console.log(this.loginService.sendRequest(userData, "http://localhost:3000/login/user"));
+    var r = this.loginService.sendRequest(userData, "http://localhost:3000/login/user");
+    r.subscribe(data => {
+      // this.response = data
+      // console.log(data)
+      if(data['auth']){
+        this.cookie.set("jwttoken", data['token']);
+      }
+      
+    })
+    // this.cookie.set("userid", "123")
+      // console.log(this.response)
+    const payload = {
+      jwttoken: this.cookie.get("jwttoken", )
+    }
+    console.log(payload)
+    console.log(this.cookie.get("jwttoken"))
+    r = this.loginService.sendRequest(payload, "http://localhost:3000/verifyotp");
+    r.subscribe(data=>{
+      console.log(data)
+    })
   }
 
   // logUserIn(event){

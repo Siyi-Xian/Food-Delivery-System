@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const bodyParser=require("body-parser");
 var nodemailer = require('nodemailer');
 const Bcrypt = require("bcryptjs");
+let jwt = require('jsonwebtoken');
+let config = require('./config');
+let middleware = require('./jwtverification');
+const cookieParser = require('cookie-parser');
 
 var cors = require('cors')
 
@@ -13,19 +17,44 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ 
     extended: true
 }));
+app.use(cookieParser());
+
 
 app.use(cors())
 
 
-var mailer = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'foodoholics4@gmail.com',
-        pass: 'deliciousfood'
+function send_mail(from, receiver, subject, message){
+    var mailer = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'foodoholics4@gmail.com',
+            pass: 'deliciousfood'
+        }
+    })
+    var mailOptions = {
+        from: 'foodoholics4@gmail.com',
+        to: receiver,
+        subject: subject,
+        text: message
     }
+    mailer.sendMail(mailOptions, function(error, info){
+        if(error){
+            console.log(error)
+        }
+        else{
+            console.log('Email sent: ' +  info.response)
+        }
+    })
+}
+
+
+
+
+
+app.get('/temp', function(req, res){
+    res.cookie("raj", "nandu");
+    res.json({message: "Hi Raj!"})
 })
-
-
 
 
 
@@ -46,35 +75,71 @@ app.post('/login/:collection_name', function(req, res){
     }
     else{
         res.status(404).error("Page Not Found");
+        return;
     }
     db.collection(collection_name).findOne({email: req.body.email}, {projection:{ name: 1, password: 1}}, function(err, data){
         if (err || data == null){
             // console("Inside null condition")
             // res.send("User does not exist");
+            res.cookie("auth", 'negative')
             res.json({auth: false})
+            return
         }
         else{
-            db.collection(collection_name).findOne({email: req.body.email}, {projection:{ name: 1, password: 1}}, function(err, data){
-                if(Bcrypt.compareSync(req.body.password, data.password)){
-                    console.log("Inside verifieed")
-                    console.log(data)
-                    // res.send("authenticated")
-                    res.json({auth: true})
+            // db.collection(collection_name).findOne({email: req.body.email}, {projection:{ name: 1, password: 1, email: 1}}, function(err, data){
+            if(Bcrypt.compareSync(req.body.password, data.password)){
+                // console.log("Inside verifieed")
+                // console.log(data)
+                // res.send("authenticated")
+                let token = jwt.sign({_id: data._id}, config.secret, {expiresIn: '168h'});
+                const otp = Math.floor(Math.random() * (999999 - 100000 + 1) + 100000);
+                const otp_data = {
+                    $set: {
+                        otp: otp
+                    }
                 }
-                else{
-                    console.log("Auth Failed")
-                    res.json({auth: false})
-                    // res.send("Authentication failed")
-                }  
-            });
+                db.collection(collection_name).findOneAndUpdate({_id: data._id}, otp_data, {projection:{ email: 1}}, function(err, d){
+                    if (err){
+                        res.status(404).send("Page Not Found");
+                    }
+                    else{
+                        
+                        // var receiver = req.body.email
+                        var email_text = "Your One Time Password is " + otp;
+                        console.log(d.value.email)
+                        send_mail('foodoholics4@gmail.com', d.value.email, "Food-o-Holic OTP Verification", email_text)
+                        
+                    }
+                })
+                var options = {maxAge: 604800000, httpOnly:true, secure:true}
+                // res.cookie("jwttoken", "raj");
+                res.cookie("autht", token)
+                res.json({
+                    auth: true,
+                    message: 'Auth Successful',
+                    _id: data._id,
+                    token: token,
+
+                });
+                return
+            }
+            else{
+                console.log("Auth Failed")
+                res.cookie("autht", 'negative')
+                res.json({
+                    auth: false,
+                    message: 'Incorrect username or password'
+                });
+                return
+            }  
+            // });
         }
     });
 })
 
-// edit here
 app.get('/verify/:email/:token/:collection_name', function(req, res){
 
-    console.log(req.body)
+    // console.log(req.body)
     var collection_name = req.params.collection_name;
     if(collection_name == 'user'){
         collection_name = "user_data"
@@ -83,7 +148,9 @@ app.get('/verify/:email/:token/:collection_name', function(req, res){
         collection_name = "restaurant_data"
     }
     else{
+        // res.redirect('*')
         res.status(404).send("Page Not Found");
+        return;
     }
 
 
@@ -104,6 +171,13 @@ app.get('/verify/:email/:token/:collection_name', function(req, res){
     })    
 });
 
+// Continue working here
+app.post('/verifyotp', middleware.checkToken, function(req, res){
+    console.log("Inside verify")
+    // console.log(req.headers['x-access-token'] || req.headers['authorization']);
+    // console.log(req.cookies);
+    res.send({message: "Token success"})
+});
 
 
 
@@ -118,7 +192,8 @@ app.post('/sign_up/:collection_name', function(req, res){
             "email": req.body.email,
             "password": Bcrypt.hashSync(req.body.password, 10),
             "token": token,
-            "is_verified": false
+            "is_verified": false,
+            otp: 0
         }
     }
     else if(collection_name == 'restaurant'){
@@ -150,7 +225,7 @@ app.post('/sign_up/:collection_name', function(req, res){
             });
 
             var receiver = req.body.email
-            var email_text = "Click on the link to verify your account " + "localhost:3000/verify/" + req.body.email + '/' + token + '/'+collection_name;
+            var email_text = "Click on the link to verify your account " + "localhost:3000/verify/" + req.body.email + '/' + token + '/'+req.params.collection_name;
             
             var mailOptions = {
                 from: 'foodoholics4@gmail.com',
@@ -177,6 +252,10 @@ app.post('/sign_up/:collection_name', function(req, res){
     
 
 });
+
+app.get('*', function(req, res){
+    res.status(404).send("Page Not Found")
+})
 
 app.listen(3000, function(){
     console.log("Server listening at port 3000");
