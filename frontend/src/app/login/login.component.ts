@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChildren, ElementRef } from '@angular/core';
 // import { AuthService } from '../auth.service';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder,FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from '../login.service'
 @Component({
   selector: 'app-login',
@@ -8,6 +8,36 @@ import {LoginService} from '../login.service'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  //form: FormGroup;
+ // formInput = ['input1', 'input2', 'input3', 'input4', 'input5', 'input6'];
+  //@ViewChildren('formRow') rows: any;
+
+
+  
+
+ // toFormGroup(elements) {
+   // const group: any = {};
+
+    //elements.forEach(key => {
+      //group[key] = new FormControl('', Validators.required);
+    //});
+    //return new FormGroup(group);
+ // }
+
+  // keyUpEvent(event, index) {
+  //   let pos = index;
+  //   if (event.keyCode === 8 && event.which === 8) {
+  //     pos = index - 1 ;
+  //   } else {
+  //     pos = index + 1 ;
+  //   }
+  //   if (pos > -1 && pos < this.formInput.length ) {
+  //     this.rows._results[pos].nativeElement.focus();
+  //   }
+
+  // }
+
+
   userLoginForm;
 
 
@@ -17,9 +47,24 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder) { 
       this.userLoginForm = this.formBuilder.group({
         email: "",
-        password: ""
+        password: "",
+        otp:""
       })
+      //this.form = this.toFormGroup(this.formInput);
     }
+
+    veryOTPAsyn(otpControl: FormControl): Promise<any> {
+      console.log(otpControl)
+      console.log(otpControl.hasError('invalidOtp'))
+      return new Promise<any>(
+        (resolve, reject) => {
+          setTimeout(() => {
+            resolve({invalidOtp:true});
+          }, 500);
+        });
+    }
+  
+  
 
   ngOnInit() {
     
@@ -27,7 +72,12 @@ export class LoginComponent implements OnInit {
 
   onSubmit(userData){
     console.log(this.loginService.sendRequest(userData, "http://localhost:3000/login/user"));
+    //console.log(this.form.value);
   }
+
+  //onverify(){
+   // console.log(this.form.value);
+ // }
 
   // logUserIn(event){
   //   event.preventDefault()
