@@ -8,6 +8,10 @@ let jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 
 
+var authentication = require('./routes/authenticate')
+var restaurant_portal = require('./routes/restaurant_portal')
+
+
 
 var cors = require('cors')
 
@@ -21,7 +25,7 @@ app.use(cookieParser());
 
 app.use(cors())
 
-var authentication = require('./routes/authenticate')
+app.use('/restaurant', restaurant_portal);
 app.use('/authentication', authentication)
 
 
