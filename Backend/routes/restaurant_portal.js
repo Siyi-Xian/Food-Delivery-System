@@ -67,7 +67,36 @@ router.delete('/delete', middleware.checkToken, function(req, res){
     })
 });
 
+router.post('/restaurant_details',  function(req, res){
+    var id = req.body._id
 
+    db.collection('restaurant_data').update({_id: ObjectId(id)},
+    {
+        $push: {restaurant_details:{
+            name: req.body.name,
+            location: req.body.location,
+            food_category: req.body.food_category,
+            res_image: req.body.res_image,
+            contact:req.body.contact,
+            working_hours:req.body.working_hours
+
+        }}
+    }, function(err, data){
+        if (err){
+            res.json({
+                message: "Failed"
+            })
+            return;
+        }
+        else{
+            res.json({
+                message: "Success"
+            })
+            return;
+        }
+    })
+    res.send("done")
+});
 
 
 module.exports = router
