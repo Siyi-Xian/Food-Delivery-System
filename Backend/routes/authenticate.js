@@ -69,7 +69,7 @@ router.post('/login/:collection_name', function(req, res){
                 // console.log("Inside verifieed")
                 // console.log(data)
                 // res.send("authenticated")
-                // let token = jwt.sign({_id: data._id}, config.secret, {expiresIn: '168h'});
+                let token = jwt.sign({_id: data._id}, config.secret, {expiresIn: '168h'});
                 const otp = Math.floor(Math.random() * (999999 - 100000 + 1) + 100000);
                 const otp_data = {
                     $set: {
@@ -95,8 +95,8 @@ router.post('/login/:collection_name', function(req, res){
                 res.json({
                     auth: true,
                     message: 'Auth Successful',
-                    _id: data._id
-                    // token: token,
+                    _id: data._id,
+                    token: token
 
                 });
                 return
