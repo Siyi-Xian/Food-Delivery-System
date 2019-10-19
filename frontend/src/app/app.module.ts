@@ -18,10 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { RestaurantViewComponent } from './restaurant-view/restaurant-view.component';
 import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
 import { RestaurantdetailsComponent } from './restaurantdetails/restaurantdetails.component';
-import { RestaurantambienceComponent } from './restaurantambience/restaurantambience.component';
 import { RestaurantmenuComponent } from './restaurantmenu/restaurantmenu.component';
 import { RestaurantstatsComponent } from './restaurantstats/restaurantstats.component';
-import { RestauranteditdetailsComponent } from './restauranteditdetails/restauranteditdetails.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,10 +32,8 @@ import { RestauranteditdetailsComponent } from './restauranteditdetails/restaura
     RestaurantViewComponent,
     OrderhistoryComponent,
     RestaurantdetailsComponent,
-    RestaurantambienceComponent,
     RestaurantmenuComponent,
-    RestaurantstatsComponent,
-    RestauranteditdetailsComponent  ],
+    RestaurantstatsComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -82,20 +78,12 @@ import { RestauranteditdetailsComponent } from './restauranteditdetails/restaura
         component: RestaurantdetailsComponent
       },
       {
-        path: 'restaurantambience',
-        component: RestaurantambienceComponent
-      },
-      {
         path: 'restaurantmenu',
         component: RestaurantmenuComponent
       },
       {
         path: 'restaurantstats',
         component: RestaurantstatsComponent
-      },
-      {
-        path: 'restauranteditdetails',
-        component: RestauranteditdetailsComponent
       }
     ])
   ],
