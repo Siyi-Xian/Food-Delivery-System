@@ -29,8 +29,12 @@ export class RestaurantdetailsComponent implements OnInit {
   onSubmit(details){
     var jwttoken = this.cookie.get("jwttoken")
     details["jwttoken"] = jwttoken
+    details['_id'] = this.cookie.get("restaurant_id")
     var r = this.loginService.sendRequest(details, "http://localhost:3000/restaurant/restaurant_details");
-    
+    r.subscribe(data => {
+      console.log(data)
+      
+    })
   }
   
   ngOnInit() {

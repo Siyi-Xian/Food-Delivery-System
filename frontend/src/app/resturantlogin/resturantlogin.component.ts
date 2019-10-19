@@ -30,9 +30,11 @@ export class ResturantloginComponent implements OnInit {
   onSubmit(userData){
     var r = this.loginService.sendRequest(userData, "http://localhost:3000/authentication/login/restaurant");
     r.subscribe(data => {
+      console.log(data)
       if(data['auth']){
         this.cookie.set("jwttoken", data['token']);
         this.cookie.set("restaurant_id", data['_id']);
+        console.log(data[_id])
       }
       
     })

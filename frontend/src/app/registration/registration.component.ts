@@ -9,7 +9,7 @@ import {LoginService} from '../login.service'
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  SERVER_URL = "http://localhost:3000/sign_up/user";
+  SERVER_URL = "http://localhost:3000/authentication/sign_up/user";
   userRegistrationForm;
   
   
@@ -31,7 +31,13 @@ export class RegistrationComponent implements OnInit {
   onSubmit(userData){
 
     console.log(userData);
-    console.log(this.loginService.sendRequest(userData, this.SERVER_URL));
+    var r = this.loginService.sendRequest(userData, this.SERVER_URL);
+    r.subscribe(data => {
+      // if(data['auth']){
+      //   // this.cookie.set("jwttoken", data['token']);
+      // }
+      
+    })
 
   }
 

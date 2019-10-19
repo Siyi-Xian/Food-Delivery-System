@@ -41,7 +41,11 @@ export class RestaurantregComponent implements OnInit {
 
   onSubmit(userData){
     console.log(userData);
-    console.log(this.loginService.sendRequest(userData, this.SERVER_URL));
+    var r = this.loginService.sendRequest(userData, this.SERVER_URL);
+    r.subscribe(data => {
+      
+      
+    })
   }
 
 }
