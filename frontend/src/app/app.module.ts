@@ -15,6 +15,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ResturantloginComponent } from './resturantlogin/resturantlogin.component';
 import { RestaurantregComponent } from './restaurantreg/restaurantreg.component';
 import { FormsModule } from '@angular/forms';
+import { RestaurantViewComponent } from './restaurant-view/restaurant-view.component';
+import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     PublicComponent,
     RegistrationComponent,
     ResturantloginComponent,
-    RestaurantregComponent  ],
+    RestaurantregComponent,
+    RestaurantViewComponent,
+    OrderhistoryComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -54,6 +58,14 @@ import { FormsModule } from '@angular/forms';
       {
         path: 'restaurantreg',
         component: RestaurantregComponent
+      },
+      {
+        path: 'restaurant-view',
+        component: RestaurantViewComponent
+      },
+      {
+        path: 'orderhistory',
+        component: OrderhistoryComponent
       }
     ])
   ],
