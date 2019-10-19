@@ -2,7 +2,7 @@
 
     <head>
         <title>
-          Order History
+          Restaurant Details
         </title>
         <!-- Bootstrap CDN scripts -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -22,12 +22,17 @@
               <img src="../../assets/img/logo.png" height="50" alt="">
             </a>
             <ul class="nav navbar-nav navbar-right" style="padding-right: 20px;">
+              <li><a routerLink="/orderhistory">Order History</a></li>  
                 <li><a routerLink="/resturantlogin"><span class="glyphicon glyphicon-log-out"></span> Log out </a></li>
             </ul>
           </nav>
 
-          <p>Order History</p>
-
+          <ul class="nav nav-pills nav-stacked" style="padding-left: 5px; padding-right: 1200px">
+              <li><a routerLink="/restaurantdetails"><span class="glyphicon glyphicon-th-list"></span> Details </a></li>
+              <li><a routerLink="/restaurantambience"><span class="glyphicon glyphicon-picture"></span> Ambience </a></li>
+              <li><a routerLink="/restaurantmenu"><span class="glyphicon glyphicon-menu-hamburger"></span> Menu </a></li>
+              <li><a routerLink="/restaurantstats" class="btn btn-primary"><span class="glyphicon glyphicon-stats"></span> Statistics </a></li>
+          </ul>
     </body>
 
 </html>
