@@ -11,10 +11,12 @@ var db = mongoose.connection;
 
 
 router.post('/menu', middleware.checkToken, function(req, res){
-    var id = req.body._id
+    var id = req.body.id
+    console.log(id)
 
     db.collection('restaurant_data').update({_id: ObjectId(id)},
     {
+        
         $push: {menu:{
             name: req.body.name,
             cost: req.body.cost,
@@ -23,19 +25,19 @@ router.post('/menu', middleware.checkToken, function(req, res){
         }}
     }, function(err, data){
         if (err){
-            res.json({
-                message: "Failed"
-            })
+                console.log("Fail")
+                res.send("Fail")
+           
             return;
         }
         else{
-            res.json({
-                message: "Success"
-            })
+                console.log("Success")
+                res.send("Success")
+           
             return;
         }
     })
-    res.send("done")
+   
 });
 
 
@@ -68,7 +70,8 @@ router.delete('/delete', middleware.checkToken, function(req, res){
 });
 
 router.post('/restaurant_details',  function(req, res){
-    var id = req.body._id
+    var id = req.body.id
+    console.log(id)
 
     db.collection('restaurant_data').update({_id: ObjectId(id)},
     {
@@ -83,19 +86,21 @@ router.post('/restaurant_details',  function(req, res){
         }}
     }, function(err, data){
         if (err){
+            console.log("Fail")
             res.json({
                 message: "Failed"
             })
             return;
         }
         else{
+            console.log("Success")
             res.json({
                 message: "Success"
             })
             return;
         }
     })
-    res.send("done")
+    //res.send("done")
 });
 
 
