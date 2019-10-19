@@ -22,13 +22,26 @@
               <img src="../../assets/img/logo.png" height="50" alt="">
             </a>
             <ul class="nav navbar-nav navbar-right" style="padding-right: 20px;">
-              <li><a routerLink="/orderhistory">Order History</a></li>  
                 <li><a routerLink="/resturantlogin"><span class="glyphicon glyphicon-log-out"></span> Log out </a></li>
             </ul>
           </nav>
           <app-sidebar>
             
           </app-sidebar>
+
+          <form mehtod="post" [formGroup]="menuForm" (ngSubmit) = onSubmit(menuForm.value)>
+              <div>Add item to the Menu</div>
+              <div>Item Name: </div>
+              <div><input type = "text" required="required" formControlName="name" placeholder="Cheeseburger" id="name" style="width: 100%"></div>
+              <div>Cost: </div>
+              <div><input type="text" required="required" formControlName="cost" placeholder="$2.00" id="cost" style="width: 100%"></div>
+              <div>Description: </div>
+              <div><input type="text" required="required" formControlName="description" placeholder="A delecious Meal" id="description" style="width: 100%"></div>
+              <div>Image: </div>
+              <div><input type="file" required="required" accept="image/*" id="res_image"></div>
+              <button type="submit" value="submit" class="btn btn-primary btn-lg btn-block"> Add Item </button>
+            </form>
+
     </body>
 
 </html>
