@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginService} from '../login.service'
+import {LoginService} from '../login.service';
 import {FormBuilder} from '@angular/forms';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-resturantlogin',
@@ -15,7 +16,8 @@ export class ResturantloginComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    private formBuilder: FormBuilder) { 
+    private formBuilder: FormBuilder,
+    private cookie: CookieService) { 
       this.restaurantLoginForm = this.formBuilder.group({
         email: '',
         password: ''
@@ -26,7 +28,14 @@ export class ResturantloginComponent implements OnInit {
   }
 
   onSubmit(userData){
-    console.log(this.loginService.sendRequest(userData, "http://localhost:3000/login/restaurant"));
+    var r = this.loginService.sendRequest(userData, "http://localhost:3000/authentication/login/restaurant");
+    r.subscribe(data => {
+      if(data['auth']){
+        this.cookie.set("jwttoken", data['token']);
+        this.cookie.set("restaurant_id", data['_id']);
+      }
+      
+    })
   }
 
   logRestIn(event){

@@ -8,7 +8,7 @@ import {FormBuilder} from '@angular/forms';
   styleUrls: ['./restaurantreg.component.css']
 })
 export class RestaurantregComponent implements OnInit {
-  SERVER_URL = "http://localhost:3000/sign_up/restaurant";
+  SERVER_URL = "http://localhost:3000/authentication/sign_up/restaurant";
   restaurantRegistrationForm;
   constructor(
     private loginService: LoginService,
