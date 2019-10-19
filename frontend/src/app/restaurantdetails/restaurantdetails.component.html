@@ -26,15 +26,27 @@
                 <li><a routerLink="/resturantlogin"><span class="glyphicon glyphicon-log-out"></span> Log out </a></li>
             </ul>
           </nav>
+          <app-sidebar>
+            
+          </app-sidebar>
 
-          <a routerLink="/restauranteditdetails"><span style="padding-right: 1250px;"></span> Edit Details </a>
+          <form mehtod="post" [formGroup]="detailsForm" (ngSubmit) = onSubmit(detailsForm.value)>
+            <div>Edit Details</div>
+            <div>Restaurant Name: </div>
+            <div><input type = "text" required="required" formControlName="name" placeholder="John Doe's Burgers" id="name" style="width: 100%"></div>
+            <div>Restaurant Location: </div>
+            <div><input type="text" required="required" formControlName="location" placeholder="Bloomington, IN" id="location" style="width: 100%"></div>
+            <div>Category: </div>
+            <div><input type="text" required="required" formControlName="food_category" placeholder="Fast Food" id="food_category" style="width: 100%"></div>
+            <div>Image: </div>
+            <div><input type="file" required="required" accept="image/*" id="res_image"></div>
+            <div>Contact Phone Number: </div>
+            <div><input type="text" required="required" formControlName="contact" placeholder="555-555-5555" id="contact"></div>
+            <div>Working Hours: </div>
+            <div><input type="text" required="required" formControlName="working_hours" placeholder="12pm - 8 pm" id="working_hours"></div>
+            <button type="submit" value="submit" class="btn btn-primary btn-lg btn-block">Update</button>
+          </form>
 
-          <ul class="nav nav-pills nav-stacked" style="padding-left: 5px; padding-right: 1200px">
-              <li><a routerLink="/restaurantdetails" class="btn btn-primary"><span class="glyphicon glyphicon-th-list"></span> Details </a></li>
-              <li><a routerLink="/restaurantambience"><span class="glyphicon glyphicon-picture"></span> Ambience </a></li>
-              <li><a routerLink="/restaurantmenu"><span class="glyphicon glyphicon-menu-hamburger"></span> Menu </a></li>
-              <li><a routerLink="/restaurantstats"><span class="glyphicon glyphicon-stats"></span> Statistics </a></li>
-          </ul>
     </body>
 
 </html>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder} from '@angular/forms';
+import {CookieService} from 'ngx-cookie-service';
+import {LoginService} from '../login.service';
 
 @Component({
   selector: 'app-restaurantdetails',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantdetailsComponent implements OnInit {
 
-  constructor() { }
+  detailsForm
+  constructor(
+    private loginService: LoginService,
+    private formBuilder: FormBuilder,
+    private cookie: CookieService) { 
+      this.detailsForm = this.formBuilder.group({
+        name: "",
+        location: "",
+        food_category: "",
+        res_image: "",
+        contact: "",
+        working_hours: ""
+      })  
+    
+  }
 
+  onSubmit(details){
+    var jwttoken = this.cookie.get("jwttoken")
+    details["jwttoken"] = jwttoken
+    var r = this.loginService.sendRequest(details, "http://localhost:3000/restaurant/restaurant_details");
+    
+  }
+  
   ngOnInit() {
   }
+
+
 
 }
