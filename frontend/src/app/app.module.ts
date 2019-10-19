@@ -20,6 +20,7 @@ import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
 import { RestaurantdetailsComponent } from './restaurantdetails/restaurantdetails.component';
 import { RestaurantmenuComponent } from './restaurantmenu/restaurantmenu.component';
 import { RestaurantstatsComponent } from './restaurantstats/restaurantstats.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { RestaurantstatsComponent } from './restaurantstats/restaurantstats.comp
     OrderhistoryComponent,
     RestaurantdetailsComponent,
     RestaurantmenuComponent,
-    RestaurantstatsComponent  ],
+    RestaurantstatsComponent,
+    SidebarComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
