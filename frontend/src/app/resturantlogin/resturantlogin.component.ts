@@ -34,7 +34,7 @@ export class ResturantloginComponent implements OnInit {
       if(data['auth']){
         this.cookie.set("jwttoken", data['token']);
         this.cookie.set("restaurant_id", data['_id']);
-        console.log(data[_id])
+        console.log(data['_id'])
       }
       
     })

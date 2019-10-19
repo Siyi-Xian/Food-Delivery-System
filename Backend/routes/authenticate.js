@@ -92,6 +92,7 @@ router.post('/login/:collection_name', function(req, res){
                 var options = {maxAge: 604800000, httpOnly:true, secure:true}
                 // res.cookie("jwttoken", "raj");
                 // res.cookie("autht", token)
+                console.log(data._id)
                 res.json({
                     auth: true,
                     message: 'Auth Successful',
