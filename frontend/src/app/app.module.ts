@@ -22,6 +22,9 @@ import { RestaurantmenuComponent } from './restaurantmenu/restaurantmenu.compone
 import { RestaurantstatsComponent } from './restaurantstats/restaurantstats.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RestaurantviewdetailsComponent } from './restaurantviewdetails/restaurantviewdetails.component';
+import { RestaurantviewmenuComponent } from './restaurantviewmenu/restaurantviewmenu.component';
+import { RestaurantcurrentordersComponent } from './restaurantcurrentorders/restaurantcurrentorders.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,13 +40,16 @@ import { RestaurantviewdetailsComponent } from './restaurantviewdetails/restaura
     RestaurantmenuComponent,
     RestaurantstatsComponent,
     SidebarComponent,
-    RestaurantviewdetailsComponent  ],
+    RestaurantviewdetailsComponent,
+    RestaurantviewmenuComponent,
+    RestaurantcurrentordersComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    
     RouterModule.forRoot([
       {
         path: '',
@@ -92,6 +98,14 @@ import { RestaurantviewdetailsComponent } from './restaurantviewdetails/restaura
       {
         path: 'restaurantviewdetails',
         component: RestaurantviewdetailsComponent
+      },
+      {
+        path: 'restaurantviewmenu',
+        component: RestaurantviewmenuComponent
+      },
+      {
+        path: 'restaurantcurrentorders',
+        component: RestaurantcurrentordersComponent
       }
     ])
   ],
