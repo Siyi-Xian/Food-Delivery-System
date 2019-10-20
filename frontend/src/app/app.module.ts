@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {CookieService} from 'ngx-cookie-service'
+import {CookieService} from 'ngx-cookie-service';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
