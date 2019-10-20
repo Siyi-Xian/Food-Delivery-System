@@ -69,24 +69,25 @@ router.delete('/delete', middleware.checkToken, function(req, res){
     })
 });
 
-router.post('/restaurant_details',  function(req, res){
-    var id = req.body.id
+router.post('/restaurant_details', middleware.checkToken,  function(req, res){
+    var id = req.body._id
     console.log(id)
 
-    db.collection('restaurant_data').update({_id: ObjectId(id)},
-    {
-        $push: {restaurant_details:{
+    var data_update = {
+        $set: {
             name: req.body.name,
             location: req.body.location,
             food_category: req.body.food_category,
-            res_image: req.body.res_image,
+            // res_image: req.body.res_image,
             contact:req.body.contact,
             working_hours:req.body.working_hours
-
-        }}
-    }, function(err, data){
+        }
+    }
+    
+    
+    db.collection('restaurant_data').updateOne({_id: ObjectId(id)}, data_update, function(err, data){
         if (err){
-            console.log("Fail")
+            console.log(err)
             res.json({
                 message: "Failed"
             })
@@ -94,6 +95,7 @@ router.post('/restaurant_details',  function(req, res){
         }
         else{
             console.log("Success")
+            // console.log(data)
             res.json({
                 message: "Success"
             })
