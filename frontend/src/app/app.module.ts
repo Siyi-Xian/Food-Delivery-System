@@ -21,6 +21,7 @@ import { RestaurantdetailsComponent } from './restaurantdetails/restaurantdetail
 import { RestaurantmenuComponent } from './restaurantmenu/restaurantmenu.component';
 import { RestaurantstatsComponent } from './restaurantstats/restaurantstats.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { RestaurantviewdetailsComponent } from './restaurantviewdetails/restaurantviewdetails.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     RestaurantdetailsComponent,
     RestaurantmenuComponent,
     RestaurantstatsComponent,
-    SidebarComponent  ],
+    SidebarComponent,
+    RestaurantviewdetailsComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -86,6 +88,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
       {
         path: 'restaurantstats',
         component: RestaurantstatsComponent
+      },
+      {
+        path: 'restaurantviewdetails',
+        component: RestaurantviewdetailsComponent
       }
     ])
   ],
