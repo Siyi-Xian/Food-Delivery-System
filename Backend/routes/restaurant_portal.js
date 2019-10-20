@@ -69,8 +69,8 @@ router.delete('/delete', middleware.checkToken, function(req, res){
     })
 });
 
-router.post('/restaurant_details', middleware.checkToken,  function(req, res){
-    var id = req.body._id
+router.post('/restaurant_details/:id',   function(req, res){
+    var id = req.params.id
     console.log(id)
 
     var data_update = {
@@ -95,7 +95,7 @@ router.post('/restaurant_details', middleware.checkToken,  function(req, res){
         }
         else{
             console.log("Success")
-            // console.log(data)
+             console.log(data)
             res.json({
                 message: "Success"
             })
@@ -106,4 +106,26 @@ router.post('/restaurant_details', middleware.checkToken,  function(req, res){
 });
 
 
+router.post('/display_details', function(req, res){
+    var id = req.body.id
+    console.log(id)
+    db.collection('restaurant_data'). find({_id: ObjectId(id)}, {projection:{restaurant_details:1}} ).toArray(function(err, result) {
+        if (err){
+            console.log("Fail")
+            res.json({
+                message: "Failed"
+            })
+            return;
+        }
+        else{
+            console.log("Success")
+            console.log(result)
+        
+            res.json({
+                message: "Success"
+            })
+            return;
+        }
+    })
+});
 module.exports = router
