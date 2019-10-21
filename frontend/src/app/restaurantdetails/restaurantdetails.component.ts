@@ -33,9 +33,8 @@ export class RestaurantdetailsComponent implements OnInit {
     details["jwttoken"] = jwttoken
     details['_id'] = this.cookie.get("restaurant_id")
 
-    //var mod = details.module('app', ['naif-base64']);
+    //var mod = .module('app', ['naif-base64']);
 
-    var image = this.cookie.get("res_image")
     //details['res_image'] = toBase64String.encode(image)
     details['res_image'] = this.cookie.get("res_image")
 
