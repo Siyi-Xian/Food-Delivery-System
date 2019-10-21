@@ -2,7 +2,7 @@ A web application based on MEAN stack to provide end to end connection between r
 
 Developers
 
-Aneri Shah
-Patrick McBride
-Raj Deepak Nandu
+Aneri Shah, 
+Patrick McBride, 
+Raj Deepak Nandu, 
 Siyi Xian
