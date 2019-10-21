@@ -11,7 +11,7 @@ const cookieParser = require('cookie-parser');
 var authentication = require('./routes/authenticate')
 var restaurant_portal = require('./routes/restaurant_portal')
 
-
+var port = process.env.PORT || 8080
 
 var cors = require('cors')
 

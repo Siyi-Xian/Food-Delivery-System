@@ -72,13 +72,13 @@ router.delete('/delete', middleware.checkToken, function(req, res){
 router.post('/restaurant_details/:id',   function(req, res){
     var id = req.params.id
     console.log(id)
-
+    console.log( req.body.res_image)
     var data_update = {
         $set: {
             name: req.body.name,
             location: req.body.location,
             food_category: req.body.food_category,
-            // res_image: req.body.res_image,
+            res_image: req.body.res_image,
             contact:req.body.contact,
             working_hours:req.body.working_hours
         }
@@ -106,10 +106,19 @@ router.post('/restaurant_details/:id',   function(req, res){
 });
 
 
-router.post('/display_details', function(req, res){
-    var id = req.body.id
+router.get('/display_details/:restaurant_id', function(req, res){
+    var id = req.params.restaurant_id
     console.log(id)
-    db.collection('restaurant_data'). find({_id: ObjectId(id)}, {projection:{restaurant_details:1}} ).toArray(function(err, result) {
+    var d = {
+        projection:{name:1,
+             location: 1,
+             food_category: 1,
+             res_image: 1,
+             contact: 1,
+             working_hours: 1 
+            }
+        }
+    db.collection('restaurant_data'). find({_id: ObjectId(id)}, d).toArray(function(err, result) {
         if (err){
             console.log("Fail")
             res.json({
@@ -119,11 +128,9 @@ router.post('/display_details', function(req, res){
         }
         else{
             console.log("Success")
-            console.log(result)
+            // console.log(result)
         
-            res.json({
-                message: "Success"
-            })
+            res.json(result)
             return;
         }
     })

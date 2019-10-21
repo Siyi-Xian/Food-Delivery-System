@@ -41,8 +41,10 @@ export class RestaurantdetailsComponent implements OnInit {
     reader.onload = function(e){
       console.log("encoding image")
       b64 = btoa(e.target.toString());
+      console.log(b64)
     }
     this.fileAsBase64 = b64;
+    
   }
 
 
@@ -54,9 +56,9 @@ export class RestaurantdetailsComponent implements OnInit {
   
     //var mod = .module('app', ['naif-base64']);
 
-    details['reg_image'] = this.fileAsBase64;
-    
-    var r = this.loginService.sendRequest(details, 'http://localhost:3000/restaurant/restaurant_details');
+    details['res_image'] = this.fileAsBase64;
+    console.log(details['res_image'])
+    var r = this.loginService.sendRequest(details, 'http://localhost:3000/restaurant/restaurant_details/'+this.cookie.get('restaurant_id'));
     r.subscribe(data => {
       console.log(data);
 
@@ -64,8 +66,10 @@ export class RestaurantdetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.httpService.get('http://localhost:3000/restaurant/restaurant_details').subscribe(data => {
-      this.detailsForm = data;
+    console.log("fge" + this.cookie.get('restaurant_id'))
+    this.httpService.get('http://localhost:3000/restaurant/display_details/'+this.cookie.get('restaurant_id')).subscribe(data => {
+      // this.detailsForm = data;
+      console.log(data)
     });
   }
 
