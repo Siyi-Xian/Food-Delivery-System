@@ -24,6 +24,7 @@
         <h2>Add item to the Menu</h2>
       </div>
       <div class="container" style="padding: 30px; font-size: 15px">
+        <form mehtod="post" [formGroup]="menuForm" (ngSubmit)=onSubmit(menuForm.value)>
         <div class="fields">
           <div>Item Name:</div>
           <div><input type="text" required="required" formControlName="name" placeholder="Cheeseburger" id="name"
@@ -42,19 +43,18 @@
         </div>
         <div class="fields">
           <div>Image:</div>
-          <div><input type="file" required="required" accept="image/*" id="res_image"></div>
+          <div><input type="file" required="required" accept="image/*" (change)="onFileSelected($event)" id="food_image" ng-model="res_image"
+            base-sixty-four-input>></div>
         </div>
         <button type="submit" value="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 20px">
           Add Item
         </button>
+        </form>
       </div>
     </div>
   </div>
 </div>
 
-<form mehtod="post" [formGroup]="menuForm" (ngSubmit)=onSubmit(menuForm.value)>
-
-</form>
 
 </body>
 

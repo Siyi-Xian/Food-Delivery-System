@@ -44,7 +44,7 @@
           </div>
           <div class="fields">
             <div>Image:</div>
-            <div><input type="file" required="required" accept="image/*" id="res_image" ng-model="res_image"
+            <div><input type="file" required="required" accept="image/*" (change)="onFileSelected($event)" id="res_image" ng-model="res_image"
                         base-sixty-four-input></div>
           </div>
           <div class="fields">
