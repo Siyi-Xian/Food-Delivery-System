@@ -13,8 +13,10 @@ let middleware = require('./jwtverification');
 var router = express.Router()
 
 
+mongoose.connect('mongodb://heroku_wr9z45km:4qlbddem2aer4k5djhcrp5ph3s@ds243717.mlab.com:43717/heroku_wr9z45km', { useNewUrlParser: true, useUnifiedTopology: true });
 
-mongoose.connect('mongodb://localhost:27017/foodoholics', { useNewUrlParser: true, useUnifiedTopology: true });
+
+// mongoose.connect('mongodb://localhost:27017/foodoholics', { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 
 function send_mail(from, receiver, subject, message){
