@@ -44,7 +44,6 @@ export class RestaurantdetailsComponent implements OnInit {
       console.log(b64)
     }
     this.fileAsBase64 = b64;
-    
   }
 
 

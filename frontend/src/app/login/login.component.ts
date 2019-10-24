@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 // import { AuthService } from '../auth.service';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from '../login.service';
 import {CookieService} from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +13,13 @@ import {CookieService} from 'ngx-cookie-service';
 export class LoginComponent implements OnInit {
   userLoginForm;
   response: any;
-
+  private showFile: boolean = false;
   timesSubmitted = 0;
 
   constructor(
     private loginService: LoginService,
     private formBuilder: FormBuilder,
+    private router: Router,
     private cookie: CookieService) {
     this.userLoginForm = this.formBuilder.group({
       email: '',
@@ -25,18 +27,36 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  veryOTPAsyn(otpControl: FormControl): Promise<any> {
+    console.log(otpControl)
+    console.log(otpControl.hasError('invalidOtp'))
+    return new Promise<any>(
+      (resolve, reject) => {
+        setTimeout(() => {
+          resolve({invalidOtp:true});
+        }, 500);
+      });
+  }
+
   ngOnInit() {
 
   }
 
   onSubmit(userData) {
+
+    var shouldVerify = true
+
     var r = this.loginService.sendRequest(userData, 'http://localhost:3000/authentication/login/user');
+    var r = this.loginService.sendRequest(userData, "http://localhost:3000/login/user");
     r.subscribe(data => {
+      //check if the user is verified 
       if (data['auth']) {
         this.cookie.set('jwttoken', data['token']);
+        this.router.navigate(['/customerdashboard']);
+        shouldVerify = false
       }
-
     });
+
     // this.cookie.set("userid", "123")
     // console.log(this.response)
     const payload = {
@@ -44,37 +64,17 @@ export class LoginComponent implements OnInit {
     };
     console.log(payload);
     console.log(this.cookie.get('jwttoken'));
-    r = this.loginService.sendRequest(payload, 'http://localhost:3000/verifyotp');
-    r.subscribe(data => {
-      console.log(data);
-    });
+    if(shouldVerify){
+      r = this.loginService.sendRequest(payload, 'http://localhost:3000/verifyotp');
+      r.subscribe(data => {
+        console.log(data);
+      });
+    }
   }
 
-  // logUserIn(event){
-  //   event.preventDefault()
-  //   console.log(event)
-  //   this.timesSubmitted += 1
-  //   if (this.timesSubmitted > 1){
-  //     console.log("captcha has been prompted")
-  //   }
-
-  // const target = event.target
-  // console.log(target.srcElement['0'])
-  // const email = target.querySelector('email').value
-  // const password = target.querySelector('password').value
-  // }
-  /*
-  // subscribe is throwing error because the http request to the backend hasn't been established yet
-  this.Auth.validateUserDetails(email, password).subscribe(data => {
-    if(data.success){
-      // direct user to customer view
-    }
-    else{
-      window.alert("Invalid credintials")
-    }
-  })
-  console.log(email, password)
-}
-*/
+  
+  onClickOpenVerification(){
+    this.showFile = true;
+  }
 
 }

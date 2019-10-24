@@ -25,6 +25,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { RestaurantviewdetailsComponent } from './restaurantviewdetails/restaurantviewdetails.component';
 import { RestaurantviewmenuComponent } from './restaurantviewmenu/restaurantviewmenu.component';
 import { RestaurantcurrentordersComponent } from './restaurantcurrentorders/restaurantcurrentorders.component';
+import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
+import { VerifyComponent } from './verify/verify.component';
+import { RecoverComponent } from './recover/recover.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { RestaurantcurrentordersComponent } from './restaurantcurrentorders/rest
     SidebarComponent,
     RestaurantviewdetailsComponent,
     RestaurantviewmenuComponent,
-    RestaurantcurrentordersComponent  ],
+    RestaurantcurrentordersComponent,
+    CustomerdashboardComponent,
+    VerifyComponent,
+    RecoverComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -107,6 +113,18 @@ import { RestaurantcurrentordersComponent } from './restaurantcurrentorders/rest
       {
         path: 'restaurantcurrentorders',
         component: RestaurantcurrentordersComponent
+      },
+      {
+        path: 'customerdashboard',
+        component: CustomerdashboardComponent
+      },
+      {
+        path: 'verify',
+        component: VerifyComponent
+      },
+      {
+        path: 'recover',
+        component: RecoverComponent
       }
     ])
   ],

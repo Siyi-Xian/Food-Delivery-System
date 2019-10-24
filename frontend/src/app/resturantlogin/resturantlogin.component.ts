@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../login.service';
 import {FormBuilder} from '@angular/forms';
 import {CookieService} from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-resturantlogin',
@@ -17,6 +18,7 @@ export class ResturantloginComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private formBuilder: FormBuilder,
+    private router: Router,
     private cookie: CookieService) { 
       this.restaurantLoginForm = this.formBuilder.group({
         email: '',
@@ -28,24 +30,26 @@ export class ResturantloginComponent implements OnInit {
   }
 
   onSubmit(userData){
+    this.timesSubmitted += 1;
     var r = this.loginService.sendRequest(userData, "http://localhost:3000/authentication/login/restaurant");
     r.subscribe(data => {
       console.log(data)
       if(data['auth']){
         this.cookie.set("jwttoken", data['token']);
         this.cookie.set("restaurant_id", data['_id']);
+        this.router.navigate(['/restaurant-view']);
         //console.log(data[_id])
       }
       
     })
   }
 
-  logRestIn(event){
-    event.preventDefault()
-    console.log(event)
-    this.timesSubmitted += 1
-    if (this.timesSubmitted > 1){
-      console.log("captcha has been prompted")
-    }
-  }
+  //logRestIn(event){
+    //event.preventDefault()
+    //console.log(event)
+    //this.timesSubmitted += 1
+    //if (this.timesSubmitted > 1){
+      //console.log("captcha has been prompted")
+    //}
+  //}
 }
