@@ -16,10 +16,10 @@
            <label for="e-mail">Verify OTP</label>
            <br>
            please enter the 6-digit code sent to your email
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="OTP" formControlName="otp">
+    <div class="input-group" [formGroup]="verifyFormData">
+      <input type="text" placeholder="OTP" formControlName="otp">
       <span class="input-group-btn">
-        <button class="btn btn-secondary" (click)="veryOTPAsyn(userLoginForm.controls.otp)" type="button">Verify</button>
+        <button class="btn btn-secondary" (click)="veryOTPAsyn(verifyFormData.otp)" type="button">Verify</button>
       </span>
     </div>
     <div class="form-text error" *ngIf="userLoginForm.controls.otp.touched">

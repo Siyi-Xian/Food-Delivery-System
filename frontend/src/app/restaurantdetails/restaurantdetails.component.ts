@@ -3,7 +3,6 @@ import {FormBuilder} from '@angular/forms';
 import {CookieService} from 'ngx-cookie-service';
 import {LoginService} from '../login.service';
 import {HttpClient} from '@angular/common/http';
-import { toBase64String } from '@angular/compiler/src/output/source_map';
 
 @Component({
   selector: 'app-restaurantdetails',
@@ -53,7 +52,6 @@ export class RestaurantdetailsComponent implements OnInit {
     details['jwttoken'] = jwttoken;
     details['_id'] = this.cookie.get('restaurant_id');
   
-    //var mod = .module('app', ['naif-base64']);
 
     details['res_image'] = this.fileAsBase64;
     console.log(details['res_image'])

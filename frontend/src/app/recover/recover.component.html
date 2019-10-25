@@ -33,7 +33,7 @@
         <div><input type="text" required = "required" formControlName="email" placeholder="johndoe@foodoholic.com" id="Email" style="width: 100%"></div>
         <div><button type="submit"value = "submit" class="btn btn-primary btn-lg btn-block" (click)="onClickOpenVerification()">Verify</button></div>
     </form>
-    
+
     <div *ngIf="showFile">
         <form method="post" [formGroup]="userVerificationForm" (ngSubmit) = "onVerify(userVerificationForm.value)">
           <div>Please enter the 6-digit code that was sent to your email</div>
@@ -46,6 +46,16 @@
           <div *ngIf="userLoginForm.controls.otp.hasError('required')">Verifcation is required</div>
           <div *ngIf="userLoginForm.controls.otp.hasError('invalidOtp')">Code is invalid</div>
         </div>
+      </div>
+
+      <div *ngIf="showPasswordReset">
+        <form method="post" [formGroup]="userPasswordReset" (ngSubmit) = "onReset(userPasswordReset.value)">
+          <div>Enter your new password</div>
+          <input type="text" class="form-control" placeholder="******" formControlName="newPass">
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" type="submit" value="submit">Submit</button>
+          </span>
+        </form>
       </div>
 
   </body>
