@@ -17,21 +17,17 @@
     <img src="../../assets/img/logo.png" height="50" alt="">
   </a>
   <div class="container">
-      <ul class="nav navbar-nav">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Sign up</a>
+          <div class="dropdown">
+            <button href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">Login/Sign up</button>
             <ul class="dropdown-menu">
               <li><a href="#" routerLink="/login">Login</a></li>
-              <li class="divider"></li>
-              <li><a href="#" routerLink="/registration">Registration</a></li>
+              <a href="#" routerLink="/registration">Registration</a>
+              <div class="dropdown-divider"></div>
               <label>Restaurant Owner?</label>
-              <li class="divider"></li>
               <li><a href="#" routerLink="/resturantlogin">Restaurant Login</a></li>
-              <li class="divider"></li>
-              <li><a href="#" routerLink="/restaurantreg">Restaurant Registration</a></li>
+              <a href="#" routerLink="/restaurantreg">Register Restaurant</a>
             </ul>
-          </li>
-        </ul>
+          </div>
   </div>
 </nav>
 </body>
