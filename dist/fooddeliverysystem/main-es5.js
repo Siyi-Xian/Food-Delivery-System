@@ -1280,13 +1280,13 @@
             /* harmony import */ var _login_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../login.service */ "./src/app/login.service.ts");
             /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
             var RestaurantdetailsComponent = /** @class */ (function () {
-                function RestaurantdetailsComponent(httpService, loginService, formBuilder, cookie) {
+                function RestaurantdetailsComponent(httpService, loginService, formBuilder, cookie, http) {
                     this.httpService = httpService;
                     this.loginService = loginService;
                     this.formBuilder = formBuilder;
                     this.cookie = cookie;
+                    this.http = http;
                     this.selectedFile = null;
-                    this.fileAsBase64 = null;
                     this.detailsForm = this.formBuilder.group({
                         name: '',
                         location: '',
@@ -1298,25 +1298,33 @@
                 }
                 RestaurantdetailsComponent.prototype.onFileSelected = function (event) {
                     //this.selectedFile = <File>event.target.files[0];
-                    var b64;
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        console.log("encoding image");
-                        b64 = btoa(e.target.toString());
-                        console.log(b64);
-                    };
-                    this.fileAsBase64 = b64;
+                    // var b64;
+                    // var reader = new FileReader();
+                    // reader.onload = function(e){
+                    //   console.log("encoding image")
+                    //   b64 = btoa(e.target.toString());
+                    //   console.log(b64)
+                    // }
+                    // this.fileAsBase64 = b64;
+                    var file = event.target.files[0];
+                    this.image = file;
                 };
                 RestaurantdetailsComponent.prototype.onSubmit = function (details) {
                     var jwttoken = this.cookie.get('jwttoken');
                     details['jwttoken'] = jwttoken;
-                    details['_id'] = this.cookie.get('restaurant_id');
-                    details['res_image'] = this.fileAsBase64;
-                    console.log(details['res_image']);
-                    var r = this.loginService.sendRequest(details, '/restaurant/restaurant_details/' + this.cookie.get('restaurant_id'));
-                    r.subscribe(function (data) {
-                        console.log(data);
-                    });
+                    details['id'] = this.cookie.get('restaurant_id');
+                    // details['res_image'] = this.fileAsBase64;
+                    // console.log(details['res_image'])
+                    var formData = new FormData();
+                    formData.append("id", this.cookie.get('restaurant_id'));
+                    formData.append("jwttoken", jwttoken);
+                    formData.append("image", this.image, this.cookie.get('restaurant_id') + '.jpg');
+                    formData.append("name", details['name']);
+                    formData.append("location", details['location']);
+                    formData.append("food_category", details['food_category']);
+                    formData.append("contact", details['contact']);
+                    formData.append("working_hours", details['working_hours']);
+                    this.http.post('/restaurant/restaurant_details', formData).subscribe(function (res) { return console.log(res); }, function (err) { return console.log(err); });
                 };
                 RestaurantdetailsComponent.prototype.ngOnInit = function () {
                     var _this = this;
@@ -1324,11 +1332,13 @@
                     this.httpService.get('/restaurant/display_details/' + this.cookie.get('restaurant_id')).subscribe(function (data) {
                         // this.detailsForm = data;
                         console.log(data);
-                        _this.detailsForm.controls['name'].setValue(data['name']);
-                        _this.detailsForm.controls['location'].setValue(data['location']);
-                        _this.detailsForm.controls['food_category'].setValue(data['food_category']);
-                        _this.detailsForm.controls['contact'].setValue(data['contact']);
-                        _this.detailsForm.controls['working_hours'].setValue(data['working_hours']);
+                        if (data != null) {
+                            _this.detailsForm.controls['name'].setValue(data['name']);
+                            _this.detailsForm.controls['location'].setValue(data['location']);
+                            _this.detailsForm.controls['food_category'].setValue(data['food_category']);
+                            _this.detailsForm.controls['contact'].setValue(data['contact']);
+                            _this.detailsForm.controls['working_hours'].setValue(data['working_hours']);
+                        }
                     });
                 };
                 return RestaurantdetailsComponent;
@@ -1337,7 +1347,8 @@
                 { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"] },
                 { type: _login_service__WEBPACK_IMPORTED_MODULE_4__["LoginService"] },
                 { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
+                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] },
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"] }
             ]; };
             RestaurantdetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1373,12 +1384,13 @@
             /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
             /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
             /* harmony import */ var _login_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../login.service */ "./src/app/login.service.ts");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
             var RestaurantmenuComponent = /** @class */ (function () {
-                function RestaurantmenuComponent(loginService, formBuilder, cookie) {
+                function RestaurantmenuComponent(loginService, formBuilder, cookie, http) {
                     this.loginService = loginService;
                     this.formBuilder = formBuilder;
                     this.cookie = cookie;
-                    this.fileAsBase64 = null;
+                    this.http = http;
                     this.menuForm = this.formBuilder.group({
                         name: "",
                         cost: "",
@@ -1386,24 +1398,35 @@
                         image: ""
                     });
                 }
+                // fileAsBase64 = null;
                 RestaurantmenuComponent.prototype.onFileSelected = function (event) {
-                    var b64;
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        console.log("encoding images");
-                        b64 = btoa(e.target.toString());
-                    };
-                    this.fileAsBase64 = b64;
+                    // var b64
+                    // var reader = new FileReader()
+                    // reader.onload = function(e){
+                    //   console.log("encoding images")
+                    //   b64 = btoa(e.target.toString());
+                    // }
+                    // this.fileAsBase64 = b64;
+                    var file = event.target.files[0];
+                    this.image = file;
                 };
                 RestaurantmenuComponent.prototype.onSubmit = function (menu) {
                     var jwttoken = this.cookie.get("jwttoken");
-                    menu["jwttoken"] = jwttoken;
-                    menu['id'] = this.cookie.get("restaurant_id");
-                    menu['image'] = this.fileAsBase64;
-                    var r = this.loginService.sendRequest(menu, "/restaurant/menu");
-                    r.subscribe(function (data) {
-                        console.log(data);
-                    });
+                    // menu["jwttoken"] = jwttoken
+                    // menu['id'] = this.cookie.get("restaurant_id")
+                    // menu['image'] = this.image;
+                    var formData = new FormData();
+                    formData.append("image", this.image, this.cookie.get("restaurant_id") + menu['name'] + ".jpg");
+                    formData.append('id', this.cookie.get("restaurant_id"));
+                    formData.append('jwttoken', jwttoken);
+                    formData.append('name', menu['name']);
+                    formData.append('cost', menu['cost']);
+                    formData.append('description', menu['description']);
+                    this.http.post('/restaurant/menu', formData).subscribe(function (res) { return console.log(res); }, function (err) { return console.log(err); });
+                    // var r = this.loginService.sendRequest(menu, "/restaurant/menu");
+                    // r.subscribe(data => {
+                    //   console.log(data)
+                    // })
                 };
                 RestaurantmenuComponent.prototype.ngOnInit = function () {
                 };
@@ -1412,7 +1435,8 @@
             RestaurantmenuComponent.ctorParameters = function () { return [
                 { type: _login_service__WEBPACK_IMPORTED_MODULE_4__["LoginService"] },
                 { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
+                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] },
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"] }
             ]; };
             RestaurantmenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

@@ -5,14 +5,35 @@ var ObjectId = require('mongoose').Types.ObjectId;
 let jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 let middleware = require('./jwtverification');
+const multer = require('multer')
+
 var router = express.Router()
 mongoose.connect('mongodb://heroku_wr9z45km:4qlbddem2aer4k5djhcrp5ph3s@ds243717.mlab.com:43717/heroku_wr9z45km', { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
+const menu_image_storage = multer.diskStorage({
+    destination: (req, file, callBack)=>{
+        callBack(null, "menu_images")
+    },
+    filename: (req, file, callBack)=>{
+        callBack(null, file.originalname)
+    }
+})
 
+const restaurant_image_storage = multer.diskStorage({
+    destination: (req, file, callBack)=>{
+        callBack(null, "restaurant_images")
+    },
+    filename: (req, file, callBack)=>{
+        callBack(null, req.body.id + ".jpg")
+    }
+})
 
-router.post('/menu', middleware.checkToken, function(req, res){
+var upload_menu = multer({storage: menu_image_storage})
+var upload_restaurant = multer({storage: restaurant_image_storage})
+
+router.post('/menu', upload_menu.single('image'), function(req, res){
     var id = req.body.id
-    console.log(id)
+    // console.log(id)
 
     db.collection('restaurant_data').update({_id: ObjectId(id)},
     {
@@ -21,7 +42,7 @@ router.post('/menu', middleware.checkToken, function(req, res){
             name: req.body.name,
             cost: req.body.cost,
             description: req.body.description,
-            image: req.body.image
+            image: id + req.body.name + ".jpg"
         }}
     }, function(err, data){
         if (err){
@@ -73,16 +94,16 @@ router.delete('/delete', middleware.checkToken, function(req, res){
     })
 });
 
-router.post('/restaurant_details/:id',   function(req, res){
-    var id = req.params.id
+router.post('/restaurant_details', upload_restaurant.single('image'), function(req, res){
+    var id = req.body.id
     console.log(id)
-    console.log( req.body.res_image)
+    // console.log( req.body.res_image)
     var data_update = {
         $set: {
             name: req.body.name,
             location: req.body.location,
             food_category: req.body.food_category,
-            res_image: req.body.res_image,
+            res_image: id+'.jpg',
             contact:req.body.contact,
             working_hours:req.body.working_hours
         }

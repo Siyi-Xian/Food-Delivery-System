@@ -17,7 +17,8 @@ export class RestaurantdetailsComponent implements OnInit {
     private httpService:HttpClient,
     private loginService: LoginService,
     private formBuilder: FormBuilder,
-    private cookie: CookieService) {
+    private cookie: CookieService,
+    private http: HttpClient) {
     this.detailsForm = this.formBuilder.group({
       name: '',
       location: '',
@@ -31,18 +32,20 @@ export class RestaurantdetailsComponent implements OnInit {
 
   selectedFile: File = null;
 
-  fileAsBase64 = null;
-
+  // fileAsBase64 = null;
+  image
   onFileSelected(event){
     //this.selectedFile = <File>event.target.files[0];
-    var b64;
-    var reader = new FileReader();
-    reader.onload = function(e){
-      console.log("encoding image")
-      b64 = btoa(e.target.toString());
-      console.log(b64)
-    }
-    this.fileAsBase64 = b64;
+    // var b64;
+    // var reader = new FileReader();
+    // reader.onload = function(e){
+    //   console.log("encoding image")
+    //   b64 = btoa(e.target.toString());
+    //   console.log(b64)
+    // }
+    // this.fileAsBase64 = b64;
+    const file = event.target.files[0];
+    this.image = file
   }
 
 
@@ -50,16 +53,26 @@ export class RestaurantdetailsComponent implements OnInit {
   onSubmit(details) {
     var jwttoken = this.cookie.get('jwttoken');
     details['jwttoken'] = jwttoken;
-    details['_id'] = this.cookie.get('restaurant_id');
+    details['id'] = this.cookie.get('restaurant_id');
   
 
-    details['res_image'] = this.fileAsBase64;
-    console.log(details['res_image'])
-    var r = this.loginService.sendRequest(details, '/restaurant/restaurant_details/'+this.cookie.get('restaurant_id'));
-    r.subscribe(data => {
-      console.log(data);
+    // details['res_image'] = this.fileAsBase64;
+    // console.log(details['res_image'])
 
-    });
+    const formData = new FormData()
+    formData.append("id", this.cookie.get('restaurant_id'))
+    formData.append("jwttoken", jwttoken)
+    formData.append("image", this.image, this.cookie.get('restaurant_id')+'.jpg')
+    formData.append("name", details['name'])
+    formData.append("location", details['location'])
+    formData.append("food_category", details['food_category'])
+    formData.append("contact", details['contact'])
+    formData.append("working_hours", details['working_hours'])
+
+    this.http.post<any>('/restaurant/restaurant_details', formData).subscribe(
+      (res)=> console.log(res),
+      (err) => console.log(err)
+    )
   }
 
   ngOnInit() {
@@ -67,11 +80,14 @@ export class RestaurantdetailsComponent implements OnInit {
     this.httpService.get('/restaurant/display_details/'+this.cookie.get('restaurant_id')).subscribe(data => {
       // this.detailsForm = data;
       console.log(data)
-      this.detailsForm.controls['name'].setValue(data['name'])
-      this.detailsForm.controls['location'].setValue(data['location'])
-      this.detailsForm.controls['food_category'].setValue(data['food_category'])
-      this.detailsForm.controls['contact'].setValue(data['contact'])
-      this.detailsForm.controls['working_hours'].setValue(data['working_hours'])
+      if (data != null){
+        this.detailsForm.controls['name'].setValue(data['name'])
+        this.detailsForm.controls['location'].setValue(data['location'])
+        this.detailsForm.controls['food_category'].setValue(data['food_category'])
+        this.detailsForm.controls['contact'].setValue(data['contact'])
+        this.detailsForm.controls['working_hours'].setValue(data['working_hours'])
+      }
+      
 
     });
   }

@@ -1369,13 +1369,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let RestaurantdetailsComponent = class RestaurantdetailsComponent {
-    constructor(httpService, loginService, formBuilder, cookie) {
+    constructor(httpService, loginService, formBuilder, cookie, http) {
         this.httpService = httpService;
         this.loginService = loginService;
         this.formBuilder = formBuilder;
         this.cookie = cookie;
+        this.http = http;
         this.selectedFile = null;
-        this.fileAsBase64 = null;
         this.detailsForm = this.formBuilder.group({
             name: '',
             location: '',
@@ -1387,36 +1387,46 @@ let RestaurantdetailsComponent = class RestaurantdetailsComponent {
     }
     onFileSelected(event) {
         //this.selectedFile = <File>event.target.files[0];
-        var b64;
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            console.log("encoding image");
-            b64 = btoa(e.target.toString());
-            console.log(b64);
-        };
-        this.fileAsBase64 = b64;
+        // var b64;
+        // var reader = new FileReader();
+        // reader.onload = function(e){
+        //   console.log("encoding image")
+        //   b64 = btoa(e.target.toString());
+        //   console.log(b64)
+        // }
+        // this.fileAsBase64 = b64;
+        const file = event.target.files[0];
+        this.image = file;
     }
     onSubmit(details) {
         var jwttoken = this.cookie.get('jwttoken');
         details['jwttoken'] = jwttoken;
-        details['_id'] = this.cookie.get('restaurant_id');
-        details['res_image'] = this.fileAsBase64;
-        console.log(details['res_image']);
-        var r = this.loginService.sendRequest(details, '/restaurant/restaurant_details/' + this.cookie.get('restaurant_id'));
-        r.subscribe(data => {
-            console.log(data);
-        });
+        details['id'] = this.cookie.get('restaurant_id');
+        // details['res_image'] = this.fileAsBase64;
+        // console.log(details['res_image'])
+        const formData = new FormData();
+        formData.append("id", this.cookie.get('restaurant_id'));
+        formData.append("jwttoken", jwttoken);
+        formData.append("image", this.image, this.cookie.get('restaurant_id') + '.jpg');
+        formData.append("name", details['name']);
+        formData.append("location", details['location']);
+        formData.append("food_category", details['food_category']);
+        formData.append("contact", details['contact']);
+        formData.append("working_hours", details['working_hours']);
+        this.http.post('/restaurant/restaurant_details', formData).subscribe((res) => console.log(res), (err) => console.log(err));
     }
     ngOnInit() {
         console.log("fge" + this.cookie.get('restaurant_id'));
         this.httpService.get('/restaurant/display_details/' + this.cookie.get('restaurant_id')).subscribe(data => {
             // this.detailsForm = data;
             console.log(data);
-            this.detailsForm.controls['name'].setValue(data['name']);
-            this.detailsForm.controls['location'].setValue(data['location']);
-            this.detailsForm.controls['food_category'].setValue(data['food_category']);
-            this.detailsForm.controls['contact'].setValue(data['contact']);
-            this.detailsForm.controls['working_hours'].setValue(data['working_hours']);
+            if (data != null) {
+                this.detailsForm.controls['name'].setValue(data['name']);
+                this.detailsForm.controls['location'].setValue(data['location']);
+                this.detailsForm.controls['food_category'].setValue(data['food_category']);
+                this.detailsForm.controls['contact'].setValue(data['contact']);
+                this.detailsForm.controls['working_hours'].setValue(data['working_hours']);
+            }
         });
     }
 };
@@ -1424,7 +1434,8 @@ RestaurantdetailsComponent.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"] },
     { type: _login_service__WEBPACK_IMPORTED_MODULE_4__["LoginService"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"] }
 ];
 RestaurantdetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1466,17 +1477,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
 /* harmony import */ var _login_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../login.service */ "./src/app/login.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
 
 
 
 
 
 let RestaurantmenuComponent = class RestaurantmenuComponent {
-    constructor(loginService, formBuilder, cookie) {
+    constructor(loginService, formBuilder, cookie, http) {
         this.loginService = loginService;
         this.formBuilder = formBuilder;
         this.cookie = cookie;
-        this.fileAsBase64 = null;
+        this.http = http;
         this.menuForm = this.formBuilder.group({
             name: "",
             cost: "",
@@ -1484,24 +1497,35 @@ let RestaurantmenuComponent = class RestaurantmenuComponent {
             image: ""
         });
     }
+    // fileAsBase64 = null;
     onFileSelected(event) {
-        var b64;
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            console.log("encoding images");
-            b64 = btoa(e.target.toString());
-        };
-        this.fileAsBase64 = b64;
+        // var b64
+        // var reader = new FileReader()
+        // reader.onload = function(e){
+        //   console.log("encoding images")
+        //   b64 = btoa(e.target.toString());
+        // }
+        // this.fileAsBase64 = b64;
+        const file = event.target.files[0];
+        this.image = file;
     }
     onSubmit(menu) {
         var jwttoken = this.cookie.get("jwttoken");
-        menu["jwttoken"] = jwttoken;
-        menu['id'] = this.cookie.get("restaurant_id");
-        menu['image'] = this.fileAsBase64;
-        var r = this.loginService.sendRequest(menu, "/restaurant/menu");
-        r.subscribe(data => {
-            console.log(data);
-        });
+        // menu["jwttoken"] = jwttoken
+        // menu['id'] = this.cookie.get("restaurant_id")
+        // menu['image'] = this.image;
+        const formData = new FormData();
+        formData.append("image", this.image, this.cookie.get("restaurant_id") + menu['name'] + ".jpg");
+        formData.append('id', this.cookie.get("restaurant_id"));
+        formData.append('jwttoken', jwttoken);
+        formData.append('name', menu['name']);
+        formData.append('cost', menu['cost']);
+        formData.append('description', menu['description']);
+        this.http.post('/restaurant/menu', formData).subscribe((res) => console.log(res), (err) => console.log(err));
+        // var r = this.loginService.sendRequest(menu, "/restaurant/menu");
+        // r.subscribe(data => {
+        //   console.log(data)
+        // })
     }
     ngOnInit() {
     }
@@ -1509,7 +1533,8 @@ let RestaurantmenuComponent = class RestaurantmenuComponent {
 RestaurantmenuComponent.ctorParameters = () => [
     { type: _login_service__WEBPACK_IMPORTED_MODULE_4__["LoginService"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"] }
 ];
 RestaurantmenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
