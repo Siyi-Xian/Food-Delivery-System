@@ -67,6 +67,12 @@ export class RestaurantdetailsComponent implements OnInit {
     this.httpService.get('/restaurant/display_details/'+this.cookie.get('restaurant_id')).subscribe(data => {
       // this.detailsForm = data;
       console.log(data)
+      this.detailsForm.controls['name'].setValue(data['name'])
+      this.detailsForm.controls['location'].setValue(data['location'])
+      this.detailsForm.controls['food_category'].setValue(data['food_category'])
+      this.detailsForm.controls['contact'].setValue(data['contact'])
+      this.detailsForm.controls['working_hours'].setValue(data['working_hours'])
+
     });
   }
 

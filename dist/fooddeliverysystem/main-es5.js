@@ -1319,10 +1319,16 @@
                     });
                 };
                 RestaurantdetailsComponent.prototype.ngOnInit = function () {
+                    var _this = this;
                     console.log("fge" + this.cookie.get('restaurant_id'));
                     this.httpService.get('/restaurant/display_details/' + this.cookie.get('restaurant_id')).subscribe(function (data) {
                         // this.detailsForm = data;
                         console.log(data);
+                        _this.detailsForm.controls['name'].setValue(data['name']);
+                        _this.detailsForm.controls['location'].setValue(data['location']);
+                        _this.detailsForm.controls['food_category'].setValue(data['food_category']);
+                        _this.detailsForm.controls['contact'].setValue(data['contact']);
+                        _this.detailsForm.controls['working_hours'].setValue(data['working_hours']);
                     });
                 };
                 return RestaurantdetailsComponent;
@@ -1392,7 +1398,7 @@
                 RestaurantmenuComponent.prototype.onSubmit = function (menu) {
                     var jwttoken = this.cookie.get("jwttoken");
                     menu["jwttoken"] = jwttoken;
-                    menu['_id'] = this.cookie.get("restaurant_id");
+                    menu['id'] = this.cookie.get("restaurant_id");
                     menu['image'] = this.fileAsBase64;
                     var r = this.loginService.sendRequest(menu, "/restaurant/menu");
                     r.subscribe(function (data) {
@@ -1805,7 +1811,7 @@
           \***************************/
         /*! no static exports found */
         /***/ (function (module, exports, __webpack_require__) {
-            module.exports = __webpack_require__(/*! D:\IUB\Semester 1\Software Engineering\project\Experiment\src\main.ts */ "./src/main.ts");
+            module.exports = __webpack_require__(/*! D:\IUB\Semester 1\Software Engineering\project\Food-Delivery-System\src\main.ts */ "./src/main.ts");
             /***/ 
         })
     }, [[0, "runtime", "vendor"]]]);

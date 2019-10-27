@@ -1412,6 +1412,11 @@ let RestaurantdetailsComponent = class RestaurantdetailsComponent {
         this.httpService.get('/restaurant/display_details/' + this.cookie.get('restaurant_id')).subscribe(data => {
             // this.detailsForm = data;
             console.log(data);
+            this.detailsForm.controls['name'].setValue(data['name']);
+            this.detailsForm.controls['location'].setValue(data['location']);
+            this.detailsForm.controls['food_category'].setValue(data['food_category']);
+            this.detailsForm.controls['contact'].setValue(data['contact']);
+            this.detailsForm.controls['working_hours'].setValue(data['working_hours']);
         });
     }
 };
@@ -1491,7 +1496,7 @@ let RestaurantmenuComponent = class RestaurantmenuComponent {
     onSubmit(menu) {
         var jwttoken = this.cookie.get("jwttoken");
         menu["jwttoken"] = jwttoken;
-        menu['_id'] = this.cookie.get("restaurant_id");
+        menu['id'] = this.cookie.get("restaurant_id");
         menu['image'] = this.fileAsBase64;
         var r = this.loginService.sendRequest(menu, "/restaurant/menu");
         r.subscribe(data => {
@@ -1968,7 +1973,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\IUB\Semester 1\Software Engineering\project\Experiment\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\IUB\Semester 1\Software Engineering\project\Food-Delivery-System\src\main.ts */"./src/main.ts");
 
 
 /***/ })

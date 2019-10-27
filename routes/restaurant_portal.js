@@ -26,13 +26,17 @@ router.post('/menu', middleware.checkToken, function(req, res){
     }, function(err, data){
         if (err){
                 console.log("Fail")
-                res.send("Fail")
+                res.json({
+                    message: "Failed"
+                })
            
             return;
         }
         else{
                 console.log("Success")
-                res.send("Success")
+                res.json({
+                    message: "Success"
+                })
            
             return;
         }
@@ -118,9 +122,10 @@ router.get('/display_details/:restaurant_id', function(req, res){
              working_hours: 1 
             }
         }
-    db.collection('restaurant_data'). find({_id: ObjectId(id)}, d).toArray(function(err, result) {
+    // db.collection('restaurant_data'). find({_id: ObjectId(id)}, d).toArray(function(err, result) {
+    db.collection('restaurant_data'). findOne({_id: ObjectId(id)}, d, function(err, result) {
         if (err){
-            console.log("Fail")
+            console.log(err)
             res.json({
                 message: "Failed"
             })
