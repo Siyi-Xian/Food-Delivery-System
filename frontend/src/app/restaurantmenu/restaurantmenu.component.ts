@@ -41,7 +41,7 @@ export class RestaurantmenuComponent implements OnInit {
     menu["jwttoken"] = jwttoken
     menu['_id'] = this.cookie.get("restaurant_id")
     menu['image'] = this.fileAsBase64;
-    var r = this.loginService.sendRequest(menu, "http://localhost:3000/restaurant/menu");
+    var r = this.loginService.sendRequest(menu, "/restaurant/menu");
     r.subscribe(data => {
       console.log(data)
       

@@ -9,7 +9,7 @@ import {LoginService} from '../login.service'
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  SERVER_URL = "http://localhost:3000/authentication/sign_up/user";
+  SERVER_URL = "/authentication/sign_up/user";
   userRegistrationForm;
   
   

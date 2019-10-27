@@ -28,7 +28,7 @@ export class ResturantloginComponent implements OnInit {
   }
 
   onSubmit(userData){
-    var r = this.loginService.sendRequest(userData, "http://localhost:3000/authentication/login/restaurant");
+    var r = this.loginService.sendRequest(userData, "/authentication/login/restaurant");
     r.subscribe(data => {
       console.log(data)
       if(data['auth']){

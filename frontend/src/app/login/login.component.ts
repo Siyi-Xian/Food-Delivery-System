@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(userData) {
-    var r = this.loginService.sendRequest(userData, 'http://localhost:3000/authentication/login/user');
+    var r = this.loginService.sendRequest(userData, '/authentication/login/user');
     r.subscribe(data => {
       if (data['auth']) {
         this.cookie.set('jwttoken', data['token']);
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     };
     console.log(payload);
     console.log(this.cookie.get('jwttoken'));
-    r = this.loginService.sendRequest(payload, 'http://localhost:3000/verifyotp');
+    r = this.loginService.sendRequest(payload, '/authentication/verifyotp');
     r.subscribe(data => {
       console.log(data);
     });

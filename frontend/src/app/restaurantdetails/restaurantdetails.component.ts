@@ -58,7 +58,7 @@ export class RestaurantdetailsComponent implements OnInit {
 
     details['res_image'] = this.fileAsBase64;
     console.log(details['res_image'])
-    var r = this.loginService.sendRequest(details, 'http://localhost:3000/restaurant/restaurant_details/'+this.cookie.get('restaurant_id'));
+    var r = this.loginService.sendRequest(details, '/restaurant/restaurant_details/'+this.cookie.get('restaurant_id'));
     r.subscribe(data => {
       console.log(data);
 
@@ -67,7 +67,7 @@ export class RestaurantdetailsComponent implements OnInit {
 
   ngOnInit() {
     console.log("fge" + this.cookie.get('restaurant_id'))
-    this.httpService.get('http://localhost:3000/restaurant/display_details/'+this.cookie.get('restaurant_id')).subscribe(data => {
+    this.httpService.get('/restaurant/display_details/'+this.cookie.get('restaurant_id')).subscribe(data => {
       // this.detailsForm = data;
       console.log(data)
     });
