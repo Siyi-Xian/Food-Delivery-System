@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   userLoginForm;
+  userVerifyForm;
   response: any;
   private showFile: boolean = false;
   timesSubmitted = 0;
@@ -25,6 +26,9 @@ export class LoginComponent implements OnInit {
       email: '',
       password: ''
     });
+    this.userVerifyForm = this.formBuilder.group({
+      otp: ''
+    })
   }
 
   veryOTPAsyn(otpControl: FormControl): Promise<any> {

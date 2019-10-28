@@ -35,14 +35,14 @@
     </form>
 
     <div *ngIf="showFile">
-        <form method="post" [formGroup]="userVerificationForm" (ngSubmit) = "onVerify(userVerificationForm.value)">
+        <form method="post" [formGroup]="userVerifyForm" (ngSubmit) = "onVerify(userVerifyForm.value)">
           <div>Please enter the 6-digit code that was sent to your email</div>
           <input type="text" class="form-control" placeholder="6-digit code" formControlName="otp">
           <span class="input-group-btn">
-            <button class="btn btn-secondary" (click)="veryOTPAsyn(userLoginForm.controls.otp)" type="button">Verify</button>
+            <button class="btn btn-secondary" (click)="veryOTPAsyn(userVerifyForm.controls.otp)" type="button">Verify</button>
           </span>
         </form>
-        <div class="form-text error" *ngIf="userLoginForm.controls.opt.touched">
+        <div class="form-text error" *ngIf="userVerifyForm.touched">
           <div *ngIf="userLoginForm.controls.otp.hasError('required')">Verifcation is required</div>
           <div *ngIf="userLoginForm.controls.otp.hasError('invalidOtp')">Code is invalid</div>
         </div>

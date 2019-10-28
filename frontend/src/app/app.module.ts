@@ -28,6 +28,7 @@ import { RestaurantcurrentordersComponent } from './restaurantcurrentorders/rest
 import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
 import { VerifyComponent } from './verify/verify.component';
 import { RecoverComponent } from './recover/recover.component';
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { RecoverComponent } from './recover/recover.component';
     RestaurantcurrentordersComponent,
     CustomerdashboardComponent,
     VerifyComponent,
-    RecoverComponent  ],
+    RecoverComponent,
+    ShoppingcartComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -125,6 +127,10 @@ import { RecoverComponent } from './recover/recover.component';
       {
         path: 'recover',
         component: RecoverComponent
+      },
+      {
+        path: 'shoppingcart',
+        component: ShoppingcartComponent
       }
     ])
   ],

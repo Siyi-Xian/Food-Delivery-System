@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class RecoverComponent implements OnInit {
 
   userRecoverForm;
+  userVerifyForm;
 
   constructor(
     private loginService: LoginService,
@@ -24,6 +25,9 @@ export class RecoverComponent implements OnInit {
         name: '',
         email: ''
       });
+      this.userVerifyForm = this.formBuilder.group({
+        otp: ''
+      })
     }
 
 
