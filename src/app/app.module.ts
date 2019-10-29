@@ -3,7 +3,8 @@ import { NgModule, Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
-
+import { GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angularx-social-login';
+import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +30,21 @@ import { CustomerdashboardComponent } from './customerdashboard/customerdashboar
 import { VerifyComponent } from './verify/verify.component';
 import { RecoverComponent } from './recover/recover.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+
+export function socialConfigs(){
+  const config = new AuthServiceConfig([
+    {
+      id: GoogleLoginProvider.PROVIDER_ID,
+      provider: new GoogleLoginProvider('594822105603-ugolhi0gvekn50uh6pct5v0hthh3mjfn.apps.googleusercontent.com')
+    },
+    {
+      id: FacebookLoginProvider.PROVIDER_ID,
+      provider: new FacebookLoginProvider('2606643606225907')
+    }
+  ]);
+  return config;
+}
+
 
 @NgModule({
   declarations: [
@@ -135,7 +151,11 @@ import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
     ])
   ],
   providers: [
-    CookieService
+    CookieService,
+    AuthService,{
+      provide: AuthServiceConfig,
+      useFactory: socialConfigs
+    }
   ],
   bootstrap: [AppComponent]
 })
