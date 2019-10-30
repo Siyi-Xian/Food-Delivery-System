@@ -6,7 +6,7 @@ let jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 let middleware = require('./jwtverification');
 const multer = require('multer')
-
+var fs = require('fs')
 var router = express.Router()
 mongoose.connect('mongodb://heroku_wr9z45km:4qlbddem2aer4k5djhcrp5ph3s@ds243717.mlab.com:43717/heroku_wr9z45km', { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
@@ -30,6 +30,67 @@ const restaurant_image_storage = multer.diskStorage({
 
 var upload_menu = multer({storage: menu_image_storage})
 var upload_restaurant = multer({storage: restaurant_image_storage})
+
+
+router.get('/restaurants_list', middleware.checkToken, function(req, res){
+    var projection = {
+        projection: {
+            _id: 1,
+            name: 1,
+            contact: 1,
+            food_category: 1,
+            location: 1,
+            working_hours: 1,
+            res_image: 1
+            
+        }
+    }
+    var query = {
+        name: {
+            $regex:req.body.restaurant_name
+        },
+        food_category: {
+            $regex:req.body.food_category
+        },
+        location: {
+            $regex:req.body.location
+        }
+    }
+    db.collection('restaurant_data').find(query, projection).toArray(function(err, result){
+        if (err){
+            // console.log(err)
+            res.json({
+                message: "Failed to load"
+            })
+        }
+        else{
+            // console.log(result)
+
+            res.json(result)
+            
+        }
+    })
+})
+
+router.get("/restaurant_image", middleware.checkToken, function(req, res){
+    fs.readFile('restaurant_images/' + req.body.res_image, function(err, content){
+        if(err){
+            res.writeHead(400, {'Content-type':'text/html'})
+            console.log(err);
+            res.json({
+                message: "Picture not found"
+            }); 
+        }
+        else {
+            //specify the content type in the response will be an image
+            // res.writeHead(200,{'Content-type':'image/jpg'});
+            res.json(content);
+        }
+    })
+})
+
+
+
 
 router.post('/menu', upload_menu.single('image'), function(req, res){
     var id = req.body.id

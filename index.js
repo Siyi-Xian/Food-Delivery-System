@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 
 var authentication = require('./routes/authenticate')
 var restaurant_portal = require('./routes/restaurant_portal')
-
+var customer_portal = require('./routes/customer_portal')
 var port = process.env.PORT || 8080
 
 var cors = require('cors')
@@ -33,7 +33,7 @@ app.use(express.static(__dirname + '/dist/fooddeliverysystem'));
 // const server = 
 app.use('/restaurant', restaurant_portal);
 app.use('/authentication', authentication)
-
+app.use('/customer', customer_portal)
 app.get("/*", function(req, res){
     res.sendFile(path.join(__dirname+ '/dist/fooddeliverysystem/index.html'))
 })

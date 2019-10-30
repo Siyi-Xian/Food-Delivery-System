@@ -222,7 +222,7 @@ router.post('/sign_up/:collection_name', function(req, res){
         if (err || data == null){
             
             console.log(Bcrypt.hashSync(req.body.password, 10))
-            db.collection(collection_name).insertOne(data_to_be_inserted, function (error, collection){
+            db.collection(collection_name).insertOne(data_to_be_inserted, function (error, result){
                 if (error){
                     console.log("error here")
                     throw error;
