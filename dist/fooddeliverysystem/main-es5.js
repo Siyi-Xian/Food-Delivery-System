@@ -50,7 +50,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<p>customerdashboard works!</p>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\">\r\n  <li><a routerLink=\"/shoppingcart\" class=\"glyphicon glyphicon-shopping-cart\"> Cart</a></li>\r\n  <div class=\"container\">\r\n    <div class=\"dropdown\">\r\n      <button class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><span class=\"glyphicon glyphicon-user\"></span> Account <span class=\"caret\"></span></button>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/shoppingcart\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> Cart </button></li>\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/public\"><span class=\"glyphicon glyphicon-log-out\"></span>Log out</button></li>\r\n        </ul>\r\n      </div>\r\n  </div>\r\n  </ul>\r\n</nav>\r\n\r\n    <!-- Search bar -->\r\n    \r\n\r\n</body>\r\n</html>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html": 
@@ -61,7 +61,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n  <head>\r\n    <title>\r\n      Log In\r\n    </title>\r\n    <!-- Bootstrap CDN scripts -->\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n    <script src=\"login.component.css\"></script>\r\n    <script src=\"../../styles.css\"></script>\r\n  </head>\r\n  <body  class=\"login-background\">\r\n  <nav class=\"navbar navbar-light\">\r\n    <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n      <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n    </a>\r\n    <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\">\r\n      <li><a routerLink=\"/resturantlogin\"><span class=\"glyphicon glyphicon-glass\"></span> Restaurant Owner? </a></li>\r\n    </ul>\r\n  </nav>\r\n  <div>\r\n    <div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n      <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n        <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n          <h2>Log In</h2>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n          <form method=\"post\" [formGroup]=\"userLoginForm\" (ngSubmit) = \"onSubmit(userLoginForm.value)\">\r\n            <div class=\"container\" style=\"padding-bottom: 20px\">\r\n              <div>Your Email:</div>\r\n              <div><input type = \"email\" formControlName=\"email\" required = \"required\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n            </div>\r\n            <div class=\"container\">\r\n              <div class=\"row\">\r\n                <div class=\"col-md-6\">Your Password:</div>\r\n                <div class=\"col-md-6\" style=\"text-align: right\"><a routerLink=\"/recover\">Forgot?</a></div>\r\n              </div>\r\n              <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n            </div>\r\n            <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n              <button type=\"submit\" value = \"submit\" class=\"btn btn-primary btn-lg btn-block\" (click)=\"onClickOpenVerification()\">Login</button>\r\n              <div class=\"container\" style=\"margin-top: 20px; padding: 20px 27px 5px 27px\">\r\n                <a id=\"google-button\" class=\"btn btn-block btn-social btn-google\" style=\"margin-bottom: 15px\">\r\n                  <i class=\"fa fa-google\"></i> Sign in with Google\r\n                </a>\r\n                <a id=\"facebook-button\" class=\"btn btn-block btn-social btn-facebook\">\r\n                  <i class=\"fa fa-facebook\"></i> Sign in with Facebook\r\n                </a>\r\n              </div>\r\n            </div>\r\n          </form>\r\n        </div>\r\n\r\n         \r\n        <div *ngIf=\"showFile\">\r\n          <form method=\"post\" [formGroup]=\"userVerificationForm\" (ngSubmit) = \"onVerify(userVerificationForm.value)\">\r\n            <div>Please enter the 6-digit code that was sent to your email</div>\r\n            <input type=\"text\" class=\"form-control\" placeholder=\"6-digit code\" formControlName=\"otp\">\r\n            <span class=\"input-group-btn\">\r\n              <button class=\"btn btn-secondary\" (click)=\"veryOTPAsyn(userLoginForm.controls.otp)\" type=\"button\">Verify</button>\r\n            </span>\r\n          </form>\r\n          <div class=\"form-text error\" *ngIf=\"userLoginForm.controls.opt.touched\">\r\n            <div *ngIf=\"userLoginForm.controls.otp.hasError('required')\">Verifcation is required</div>\r\n            <div *ngIf=\"userLoginForm.controls.otp.hasError('invalidOtp')\">Code is invalid</div>\r\n          </div>\r\n        </div>\r\n      \r\n\r\n        <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n          <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>New to Food-O-Holic?</b></div>\r\n          <div class=\"row\"><a routerLink=\"/registration\">Create an account</a>, it only takes a few seconds.</div>\r\n          <div class=\"row\"><a routerLink=\"/recover\">Forgot Password</a>.</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n  <head>\r\n    <title>\r\n      Log In\r\n    </title>\r\n    <!-- Bootstrap CDN scripts -->\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n    <script src=\"login.component.css\"></script>\r\n    <script src=\"../../styles.css\"></script>\r\n  </head>\r\n  <body  class=\"login-background\">\r\n  <nav class=\"navbar navbar-light\">\r\n    <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n      <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n    </a>\r\n    <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\">\r\n      <li><a routerLink=\"/resturantlogin\"><span class=\"glyphicon glyphicon-glass\"></span> Restaurant Owner? </a></li>\r\n    </ul>\r\n  </nav>\r\n  <div>\r\n    <div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n      <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n        <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n          <h2>Log In</h2>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n          <form method=\"post\" [formGroup]=\"userLoginForm\" (ngSubmit) = \"onSubmit(userLoginForm.value)\">\r\n            <div class=\"container\" style=\"padding-bottom: 20px\">\r\n              <div>Your Email:</div>\r\n              <div><input type = \"email\" formControlName=\"email\" required = \"required\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n            </div>\r\n            <div class=\"container\">\r\n              <div class=\"row\">\r\n                <div class=\"col-md-6\">Your Password:</div>\r\n                <div class=\"col-md-6\" style=\"text-align: right\"><a routerLink=\"/recover\">Forgot?</a></div>\r\n              </div>\r\n              <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n            </div>\r\n            <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n              <button type=\"submit\" value = \"submit\" class=\"btn btn-primary btn-lg btn-block\" (click)=\"onClickOpenVerification()\">Login</button>\r\n\r\n              <!-- Place holder for recaptcha -->\r\n              <div #recaptcha></div>\r\n\r\n              <div class=\"container\" style=\"margin-top: 20px; padding: 20px 27px 5px 27px\">\r\n                <button id=\"google-button\" class=\"btn btn-block btn-social btn-google\" style=\"margin-bottom: 15px\" (click)=\"socialSignIn('google')\">\r\n                  <i class=\"fa fa-google\"></i> Sign in with Google\r\n                </button>\r\n                <button id=\"facebook-button\" class=\"btn btn-block btn-social btn-facebook\" (click)=\"socialSignIn('facebook')\">\r\n                  <i class=\"fa fa-facebook\"></i> Sign in with Facebook\r\n                </button>\r\n              </div>\r\n            </div>\r\n          </form>\r\n        </div>\r\n\r\n         \r\n        <div *ngIf=\"showFile\">\r\n          <form method=\"post\" [formGroup]=\"userVerifyForm\" (ngSubmit) = \"onVerify(userVerifyForm.value)\">\r\n            <div>Please enter the 6-digit code that was sent to your email</div>\r\n            <input type=\"text\" required=\"required\" placeholder=\"6-digit code\" formControlName=\"otp\">\r\n            <span class=\"input-group-btn\">\r\n              <button class=\"btn btn-secondary\" (click)=\"veryOTPAsyn(userVerifyForm.otp)\" type=\"button\">Verify</button>\r\n            </span>\r\n          </form>\r\n          <div class=\"form-text error\" *ngIf=\"userVerifyForm.touched\">\r\n            <div *ngIf=\"userLoginForm.controls.otp.hasError('required')\">Verifcation is required</div>\r\n            <div *ngIf=\"userLoginForm.controls.otp.hasError('invalidOtp')\">Code is invalid</div>\r\n          </div>\r\n        </div>\r\n      \r\n\r\n        <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n          <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>New to Food-O-Holic?</b></div>\r\n          <div class=\"row\"><a routerLink=\"/registration\">Create an account</a>, it only takes a few seconds.</div>\r\n          <div class=\"row\"><a routerLink=\"/recover\">Forgot Password</a>.</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/orderhistory/orderhistory.component.html": 
@@ -83,7 +83,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    public dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <div class=\"container\">\r\n          <div class=\"dropdown\">\r\n            <button href=\"#\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Login/Sign up</button>\r\n            <ul class=\"dropdown-menu\">\r\n              <li><a href=\"#\" routerLink=\"/login\">Login</a></li>\r\n              <a href=\"#\" routerLink=\"/registration\">Registration</a>\r\n              <div class=\"dropdown-divider\"></div>\r\n              <label>Restaurant Owner?</label>\r\n              <li><a href=\"#\" routerLink=\"/resturantlogin\">Restaurant Login</a></li>\r\n              <a href=\"#\" routerLink=\"/restaurantreg\">Register Restaurant</a>\r\n            </ul>\r\n          </div>\r\n  </div>\r\n</nav>\r\n</body>\r\n</html>\r\n\r\n\r\n\r\n\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    public dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <div class=\"container\">\r\n    <div class=\"dropdown\">\r\n      <button href=\"#\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Login/Sign up</button>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\" routerLink=\"/login\">Login</a></li>\r\n          <a href=\"#\" routerLink=\"/registration\">Registration</a>\r\n          <div class=\"dropdown-divider\"></div>\r\n          <label>Restaurant Owner?</label>\r\n          <li><a href=\"#\" routerLink=\"/resturantlogin\">Restaurant Login</a></li>\r\n          <a href=\"#\" routerLink=\"/restaurantreg\">Register Restaurant</a>\r\n        </ul>\r\n      </div>\r\n  </div>\r\n</nav>\r\n</body>\r\n</html>\r\n\r\n\r\n\r\n\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/recover/recover.component.html": 
@@ -94,7 +94,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n  <head>\r\n    <title>\r\n      Recover Account\r\n    </title>\r\n    <!-- Bootstrap CDN scripts -->\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n    <script src=\"login.component.css\"></script>\r\n    <script src=\"../../styles.css\"></script>\r\n  </head>\r\n  <body class=\"login-background\">\r\n\r\n    <nav class=\"navbar navbar-light\">\r\n        <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n          <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n        </a>\r\n    </nav>\r\n\r\n    <div>Recover your account</div>\r\n\r\n    <br>\r\n\r\n    <div>To recover your account please complete the form below</div>\r\n\r\n    <form method=\"POST\" [formGroup]=\"userRecoverForm\" (ngSubmit)=\"onSubmit(userRecoverForm.value)\">\r\n        <div>Full Name:</div>\r\n        <div><input type=\"text\" required=\"required\" formControlName=\"name\" placeholder=\"First Last\" id=\"FullName\" style=\"width: 100%\"></div>\r\n        <div>Email Address:</div>\r\n        <div><input type=\"text\" required = \"required\" formControlName=\"email\" placeholder=\"johndoe@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n        <div><button type=\"submit\"value = \"submit\" class=\"btn btn-primary btn-lg btn-block\" (click)=\"onClickOpenVerification()\">Verify</button></div>\r\n    </form>\r\n\r\n    <div *ngIf=\"showFile\">\r\n        <form method=\"post\" [formGroup]=\"userVerificationForm\" (ngSubmit) = \"onVerify(userVerificationForm.value)\">\r\n          <div>Please enter the 6-digit code that was sent to your email</div>\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"6-digit code\" formControlName=\"otp\">\r\n          <span class=\"input-group-btn\">\r\n            <button class=\"btn btn-secondary\" (click)=\"veryOTPAsyn(userLoginForm.controls.otp)\" type=\"button\">Verify</button>\r\n          </span>\r\n        </form>\r\n        <div class=\"form-text error\" *ngIf=\"userLoginForm.controls.opt.touched\">\r\n          <div *ngIf=\"userLoginForm.controls.otp.hasError('required')\">Verifcation is required</div>\r\n          <div *ngIf=\"userLoginForm.controls.otp.hasError('invalidOtp')\">Code is invalid</div>\r\n        </div>\r\n      </div>\r\n\r\n      <div *ngIf=\"showPasswordReset\">\r\n        <form method=\"post\" [formGroup]=\"userPasswordReset\" (ngSubmit) = \"onReset(userPasswordReset.value)\">\r\n          <div>Enter your new password</div>\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"******\" formControlName=\"newPass\">\r\n          <span class=\"input-group-btn\">\r\n            <button class=\"btn btn-secondary\" type=\"submit\" value=\"submit\">Submit</button>\r\n          </span>\r\n        </form>\r\n      </div>\r\n\r\n  </body>\r\n</html>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n  <head>\r\n    <title>\r\n      Recover Account\r\n    </title>\r\n    <!-- Bootstrap CDN scripts -->\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n    <script src=\"login.component.css\"></script>\r\n    <script src=\"../../styles.css\"></script>\r\n  </head>\r\n  <body class=\"login-background\">\r\n\r\n    <nav class=\"navbar navbar-light\">\r\n        <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n          <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n        </a>\r\n    </nav>\r\n\r\n    <div>Recover your account</div>\r\n\r\n    <br>\r\n\r\n    <div>To recover your account please complete the form below</div>\r\n\r\n    <form method=\"POST\" [formGroup]=\"userRecoverForm\" (ngSubmit)=\"onSubmit(userRecoverForm.value)\">\r\n        <div>Full Name:</div>\r\n        <div><input type=\"text\" required=\"required\" formControlName=\"name\" placeholder=\"First Last\" id=\"FullName\" style=\"width: 100%\"></div>\r\n        <div>Email Address:</div>\r\n        <div><input type=\"text\" required = \"required\" formControlName=\"email\" placeholder=\"johndoe@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n        <div><button type=\"submit\"value = \"submit\" class=\"btn btn-primary btn-lg btn-block\" (click)=\"onClickOpenVerification()\">Verify</button></div>\r\n    </form>\r\n\r\n    <div *ngIf=\"showFile\">\r\n        <form method=\"post\" [formGroup]=\"userVerifyForm\" (ngSubmit) = \"onVerify(userVerifyForm.value)\">\r\n          <div>Please enter the 6-digit code that was sent to your email</div>\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"6-digit code\" formControlName=\"otp\">\r\n          <span class=\"input-group-btn\">\r\n            <button class=\"btn btn-secondary\" (click)=\"veryOTPAsyn(userVerifyForm.controls.otp)\" type=\"button\">Verify</button>\r\n          </span>\r\n        </form>\r\n        <div class=\"form-text error\" *ngIf=\"userVerifyForm.touched\">\r\n          <div *ngIf=\"userLoginForm.controls.otp.hasError('required')\">Verifcation is required</div>\r\n          <div *ngIf=\"userLoginForm.controls.otp.hasError('invalidOtp')\">Code is invalid</div>\r\n        </div>\r\n      </div>\r\n\r\n      <div *ngIf=\"showPasswordReset\">\r\n        <form method=\"post\" [formGroup]=\"userPasswordReset\" (ngSubmit) = \"onReset(userPasswordReset.value)\">\r\n          <div>Enter your new password</div>\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"******\" formControlName=\"newPass\">\r\n          <span class=\"input-group-btn\">\r\n            <button class=\"btn btn-secondary\" type=\"submit\" value=\"submit\">Submit</button>\r\n          </span>\r\n        </form>\r\n      </div>\r\n\r\n  </body>\r\n</html>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/registration/registration.component.html": 
@@ -205,6 +205,17 @@
             "use strict";
             __webpack_require__.r(__webpack_exports__);
             /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    Log In\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\">\r\n    <li><a routerLink=\"/login\"><span class=\"glyphicon glyphicon-log-in\"></span> Customer Login </a></li>\r\n  </ul>\r\n</nav>\r\n<div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n  <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n    <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n      <h2>Restaurant Login</h2>\r\n    </div>\r\n    <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n      <form method=\"post\" [formGroup]=\"restaurantLoginForm\" (ngSubmit) = \"onSubmit(restaurantLoginForm.value)\">\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          <div>Your Email:</div>\r\n          <div><input type = \"text\" required = \"required\" formControlName=\"email\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-6\">Your Password:</div>\r\n            <div class=\"col-md-6\" style=\"text-align: right\"><a routerLink=\"/recover\">Forgot?</a></div>\r\n          </div>\r\n          <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n          <button type=\"submit\" value = \"submit\" class=\"btn btn-primary btn-lg btn-block\">Login</button>\r\n        </div>\r\n\r\n      </form>\r\n    </div>\r\n    <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n      <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>Want us to deliver your food?</b></div>\r\n      <div class=\"row\"><a routerLink=\"/restaurantreg\">Create a restaurant account</a>, registered to be a restaurant owner on Food-O-Holic today!</div>\r\n    </div>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n");
+            /***/ 
+        }),
+        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/shoppingcart/shoppingcart.component.html": 
+        /*!************************************************************************************************!*\
+          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/shoppingcart/shoppingcart.component.html ***!
+          \************************************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("<p>shoppingcart works!</p>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/sidebar/sidebar.component.html": 
@@ -634,10 +645,11 @@
         /*!*******************************!*\
           !*** ./src/app/app.module.ts ***!
           \*******************************/
-        /*! exports provided: AppModule */
+        /*! exports provided: socialConfigs, AppModule */
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "socialConfigs", function () { return socialConfigs; });
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function () { return AppModule; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
@@ -645,27 +657,42 @@
             /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
             /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
             /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
-            /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-            /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-            /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-            /* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./admin/admin.component */ "./src/app/admin/admin.component.ts");
-            /* harmony import */ var _public_public_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./public/public.component */ "./src/app/public/public.component.ts");
-            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-            /* harmony import */ var _registration_registration_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./registration/registration.component */ "./src/app/registration/registration.component.ts");
-            /* harmony import */ var _resturantlogin_resturantlogin_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./resturantlogin/resturantlogin.component */ "./src/app/resturantlogin/resturantlogin.component.ts");
-            /* harmony import */ var _restaurantreg_restaurantreg_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./restaurantreg/restaurantreg.component */ "./src/app/restaurantreg/restaurantreg.component.ts");
-            /* harmony import */ var _restaurant_view_restaurant_view_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./restaurant-view/restaurant-view.component */ "./src/app/restaurant-view/restaurant-view.component.ts");
-            /* harmony import */ var _orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./orderhistory/orderhistory.component */ "./src/app/orderhistory/orderhistory.component.ts");
-            /* harmony import */ var _restaurantdetails_restaurantdetails_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./restaurantdetails/restaurantdetails.component */ "./src/app/restaurantdetails/restaurantdetails.component.ts");
-            /* harmony import */ var _restaurantmenu_restaurantmenu_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./restaurantmenu/restaurantmenu.component */ "./src/app/restaurantmenu/restaurantmenu.component.ts");
-            /* harmony import */ var _restaurantstats_restaurantstats_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./restaurantstats/restaurantstats.component */ "./src/app/restaurantstats/restaurantstats.component.ts");
-            /* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/sidebar/sidebar.component.ts");
-            /* harmony import */ var _restaurantviewdetails_restaurantviewdetails_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./restaurantviewdetails/restaurantviewdetails.component */ "./src/app/restaurantviewdetails/restaurantviewdetails.component.ts");
-            /* harmony import */ var _restaurantviewmenu_restaurantviewmenu_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./restaurantviewmenu/restaurantviewmenu.component */ "./src/app/restaurantviewmenu/restaurantviewmenu.component.ts");
-            /* harmony import */ var _restaurantcurrentorders_restaurantcurrentorders_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./restaurantcurrentorders/restaurantcurrentorders.component */ "./src/app/restaurantcurrentorders/restaurantcurrentorders.component.ts");
-            /* harmony import */ var _customerdashboard_customerdashboard_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./customerdashboard/customerdashboard.component */ "./src/app/customerdashboard/customerdashboard.component.ts");
-            /* harmony import */ var _verify_verify_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./verify/verify.component */ "./src/app/verify/verify.component.ts");
-            /* harmony import */ var _recover_recover_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./recover/recover.component */ "./src/app/recover/recover.component.ts");
+            /* harmony import */ var angularx_social_login__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angularx-social-login */ "./node_modules/angularx-social-login/angularx-social-login.js");
+            /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+            /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+            /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+            /* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./admin/admin.component */ "./src/app/admin/admin.component.ts");
+            /* harmony import */ var _public_public_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./public/public.component */ "./src/app/public/public.component.ts");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            /* harmony import */ var _registration_registration_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./registration/registration.component */ "./src/app/registration/registration.component.ts");
+            /* harmony import */ var _resturantlogin_resturantlogin_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./resturantlogin/resturantlogin.component */ "./src/app/resturantlogin/resturantlogin.component.ts");
+            /* harmony import */ var _restaurantreg_restaurantreg_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./restaurantreg/restaurantreg.component */ "./src/app/restaurantreg/restaurantreg.component.ts");
+            /* harmony import */ var _restaurant_view_restaurant_view_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./restaurant-view/restaurant-view.component */ "./src/app/restaurant-view/restaurant-view.component.ts");
+            /* harmony import */ var _orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./orderhistory/orderhistory.component */ "./src/app/orderhistory/orderhistory.component.ts");
+            /* harmony import */ var _restaurantdetails_restaurantdetails_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./restaurantdetails/restaurantdetails.component */ "./src/app/restaurantdetails/restaurantdetails.component.ts");
+            /* harmony import */ var _restaurantmenu_restaurantmenu_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./restaurantmenu/restaurantmenu.component */ "./src/app/restaurantmenu/restaurantmenu.component.ts");
+            /* harmony import */ var _restaurantstats_restaurantstats_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./restaurantstats/restaurantstats.component */ "./src/app/restaurantstats/restaurantstats.component.ts");
+            /* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/sidebar/sidebar.component.ts");
+            /* harmony import */ var _restaurantviewdetails_restaurantviewdetails_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./restaurantviewdetails/restaurantviewdetails.component */ "./src/app/restaurantviewdetails/restaurantviewdetails.component.ts");
+            /* harmony import */ var _restaurantviewmenu_restaurantviewmenu_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./restaurantviewmenu/restaurantviewmenu.component */ "./src/app/restaurantviewmenu/restaurantviewmenu.component.ts");
+            /* harmony import */ var _restaurantcurrentorders_restaurantcurrentorders_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./restaurantcurrentorders/restaurantcurrentorders.component */ "./src/app/restaurantcurrentorders/restaurantcurrentorders.component.ts");
+            /* harmony import */ var _customerdashboard_customerdashboard_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./customerdashboard/customerdashboard.component */ "./src/app/customerdashboard/customerdashboard.component.ts");
+            /* harmony import */ var _verify_verify_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./verify/verify.component */ "./src/app/verify/verify.component.ts");
+            /* harmony import */ var _recover_recover_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./recover/recover.component */ "./src/app/recover/recover.component.ts");
+            /* harmony import */ var _shoppingcart_shoppingcart_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./shoppingcart/shoppingcart.component */ "./src/app/shoppingcart/shoppingcart.component.ts");
+            function socialConfigs() {
+                var config = new angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthServiceConfig"]([
+                    {
+                        id: angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["GoogleLoginProvider"].PROVIDER_ID,
+                        provider: new angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["GoogleLoginProvider"]('594822105603-ugolhi0gvekn50uh6pct5v0hthh3mjfn.apps.googleusercontent.com')
+                    },
+                    {
+                        id: angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["FacebookLoginProvider"].PROVIDER_ID,
+                        provider: new angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["FacebookLoginProvider"]('2606643606225907')
+                    }
+                ]);
+                return config;
+            }
             var AppModule = /** @class */ (function () {
                 function AppModule() {
                 }
@@ -674,107 +701,116 @@
             AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
                     declarations: [
-                        _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
-                        _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"],
-                        _admin_admin_component__WEBPACK_IMPORTED_MODULE_9__["AdminComponent"],
-                        _public_public_component__WEBPACK_IMPORTED_MODULE_10__["PublicComponent"],
-                        _registration_registration_component__WEBPACK_IMPORTED_MODULE_12__["RegistrationComponent"],
-                        _resturantlogin_resturantlogin_component__WEBPACK_IMPORTED_MODULE_13__["ResturantloginComponent"],
-                        _restaurantreg_restaurantreg_component__WEBPACK_IMPORTED_MODULE_14__["RestaurantregComponent"],
-                        _restaurant_view_restaurant_view_component__WEBPACK_IMPORTED_MODULE_15__["RestaurantViewComponent"],
-                        _orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_16__["OrderhistoryComponent"],
-                        _restaurantdetails_restaurantdetails_component__WEBPACK_IMPORTED_MODULE_17__["RestaurantdetailsComponent"],
-                        _restaurantmenu_restaurantmenu_component__WEBPACK_IMPORTED_MODULE_18__["RestaurantmenuComponent"],
-                        _restaurantstats_restaurantstats_component__WEBPACK_IMPORTED_MODULE_19__["RestaurantstatsComponent"],
-                        _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_20__["SidebarComponent"],
-                        _restaurantviewdetails_restaurantviewdetails_component__WEBPACK_IMPORTED_MODULE_21__["RestaurantviewdetailsComponent"],
-                        _restaurantviewmenu_restaurantviewmenu_component__WEBPACK_IMPORTED_MODULE_22__["RestaurantviewmenuComponent"],
-                        _restaurantcurrentorders_restaurantcurrentorders_component__WEBPACK_IMPORTED_MODULE_23__["RestaurantcurrentordersComponent"],
-                        _customerdashboard_customerdashboard_component__WEBPACK_IMPORTED_MODULE_24__["CustomerdashboardComponent"],
-                        _verify_verify_component__WEBPACK_IMPORTED_MODULE_25__["VerifyComponent"],
-                        _recover_recover_component__WEBPACK_IMPORTED_MODULE_26__["RecoverComponent"]
+                        _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
+                        _login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"],
+                        _admin_admin_component__WEBPACK_IMPORTED_MODULE_10__["AdminComponent"],
+                        _public_public_component__WEBPACK_IMPORTED_MODULE_11__["PublicComponent"],
+                        _registration_registration_component__WEBPACK_IMPORTED_MODULE_13__["RegistrationComponent"],
+                        _resturantlogin_resturantlogin_component__WEBPACK_IMPORTED_MODULE_14__["ResturantloginComponent"],
+                        _restaurantreg_restaurantreg_component__WEBPACK_IMPORTED_MODULE_15__["RestaurantregComponent"],
+                        _restaurant_view_restaurant_view_component__WEBPACK_IMPORTED_MODULE_16__["RestaurantViewComponent"],
+                        _orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_17__["OrderhistoryComponent"],
+                        _restaurantdetails_restaurantdetails_component__WEBPACK_IMPORTED_MODULE_18__["RestaurantdetailsComponent"],
+                        _restaurantmenu_restaurantmenu_component__WEBPACK_IMPORTED_MODULE_19__["RestaurantmenuComponent"],
+                        _restaurantstats_restaurantstats_component__WEBPACK_IMPORTED_MODULE_20__["RestaurantstatsComponent"],
+                        _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_21__["SidebarComponent"],
+                        _restaurantviewdetails_restaurantviewdetails_component__WEBPACK_IMPORTED_MODULE_22__["RestaurantviewdetailsComponent"],
+                        _restaurantviewmenu_restaurantviewmenu_component__WEBPACK_IMPORTED_MODULE_23__["RestaurantviewmenuComponent"],
+                        _restaurantcurrentorders_restaurantcurrentorders_component__WEBPACK_IMPORTED_MODULE_24__["RestaurantcurrentordersComponent"],
+                        _customerdashboard_customerdashboard_component__WEBPACK_IMPORTED_MODULE_25__["CustomerdashboardComponent"],
+                        _verify_verify_component__WEBPACK_IMPORTED_MODULE_26__["VerifyComponent"],
+                        _recover_recover_component__WEBPACK_IMPORTED_MODULE_27__["RecoverComponent"],
+                        _shoppingcart_shoppingcart_component__WEBPACK_IMPORTED_MODULE_28__["ShoppingcartComponent"]
                     ],
                     imports: [
                         _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                         _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
                         _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
-                        _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
+                        _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
                         _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-                        _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"].forRoot([
+                        _angular_router__WEBPACK_IMPORTED_MODULE_12__["RouterModule"].forRoot([
                             {
                                 path: '',
-                                component: _public_public_component__WEBPACK_IMPORTED_MODULE_10__["PublicComponent"]
+                                component: _public_public_component__WEBPACK_IMPORTED_MODULE_11__["PublicComponent"]
                             },
                             {
                                 path: 'login',
-                                component: _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"]
+                                component: _login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"]
                             },
                             {
                                 path: 'public',
-                                component: _public_public_component__WEBPACK_IMPORTED_MODULE_10__["PublicComponent"]
+                                component: _public_public_component__WEBPACK_IMPORTED_MODULE_11__["PublicComponent"]
                             },
                             {
                                 path: 'registration',
-                                component: _registration_registration_component__WEBPACK_IMPORTED_MODULE_12__["RegistrationComponent"]
+                                component: _registration_registration_component__WEBPACK_IMPORTED_MODULE_13__["RegistrationComponent"]
                             },
                             {
                                 path: 'resturantlogin',
-                                component: _resturantlogin_resturantlogin_component__WEBPACK_IMPORTED_MODULE_13__["ResturantloginComponent"]
+                                component: _resturantlogin_resturantlogin_component__WEBPACK_IMPORTED_MODULE_14__["ResturantloginComponent"]
                             },
                             {
                                 path: 'restaurantreg',
-                                component: _restaurantreg_restaurantreg_component__WEBPACK_IMPORTED_MODULE_14__["RestaurantregComponent"]
+                                component: _restaurantreg_restaurantreg_component__WEBPACK_IMPORTED_MODULE_15__["RestaurantregComponent"]
                             },
                             {
                                 path: 'restaurant-view',
-                                component: _restaurant_view_restaurant_view_component__WEBPACK_IMPORTED_MODULE_15__["RestaurantViewComponent"]
+                                component: _restaurant_view_restaurant_view_component__WEBPACK_IMPORTED_MODULE_16__["RestaurantViewComponent"]
                             },
                             {
                                 path: 'orderhistory',
-                                component: _orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_16__["OrderhistoryComponent"]
+                                component: _orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_17__["OrderhistoryComponent"]
                             },
                             {
                                 path: 'restaurantdetails',
-                                component: _restaurantdetails_restaurantdetails_component__WEBPACK_IMPORTED_MODULE_17__["RestaurantdetailsComponent"]
+                                component: _restaurantdetails_restaurantdetails_component__WEBPACK_IMPORTED_MODULE_18__["RestaurantdetailsComponent"]
                             },
                             {
                                 path: 'restaurantmenu',
-                                component: _restaurantmenu_restaurantmenu_component__WEBPACK_IMPORTED_MODULE_18__["RestaurantmenuComponent"]
+                                component: _restaurantmenu_restaurantmenu_component__WEBPACK_IMPORTED_MODULE_19__["RestaurantmenuComponent"]
                             },
                             {
                                 path: 'restaurantstats',
-                                component: _restaurantstats_restaurantstats_component__WEBPACK_IMPORTED_MODULE_19__["RestaurantstatsComponent"]
+                                component: _restaurantstats_restaurantstats_component__WEBPACK_IMPORTED_MODULE_20__["RestaurantstatsComponent"]
                             },
                             {
                                 path: 'restaurantviewdetails',
-                                component: _restaurantviewdetails_restaurantviewdetails_component__WEBPACK_IMPORTED_MODULE_21__["RestaurantviewdetailsComponent"]
+                                component: _restaurantviewdetails_restaurantviewdetails_component__WEBPACK_IMPORTED_MODULE_22__["RestaurantviewdetailsComponent"]
                             },
                             {
                                 path: 'restaurantviewmenu',
-                                component: _restaurantviewmenu_restaurantviewmenu_component__WEBPACK_IMPORTED_MODULE_22__["RestaurantviewmenuComponent"]
+                                component: _restaurantviewmenu_restaurantviewmenu_component__WEBPACK_IMPORTED_MODULE_23__["RestaurantviewmenuComponent"]
                             },
                             {
                                 path: 'restaurantcurrentorders',
-                                component: _restaurantcurrentorders_restaurantcurrentorders_component__WEBPACK_IMPORTED_MODULE_23__["RestaurantcurrentordersComponent"]
+                                component: _restaurantcurrentorders_restaurantcurrentorders_component__WEBPACK_IMPORTED_MODULE_24__["RestaurantcurrentordersComponent"]
                             },
                             {
                                 path: 'customerdashboard',
-                                component: _customerdashboard_customerdashboard_component__WEBPACK_IMPORTED_MODULE_24__["CustomerdashboardComponent"]
+                                component: _customerdashboard_customerdashboard_component__WEBPACK_IMPORTED_MODULE_25__["CustomerdashboardComponent"]
                             },
                             {
                                 path: 'verify',
-                                component: _verify_verify_component__WEBPACK_IMPORTED_MODULE_25__["VerifyComponent"]
+                                component: _verify_verify_component__WEBPACK_IMPORTED_MODULE_26__["VerifyComponent"]
                             },
                             {
                                 path: 'recover',
-                                component: _recover_recover_component__WEBPACK_IMPORTED_MODULE_26__["RecoverComponent"]
+                                component: _recover_recover_component__WEBPACK_IMPORTED_MODULE_27__["RecoverComponent"]
+                            },
+                            {
+                                path: 'shoppingcart',
+                                component: _shoppingcart_shoppingcart_component__WEBPACK_IMPORTED_MODULE_28__["ShoppingcartComponent"]
                             }
                         ])
                     ],
                     providers: [
-                        ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"]
+                        ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"],
+                        angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthService"], {
+                            provide: angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthServiceConfig"],
+                            useFactory: socialConfigs
+                        }
                     ],
-                    bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
+                    bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
                 })
             ], AppModule);
             /***/ 
@@ -882,22 +918,30 @@
         /*!******************************************!*\
           !*** ./src/app/login/login.component.ts ***!
           \******************************************/
-        /*! exports provided: LoginComponent */
+        /*! exports provided: LoginComponent, Socialusers */
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function () { return LoginComponent; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Socialusers", function () { return Socialusers; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
             /* harmony import */ var _login_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../login.service */ "./src/app/login.service.ts");
             /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+            /* harmony import */ var angularx_social_login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angularx-social-login */ "./node_modules/angularx-social-login/angularx-social-login.js");
+            /* harmony import */ var _sociallogin_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../sociallogin.service */ "./src/app/sociallogin.service.ts");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
             // import { AuthService } from '../auth.service';
             var LoginComponent = /** @class */ (function () {
-                function LoginComponent(loginService, formBuilder, cookie) {
+                function LoginComponent(OAuth, SocialloginService, loginService, formBuilder, router, cookie) {
+                    this.OAuth = OAuth;
+                    this.SocialloginService = SocialloginService;
                     this.loginService = loginService;
                     this.formBuilder = formBuilder;
+                    this.router = router;
                     this.cookie = cookie;
+                    this.socialusers = new Socialusers();
                     this.timesSubmitted = 0;
                     this.userLoginForm = this.formBuilder.group({
                         email: '',
@@ -905,6 +949,7 @@
                     });
                 }
                 LoginComponent.prototype.ngOnInit = function () {
+                    this.addRecaptchaScript();
                 };
                 LoginComponent.prototype.onSubmit = function (userData) {
                     var _this = this;
@@ -926,13 +971,68 @@
                         console.log(data);
                     });
                 };
+                LoginComponent.prototype.socialSignIn = function (socialProvider) {
+                    var _this = this;
+                    var socialPlatormProvider;
+                    if (socialProvider == 'google') {
+                        socialPlatormProvider = angularx_social_login__WEBPACK_IMPORTED_MODULE_5__["GoogleLoginProvider"].PROVIDER_ID;
+                    }
+                    else if (socialProvider == 'facebook') {
+                        socialPlatormProvider = angularx_social_login__WEBPACK_IMPORTED_MODULE_5__["FacebookLoginProvider"].PROVIDER_ID;
+                    }
+                    this.OAuth.signIn(socialPlatormProvider).then(function (socialusers) {
+                        console.log(socialProvider, socialusers);
+                        console.log(socialusers);
+                        _this.Savesresponse(socialusers);
+                    });
+                };
+                LoginComponent.prototype.Savesresponse = function (socialusers) {
+                    var _this = this;
+                    this.SocialloginService.Savesresponse(Socialusers).subscribe(function (res) {
+                        _this.socialusers = res;
+                        _this.response = res.userDetail;
+                        localStorage.setItem('socialusers', JSON.stringify(_this.socialusers));
+                        _this.router.navigate(['/customerdashboard']);
+                    });
+                };
+                LoginComponent.prototype.addRecaptchaScript = function () {
+                    var _this = this;
+                    window['grecaptchaCallback'] = function () {
+                        _this.renderReCaptcha();
+                    };
+                    (function (d, s, id, obj) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) {
+                            obj.renderReCaptcha();
+                            return;
+                        }
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'recaptcha-jssdk', this));
+                };
+                LoginComponent.prototype.renderReCaptcha = function () {
+                    window['grecaptcha'].render(this.recaptchaElement.nativeElement, {
+                        'sitekey': '6LeH9r8UAAAAALWth6G-94o1Zs6yniRys5g4D7d-',
+                        'callback': function (response) {
+                            console.log(response);
+                        }
+                    });
+                };
                 return LoginComponent;
             }());
             LoginComponent.ctorParameters = function () { return [
+                { type: angularx_social_login__WEBPACK_IMPORTED_MODULE_5__["AuthService"] },
+                { type: _sociallogin_service__WEBPACK_IMPORTED_MODULE_6__["SocialloginService"] },
                 { type: _login_service__WEBPACK_IMPORTED_MODULE_3__["LoginService"] },
                 { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"] },
                 { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"] }
             ]; };
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('recaptcha', { static: true })
+            ], LoginComponent.prototype, "recaptchaElement", void 0);
             LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-login',
@@ -940,6 +1040,11 @@
                     styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./login.component.css */ "./src/app/login/login.component.css")).default]
                 })
             ], LoginComponent);
+            var Socialusers = /** @class */ (function () {
+                function Socialusers() {
+                }
+                return Socialusers;
+            }());
             /***/ 
         }),
         /***/ "./src/app/orderhistory/orderhistory.component.css": 
@@ -1055,6 +1160,9 @@
                     this.userRecoverForm = this.formBuilder.group({
                         name: '',
                         email: ''
+                    });
+                    this.userVerifyForm = this.formBuilder.group({
+                        otp: ''
                     });
                 }
                 RecoverComponent.prototype.onClickOpenVerification = function () {
@@ -1707,6 +1815,44 @@
             ], ResturantloginComponent);
             /***/ 
         }),
+        /***/ "./src/app/shoppingcart/shoppingcart.component.css": 
+        /*!*********************************************************!*\
+          !*** ./src/app/shoppingcart/shoppingcart.component.css ***!
+          \*********************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Nob3BwaW5nY2FydC9zaG9wcGluZ2NhcnQuY29tcG9uZW50LmNzcyJ9 */");
+            /***/ 
+        }),
+        /***/ "./src/app/shoppingcart/shoppingcart.component.ts": 
+        /*!********************************************************!*\
+          !*** ./src/app/shoppingcart/shoppingcart.component.ts ***!
+          \********************************************************/
+        /*! exports provided: ShoppingcartComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShoppingcartComponent", function () { return ShoppingcartComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            var ShoppingcartComponent = /** @class */ (function () {
+                function ShoppingcartComponent() {
+                }
+                ShoppingcartComponent.prototype.ngOnInit = function () {
+                };
+                return ShoppingcartComponent;
+            }());
+            ShoppingcartComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'app-shoppingcart',
+                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./shoppingcart.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/shoppingcart/shoppingcart.component.html")).default,
+                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./shoppingcart.component.css */ "./src/app/shoppingcart/shoppingcart.component.css")).default]
+                })
+            ], ShoppingcartComponent);
+            /***/ 
+        }),
         /***/ "./src/app/sidebar/sidebar.component.css": 
         /*!***********************************************!*\
           !*** ./src/app/sidebar/sidebar.component.css ***!
@@ -1745,6 +1891,38 @@
             ], SidebarComponent);
             /***/ 
         }),
+        /***/ "./src/app/sociallogin.service.ts": 
+        /*!****************************************!*\
+          !*** ./src/app/sociallogin.service.ts ***!
+          \****************************************/
+        /*! exports provided: SocialloginService */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SocialloginService", function () { return SocialloginService; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            var SocialloginService = /** @class */ (function () {
+                function SocialloginService(http) {
+                    this.http = http;
+                }
+                SocialloginService.prototype.Savesresponse = function (response) {
+                    this.url = '/Api/Login/Savesresponse';
+                    return this.http.post(this.url, response);
+                };
+                return SocialloginService;
+            }());
+            SocialloginService.ctorParameters = function () { return [
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+            ]; };
+            SocialloginService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+                    providedIn: 'root'
+                })
+            ], SocialloginService);
+            /***/ 
+        }),
         /***/ "./src/app/verify/verify.component.css": 
         /*!*********************************************!*\
           !*** ./src/app/verify/verify.component.css ***!
@@ -1767,13 +1945,27 @@
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VerifyComponent", function () { return VerifyComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+            /* harmony import */ var _login_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../login.service */ "./src/app/login.service.ts");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
             var VerifyComponent = /** @class */ (function () {
-                function VerifyComponent() {
+                function VerifyComponent(loginService, router, formBuilder) {
+                    this.loginService = loginService;
+                    this.router = router;
+                    this.formBuilder = formBuilder;
+                    this.verifyForm = this.formBuilder.group({
+                        otp: ''
+                    });
                 }
                 VerifyComponent.prototype.ngOnInit = function () {
                 };
                 return VerifyComponent;
             }());
+            VerifyComponent.ctorParameters = function () { return [
+                { type: _login_service__WEBPACK_IMPORTED_MODULE_3__["LoginService"] },
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
+                { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
+            ]; };
             VerifyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-verify',
