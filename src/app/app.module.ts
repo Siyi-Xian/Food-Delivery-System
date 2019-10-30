@@ -30,6 +30,7 @@ import { CustomerdashboardComponent } from './customerdashboard/customerdashboar
 import { VerifyComponent } from './verify/verify.component';
 import { RecoverComponent } from './recover/recover.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+import { RestaurantdropdownComponent } from './restaurantdropdown/restaurantdropdown.component';
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -67,7 +68,8 @@ export function socialConfigs(){
     CustomerdashboardComponent,
     VerifyComponent,
     RecoverComponent,
-    ShoppingcartComponent  ],
+    ShoppingcartComponent,
+    RestaurantdropdownComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
