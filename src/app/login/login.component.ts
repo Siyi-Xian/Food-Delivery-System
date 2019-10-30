@@ -77,6 +77,7 @@ export class LoginComponent implements OnInit {
       console.log(socialusers);
       this.Savesresponse(socialusers);
     });
+    this.router.navigate(['/customerdashboard']);
   }
 
   Savesresponse(socialusers: Socialusers){

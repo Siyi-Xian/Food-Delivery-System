@@ -34,12 +34,15 @@
 </nav>
 
     <!-- Search bar -->
-    <div class="search-container">  
+    <div class="search-container" [formGroup]="userLoginForm" (ngSubmit) = "onSubmit(userLoginForm.value)">  
       <form action="post">
         <input type="text" placeholder="Search for restaurants..." name="search">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
     </div>
+
+    <!-- placeholder for results from search query -->
+    <div #result></div>
 
 </body>
 </html>

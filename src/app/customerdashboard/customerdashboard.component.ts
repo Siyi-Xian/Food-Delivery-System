@@ -14,4 +14,9 @@ export class CustomerdashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(event){
+    console.log(event);
+    console.log(event.value);
+  }
+
 }
