@@ -31,6 +31,8 @@ import { VerifyComponent } from './verify/verify.component';
 import { RecoverComponent } from './recover/recover.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { RestaurantdropdownComponent } from './restaurantdropdown/restaurantdropdown.component';
+import { CustomerprofileComponent } from './customerprofile/customerprofile.component';
+import { CustomereditprofileComponent } from './customereditprofile/customereditprofile.component';
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -69,7 +71,9 @@ export function socialConfigs(){
     VerifyComponent,
     RecoverComponent,
     ShoppingcartComponent,
-    RestaurantdropdownComponent  ],
+    RestaurantdropdownComponent,
+    CustomerprofileComponent,
+    CustomereditprofileComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -149,6 +153,14 @@ export function socialConfigs(){
       {
         path: 'shoppingcart',
         component: ShoppingcartComponent
+      },
+      {
+        path: 'customerprofile',
+        component: CustomerprofileComponent
+      },
+      {
+        path: 'customereditprofile',
+        component: CustomereditprofileComponent
       }
     ])
   ],
