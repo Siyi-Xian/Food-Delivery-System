@@ -18,6 +18,7 @@ export class RestaurantviewdetailsComponent implements OnInit {
   ngOnInit() {
     var url='/display_details/'+ this.cookie.get ('restaurant_id')
     this.http.get(url)
+    
 
   }
 
