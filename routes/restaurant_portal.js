@@ -24,7 +24,7 @@ const restaurant_image_storage = multer.diskStorage({
         callBack(null, "restaurant_images")
     },
     filename: (req, file, callBack)=>{
-        callBack(null, req.body.id + ".jpg")
+        callBack(null, req.body.id + ".png")
     }
 })
 
@@ -96,7 +96,7 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
 router.get("/restaurant_image/:restaurant_id", middleware.checkToken, function(req, res){
     var id = req.params.restaurant_id
     console.log(id)
-    fs.readFile('restaurant_images/' + id + ".jpg", function(err, content){
+    fs.readFile('restaurant_images/' + id + ".png", function(err, content){
         if(err){
             res.writeHead(400, {'Content-type':'text/html'})
             console.log(err);
@@ -115,6 +115,26 @@ router.get("/restaurant_image/:restaurant_id", middleware.checkToken, function(r
 })
 
 
+router.get("/menu_image", middleware.checkToken, function(req, res){
+    var id = req.query.restaurant_id
+    console.log(id)
+    fs.readFile('menu_images/' + id + req.query.name + ".png", function(err, content){
+        if(err){
+            // res.writeHead(400, {'Content-type':'text/html'})
+            console.log(err);
+            res.json({
+                message: "Picture not found"
+            }); 
+            return
+        }
+        else {
+            //specify the content type in the response will be an image
+            // res.writeHead(200,{'Content-type':'image/jpg'});
+            res.json(content);
+            return
+        }
+    })
+})
 
 
 router.post('/menu', upload_menu.single('image'), function(req, res){
@@ -128,7 +148,7 @@ router.post('/menu', upload_menu.single('image'), function(req, res){
             name: req.body.name,
             cost: req.body.cost,
             description: req.body.description,
-            image: id + req.body.name + ".jpg"
+            image: id + req.body.name + ".png"
         }}
     }, function(err, data){
         if (err){
@@ -189,7 +209,7 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
             name: req.body.name,
             location: req.body.location,
             food_category: req.body.food_category,
-            res_image: id+'.jpg',
+            res_image: id+'.png',
             contact:req.body.contact,
             working_hours:req.body.working_hours
         }
