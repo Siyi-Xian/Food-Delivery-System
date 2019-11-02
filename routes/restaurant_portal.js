@@ -32,7 +32,27 @@ var upload_menu = multer({storage: menu_image_storage})
 var upload_restaurant = multer({storage: restaurant_image_storage})
 
 
+router.get("/display_menu/:restaurant_id", middleware.checkToken, function(req, res){
+    var restaurant_id = req.params.restaurant_id
+    var projection = {
+        projection: {
+            menu: 1
+        }   
+    }
+    db.collection('restaurant_data').findOne({_id: new ObjectId(restaurant_id)}, projection, function(err, data){
+        if(err){
+            console.log("error")
+            res.json({
+                message: "No items"
+            })
+        }
+        else{
+            res.json(data)
+        }
+    })
+})
 router.get('/restaurants_list', middleware.checkToken, function(req, res){
+    console.log(req.query)
     var projection = {
         projection: {
             _id: 1,
@@ -47,15 +67,16 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
     }
     var query = {
         name: {
-            $regex:req.body.restaurant_name
+            $regex:req.query.restaurant_name
         },
         food_category: {
-            $regex:req.body.food_category
+            $regex:req.query.food_category
         },
         location: {
-            $regex:req.body.location
+            $regex:req.query.location
         }
     }
+    console.log(query)
     db.collection('restaurant_data').find(query, projection).toArray(function(err, result){
         if (err){
             // console.log(err)
@@ -72,19 +93,23 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
     })
 })
 
-router.get("/restaurant_image", middleware.checkToken, function(req, res){
-    fs.readFile('restaurant_images/' + req.body.res_image, function(err, content){
+router.get("/restaurant_image/:restaurant_id", middleware.checkToken, function(req, res){
+    var id = req.params.restaurant_id
+    console.log(id)
+    fs.readFile('restaurant_images/' + id + ".jpg", function(err, content){
         if(err){
             res.writeHead(400, {'Content-type':'text/html'})
             console.log(err);
             res.json({
                 message: "Picture not found"
             }); 
+            return
         }
         else {
             //specify the content type in the response will be an image
             // res.writeHead(200,{'Content-type':'image/jpg'});
             res.json(content);
+            return
         }
     })
 })
@@ -192,9 +217,9 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
 });
 
 
-router.get('/display_details/:restaurant_id', function(req, res){
+router.get('/display_details/:restaurant_id', middleware.checkToken, function(req, res){
     var id = req.params.restaurant_id
-    console.log(id)
+    // console.log(id)
     var d = {
         projection:{name:1,
              location: 1,

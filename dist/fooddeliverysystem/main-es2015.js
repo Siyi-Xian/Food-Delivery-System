@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\">\r\n  <li><a routerLink=\"/shoppingcart\" class=\"glyphicon glyphicon-shopping-cart\"> Cart</a></li>\r\n  <div class=\"container\">\r\n    <div class=\"dropdown\">\r\n      <button class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><span class=\"glyphicon glyphicon-user\"></span> Account <span class=\"caret\"></span></button>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/shoppingcart\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> Cart </button></li>\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/public\"><span class=\"glyphicon glyphicon-log-out\"></span>Log out</button></li>\r\n        </ul>\r\n      </div>\r\n  </div>\r\n  </ul>\r\n</nav>\r\n\r\n    <!-- Search bar -->\r\n    \r\n\r\n</body>\r\n</html>");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\">\r\n  <li><a routerLink=\"/shoppingcart\" class=\"glyphicon glyphicon-shopping-cart\"> Cart</a></li>\r\n  <div class=\"container\">\r\n    <div class=\"dropdown\">\r\n      <button class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><span class=\"glyphicon glyphicon-user\"></span> Account <span class=\"caret\"></span></button>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/shoppingcart\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> Cart </button></li>\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/public\"><span class=\"glyphicon glyphicon-log-out\"></span>Log out</button></li>\r\n        </ul>\r\n      </div>\r\n  </div>\r\n  </ul>\r\n</nav>\r\n\r\n\r\n<h3>Welcome back</h3>\r\n<p>Search for restaurants below</p>\r\n    <!-- Search bar -->\r\n    <div class=\"search-container\" [formGroup]=\"userLoginForm\" (ngSubmit) = \"onSubmit(userLoginForm.value)\">  \r\n      <form action=\"post\">\r\n        <input type=\"text\" placeholder=\"Search for restaurants...\" name=\"search\">\r\n        <button type=\"submit\"><i class=\"fa fa-search\"></i></button>\r\n      </form>\r\n    </div>\r\n\r\n    <!-- placeholder for results from search query -->\r\n    <div #result></div>\r\n\r\n</body>\r\n</html>");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n  <head>\r\n    <title>\r\n      Log In\r\n    </title>\r\n    <!-- Bootstrap CDN scripts -->\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n    <script src=\"login.component.css\"></script>\r\n    <script src=\"../../styles.css\"></script>\r\n  </head>\r\n  <body  class=\"login-background\">\r\n  <nav class=\"navbar navbar-light\">\r\n    <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n      <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n    </a>\r\n    <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\">\r\n      <li><a routerLink=\"/resturantlogin\"><span class=\"glyphicon glyphicon-glass\"></span> Restaurant Owner? </a></li>\r\n    </ul>\r\n  </nav>\r\n  <div>\r\n    <div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n      <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n        <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n          <h2>Log In</h2>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n          <form method=\"post\" [formGroup]=\"userLoginForm\" (ngSubmit) = \"onSubmit(userLoginForm.value)\">\r\n            <div class=\"container\" style=\"padding-bottom: 20px\">\r\n              <div>Your Email:</div>\r\n              <div><input type = \"email\" formControlName=\"email\" required = \"required\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n            </div>\r\n            <div class=\"container\">\r\n              <div class=\"row\">\r\n                <div class=\"col-md-6\">Your Password:</div>\r\n                <div class=\"col-md-6\" style=\"text-align: right\"><a routerLink=\"/recover\">Forgot?</a></div>\r\n              </div>\r\n              <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n            </div>\r\n            <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n              <button type=\"submit\" value = \"submit\" class=\"btn btn-primary btn-lg btn-block\" (click)=\"onClickOpenVerification()\">Login</button>\r\n\r\n              <!-- Place holder for recaptcha -->\r\n              <div #recaptcha></div>\r\n\r\n              <div class=\"container\" style=\"margin-top: 20px; padding: 20px 27px 5px 27px\">\r\n                <button id=\"google-button\" class=\"btn btn-block btn-social btn-google\" style=\"margin-bottom: 15px\" (click)=\"socialSignIn('google')\">\r\n                  <i class=\"fa fa-google\"></i> Sign in with Google\r\n                </button>\r\n                <button id=\"facebook-button\" class=\"btn btn-block btn-social btn-facebook\" (click)=\"socialSignIn('facebook')\">\r\n                  <i class=\"fa fa-facebook\"></i> Sign in with Facebook\r\n                </button>\r\n              </div>\r\n            </div>\r\n          </form>\r\n        </div>\r\n\r\n         \r\n        <div *ngIf=\"showFile\">\r\n          <form method=\"post\" [formGroup]=\"userVerifyForm\" (ngSubmit) = \"onVerify(userVerifyForm.value)\">\r\n            <div>Please enter the 6-digit code that was sent to your email</div>\r\n            <input type=\"text\" required=\"required\" placeholder=\"6-digit code\" formControlName=\"otp\">\r\n            <span class=\"input-group-btn\">\r\n              <button class=\"btn btn-secondary\" (click)=\"veryOTPAsyn(userVerifyForm.otp)\" type=\"button\">Verify</button>\r\n            </span>\r\n          </form>\r\n          <div class=\"form-text error\" *ngIf=\"userVerifyForm.touched\">\r\n            <div *ngIf=\"userLoginForm.controls.otp.hasError('required')\">Verifcation is required</div>\r\n            <div *ngIf=\"userLoginForm.controls.otp.hasError('invalidOtp')\">Code is invalid</div>\r\n          </div>\r\n        </div>\r\n      \r\n\r\n        <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n          <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>New to Food-O-Holic?</b></div>\r\n          <div class=\"row\"><a routerLink=\"/registration\">Create an account</a>, it only takes a few seconds.</div>\r\n          <div class=\"row\"><a routerLink=\"/recover\">Forgot Password</a>.</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </body>\r\n</html>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n  <head>\r\n    <title>\r\n      Log In\r\n    </title>\r\n    <!-- Bootstrap CDN scripts -->\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n    <script src=\"login.component.css\"></script>\r\n    <script src=\"../../styles.css\"></script>\r\n  </head>\r\n  <body  class=\"login-background\">\r\n  <nav class=\"navbar navbar-light\">\r\n    <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n      <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n    </a>\r\n    <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\">\r\n      <li><a routerLink=\"/resturantlogin\"><span class=\"glyphicon glyphicon-glass\"></span> Restaurant Owner? </a></li>\r\n    </ul>\r\n  </nav>\r\n  <div>\r\n    <div class=\"container\" style=\"width: 430px; margin-top: 5%; margin-bottom: 5%\">\r\n      <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n        <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n          <h2>Log In</h2>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n          <form method=\"post\" [formGroup]=\"userLoginForm\" (ngSubmit) = \"onSubmit(userLoginForm.value)\">\r\n            <div class=\"container\" style=\"padding-bottom: 20px\">\r\n              <div>Your Email:</div>\r\n              <div><input type = \"email\" formControlName=\"email\" required = \"required\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n            </div>\r\n            <div class=\"container\">\r\n              <div class=\"row\">\r\n                <div class=\"col-md-6\">Your Password:</div>\r\n                <div class=\"col-md-6\" style=\"text-align: right\"><a routerLink=\"/recover\">Forgot?</a></div>\r\n              </div>\r\n              <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n            </div>\r\n            <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n              <button type=\"submit\" value = \"submit\" class=\"btn btn-primary btn-lg btn-block\" (click)=\"onClickOpenVerification()\">Login</button>\r\n\r\n              <!-- Place holder for recaptcha -->\r\n              <div #recaptcha style=\"padding: 10px -10px; margin-top: 10px\"></div>\r\n\r\n              <div class=\"container\" style=\"margin-top: 10px; padding: 10px 27px 5px 27px\">\r\n                <button id=\"google-button\" class=\"btn btn-block btn-social btn-google\" style=\"margin-bottom: 15px\" (click)=\"socialSignIn('google')\">\r\n                  <i class=\"fa fa-google\"></i> Sign in with Google\r\n                </button>\r\n                <button id=\"facebook-button\" class=\"btn btn-block btn-social btn-facebook\" (click)=\"socialSignIn('facebook')\">\r\n                  <i class=\"fa fa-facebook\"></i> Sign in with Facebook\r\n                </button>\r\n              </div>\r\n            </div>\r\n          </form>\r\n        </div>\r\n\r\n\r\n        <div *ngIf=\"showFile\">\r\n          <form method=\"post\" [formGroup]=\"userVerifyForm\" (ngSubmit) = \"onVerify(userVerifyForm.value)\">\r\n            <div>Please enter the 6-digit code that was sent to your email</div>\r\n            <input type=\"text\" required=\"required\" placeholder=\"6-digit code\" formControlName=\"otp\">\r\n            <span class=\"input-group-btn\">\r\n              <button class=\"btn btn-secondary\" (click)=\"veryOTPAsyn(userVerifyForm.otp)\" type=\"button\">Verify</button>\r\n            </span>\r\n          </form>\r\n          <div class=\"form-text error\" *ngIf=\"userVerifyForm.touched\">\r\n            <div *ngIf=\"userLoginForm.controls.otp.hasError('required')\">Verifcation is required</div>\r\n            <div *ngIf=\"userLoginForm.controls.otp.hasError('invalidOtp')\">Code is invalid</div>\r\n          </div>\r\n        </div>\r\n\r\n\r\n        <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n          <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>New to Food-O-Holic?</b></div>\r\n          <div class=\"row\"><a routerLink=\"/registration\">Create an account</a>, it only takes a few seconds.</div>\r\n          <div class=\"row\"><a routerLink=\"/recover\">Forgot Password</a>.</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </body>\r\n</html>\r\n");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Order History\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body style=\"background-color: #FFCA28\">\r\n\r\n\r\n\r\n<app-sidebar></app-sidebar>\r\n\r\n<div class=\"container\" style=\"margin: 0px 0px 0px 200px; padding: 0\">\r\n</div>\r\n\r\n</body>\r\n\r\n</html>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Order History\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body style=\"background-color: #FFCA28\">\r\n\r\n\r\n\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n<div class=\"container\" style=\"margin: 0px 0px 0px 200px; padding: 0\">\r\n</div>\r\n\r\n</body>\r\n\r\n</html>\r\n");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    public dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <div class=\"container\">\r\n    <div class=\"dropdown\">\r\n      <button href=\"#\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Login/Sign up</button>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\" routerLink=\"/login\">Login</a></li>\r\n          <a href=\"#\" routerLink=\"/registration\">Registration</a>\r\n          <div class=\"dropdown-divider\"></div>\r\n          <label>Restaurant Owner?</label>\r\n          <li><a href=\"#\" routerLink=\"/resturantlogin\">Restaurant Login</a></li>\r\n          <a href=\"#\" routerLink=\"/restaurantreg\">Register Restaurant</a>\r\n        </ul>\r\n      </div>\r\n  </div>\r\n</nav>\r\n</body>\r\n</html>\r\n\r\n\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    public dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <div class=\"navbar-right\">\r\n    <div class=\"dropdown\">\r\n      <button href=\"#\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Login/Sign up</button>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a href=\"#\" routerLink=\"/login\">Login</a></li>\r\n          <a href=\"#\" routerLink=\"/registration\">Registration</a>\r\n          <div class=\"dropdown-divider\"></div>\r\n          <label>Restaurant Owner?</label>\r\n          <li><a href=\"#\" routerLink=\"/resturantlogin\">Restaurant Login</a></li>\r\n          <a href=\"#\" routerLink=\"/restaurantreg\">Register Restaurant</a>\r\n        </ul>\r\n      </div>\r\n  </div>\r\n</nav>\r\n</body>\r\n</html>\r\n\r\n\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<html>\r\n\r\n    <head>\r\n        <title>\r\n          Restaurant Portal\r\n        </title>\r\n        <!-- Bootstrap CDN scripts -->\r\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n        <script src=\"login.component.css\"></script>\r\n        <script src=\"../../styles.css\"></script>\r\n    </head> \r\n    <body>\r\n\r\n        <nav class=\"navbar navbar-light\">\r\n            <!-- Navbar content -->\r\n            <!-- Just an image -->\r\n            <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n              <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n            </a>\r\n            <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\"> \r\n                <li><a routerLink=\"/resturantlogin\"><span class=\"glyphicon glyphicon-log-out\"></span> Log out </a></li>\r\n            </ul>\r\n          </nav>\r\n\r\n          <app-sidebar>\r\n\r\n\r\n          </app-sidebar>\r\n    </body>\r\n\r\n</html>");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<html>\r\n\r\n    <head>\r\n        <title>\r\n          Restaurant Portal\r\n        </title>\r\n        <!-- Bootstrap CDN scripts -->\r\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n        <script src=\"login.component.css\"></script>\r\n        <script src=\"../../styles.css\"></script>\r\n    </head> \r\n    <body>\r\n\r\n        <nav class=\"navbar navbar-light\">\r\n            <!-- Navbar content -->\r\n            <!-- Just an image -->\r\n            <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n              <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n            </a>\r\n            <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\"> \r\n                <div class=\"container\">\r\n                  <div class=\"dropdown\">\r\n                      <button class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><span class=\"glyphicon glyphicon-user\"></span> Account <span class=\"caret\"></span></button>\r\n                      <ul class=\"dropdown-menu\">\r\n                        <label>Orders</label>\r\n                        <li><a href=\"#\" routerLink=\"/restaurantcurrentorders\">Current Orders</a></li>\r\n                        <li><a href=\"#\" routerLink=\"/orderhistory\">Order History</a></li>\r\n                        <div class=\"dropdown-divider\"></div>\r\n                        <label>Restaurant Details</label>\r\n                        <li><a href=\"#\" routerLink=\"/resturantdetails\">Add Details</a></li>\r\n                        <li><a href=\"#\" routerLink=\"/restaurantviewdetails\">View Details</a></li>\r\n                        <div class=\"dropdown-divider\"></div>\r\n                        <label>Restaurant Menu</label>\r\n                        <li><a href=\"#\" routerLink=\"/restaurantmenu\">Add items to menu</a></li>\r\n                        <li><a href=\"#\" routerLink=\"/restaurantviewmenu\">View Menu</a></li>\r\n                        <div class=\"dropdown-divider\"></div>\r\n                        <label>Restaurent Statistics</label>\r\n                        <li><a href=\"#\" routerLink=\"/restaurantstats\">Statistics</a></li>\r\n                        <div class=\"dropdown-divider\"></div>\r\n                        <li><a href=\"#\" routerLink=\"/resturantlogin\">Log out</a></li>\r\n                      </ul>\r\n                    </div>\r\n                </div>\r\n            </ul>\r\n          </nav>\r\n\r\n    </body>\r\n\r\n</html>");
 
 /***/ }),
 
@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Menu\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-sidebar>\r\n\r\n</app-sidebar>\r\n\r\n\r\n</body>\r\n\r\n</html>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Menu\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n<h3>Current Orders</h3>\r\n<p>below are orders that are currently being fulfilled</p>\r\n<p>Click on an order to reveal options</p>\r\n\r\n<!-- Place holder for list of orders -->\r\n<div #currentorders></div>\r\n\r\n</body>\r\n\r\n</html>\r\n");
 
 /***/ }),
 
@@ -162,7 +162,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Details\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"restaurantdetails.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n\r\n<app-sidebar>\r\n</app-sidebar>\r\n\r\n<div style=\"margin-left: 200px\">\r\n  <div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n    <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n      <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n        <h2>Edit Details</h2>\r\n      </div>\r\n      <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n        <form mehtod=\"post\" [formGroup]=\"detailsForm\" (ngSubmit)=onSubmit(detailsForm.value)>\r\n          <div class=\"fields\">\r\n            <div>Restaurant Name:</div>\r\n            <div><input type=\"text\" required=\"required\" formControlName=\"name\" placeholder=\"{{ detailsForm.name }}\"\r\n                        id=\"name\" style=\"width: 100%\"></div>\r\n          </div>\r\n          <div class=\"fields\">\r\n            <div>Restaurant Location:</div>\r\n            <div><input type=\"text\" required=\"required\" formControlName=\"location\"\r\n                        placeholder=\"{{ detailsForm.location }}\" id=\"location\" style=\"width: 100%\"></div>\r\n          </div>\r\n          <div class=\"fields\">\r\n            <div>Category:</div>\r\n            <div><input type=\"text\" required=\"required\" formControlName=\"food_category\"\r\n                        placeholder=\"{{ detailsForm.food_category }}\" id=\"food_category\" style=\"width: 100%\"></div>\r\n          </div>\r\n          <div class=\"fields\">\r\n            <div>Image:</div>\r\n            <div><input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"res_image\" ng-model=\"res_image\"\r\n                        base-sixty-four-input></div>\r\n          </div>\r\n          <div class=\"fields\">\r\n            <div>Contact Phone Number:</div>\r\n            <div><input type=\"text\" required=\"required\" formControlName=\"contact\" placeholder=\"{{ detailsForm.contact }}\"\r\n                        id=\"contact\">\r\n            </div>\r\n          </div>\r\n          <div class=\"fields\">\r\n            <div>Working Hours:</div>\r\n            <div><input type=\"text\" required=\"required\" formControlName=\"working_hours\"\r\n                        placeholder=\"{{ detailsForm.working_hours }}\"\r\n                        id=\"working_hours\"></div>\r\n          </div>\r\n          <button type=\"submit\" value=\"submit\" class=\"btn btn-primary btn-lg btn-block\" style=\"margin-top: 20px\">Update</button>\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>\r\n\r\n</html>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Details\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"restaurantdetails.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n<div style=\"margin-left: 200px\">\r\n  <div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n    <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n      <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n        <h2>Edit Details</h2>\r\n      </div>\r\n      <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n        <form mehtod=\"post\" [formGroup]=\"detailsForm\" (ngSubmit)=onSubmit(detailsForm.value)>\r\n          <div class=\"fields\">\r\n            <div>Restaurant Name:</div>\r\n            <div><input type=\"text\" required=\"required\" formControlName=\"name\" placeholder=\"{{ detailsForm.name }}\"\r\n                        id=\"name\" style=\"width: 100%\"></div>\r\n          </div>\r\n          <div class=\"fields\">\r\n            <div>Restaurant Location:</div>\r\n            <div><input type=\"text\" required=\"required\" formControlName=\"location\"\r\n                        placeholder=\"{{ detailsForm.location }}\" id=\"location\" style=\"width: 100%\"></div>\r\n          </div>\r\n          <div class=\"fields\">\r\n            <div>Category:</div>\r\n            <div><input type=\"text\" required=\"required\" formControlName=\"food_category\"\r\n                        placeholder=\"{{ detailsForm.food_category }}\" id=\"food_category\" style=\"width: 100%\"></div>\r\n          </div>\r\n          <div class=\"fields\">\r\n            <div>Image:</div>\r\n            <div><input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"res_image\" ng-model=\"res_image\"\r\n                        base-sixty-four-input></div>\r\n          </div>\r\n          <div class=\"fields\">\r\n            <div>Contact Phone Number:</div>\r\n            <div><input type=\"text\" required=\"required\" formControlName=\"contact\" placeholder=\"{{ detailsForm.contact }}\"\r\n                        id=\"contact\">\r\n            </div>\r\n          </div>\r\n          <div class=\"fields\">\r\n            <div>Working Hours:</div>\r\n            <div><input type=\"text\" required=\"required\" formControlName=\"working_hours\"\r\n                        placeholder=\"{{ detailsForm.working_hours }}\"\r\n                        id=\"working_hours\"></div>\r\n          </div>\r\n          <button type=\"submit\" value=\"submit\" class=\"btn btn-primary btn-lg btn-block\" style=\"margin-top: 20px\">Update</button>\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>\r\n\r\n</html>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/restaurantdropdown/restaurantdropdown.component.html":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/restaurantdropdown/restaurantdropdown.component.html ***!
+  \************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-light\" style=\"padding-right: 30px\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"width: 80%\">\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-glass\"></span>\r\n        Orders\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\" style=\"width: 100%\">\r\n        <li><a href=\"#\" routerLink=\"/restaurantcurrentorders\">Current Orders</a></li>\r\n        <li><a href=\"#\" routerLink=\"/orderhistory\">Order History</a></li>\r\n      </ul>\r\n    </li>\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-user\"></span>\r\n        Restaurant Details\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\" style=\"width: 100%\">\r\n        <li><a href=\"#\" routerLink=\"/restaurantdetails\">Add Details</a></li>\r\n        <li><a href=\"#\" routerLink=\"/restaurantviewdetails\">View Details</a></li>\r\n      </ul>\r\n    </li>\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-menu-hamburger\"></span>\r\n        Menu\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\" style=\"width: 100%\">\r\n        <li><a href=\"#\" routerLink=\"/restaurantmenu\">Add items to menu</a></li>\r\n        <li><a href=\"#\" routerLink=\"/restaurantviewmenu\">View Menu</a></li>\r\n      </ul>\r\n    </li>\r\n    <li style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/restaurantstats\">\r\n        <span class=\"glyphicon glyphicon-object-align-bottom\"></span>\r\n        Statistics\r\n      </a>\r\n    </li>\r\n    <li style=\"width: 10%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/resturantlogin\">\r\n        <span class=\"glyphicon glyphicon-off\"></span>\r\n        Logout\r\n      </a>\r\n    </li>\r\n\r\n  </ul>\r\n</nav>\r\n");
 
 /***/ }),
 
@@ -175,7 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Details\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-sidebar></app-sidebar>\r\n\r\n<div style=\"margin-left: 200px\">\r\n  <div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n    <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n      <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n        <h2>Add item to the Menu</h2>\r\n      </div>\r\n      <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n        <form mehtod=\"post\" [formGroup]=\"menuForm\" (ngSubmit)=onSubmit(menuForm.value)>\r\n        <div class=\"fields\">\r\n          <div>Item Name:</div>\r\n          <div><input type=\"text\" required=\"required\" formControlName=\"name\" placeholder=\"Cheeseburger\" id=\"name\"\r\n                      style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"fields\">\r\n          <div>Cost:</div>\r\n          <div><input type=\"text\" required=\"required\" formControlName=\"cost\" placeholder=\"$2.00\" id=\"cost\"\r\n                      style=\"width: 100%\">\r\n          </div>\r\n        </div>\r\n        <div class=\"fields\">\r\n          <div>Description:</div>\r\n          <div><input type=\"text\" required=\"required\" formControlName=\"description\" placeholder=\"A delecious Meal\"\r\n                      id=\"description\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"fields\">\r\n          <div>Image:</div>\r\n          <div><input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"food_image\" ng-model=\"res_image\"\r\n            base-sixty-four-input>></div>\r\n        </div>\r\n        <button type=\"submit\" value=\"submit\" class=\"btn btn-primary btn-lg btn-block\" style=\"margin-top: 20px\">\r\n          Add Item\r\n        </button>\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>\r\n\r\n</html>");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Details\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n<div style=\"margin-left: 200px\">\r\n  <div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n    <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n      <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n        <h2>Add item to the Menu</h2>\r\n      </div>\r\n      <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n        <form mehtod=\"post\" [formGroup]=\"menuForm\" (ngSubmit)=onSubmit(menuForm.value)>\r\n        <div class=\"fields\">\r\n          <div>Item Name:</div>\r\n          <div><input type=\"text\" required=\"required\" formControlName=\"name\" placeholder=\"Cheeseburger\" id=\"name\"\r\n                      style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"fields\">\r\n          <div>Cost:</div>\r\n          <div><input type=\"text\" required=\"required\" formControlName=\"cost\" placeholder=\"$2.00\" id=\"cost\"\r\n                      style=\"width: 100%\">\r\n          </div>\r\n        </div>\r\n        <div class=\"fields\">\r\n          <div>Description:</div>\r\n          <div><input type=\"text\" required=\"required\" formControlName=\"description\" placeholder=\"A delecious Meal\"\r\n                      id=\"description\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"fields\">\r\n          <div>Image:</div>\r\n          <div><input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"food_image\" ng-model=\"res_image\"\r\n            base-sixty-four-input>></div>\r\n        </div>\r\n        <button type=\"submit\" value=\"submit\" class=\"btn btn-primary btn-lg btn-block\" style=\"margin-top: 20px\">\r\n          Add Item\r\n        </button>\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>\r\n\r\n</html>");
 
 /***/ }),
 
@@ -201,7 +214,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Menu\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-sidebar>\r\n\r\n</app-sidebar>\r\n\r\n\r\n</body>\r\n\r\n</html>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Menu\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n<h3>Restaurant Statistics</h3>\r\n<p>below are some statistics you might find helpful</p>\r\n\r\n<!-- placeholder for statistics -->\r\n<div #stats></div>\r\n\r\n</body>\r\n\r\n</html>\r\n");
 
 /***/ }),
 
@@ -214,7 +227,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n    <head>\r\n        <title>\r\n          Restaurant Details\r\n        </title>\r\n        <!-- Bootstrap CDN scripts -->\r\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n        <script src=\"login.component.css\"></script>\r\n        <script src=\"../../styles.css\"></script>\r\n    </head>\r\n    <body>\r\n\r\n          <app-sidebar>\r\n\r\n          </app-sidebar>\r\n\r\n          <p>Restaurant Details</p>\r\n\r\n    </body>\r\n\r\n</html>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n    <head>\r\n        <title>\r\n          Restaurant Details\r\n        </title>\r\n        <!-- Bootstrap CDN scripts -->\r\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n        <script src=\"login.component.css\"></script>\r\n        <script src=\"../../styles.css\"></script>\r\n    </head>\r\n    <body>\r\n\r\n        <app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n    <h3>Restaurant Details</h3>\r\n    <p>Below is how a customer will see your Restaurant page</p>\r\n    <br>\r\n    \r\n    <ul  *ngIf=\"restaurant_details\">\r\n    <li><strong>Name: </strong> {{restaurant_details.name}}</li>\r\n    <li><strong>Contact:</strong> {{restaurant_details.contact}}</li>\r\n    <li><strong> Food Category: </strong>{{restaurant_details.food_category}}</li>\r\n    <li><strong> Location: </strong>{{restaurant_details.location}}</li>  \r\n    <li><strong> Working Hours: </strong>{{restaurant_details.working_hours}}</li>\r\n    <!-- <img [src] = \"imageurl\" alt=\"\">  -->\r\n    </ul>\r\n        \r\n      \r\n\r\n\r\n    </body>\r\n\r\n</html>\r\n");
 
 /***/ }),
 
@@ -227,7 +240,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Menu\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-sidebar>\r\n\r\n</app-sidebar>\r\n\r\n\r\n</body>\r\n\r\n</html>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Menu\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n    <app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n</body>\r\n\r\n</html>\r\n");
 
 /***/ }),
 
@@ -670,6 +683,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _verify_verify_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./verify/verify.component */ "./src/app/verify/verify.component.ts");
 /* harmony import */ var _recover_recover_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./recover/recover.component */ "./src/app/recover/recover.component.ts");
 /* harmony import */ var _shoppingcart_shoppingcart_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./shoppingcart/shoppingcart.component */ "./src/app/shoppingcart/shoppingcart.component.ts");
+/* harmony import */ var _restaurantdropdown_restaurantdropdown_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./restaurantdropdown/restaurantdropdown.component */ "./src/app/restaurantdropdown/restaurantdropdown.component.ts");
+
 
 
 
@@ -738,7 +753,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _customerdashboard_customerdashboard_component__WEBPACK_IMPORTED_MODULE_25__["CustomerdashboardComponent"],
             _verify_verify_component__WEBPACK_IMPORTED_MODULE_26__["VerifyComponent"],
             _recover_recover_component__WEBPACK_IMPORTED_MODULE_27__["RecoverComponent"],
-            _shoppingcart_shoppingcart_component__WEBPACK_IMPORTED_MODULE_28__["ShoppingcartComponent"]
+            _shoppingcart_shoppingcart_component__WEBPACK_IMPORTED_MODULE_28__["ShoppingcartComponent"],
+            _restaurantdropdown_restaurantdropdown_component__WEBPACK_IMPORTED_MODULE_29__["RestaurantdropdownComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -866,6 +882,10 @@ __webpack_require__.r(__webpack_exports__);
 let CustomerdashboardComponent = class CustomerdashboardComponent {
     constructor() { }
     ngOnInit() {
+    }
+    onSubmit(event) {
+        console.log(event);
+        console.log(event.value);
     }
 };
 CustomerdashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1029,6 +1049,7 @@ let LoginComponent = class LoginComponent {
             console.log(socialusers);
             this.Savesresponse(socialusers);
         });
+        this.router.navigate(['/customerdashboard']);
     }
     Savesresponse(socialusers) {
         this.SocialloginService.Savesresponse(Socialusers).subscribe((res) => {
@@ -1528,7 +1549,10 @@ let RestaurantdetailsComponent = class RestaurantdetailsComponent {
     }
     ngOnInit() {
         console.log("fge" + this.cookie.get('restaurant_id'));
-        this.httpService.get('/restaurant/display_details/' + this.cookie.get('restaurant_id')).subscribe(data => {
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpHeaders"]({ 'Content-Type': 'application/json',
+            jwttoken: this.cookie.get("jwttoken")
+        });
+        this.httpService.get('/restaurant/display_details/' + this.cookie.get('restaurant_id'), { headers: headers }).subscribe(data => {
             // this.detailsForm = data;
             console.log(data);
             if (data != null) {
@@ -1555,6 +1579,50 @@ RestaurantdetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./restaurantdetails.component.css */ "./src/app/restaurantdetails/restaurantdetails.component.css")).default]
     })
 ], RestaurantdetailsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/restaurantdropdown/restaurantdropdown.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/restaurantdropdown/restaurantdropdown.component.css ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Jlc3RhdXJhbnRkcm9wZG93bi9yZXN0YXVyYW50ZHJvcGRvd24uY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/restaurantdropdown/restaurantdropdown.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/restaurantdropdown/restaurantdropdown.component.ts ***!
+  \********************************************************************/
+/*! exports provided: RestaurantdropdownComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestaurantdropdownComponent", function() { return RestaurantdropdownComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let RestaurantdropdownComponent = class RestaurantdropdownComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+RestaurantdropdownComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-restaurantdropdown',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./restaurantdropdown.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/restaurantdropdown/restaurantdropdown.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./restaurantdropdown.component.css */ "./src/app/restaurantdropdown/restaurantdropdown.component.css")).default]
+    })
+], RestaurantdropdownComponent);
 
 
 
@@ -1809,13 +1877,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestaurantviewdetailsComponent", function() { return RestaurantviewdetailsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+
+
 
 
 let RestaurantviewdetailsComponent = class RestaurantviewdetailsComponent {
-    constructor() { }
+    constructor(http, cookie) {
+        this.http = http;
+        this.cookie = cookie;
+        this.errorFlag = false;
+    }
     ngOnInit() {
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json',
+            jwttoken: this.cookie.get("jwttoken")
+        });
+        var url = '/restaurant/display_details/' + this.cookie.get('restaurant_id');
+        this.http.get(url, { headers }).subscribe(data => {
+            // this.detailsForm = data;
+            console.log(data);
+            this.restaurant_details = data;
+            if (data != null) {
+                console.log(data);
+            }
+        });
+        var img_url = '/restaurant/restaurant_image/' + this.cookie.get("restaurant_id");
+        // var d = {res_image: this.cookie.get("restaurant_id")}
+        this.http.get(img_url, { headers }).subscribe(data => {
+            console.log(data);
+            if (data != null) {
+                var array = new Uint8Array(data["data"]);
+                var string_char = String.fromCharCode.apply(null, array);
+                let base64 = btoa(string_char);
+                this.imageurl = base64;
+                // console.log(this.imageurl)
+            }
+        });
     }
 };
+RestaurantviewdetailsComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
+];
 RestaurantviewdetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-restaurantviewdetails',
@@ -1853,13 +1957,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestaurantviewmenuComponent", function() { return RestaurantviewmenuComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _login_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../login.service */ "./src/app/login.service.ts");
+
+
+
+
 
 
 let RestaurantviewmenuComponent = class RestaurantviewmenuComponent {
-    constructor() { }
+    constructor(httpService, loginService, formBuilder, cookie, http) {
+        this.httpService = httpService;
+        this.loginService = loginService;
+        this.formBuilder = formBuilder;
+        this.cookie = cookie;
+        this.http = http;
+        this.detailsForm = this.formBuilder.group({
+            name: '',
+            location: '',
+            food_category: '',
+            res_image: '',
+            contact: '',
+            working_hours: ''
+        });
+    }
     ngOnInit() {
+        console.log("fge" + this.cookie.get('restaurant_id'));
+        this.httpService.get('/restaurant/menu/' + this.cookie.get('restaurant_id')).subscribe(data => {
+            // this.detailsForm = data;
+            console.log(data);
+            if (data != null) {
+                this.detailsForm.controls['name'].setValue(data['name']);
+                this.detailsForm.controls['location'].setValue(data['location']);
+                this.detailsForm.controls['food_category'].setValue(data['food_category']);
+                this.detailsForm.controls['contact'].setValue(data['contact']);
+                this.detailsForm.controls['working_hours'].setValue(data['working_hours']);
+            }
+        });
     }
 };
+RestaurantviewmenuComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
+    { type: _login_service__WEBPACK_IMPORTED_MODULE_5__["LoginService"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }
+];
 RestaurantviewmenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-restaurantviewmenu',
@@ -2008,7 +2153,7 @@ ShoppingcartComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".sidebar-main {\r\n  background-color: #FFCA28;\r\n  width: 200px;\r\n  border: 0;\r\n  height: 5000px;\r\n  font-size: 16px;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2lkZWJhci9zaWRlYmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx5QkFBeUI7RUFDekIsWUFBWTtFQUNaLFNBQVM7RUFDVCxjQUFjO0VBQ2QsZUFBZTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL3NpZGViYXIvc2lkZWJhci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNpZGViYXItbWFpbiB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI0ZGQ0EyODtcclxuICB3aWR0aDogMjAwcHg7XHJcbiAgYm9yZGVyOiAwO1xyXG4gIGhlaWdodDogNTAwMHB4O1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxufVxyXG5cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".sidebar-main {\r\n  background-color: #FFCA28;\r\n  width: 200px;\r\n  border: 0;\r\n  height: 5000px;\r\n  font-size: 16px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2lkZWJhci9zaWRlYmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx5QkFBeUI7RUFDekIsWUFBWTtFQUNaLFNBQVM7RUFDVCxjQUFjO0VBQ2QsZUFBZTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL3NpZGViYXIvc2lkZWJhci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNpZGViYXItbWFpbiB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI0ZGQ0EyODtcclxuICB3aWR0aDogMjAwcHg7XHJcbiAgYm9yZGVyOiAwO1xyXG4gIGhlaWdodDogNTAwMHB4O1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxufVxyXG4iXX0= */");
 
 /***/ }),
 
@@ -2209,7 +2354,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\pwmcb\Desktop\Food-Delivery-System\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\IUB\Semester 1\Software Engineering\project\Food-Delivery-System\src\main.ts */"./src/main.ts");
 
 
 /***/ })

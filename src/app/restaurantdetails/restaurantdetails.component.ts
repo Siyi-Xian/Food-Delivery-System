@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {CookieService} from 'ngx-cookie-service';
 import {LoginService} from '../login.service';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-restaurantdetails',
@@ -77,7 +77,10 @@ export class RestaurantdetailsComponent implements OnInit {
 
   ngOnInit() {
     console.log("fge" + this.cookie.get('restaurant_id'))
-    this.httpService.get('/restaurant/display_details/'+this.cookie.get('restaurant_id')).subscribe(data => {
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json',
+      jwttoken: this.cookie.get("jwttoken")
+    });
+    this.httpService.get('/restaurant/display_details/'+this.cookie.get('restaurant_id'), {headers: headers}).subscribe(data => {
       // this.detailsForm = data;
       console.log(data)
       if (data != null){
