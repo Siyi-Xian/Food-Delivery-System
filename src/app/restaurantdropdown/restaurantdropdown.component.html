@@ -1,23 +1,55 @@
-<div class="container">
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Account <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <label>Orders</label>
-              <li><a href="#" routerLink="/restaurantcurrentorders">Current Orders</a></li>
-              <li><a href="#" routerLink="/orderhistory">Order History</a></li>
-              <div class="dropdown-divider"></div>
-              <label>Restaurant Details</label>
-              <li><a href="#" routerLink="/restaurantdetails">Add Details</a></li>
-              <li><a href="#" routerLink="/restaurantviewdetails">View Details</a></li>
-              <div class="dropdown-divider"></div>
-              <label>Restaurant Menu</label>
-              <li><a href="#" routerLink="/restaurantmenu">Add items to menu</a></li>
-              <li><a href="#" routerLink="/restaurantviewmenu">View Menu</a></li>
-              <div class="dropdown-divider"></div>
-              <label>Restaurent Statistics</label>
-              <li><a href="#" routerLink="/restaurantstats">Statistics</a></li>
-              <div class="dropdown-divider"></div>
-              <li><a href="#" routerLink="/resturantlogin">Log out</a></li>
-            </ul>
-          </div>
-      </div>
+<nav class="navbar navbar-light" style="padding-right: 30px">
+  <!-- Navbar content -->
+  <!-- Just an image -->
+  <a class="navbar-brand" routerLink="/public" style="padding: 0;">
+    <img src="../../assets/img/logo.png" height="50" alt="">
+  </a>
+  <ul class="nav navbar-nav navbar-right" style="width: 80%">
+    <li class="dropdown" style="width: 22.5%; text-align: center">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-glass"></span>
+        Orders
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="#" routerLink="/restaurantcurrentorders">Current Orders</a></li>
+        <li><a href="#" routerLink="/orderhistory">Order History</a></li>
+      </ul>
+    </li>
+    <li class="dropdown" style="width: 22.5%; text-align: center">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-user"></span>
+        Restaurant Details
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="#" routerLink="/restaurantdetails">Add Details</a></li>
+        <li><a href="#" routerLink="/restaurantviewdetails">View Details</a></li>
+      </ul>
+    </li>
+    <li class="dropdown" style="width: 22.5%; text-align: center">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-menu-hamburger"></span>
+        Menu
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="#" routerLink="/restaurantmenu">Add items to menu</a></li>
+        <li><a href="#" routerLink="/restaurantviewmenu">View Menu</a></li>
+      </ul>
+    </li>
+    <li style="width: 22.5%; text-align: center">
+      <a href="#" routerLink="/restaurantstats">
+        <span class="glyphicon glyphicon-object-align-bottom"></span>
+        Statistics
+      </a>
+    </li>
+    <li style="width: 10%; text-align: center">
+      <a href="#" routerLink="/resturantlogin">
+        <span class="glyphicon glyphicon-off"></span>
+        Logout
+      </a>
+    </li>
+
+  </ul>
+</nav>
