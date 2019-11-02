@@ -10,21 +10,27 @@ import {CookieService} from 'ngx-cookie-service';
 export class RestaurantviewdetailsComponent implements OnInit {
 
    
-   errorMsg:string;
-   errorFlag:boolean=false;
+  errorMsg:string;
+  errorFlag:boolean=false;
+  restaurant_details
+  imageurl
   constructor( private http:HttpClient,
       private cookie:CookieService) { }
 
   ngOnInit() {
 
-
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json',
+      jwttoken: this.cookie.get("jwttoken")
+    });
     
     
 
     var url='/restaurant/display_details/' + this.cookie.get ('restaurant_id')
-    this.http.get(url).subscribe(data => {
+    
+    this.http.get(url, {headers}).subscribe(data => {
       // this.detailsForm = data;
       console.log(data)
+      this.restaurant_details = data
       if (data != null){
         console.log(data)
       }
@@ -32,15 +38,17 @@ export class RestaurantviewdetailsComponent implements OnInit {
 
     var img_url='/restaurant/restaurant_image/' + this.cookie.get("restaurant_id")
     // var d = {res_image: this.cookie.get("restaurant_id")}
-    let headers = new HttpHeaders({ 'Content-Type': 'application/json',
-      jwttoken: this.cookie.get("jwttoken")
-    });
+  
 
 
     this.http.get(img_url, {headers}).subscribe(data => {
       console.log(data)
       if (data != null){
-        console.log(data)
+        var array = new Uint8Array(data["data"])
+        var string_char = String.fromCharCode.apply(null, array)
+        let base64 = btoa(string_char)
+        this.imageurl = base64
+        // console.log(this.imageurl)
       }
     })
   }
