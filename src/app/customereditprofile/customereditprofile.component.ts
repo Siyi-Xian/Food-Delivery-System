@@ -33,7 +33,7 @@ export class CustomereditprofileComponent implements OnInit {
   }
 
   onSubmit(event){
-    
+
   }
 
   onUpdateName(event){

@@ -36,7 +36,7 @@
 
     <h3>Edit Profile</h3>
   <!-- forms for seperately updating each field -->
-    <form method="POST" [formGroup]="userUpdateForm" (ngSubmit) = "onSubmit(userUpdateForm.value)">
+    <form method="POST" [formGroup]="userProfileForm" (ngSubmit) = "onSubmit(userUpdateForm.value)">
       <!-- placeholder for customer name -->
       <div #name></div>
       <div> Name </div>
