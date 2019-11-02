@@ -9,15 +9,19 @@ import {CookieService} from 'ngx-cookie-service';
 })
 export class RestaurantviewdetailsComponent implements OnInit {
 
-   restaurantdetails=[];
+   
    errorMsg:string;
    errorFlag:boolean=false;
   constructor( private http:HttpClient,
       private cookie:CookieService) { }
 
   ngOnInit() {
+    restaurant_details=[];
     var url='/display_details/'+ this.cookie.get ('restaurant_id')
     this.http.get(url)
+    
+
+    
     
 
   }
