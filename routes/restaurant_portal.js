@@ -72,8 +72,8 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
     })
 })
 
-router.get("/restaurant_image", middleware.checkToken, function(req, res){
-    fs.readFile('restaurant_images/' + req.body.res_image, function(err, content){
+router.get("/restaurant_image/:res_image", middleware.checkToken, function(req, res){
+    fs.readFile('restaurant_images/' + req.params.res_image, function(err, content){
         if(err){
             res.writeHead(400, {'Content-type':'text/html'})
             console.log(err);
