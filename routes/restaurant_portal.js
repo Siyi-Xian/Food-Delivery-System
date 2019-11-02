@@ -98,7 +98,7 @@ router.get("/restaurant_image/:restaurant_id", middleware.checkToken, function(r
     console.log(id)
     fs.readFile('restaurant_images/' + id + ".png", function(err, content){
         if(err){
-            res.writeHead(400, {'Content-type':'text/html'})
+            // res.writeHead(400, {'Content-type':'text/html'})
             console.log(err);
             res.json({
                 message: "Picture not found"

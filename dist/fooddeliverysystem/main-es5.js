@@ -50,7 +50,29 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\">\r\n  <li><a routerLink=\"/shoppingcart\" class=\"glyphicon glyphicon-shopping-cart\"> Cart</a></li>\r\n  <div class=\"container\">\r\n    <div class=\"dropdown\">\r\n      <button class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><span class=\"glyphicon glyphicon-user\"></span> Account <span class=\"caret\"></span></button>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/shoppingcart\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> Cart </button></li>\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/public\"><span class=\"glyphicon glyphicon-log-out\"></span>Log out</button></li>\r\n        </ul>\r\n      </div>\r\n  </div>\r\n  </ul>\r\n</nav>\r\n\r\n\r\n<h3>Welcome back</h3>\r\n<p>Search for restaurants below</p>\r\n    <!-- Search bar -->\r\n    <div class=\"search-container\" [formGroup]=\"userLoginForm\" (ngSubmit) = \"onSubmit(userLoginForm.value)\">  \r\n      <form action=\"post\">\r\n        <input type=\"text\" placeholder=\"Search for restaurants...\" name=\"search\">\r\n        <button type=\"submit\"><i class=\"fa fa-search\"></i></button>\r\n      </form>\r\n    </div>\r\n\r\n    <!-- placeholder for results from search query -->\r\n    <div #result></div>\r\n\r\n</body>\r\n</html>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\">\r\n  <li><a routerLink=\"/shoppingcart\" class=\"glyphicon glyphicon-shopping-cart\"> Cart</a></li>\r\n  <div class=\"container\">\r\n    <div class=\"dropdown\">\r\n      <button class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><span class=\"glyphicon glyphicon-user\"></span> Account <span class=\"caret\"></span></button>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><a class=\"btn\" href=\"#\" routerLink=\"/shoppingcart\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> Cart </a></li>\r\n          <li><a class=\"btn\" href=\"#\" routerLink=\"/customerprofile\">Profile</a></li>\r\n          <li><a class=\"btn\" href=\"#\" routerLink=\"/public\"><span class=\"glyphicon glyphicon-log-out\"></span>Log out</a></li>\r\n        </ul>\r\n      </div>\r\n  </div>\r\n  </ul>\r\n</nav>\r\n\r\n\r\n<h3>Welcome back</h3>\r\n<p>Search for restaurants below</p>\r\n    <!-- Search bar -->\r\n    <div class=\"search-container\" [formGroup]=\"userSearchForm\" (ngSubmit) = \"onSubmit(userSearchForm.value)\">  \r\n      <form action=\"post\">\r\n        <input type=\"text\" placeholder=\"Search for restaurants...\" name=\"search\">\r\n        <div class=\"container\">\r\n          <div class=\"dropdown\">\r\n              <button class=\"btn dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><span class=\"glyphicon glyphicon-th-list\"></span></button>\r\n              <ul class=\"dropdown-menu\">\r\n                <label>Sort by</label>\r\n                <li><a class=\"dropdown-item\" (click)=\"updateToLocation()\">Location</a></li>\r\n                <li><a class=\"dropdown-item\" (click)=\"updateToResName()\">Restaurant Name</a></li>\r\n                <li><a class=\"dropdown-item\" (click)=\"updateToFoodCat()\">Restaurant Category</a></li>\r\n              </ul>\r\n          </div>\r\n        </div>\r\n        <button type=\"submit\"><i class=\"fa fa-search\"></i></button>\r\n      </form>\r\n    </div>\r\n\r\n    <!-- placeholder for results from search query -->\r\n    <div #result></div>\r\n\r\n</body>\r\n</html>");
+            /***/ 
+        }),
+        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/customereditprofile/customereditprofile.component.html": 
+        /*!**************************************************************************************************************!*\
+          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/customereditprofile/customereditprofile.component.html ***!
+          \**************************************************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\">\r\n  <li><a routerLink=\"/shoppingcart\" class=\"glyphicon glyphicon-shopping-cart\"> Cart</a></li>\r\n  <div class=\"container\">\r\n    <div class=\"dropdown\">\r\n      <button class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><span class=\"glyphicon glyphicon-user\"></span> Account <span class=\"caret\"></span></button>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/shoppingcart\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> Cart </button></li>\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/customerprofile\">Profile</button></li>\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/public\"><span class=\"glyphicon glyphicon-log-out\"></span>Log out</button></li>\r\n        </ul>\r\n      </div>\r\n  </div>\r\n  </ul>\r\n</nav>\r\n\r\n    <h3>Edit Profile</h3>\r\n  <!-- forms for seperately updating each field -->\r\n    <form method=\"POST\" [formGroup]=\"userProfileForm\" (ngSubmit) = \"onSubmit(userUpdateForm.value)\">\r\n      <!-- placeholder for customer name -->\r\n      <div #name></div>\r\n      <div> Name </div>\r\n      <input type=\"text\" formControlName=\"name\" required=\"required\" placeholder=\"John Doe\" id=\"Name\"><a class=\"btn\" (click)=\"onUpdateName($event)\">Update</a>\r\n      <!-- we should move the button to the side of the field -->\r\n      <br>\r\n      <div #contact></div>\r\n      <div>Contact</div>\r\n      <input type=\"contact\" formControlName=\"contact\" required=\"required\" placeholder=\"food@foodoholics.com\" id=\"email\"><a class=\"btn\" (click)=\"onUpdateContact($event)\">Update</a>\r\n      <br>\r\n      <div #address></div>\r\n      <div>Address</div>\r\n      <input type=\"text\" formControlName=\"address\" required=\"required\" placeholder=\"123 10th Street\" id=\"address\"><a class=\"btn\" (click)=\"onUpdateAddress($event)\">Update</a>\r\n      <div #altaddress></div>\r\n      <div>Second Address</div>\r\n      <input type=\"text\" formControlName=\"altaddress\" placeholder=\"123 Alt Drive\" id=\"altaddress\"><a class=\"btn\" (click)=\"onUpdateAltAddress($event)\">Update</a>\r\n      <div #city></div>\r\n      <div>City</div>\r\n      <input type=\"text\" formControlName=\"city\" required=\"required\" placeholder=\"Bloomington\" id=\"city\"><a class=\"btn\" (click)=\"onUpdateCity($event)\">Update</a>\r\n      <div #state></div>\r\n      <div>State</div>\r\n      <input type=\"text\" formControlName=\"state\" required=\"required\" placeholder=\"IN\" id=\"state\"><a class=\"btn\" (click)=\"onUpdateState($event)\">Update</a>\r\n      <div #zip></div>\r\n      <div>Zip Code</div>\r\n      <input type=\"text\" formControlName=\"zip\" required=\"required\" placeholder=\"47408\" id=\"zip\"><a class=\"btn\" (click)=\"onUpdateZip($event)\">Update</a>\r\n    </form>\r\n\r\n</body>\r\n</html>");
+            /***/ 
+        }),
+        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/customerprofile/customerprofile.component.html": 
+        /*!******************************************************************************************************!*\
+          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/customerprofile/customerprofile.component.html ***!
+          \******************************************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"padding-right: 20px;\">\r\n  <li><a routerLink=\"/shoppingcart\" class=\"glyphicon glyphicon-shopping-cart\"> Cart</a></li>\r\n  <div class=\"container\">\r\n    <div class=\"dropdown\">\r\n      <button class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><span class=\"glyphicon glyphicon-user\"></span> Account <span class=\"caret\"></span></button>\r\n        <ul class=\"dropdown-menu\">\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/shoppingcart\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> Cart </button></li>\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/customerprofile\">Profile</button></li>\r\n          <li><button class=\"btn\" href=\"#\" routerLink=\"/public\"><span class=\"glyphicon glyphicon-log-out\"></span>Log out</button></li>\r\n        </ul>\r\n      </div>\r\n  </div>\r\n  </ul>\r\n</nav>\r\n\r\n    <h3>Profile</h3>\r\n\r\n    <a routerLink=\"/customereditprofile\">Edit Profile</a>\r\n    <p>Profile image: </p>\r\n    <!-- placeholder for customer profile image -->\r\n    <div #profileimage></div>\r\n    <br>\r\n    <p>Full name</p>\r\n    <!-- placeholder for the full name of the customer -->\r\n    <div #fullname></div>\r\n    <br>\r\n    <p>Email address: </p>\r\n    <!-- placeholder for the email address -->\r\n    <div #email></div>\r\n    <br>\r\n\r\n\r\n\r\n</body>\r\n</html>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html": 
@@ -204,7 +226,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Menu\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n    <app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n</body>\r\n\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Menu\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n    <app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n    <h3><b>The Menu</b></h3>\r\n    <p>Below are all of the menu items that are displayed to the customer</p>\r\n    <br>\r\n    <p>Image: </p>\r\n    <!-- placeholder for food image -->\r\n    <div #foodimage></div>\r\n    <br>\r\n    <p>Item name: </p>\r\n    <!-- Placeholder for item name -->\r\n    <div #itemname></div>\r\n    <br>\r\n    <p>Cost: </p>\r\n    <!-- placeholder for cost -->\r\n    <div #cost></div>\r\n    <br>\r\n    <p>Description: </p>\r\n    <!-- placeholder for description -->\r\n    <div #description></div>\r\n\r\n</body>\r\n\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/resturantlogin/resturantlogin.component.html": 
@@ -692,6 +714,8 @@
             /* harmony import */ var _recover_recover_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./recover/recover.component */ "./src/app/recover/recover.component.ts");
             /* harmony import */ var _shoppingcart_shoppingcart_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./shoppingcart/shoppingcart.component */ "./src/app/shoppingcart/shoppingcart.component.ts");
             /* harmony import */ var _restaurantdropdown_restaurantdropdown_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./restaurantdropdown/restaurantdropdown.component */ "./src/app/restaurantdropdown/restaurantdropdown.component.ts");
+            /* harmony import */ var _customerprofile_customerprofile_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./customerprofile/customerprofile.component */ "./src/app/customerprofile/customerprofile.component.ts");
+            /* harmony import */ var _customereditprofile_customereditprofile_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./customereditprofile/customereditprofile.component */ "./src/app/customereditprofile/customereditprofile.component.ts");
             function socialConfigs() {
                 var config = new angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthServiceConfig"]([
                     {
@@ -733,7 +757,9 @@
                         _verify_verify_component__WEBPACK_IMPORTED_MODULE_26__["VerifyComponent"],
                         _recover_recover_component__WEBPACK_IMPORTED_MODULE_27__["RecoverComponent"],
                         _shoppingcart_shoppingcart_component__WEBPACK_IMPORTED_MODULE_28__["ShoppingcartComponent"],
-                        _restaurantdropdown_restaurantdropdown_component__WEBPACK_IMPORTED_MODULE_29__["RestaurantdropdownComponent"]
+                        _restaurantdropdown_restaurantdropdown_component__WEBPACK_IMPORTED_MODULE_29__["RestaurantdropdownComponent"],
+                        _customerprofile_customerprofile_component__WEBPACK_IMPORTED_MODULE_30__["CustomerprofileComponent"],
+                        _customereditprofile_customereditprofile_component__WEBPACK_IMPORTED_MODULE_31__["CustomereditprofileComponent"]
                     ],
                     imports: [
                         _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -813,6 +839,14 @@
                             {
                                 path: 'shoppingcart',
                                 component: _shoppingcart_shoppingcart_component__WEBPACK_IMPORTED_MODULE_28__["ShoppingcartComponent"]
+                            },
+                            {
+                                path: 'customerprofile',
+                                component: _customerprofile_customerprofile_component__WEBPACK_IMPORTED_MODULE_30__["CustomerprofileComponent"]
+                            },
+                            {
+                                path: 'customereditprofile',
+                                component: _customereditprofile_customereditprofile_component__WEBPACK_IMPORTED_MODULE_31__["CustomereditprofileComponent"]
                             }
                         ])
                     ],
@@ -850,17 +884,50 @@
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerdashboardComponent", function () { return CustomerdashboardComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
             var CustomerdashboardComponent = /** @class */ (function () {
-                function CustomerdashboardComponent() {
+                function CustomerdashboardComponent(formBuilder, router, http, cookie) {
+                    this.formBuilder = formBuilder;
+                    this.router = router;
+                    this.http = http;
+                    this.cookie = cookie;
+                    this.userSearchForm = this.formBuilder.group({
+                        search: ''
+                    });
                 }
                 CustomerdashboardComponent.prototype.ngOnInit = function () {
                 };
+                CustomerdashboardComponent.prototype.updateToLocation = function () {
+                    this.searchFilter = "Location";
+                };
+                CustomerdashboardComponent.prototype.updateToResName = function () {
+                    this.searchFilter = "Name";
+                };
+                CustomerdashboardComponent.prototype.updateToFoodCat = function () {
+                    this.searchFilter = "category";
+                };
                 CustomerdashboardComponent.prototype.onSubmit = function (event) {
-                    console.log(event);
-                    console.log(event.value);
+                    var _this = this;
+                    var jwttoken = this.cookie.get("jwttoken");
+                    //we'll need to change the endpoint to the endpoint for the search on the backend
+                    this.http.get('/restaurant/restaurant_list', event).subscribe(function (data) { return _this.result = { data: data }; });
+                    this.displayResult(this.result);
+                };
+                //function to render the result of the search to the website
+                CustomerdashboardComponent.prototype.displayResult = function (result) {
+                    console.log(result);
                 };
                 return CustomerdashboardComponent;
             }());
+            CustomerdashboardComponent.ctorParameters = function () { return [
+                { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
+                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"] }
+            ]; };
             CustomerdashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-customerdashboard',
@@ -868,6 +935,118 @@
                     styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./customerdashboard.component.css */ "./src/app/customerdashboard/customerdashboard.component.css")).default]
                 })
             ], CustomerdashboardComponent);
+            /***/ 
+        }),
+        /***/ "./src/app/customereditprofile/customereditprofile.component.css": 
+        /*!***********************************************************************!*\
+          !*** ./src/app/customereditprofile/customereditprofile.component.css ***!
+          \***********************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2N1c3RvbWVyZWRpdHByb2ZpbGUvY3VzdG9tZXJlZGl0cHJvZmlsZS5jb21wb25lbnQuY3NzIn0= */");
+            /***/ 
+        }),
+        /***/ "./src/app/customereditprofile/customereditprofile.component.ts": 
+        /*!**********************************************************************!*\
+          !*** ./src/app/customereditprofile/customereditprofile.component.ts ***!
+          \**********************************************************************/
+        /*! exports provided: CustomereditprofileComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomereditprofileComponent", function () { return CustomereditprofileComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+            /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            var CustomereditprofileComponent = /** @class */ (function () {
+                function CustomereditprofileComponent(formbuilder, cookie, http) {
+                    this.formbuilder = formbuilder;
+                    this.cookie = cookie;
+                    this.http = http;
+                    this.userProfileForm = this.formbuilder.group({
+                        name: '',
+                        contact: '',
+                        address: '',
+                        altAddress: '',
+                        city: '',
+                        state: '',
+                        zip: ''
+                    });
+                }
+                CustomereditprofileComponent.prototype.ngOnInit = function () {
+                };
+                CustomereditprofileComponent.prototype.onSubmit = function (event) {
+                };
+                CustomereditprofileComponent.prototype.onUpdateName = function (event) {
+                };
+                CustomereditprofileComponent.prototype.onUpdateContact = function (event) {
+                };
+                CustomereditprofileComponent.prototype.onUpdateAddress = function (event) {
+                };
+                CustomereditprofileComponent.prototype.onUpdateAltAddress = function (event) {
+                };
+                CustomereditprofileComponent.prototype.onUpdateCity = function (event) {
+                };
+                CustomereditprofileComponent.prototype.onUpdateState = function (event) {
+                };
+                CustomereditprofileComponent.prototype.onUpdateZip = function (event) {
+                };
+                return CustomereditprofileComponent;
+            }());
+            CustomereditprofileComponent.ctorParameters = function () { return [
+                { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] },
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }
+            ]; };
+            CustomereditprofileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'app-customereditprofile',
+                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./customereditprofile.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/customereditprofile/customereditprofile.component.html")).default,
+                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./customereditprofile.component.css */ "./src/app/customereditprofile/customereditprofile.component.css")).default]
+                })
+            ], CustomereditprofileComponent);
+            /***/ 
+        }),
+        /***/ "./src/app/customerprofile/customerprofile.component.css": 
+        /*!***************************************************************!*\
+          !*** ./src/app/customerprofile/customerprofile.component.css ***!
+          \***************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2N1c3RvbWVycHJvZmlsZS9jdXN0b21lcnByb2ZpbGUuY29tcG9uZW50LmNzcyJ9 */");
+            /***/ 
+        }),
+        /***/ "./src/app/customerprofile/customerprofile.component.ts": 
+        /*!**************************************************************!*\
+          !*** ./src/app/customerprofile/customerprofile.component.ts ***!
+          \**************************************************************/
+        /*! exports provided: CustomerprofileComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerprofileComponent", function () { return CustomerprofileComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            var CustomerprofileComponent = /** @class */ (function () {
+                function CustomerprofileComponent() {
+                }
+                CustomerprofileComponent.prototype.ngOnInit = function () {
+                };
+                return CustomerprofileComponent;
+            }());
+            CustomerprofileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'app-customerprofile',
+                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./customerprofile.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/customerprofile/customerprofile.component.html")).default,
+                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./customerprofile.component.css */ "./src/app/customerprofile/customerprofile.component.css")).default]
+                })
+            ], CustomerprofileComponent);
             /***/ 
         }),
         /***/ "./src/app/login.service.ts": 
