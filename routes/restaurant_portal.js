@@ -72,19 +72,23 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
     })
 })
 
-router.get("/restaurant_image/:res_image", middleware.checkToken, function(req, res){
-    fs.readFile('restaurant_images/' + req.params.res_image, function(err, content){
+router.get("/restaurant_image/:restaurant_id", middleware.checkToken, function(req, res){
+    var id = req.params.restaurant_id
+    console.log(id)
+    fs.readFile('restaurant_images/' + id + ".jpg", function(err, content){
         if(err){
             res.writeHead(400, {'Content-type':'text/html'})
             console.log(err);
             res.json({
                 message: "Picture not found"
             }); 
+            return
         }
         else {
             //specify the content type in the response will be an image
             // res.writeHead(200,{'Content-type':'image/jpg'});
             res.json(content);
+            return
         }
     })
 })
@@ -194,7 +198,7 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
 
 router.get('/display_details/:restaurant_id', function(req, res){
     var id = req.params.restaurant_id
-    console.log(id)
+    // console.log(id)
     var d = {
         projection:{name:1,
              location: 1,
