@@ -35,7 +35,7 @@ export class RegistrationComponent implements OnInit {
     console.log(userData);
     var r = this.loginService.sendRequest(userData, this.SERVER_URL);
     r.subscribe(data => {
-      this.router.navigate(['/verify']);
+      this.router.navigate(['/login']);
     })
 
   }
