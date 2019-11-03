@@ -38,9 +38,11 @@
 <h3>Welcome back</h3>
 <p>Search for restaurants below</p>
     <!-- Search bar -->
-    <div class="search-container" [formGroup]="userSearchForm" (ngSubmit) = "onSubmit(userSearchForm.value)">  
-      <form action="post">
-        <input type="text" placeholder="Search for restaurants..." name="search">
+    <div class="search-container">  
+      <form action="get" [formGroup]="userSearchForm" (ngSubmit) = "onSubmit(userSearchForm.value)">
+        <input type="text" placeholder="Restaurant Name" formControlName="restaurant_name">
+        <input type="text" placeholder="Location" formControlName="location">
+        <input type="text" placeholder="Category" formControlName="food_category">
         <div class="container">
           <div class="dropdown">
               <button class="btn dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-th-list"></span></button>
@@ -57,7 +59,22 @@
     </div>
 
     <!-- placeholder for results from search query -->
-    <div #result></div>
+    <div #result>
+      <div *ngIf = "results">
+        <ul *ngFor="let result of results">
+          <div>
+            Name: {{result.name}}
+            Food Category: {{result.food_category}}
+            Location: {{result.location}}
+            working_hours: {{result.working_hours}}
+            <img [src]="'/restaurant_images/'+result.res_image" alt=""> 
+          </div>
+        </ul>
+      </div>
+    </div>
+    
+
+    
 
 </body>
 </html>

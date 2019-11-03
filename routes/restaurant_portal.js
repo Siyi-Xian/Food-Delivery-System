@@ -52,7 +52,7 @@ router.get("/display_menu/:restaurant_id", middleware.checkToken, function(req, 
     })
 })
 router.get('/restaurants_list', middleware.checkToken, function(req, res){
-    console.log(req.query)
+    // console.log(req)
     var projection = {
         projection: {
             _id: 1,
