@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
     r.subscribe(data => {
       if (data['auth']) {
         this.cookie.set('jwttoken', data['token']);
+        this.router.navigate(['/customerdashboard']);
       }
 
     });
@@ -77,7 +78,6 @@ export class LoginComponent implements OnInit {
       console.log(socialusers);
       this.Savesresponse(socialusers);
     });
-    this.router.navigate(['/customerdashboard']);
   }
 
   Savesresponse(socialusers: Socialusers){
