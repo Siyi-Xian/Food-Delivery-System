@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {CookieService} from 'ngx-cookie-service';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {LoginService} from "../login.service";
 
 @Component({
@@ -12,7 +12,8 @@ import {LoginService} from "../login.service";
 export class RestaurantviewmenuComponent implements OnInit {
 
   detailsForm;
-
+  restaurantmenudetails
+  imageurl
   constructor(
     private httpService:HttpClient,
     private loginService: LoginService,
@@ -45,6 +46,26 @@ export class RestaurantviewmenuComponent implements OnInit {
 
 
     });
+
+
+
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json',
+    jwttoken: this.cookie.get("jwttoken")
+  });
+
+  var url='/display_menu' + this.cookie.get ('restaurant_id')
+  
+  this.http.get(url, {headers}).subscribe(data => {
+    // this.detailsForm = data;
+    //console.log(data)
+    
+    if (data != null){
+      this.restaurantmenudetails = data
+      this.restaurantmenudetails.image = "/menu_images/" + this.restaurantmenudetails.image
+      console.log(data)
+    }
+  })
+
   }
 
 
