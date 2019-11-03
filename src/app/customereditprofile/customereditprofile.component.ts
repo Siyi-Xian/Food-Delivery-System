@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class CustomereditprofileComponent implements OnInit {
     private formbuilder: FormBuilder,
     private cookie: CookieService,
     private http: HttpClient,
+    private router: Router
   ) { 
     this.userProfileForm = this.formbuilder.group({
       name: '',
@@ -33,7 +35,7 @@ export class CustomereditprofileComponent implements OnInit {
   }
 
   onSubmit(event){
-
+    this.router.navigate(['/customerprofile'])
   }
 
   onUpdateName(event){

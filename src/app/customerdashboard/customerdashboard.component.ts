@@ -33,12 +33,15 @@ export class CustomerdashboardComponent implements OnInit {
 
   updateToLocation(){
     this.searchFilter = "Location";
+    console.log(this.searchFilter);
   }
   updateToResName(){
     this.searchFilter = "Name";
+    console.log(this.searchFilter);
   }
   updateToFoodCat(){
     this.searchFilter = "category";
+    console.log(this.searchFilter);
   }
 
   onSubmit(event){
