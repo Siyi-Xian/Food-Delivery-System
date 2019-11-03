@@ -27,9 +27,10 @@ app.use(cookieParser());
 
 app.use(cors())
 
-// app.use(express.static('dist/fooddeliverysystem'))
-app.use(express.static(__dirname + '/dist/fooddeliverysystem'));
-
+app.use(express.static('dist/fooddeliverysystem'))
+// app.use(express.static(__dirname + '/menu_images'));
+app.use('/restaurant_images', express.static(__dirname + '/restaurant_images'));
+app.use('/menu_images', express.static(__dirname + '/menu_images'))
 // const server = 
 app.use('/restaurant', restaurant_portal);
 app.use('/authentication', authentication)

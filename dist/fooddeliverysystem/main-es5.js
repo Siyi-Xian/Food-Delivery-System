@@ -215,7 +215,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n    <head>\r\n        <title>\r\n          Restaurant Details\r\n        </title>\r\n        <!-- Bootstrap CDN scripts -->\r\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n        <script src=\"login.component.css\"></script>\r\n        <script src=\"../../styles.css\"></script>\r\n    </head>\r\n    <body>\r\n\r\n        <app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n    <h3>Restaurant Details</h3>\r\n    <p>Below is how a customer will see your Restaurant page</p>\r\n    <br>\r\n    \r\n    <ul  *ngIf=\"restaurant_details\">\r\n    <li><strong>Name: </strong> {{restaurant_details.name}}</li>\r\n    <li><strong>Contact:</strong> {{restaurant_details.contact}}</li>\r\n    <li><strong> Food Category: </strong>{{restaurant_details.food_category}}</li>\r\n    <li><strong> Location: </strong>{{restaurant_details.location}}</li>  \r\n    <li><strong> Working Hours: </strong>{{restaurant_details.working_hours}}</li>\r\n    <!-- <img [src] = \"imageurl\" alt=\"\">  -->\r\n    </ul>\r\n        \r\n      \r\n\r\n\r\n    </body>\r\n\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n    <head>\r\n        <title>\r\n          Restaurant Details\r\n        </title>\r\n        <!-- Bootstrap CDN scripts -->\r\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n        <script src=\"login.component.css\"></script>\r\n        <script src=\"../../styles.css\"></script>\r\n    </head>\r\n    <body>\r\n\r\n        <app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n    <h3>Restaurant Details</h3>\r\n    <p>Below is how a customer will see your Restaurant page</p>\r\n    <br>\r\n    \r\n    <ul  *ngIf=\"restaurant_details\">\r\n    <li><strong>Name: </strong> {{restaurant_details.name}}</li>\r\n    <li><strong>Contact:</strong> {{restaurant_details.contact}}</li>\r\n    <li><strong> Food Category: </strong>{{restaurant_details.food_category}}</li>\r\n    <li><strong> Location: </strong>{{restaurant_details.location}}</li>  \r\n    <li><strong> Working Hours: </strong>{{restaurant_details.working_hours}}</li>\r\n    <img [src] = \"restaurant_details.res_image\" alt=\"\"> \r\n    </ul>\r\n        \r\n      \r\n\r\n\r\n    </body>\r\n\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/restaurantviewmenu/restaurantviewmenu.component.html": 
@@ -1941,24 +1941,24 @@
                     var url = '/restaurant/display_details/' + this.cookie.get('restaurant_id');
                     this.http.get(url, { headers: headers }).subscribe(function (data) {
                         // this.detailsForm = data;
-                        console.log(data);
-                        _this.restaurant_details = data;
                         if (data != null) {
+                            _this.restaurant_details = data;
+                            _this.restaurant_details.res_image = "/restaurant_images/" + _this.restaurant_details.res_image;
                             console.log(data);
                         }
                     });
-                    var img_url = '/restaurant/restaurant_image/' + this.cookie.get("restaurant_id");
-                    // var d = {res_image: this.cookie.get("restaurant_id")}
-                    this.http.get(img_url, { headers: headers }).subscribe(function (data) {
-                        console.log(data);
-                        if (data != null) {
-                            var array = new Uint8Array(data["data"]);
-                            var string_char = String.fromCharCode.apply(null, array);
-                            var base64 = btoa(string_char);
-                            _this.imageurl = base64;
-                            // console.log(this.imageurl)
-                        }
-                    });
+                    // var img_url='/restaurant/restaurant_image/' + this.cookie.get("restaurant_id")
+                    // // var d = {res_image: this.cookie.get("restaurant_id")}
+                    // this.http.get(img_url, {headers}).subscribe(data => {
+                    //   console.log(data)
+                    //   if (data != null){
+                    //     var array = new Uint8Array(data["data"])
+                    //     var string_char = String.fromCharCode.apply(null, array)
+                    //     let base64 = btoa(string_char)
+                    //     this.imageurl = base64
+                    //     // console.log(this.imageurl)
+                    //   }
+                    // })
                 };
                 return RestaurantviewdetailsComponent;
             }());
