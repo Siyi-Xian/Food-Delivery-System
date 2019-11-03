@@ -12,6 +12,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class RestaurantdetailsComponent implements OnInit {
 
   detailsForm;
+  restaurant_details;
 
   constructor(
     private httpService:HttpClient,
@@ -54,7 +55,7 @@ export class RestaurantdetailsComponent implements OnInit {
     var jwttoken = this.cookie.get('jwttoken');
     details['jwttoken'] = jwttoken;
     details['id'] = this.cookie.get('restaurant_id');
-  
+
 
     // details['res_image'] = this.fileAsBase64;
     // console.log(details['res_image'])
@@ -76,22 +77,22 @@ export class RestaurantdetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("fge" + this.cookie.get('restaurant_id'))
     let headers = new HttpHeaders({ 'Content-Type': 'application/json',
       jwttoken: this.cookie.get("jwttoken")
     });
-    this.httpService.get('/restaurant/display_details/'+this.cookie.get('restaurant_id'), {headers: headers}).subscribe(data => {
-      // this.detailsForm = data;
-      console.log(data)
-      if (data != null){
-        this.detailsForm.controls['name'].setValue(data['name'])
-        this.detailsForm.controls['location'].setValue(data['location'])
-        this.detailsForm.controls['food_category'].setValue(data['food_category'])
-        this.detailsForm.controls['contact'].setValue(data['contact'])
-        this.detailsForm.controls['working_hours'].setValue(data['working_hours'])
-      }
-      
 
+
+
+    var url='/restaurant/display_details/' + this.cookie.get ('restaurant_id')
+
+    this.http.get(url, {headers}).subscribe(data => {
+      // this.detailsForm = data;
+
+      if (data != null){
+        this.restaurant_details = data
+        this.restaurant_details.res_image = "/restaurant_images/" + this.restaurant_details.res_image
+        console.log(data)
+      }
     });
   }
 
