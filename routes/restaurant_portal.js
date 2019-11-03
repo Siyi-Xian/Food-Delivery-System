@@ -229,17 +229,74 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
     //res.send("done")
 });
 
+router.get("/order_history/:restaurant_id", middleware.checkToken, function(req, res){
+    var id = req.params.restaurant_id
+    db.collection("order").find({restaurant_id: id, status: "1"}).toArray(function(err, data){
+        if (err){
+            console.log(err)
+            res.json({
+                message: "Failed"
+            })
+            return;
+        }
+        else{
+            console.log("Success")
+            console.log(data)
+            res.json(data)
+            return;
+        }
+    })
+})
+
+router.post("/fullfillorder", middleware.checkToken, function(req, res){
+    var id = req.body.id
+    const new_vals = {
+        $set: {
+            status: "1"
+        }
+    }
+    db.collection("order").findOneAndUpdate({_id: new ObjectId(id)}, new_vals, function(err, data){
+        if(err){
+            console.log(err);
+            res.json({message: "Error"});
+        }
+        else{
+            console.log(data);
+            res.json({message:"success"});
+        }
+    })
+})
+
+router.get("/current_orders/:restaurant_id", middleware.checkToken, function(req, res){
+    var id = req.params.restaurant_id
+    db.collection("order").find({restaurant_id: id, status: "In progress"}).toArray(function(err, data){
+        if (err){
+            console.log(err)
+            res.json({
+                message: "Failed"
+            })
+            return;
+        }
+        else{
+            console.log("Success")
+            console.log(data)
+            res.json(data)
+            return;
+        }
+    })
+})
 
 router.get('/display_details/:restaurant_id', middleware.checkToken, function(req, res){
     var id = req.params.restaurant_id
     // console.log(id)
     var d = {
-        projection:{name:1,
-             location: 1,
-             food_category: 1,
-             res_image: 1,
-             contact: 1,
-             working_hours: 1 
+        projection:{
+                name:1,
+                location: 1,
+                food_category: 1,
+                res_image: 1,
+                contact: 1,
+                working_hours: 1 
             }
         }
     // db.collection('restaurant_data'). find({_id: ObjectId(id)}, d).toArray(function(err, result) {
