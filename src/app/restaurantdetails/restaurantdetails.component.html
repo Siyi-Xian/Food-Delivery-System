@@ -28,35 +28,35 @@
   <form mehtod="post" [formGroup]="detailsForm" (ngSubmit)=onSubmit(detailsForm.value)>
     <div class="row">
       <div class=" col-md-6">
-        <img [src]="detailsForm.res_image" alt="" style="width: 500px"/>
+        <img [src]="restaurant_details.res_image" alt="" style="width: 500px"/>
         <input type="file" required="required" accept="image/*" (change)="onFileSelected($event)" id="res_image"
                ng-model="res_image"
                base-sixty-four-input>
       </div>
       <div class="form-style col-md-6">
         <h4>
-          <input type="text" required="required" formControlName="name" placeholder="{{ detailsForm.name }}"
+          <input type="text" required="required" formControlName="name" placeholder="{{ restaurant_details.name }}"
                  id="name" style="width: 100%">
         </h4>
         <li>
           <strong> Contact: </strong>
-          <input type="text" required="required" formControlName="contact" placeholder="{{ detailsForm.contact }}"
+          <input type="text" required="required" formControlName="contact" placeholder="{{ restaurant_details.contact }}"
                  id="contact">
         </li>
         <li>
           <strong> Food Category: </strong>
           <input type="text" required="required" formControlName="food_category"
-                 placeholder="{{ detailsForm.food_category }}" id="food_category">
+                 placeholder="{{ restaurant_details.food_category }}" id="food_category">
         </li>
         <li>
           <strong> Location: </strong>
           <input type="text" required="required" formControlName="location"
-                 placeholder="{{ detailsForm.location }}" id="location">
+                 placeholder="{{ restaurant_details.location }}" id="location">
         </li>
         <li>
           <strong> Working Hours: </strong>
           <input type="text" required="required" formControlName="working_hours"
-                 placeholder="{{ detailsForm.working_hours }}"
+                 placeholder="{{ restaurant_details.working_hours }}"
                  id="working_hours">
         </li>
         <li><strong> Description: </strong> Some thing write here!</li>
