@@ -33,6 +33,8 @@ import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { RestaurantdropdownComponent } from './restaurantdropdown/restaurantdropdown.component';
 import { CustomerprofileComponent } from './customerprofile/customerprofile.component';
 import { CustomereditprofileComponent } from './customereditprofile/customereditprofile.component';
+import { DeliveryloginComponent } from './deliverylogin/deliverylogin.component';
+import { DeliveryregComponent } from './deliveryreg/deliveryreg.component';
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -73,7 +75,9 @@ export function socialConfigs(){
     ShoppingcartComponent,
     RestaurantdropdownComponent,
     CustomerprofileComponent,
-    CustomereditprofileComponent  ],
+    CustomereditprofileComponent,
+    DeliveryloginComponent,
+    DeliveryregComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

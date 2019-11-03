@@ -29,28 +29,29 @@ export class RestaurantviewdetailsComponent implements OnInit {
     
     this.http.get(url, {headers}).subscribe(data => {
       // this.detailsForm = data;
-      console.log(data)
-      this.restaurant_details = data
+      
       if (data != null){
+        this.restaurant_details = data
+        this.restaurant_details.res_image = "/restaurant_images/" + this.restaurant_details.res_image
         console.log(data)
       }
     })
 
-    var img_url='/restaurant/restaurant_image/' + this.cookie.get("restaurant_id")
-    // var d = {res_image: this.cookie.get("restaurant_id")}
+    // var img_url='/restaurant/restaurant_image/' + this.cookie.get("restaurant_id")
+    // // var d = {res_image: this.cookie.get("restaurant_id")}
   
 
 
-    this.http.get(img_url, {headers}).subscribe(data => {
-      console.log(data)
-      if (data != null){
-        var array = new Uint8Array(data["data"])
-        var string_char = String.fromCharCode.apply(null, array)
-        let base64 = btoa(string_char)
-        this.imageurl = base64
-        // console.log(this.imageurl)
-      }
-    })
+    // this.http.get(img_url, {headers}).subscribe(data => {
+    //   console.log(data)
+    //   if (data != null){
+    //     var array = new Uint8Array(data["data"])
+    //     var string_char = String.fromCharCode.apply(null, array)
+    //     let base64 = btoa(string_char)
+    //     this.imageurl = base64
+    //     // console.log(this.imageurl)
+    //   }
+    // })
   }
 
 }

@@ -24,7 +24,7 @@ const restaurant_image_storage = multer.diskStorage({
         callBack(null, "restaurant_images")
     },
     filename: (req, file, callBack)=>{
-        callBack(null, req.body.id + ".jpg")
+        callBack(null, req.body.id + ".png")
     }
 })
 
@@ -52,7 +52,7 @@ router.get("/display_menu/:restaurant_id", middleware.checkToken, function(req, 
     })
 })
 router.get('/restaurants_list', middleware.checkToken, function(req, res){
-    console.log(req.query)
+    // console.log(req)
     var projection = {
         projection: {
             _id: 1,
@@ -79,13 +79,11 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
     console.log(query)
     db.collection('restaurant_data').find(query, projection).toArray(function(err, result){
         if (err){
-            // console.log(err)
             res.json({
                 message: "Failed to load"
             })
         }
         else{
-            // console.log(result)
 
             res.json(result)
             
@@ -95,10 +93,9 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
 
 router.get("/restaurant_image/:restaurant_id", middleware.checkToken, function(req, res){
     var id = req.params.restaurant_id
-    console.log(id)
-    fs.readFile('restaurant_images/' + id + ".jpg", function(err, content){
+    fs.readFile('restaurant_images/' + id + ".png", function(err, content){
         if(err){
-            res.writeHead(400, {'Content-type':'text/html'})
+            // res.writeHead(400, {'Content-type':'text/html'})
             console.log(err);
             res.json({
                 message: "Picture not found"
@@ -115,11 +112,29 @@ router.get("/restaurant_image/:restaurant_id", middleware.checkToken, function(r
 })
 
 
+router.get("/menu_image", middleware.checkToken, function(req, res){
+    var id = req.query.restaurant_id
+    fs.readFile('menu_images/' + id + req.query.name + ".png", function(err, content){
+        if(err){
+            // res.writeHead(400, {'Content-type':'text/html'})
+            console.log(err);
+            res.json({
+                message: "Picture not found"
+            }); 
+            return
+        }
+        else {
+            //specify the content type in the response will be an image
+            // res.writeHead(200,{'Content-type':'image/jpg'});
+            res.json(content);
+            return
+        }
+    })
+})
 
 
 router.post('/menu', upload_menu.single('image'), function(req, res){
     var id = req.body.id
-    // console.log(id)
 
     db.collection('restaurant_data').update({_id: ObjectId(id)},
     {
@@ -128,7 +143,7 @@ router.post('/menu', upload_menu.single('image'), function(req, res){
             name: req.body.name,
             cost: req.body.cost,
             description: req.body.description,
-            image: id + req.body.name + ".jpg"
+            image: id + req.body.name + ".png"
         }}
     }, function(err, data){
         if (err){
@@ -182,14 +197,12 @@ router.delete('/delete', middleware.checkToken, function(req, res){
 
 router.post('/restaurant_details', upload_restaurant.single('image'), function(req, res){
     var id = req.body.id
-    console.log(id)
-    // console.log( req.body.res_image)
     var data_update = {
         $set: {
             name: req.body.name,
             location: req.body.location,
             food_category: req.body.food_category,
-            res_image: id+'.jpg',
+            res_image: id+'.png',
             contact:req.body.contact,
             working_hours:req.body.working_hours
         }
@@ -216,17 +229,74 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
     //res.send("done")
 });
 
+router.get("/order_history/:restaurant_id", middleware.checkToken, function(req, res){
+    var id = req.params.restaurant_id
+    db.collection("order").find({restaurant_id: id, status: "1"}).toArray(function(err, data){
+        if (err){
+            console.log(err)
+            res.json({
+                message: "Failed"
+            })
+            return;
+        }
+        else{
+            console.log("Success")
+            console.log(data)
+            res.json(data)
+            return;
+        }
+    })
+})
+
+router.post("/fullfillorder", middleware.checkToken, function(req, res){
+    var id = req.body.id
+    const new_vals = {
+        $set: {
+            status: "1"
+        }
+    }
+    db.collection("order").findOneAndUpdate({_id: new ObjectId(id)}, new_vals, function(err, data){
+        if(err){
+            console.log(err);
+            res.json({message: "Error"});
+        }
+        else{
+            console.log(data);
+            res.json({message:"success"});
+        }
+    })
+})
+
+router.get("/current_orders/:restaurant_id", middleware.checkToken, function(req, res){
+    var id = req.params.restaurant_id
+    db.collection("order").find({restaurant_id: id, status: "In progress"}).toArray(function(err, data){
+        if (err){
+            console.log(err)
+            res.json({
+                message: "Failed"
+            })
+            return;
+        }
+        else{
+            console.log("Success")
+            console.log(data)
+            res.json(data)
+            return;
+        }
+    })
+})
 
 router.get('/display_details/:restaurant_id', middleware.checkToken, function(req, res){
     var id = req.params.restaurant_id
     // console.log(id)
     var d = {
-        projection:{name:1,
-             location: 1,
-             food_category: 1,
-             res_image: 1,
-             contact: 1,
-             working_hours: 1 
+        projection:{
+                name:1,
+                location: 1,
+                food_category: 1,
+                res_image: 1,
+                contact: 1,
+                working_hours: 1 
             }
         }
     // db.collection('restaurant_data'). find({_id: ObjectId(id)}, d).toArray(function(err, result) {
