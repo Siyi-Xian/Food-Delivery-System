@@ -1,3 +1,17 @@
-.fields {
-  margin-bottom: 10px;
+img {
+  height: 200px;
+}
+
+.item {
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+p {
+  font-size: 20px;
+}
+
+hr {
+  border-width: 3px;
 }
