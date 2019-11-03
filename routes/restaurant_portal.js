@@ -79,13 +79,11 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
     console.log(query)
     db.collection('restaurant_data').find(query, projection).toArray(function(err, result){
         if (err){
-            // console.log(err)
             res.json({
                 message: "Failed to load"
             })
         }
         else{
-            // console.log(result)
 
             res.json(result)
             
@@ -95,7 +93,6 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
 
 router.get("/restaurant_image/:restaurant_id", middleware.checkToken, function(req, res){
     var id = req.params.restaurant_id
-    console.log(id)
     fs.readFile('restaurant_images/' + id + ".png", function(err, content){
         if(err){
             // res.writeHead(400, {'Content-type':'text/html'})
@@ -117,7 +114,6 @@ router.get("/restaurant_image/:restaurant_id", middleware.checkToken, function(r
 
 router.get("/menu_image", middleware.checkToken, function(req, res){
     var id = req.query.restaurant_id
-    console.log(id)
     fs.readFile('menu_images/' + id + req.query.name + ".png", function(err, content){
         if(err){
             // res.writeHead(400, {'Content-type':'text/html'})
@@ -139,7 +135,6 @@ router.get("/menu_image", middleware.checkToken, function(req, res){
 
 router.post('/menu', upload_menu.single('image'), function(req, res){
     var id = req.body.id
-    // console.log(id)
 
     db.collection('restaurant_data').update({_id: ObjectId(id)},
     {
@@ -202,8 +197,6 @@ router.delete('/delete', middleware.checkToken, function(req, res){
 
 router.post('/restaurant_details', upload_restaurant.single('image'), function(req, res){
     var id = req.body.id
-    console.log(id)
-    // console.log( req.body.res_image)
     var data_update = {
         $set: {
             name: req.body.name,
