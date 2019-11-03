@@ -19,11 +19,15 @@
 
 
     
-    <ul  *ngFor= "let resmenu of restaurantmenudetails">
-      <li>{{resmenu}}</li>
-      <img [src] = "resmenu.image" alt=""> 
-      <!-- <img [src] = "imageurl" alt="">  -->
-      </ul>
+    <ul>
+      <div *ngFor="let item of menu">
+          Name: {{item.name}}
+          Price: {{item.cost}}
+          Description: {{ item.description }}
+          <img [src]="'/menu_images/' + item.image" alt="">
+      </div>
+
+    </ul>
 
     
 

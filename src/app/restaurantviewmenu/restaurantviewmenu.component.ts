@@ -12,57 +12,50 @@ import {LoginService} from "../login.service";
 export class RestaurantviewmenuComponent implements OnInit {
 
   detailsForm;
-  restaurantmenudetails
+  id
   imageurl
+  menu
   constructor(
     private httpService:HttpClient,
-    private loginService: LoginService,
-    private formBuilder: FormBuilder,
     private cookie: CookieService,
     private http: HttpClient) {
-    this.detailsForm = this.formBuilder.group({
-      name: '',
-      location: '',
-      food_category: '',
-      res_image: '',
-      contact: '',
-      working_hours: ''
-    });
+    
 
   }
 
   ngOnInit() {
-    console.log("fge" + this.cookie.get('restaurant_id'))
-    this.httpService.get('/restaurant/menu/'+this.cookie.get('restaurant_id')).subscribe(data => {
-      // this.detailsForm = data;
-      console.log(data)
-      if (data != null){
-        this.detailsForm.controls['name'].setValue(data['name'])
-        this.detailsForm.controls['location'].setValue(data['location'])
-        this.detailsForm.controls['food_category'].setValue(data['food_category'])
-        this.detailsForm.controls['contact'].setValue(data['contact'])
-        this.detailsForm.controls['working_hours'].setValue(data['working_hours'])
-      }
+    // console.log("fge" + this.cookie.get('restaurant_id'))
+    // this.httpService.get('/restaurant/menu/'+this.cookie.get('restaurant_id')).subscribe(data => {
+    //   // this.detailsForm = data;
+    //   console.log(data)
+    //   if (data != null){
+    //     this.detailsForm.controls['name'].setValue(data['name'])
+    //     this.detailsForm.controls['location'].setValue(data['location'])
+    //     this.detailsForm.controls['food_category'].setValue(data['food_category'])
+    //     this.detailsForm.controls['contact'].setValue(data['contact'])
+    //     this.detailsForm.controls['working_hours'].setValue(data['working_hours'])
+    //   }
 
 
-    });
+    // });
 
 
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/json',
-    jwttoken: this.cookie.get("jwttoken")
-  });
+      jwttoken: this.cookie.get("jwttoken")
+    });
 
-  var url='/display_menu' + this.cookie.get ('restaurant_id')
+  var url='/restaurant/display_menu/' + this.cookie.get ('restaurant_id')
   
   this.http.get(url, {headers}).subscribe(data => {
     // this.detailsForm = data;
     //console.log(data)
     
     if (data != null){
-      this.restaurantmenudetails = data
-      this.restaurantmenudetails.image = "/menu_images/" + this.restaurantmenudetails.image
-      console.log(data)
+      this.menu = data['menu']
+      // this.restaurantmenudetails.image = "/menu_images/" + this.restaurantmenudetails.image
+      console.log(this.menu)
+      
     }
   })
 
