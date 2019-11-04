@@ -1,3 +1,7 @@
 hr {
   border-width: 3px;
 }
+
+.row strong {
+  margin: 20px;
+}
