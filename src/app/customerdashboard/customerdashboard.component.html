@@ -72,10 +72,10 @@
       <div class="container" style="margin-left: 0">
         <ul *ngFor="let result of results">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-5">
               <img [src]="result.res_image" alt="" style="width: 500px"/>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-7">
               <h4><strong> {{result.name}} </strong></h4>
               <li><strong> Food Category: </strong>{{result.food_category}}</li>
               <li><strong> Location: </strong> <a
@@ -83,9 +83,9 @@
               </li>
               <li><strong> Working Hours: </strong>{{result.working_hours}}</li>
               <li><strong> Description: </strong> Some thing write here!</li>
-              <img [src]="'/restaurant_images/'+result.res_image" alt="">
             </div>
           </div>
+          <hr>
         </ul>
       </div>
     </div>
