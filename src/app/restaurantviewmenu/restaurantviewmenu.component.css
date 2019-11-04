@@ -1,18 +1,16 @@
-img {
-  height: 200px;
-}
-
 .item {
-  margin: 10px;
-  border-radius: 25px;
-  border: 2px solid black;
-  padding: 20px;
+  padding: 10px;
 }
 
 p {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 hr {
   border-width: 3px;
+}
+
+.break {
+  border-width: 2px;
+  border-color: black;
 }
