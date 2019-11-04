@@ -29,7 +29,6 @@ import { RestaurantcurrentordersComponent } from './restaurantcurrentorders/rest
 import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
 import { VerifyComponent } from './verify/verify.component';
 import { RecoverComponent } from './recover/recover.component';
-import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { RestaurantdropdownComponent } from './restaurantdropdown/restaurantdropdown.component';
 import { CustomerprofileComponent } from './customerprofile/customerprofile.component';
 import { CustomereditprofileComponent } from './customereditprofile/customereditprofile.component';
@@ -74,7 +73,6 @@ export function socialConfigs(){
     CustomerdashboardComponent,
     VerifyComponent,
     RecoverComponent,
-    ShoppingcartComponent,
     RestaurantdropdownComponent,
     CustomerprofileComponent,
     CustomereditprofileComponent,
@@ -157,10 +155,6 @@ export function socialConfigs(){
       {
         path: 'recover',
         component: RecoverComponent
-      },
-      {
-        path: 'shoppingcart',
-        component: ShoppingcartComponent
       },
       {
         path: 'customerprofile',
