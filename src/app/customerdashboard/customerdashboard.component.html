@@ -9,52 +9,89 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="login.component.css"></script>
+  <script src="customerdashboard.component.css"></script>
   <script src="../../styles.css"></script>
 </head>
 <body>
 <app-customerdropdown></app-customerdropdown>
 
-
-<h3>Welcome back</h3>
-<p>Search for restaurants below</p>
-    <!-- Search bar -->
-    <div class="search-container">
-      <form action="get" [formGroup]="userSearchForm" (ngSubmit) = "onSubmit(userSearchForm.value)">
-        <input type="text" placeholder="Restaurant Name" formControlName="restaurant_name">
-        <input type="text" placeholder="Location" formControlName="location">
-        <input type="text" placeholder="Category" formControlName="food_category">
-        <div class="container">
-          <div class="dropdown">
-              <button class="btn dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-th-list"></span></button>
-              <ul class="dropdown-menu">
-                <label>Sort by</label>
-                <li><a class="dropdown-item" (click)="updateToLocation()">Location</a></li>
-                <li><a class="dropdown-item" (click)="updateToResName()">Restaurant Name</a></li>
-                <li><a class="dropdown-item" (click)="updateToFoodCat()">Restaurant Category</a></li>
-              </ul>
+<div class="container">
+  <div class="container">
+    <h3>Welcome back</h3>
+    <p style="font-size: 18px">Search for restaurants below</p>
+  </div>
+  <br>
+  <div class="search-container">
+    <form action="get" [formGroup]="userSearchForm" (ngSubmit)="onSubmit(userSearchForm.value)">
+      <div class="row">
+        <div class="col-md-2 col-md-offset-2">
+          <div class="input-group">
+            <input type="text" placeholder="Restaurant Name" formControlName="restaurant_name">
           </div>
         </div>
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
-    </div>
+        <div class="col-md-2">
+          <div class="input-group">
+            <input type="text" placeholder="Location" formControlName="location">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="input-group">
+            <input type="text" placeholder="Category" formControlName="food_category">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr>
+</div>
 
-    <!-- placeholder for results from search query -->
-    <div #result>
-      <div *ngIf = "results">
+<!-- placeholder for results from search query -->
+<div #result>
+  <div *ngIf="results">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-1">
+          <h4> Result: </h4>
+        </div>
+        <div class="col-md-2 col-md-offset-4">
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true"
+                    aria-expanded="false"><span class="glyphicon glyphicon-th-list"></span></button>
+            <ul class="dropdown-menu">
+              <label>Sort by</label>
+              <li><a class="dropdown-item" (click)="updateToLocation()">Location</a></li>
+              <li><a class="dropdown-item" (click)="updateToResName()">Restaurant Name</a></li>
+              <li><a class="dropdown-item" (click)="updateToFoodCat()">Restaurant Category</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="margin-left: 0">
         <ul *ngFor="let result of results">
-          <div>
-            Name: {{result.name}}
-            Food Category: {{result.food_category}}
-            Location: {{result.location}}
-            working_hours: {{result.working_hours}}
-            <img [src]="'/restaurant_images/'+result.res_image" alt="">
+          <div class="row">
+            <div class="col-md-4">
+              <img [src]="result.res_image" alt="" style="width: 500px"/>
+            </div>
+            <div class="col-md-6">
+              <h4><strong> {{result.name}} </strong></h4>
+              <li><strong> Food Category: </strong>{{result.food_category}}</li>
+              <li><strong> Location: </strong> <a
+                href="http://maps.google.com/?q={{result.location.replace(' ', '+')}}">{{result.location}}</a>
+              </li>
+              <li><strong> Working Hours: </strong>{{result.working_hours}}</li>
+              <li><strong> Description: </strong> Some thing write here!</li>
+              <img [src]="'/restaurant_images/'+result.res_image" alt="">
+            </div>
           </div>
         </ul>
       </div>
     </div>
 
-
+  </div>
+</div>
 
 
 </body>
