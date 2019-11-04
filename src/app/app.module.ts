@@ -35,6 +35,7 @@ import { CustomerprofileComponent } from './customerprofile/customerprofile.comp
 import { CustomereditprofileComponent } from './customereditprofile/customereditprofile.component';
 import { DeliveryloginComponent } from './deliverylogin/deliverylogin.component';
 import { DeliveryregComponent } from './deliveryreg/deliveryreg.component';
+import { LogindropdownComponent } from './logindropdown/logindropdown.component';
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -77,7 +78,8 @@ export function socialConfigs(){
     CustomerprofileComponent,
     CustomereditprofileComponent,
     DeliveryloginComponent,
-    DeliveryregComponent  ],
+    DeliveryregComponent,
+    LogindropdownComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

@@ -16,12 +16,10 @@
 <body style="background-color: #FFCA28">
 
 
-
 <app-restaurantdropdown></app-restaurantdropdown>
 
-<div class="container" style="margin: 0px 0px 0px 200px; padding: 0">
-</div>
 
+<div class="container">
   <div *ngIf="orders">
     <ul>
       <div *ngFor="let order of orders">
@@ -31,6 +29,7 @@
       </div>
     </ul>
   </div>
+</div>
 
 </body>
 
