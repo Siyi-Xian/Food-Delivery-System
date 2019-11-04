@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit {
     });
     // this.cookie.set("userid", "123")
     // console.log(this.response)
+    /*
     const payload = {
       jwttoken: this.cookie.get('jwttoken')
     };
@@ -61,7 +62,7 @@ export class LoginComponent implements OnInit {
     r = this.loginService.sendRequest(payload, '/authentication/verifyotp');
     r.subscribe(data => {
       console.log(data);
-    });
+    });*/
   }
 
   public socialSignIn(socialProvider: string){
