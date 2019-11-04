@@ -26,7 +26,7 @@
   </div>
   <hr>
   <div class="row">
-    <div class=" col-md-6">
+    <div class=" col-md-6" *ngIf="restaurant_details">
       <img [src]="restaurant_details.res_image" alt="" style="width: 500px"/>
     </div>
     <div class=" col-md-6">
