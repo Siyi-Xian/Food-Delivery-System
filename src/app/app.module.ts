@@ -163,6 +163,14 @@ export function socialConfigs(){
       {
         path: 'customereditprofile',
         component: CustomereditprofileComponent
+      },
+      {
+        path: 'deliverylogin',
+        component: DeliveryloginComponent
+      },
+      {
+        path: 'deliveryreg',
+        component: DeliveryregComponent
       }
     ])
   ],
