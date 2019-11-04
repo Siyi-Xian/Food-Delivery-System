@@ -17,8 +17,6 @@
 <app-restaurantdropdown></app-restaurantdropdown>
 
 <div class="container">
-
-
   <ul>
     <div *ngFor="let item of menu">
       <div class="item">
@@ -27,7 +25,7 @@
             <img [src]="'/menu_images/' + item.image" alt="" style="width: 150px; height: 100px">
           </div>
           <div class="col-md-6">
-            <div class="row" style="margin: 10% 10%">
+            <div class="row" style="margin: 1% 10%;">
               <div class="row">
                 <p>
                   <strong> Name: </strong>
@@ -51,8 +49,8 @@
         </div>
         <hr>
         <div class="row">
-          <a class="edit-link pull-right" href="#" routerLink="/restaurantdetails" style="margin-right: 50px; font-size: 18px">Remove</a>
-          <a class="edit-link pull-right" href="#" routerLink="/restaurantdetails" style="margin-right: 50px; font-size: 18px">Edit</a>
+          <a class="edit-link pull-right" href="#" routerLink="/restaurantdetails">Remove</a>
+          <a class="edit-link pull-right" href="#" routerLink="/restaurantdetails">Edit</a>
         </div>
       </div>
     </div>
