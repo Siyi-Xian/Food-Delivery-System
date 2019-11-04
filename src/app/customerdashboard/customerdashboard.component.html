@@ -54,14 +54,16 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-md-offset-1">
-          <h4> Result: </h4>
+          <h4> Searching Result: </h4>
         </div>
         <div class="col-md-2 col-md-offset-4">
           <div class="dropdown">
             <button class="btn dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true"
-                    aria-expanded="false"><span class="glyphicon glyphicon-th-list"></span></button>
+                    aria-expanded="false">
+              <span class="glyphicon glyphicon-th-list"></span>
+              Sort By
+            </button>
             <ul class="dropdown-menu">
-              <label>Sort by</label>
               <li><a class="dropdown-item" (click)="updateToLocation()">Location</a></li>
               <li><a class="dropdown-item" (click)="updateToResName()">Restaurant Name</a></li>
               <li><a class="dropdown-item" (click)="updateToFoodCat()">Restaurant Category</a></li>
@@ -69,11 +71,11 @@
           </div>
         </div>
       </div>
-      <div class="container" style="margin-left: 0">
+      <div class="container" style="margin-left: 0; margin-right: 20px">
         <ul *ngFor="let result of results">
           <div class="row">
             <div class="col-md-5">
-              <img [src]="result.res_image" alt="" style="width: 500px"/>
+              <img [src]="result.res_image" alt=""/>
             </div>
             <div class="col-md-7">
               <h4><strong> {{result.name}} </strong></h4>
