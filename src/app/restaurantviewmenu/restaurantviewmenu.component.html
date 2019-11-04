@@ -17,6 +17,11 @@
 <app-restaurantdropdown></app-restaurantdropdown>
 
 <div class="container">
+  <div class="container">
+    <h3>Restaurant Menu</h3>
+    <p style="font-size: 18px">Below is how a customer will see your Restaurant menu</p>
+  </div>
+  <hr>
   <ul>
     <div *ngFor="let item of menu">
       <div class="item">
@@ -49,8 +54,9 @@
         </div>
         <hr>
         <div class="row">
-          <a class="edit-link pull-right" href="#" routerLink="/restaurantdetails">Remove</a>
-          <a class="edit-link pull-right" href="#" routerLink="/restaurantdetails">Edit</a>
+          <button (click)="remove(item.name, i)">Completed</button>
+          <!-- <a class="edit-link pull-right" href="#" routerLink="/restaurantdetails">Remove</a> -->
+          <!-- <a class="edit-link pull-right" href="#" routerLink="/restaurantdetails">Edit</a> -->
         </div>
       </div>
     </div>

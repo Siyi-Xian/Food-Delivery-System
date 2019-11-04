@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {CookieService} from 'ngx-cookie-service';
-import {HttpClient,HttpHeaders} from '@angular/common/http';
+import {HttpClient,HttpHeaders, HttpParams} from '@angular/common/http';
 import {LoginService} from "../login.service";
 
 @Component({
@@ -22,7 +22,24 @@ export class RestaurantviewmenuComponent implements OnInit {
     
 
   }
+  remove(name, i){
+    var url = "/restaurant/delete"
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json',
+      jwttoken: this.cookie.get("jwttoken")
+    });
+    var params = new HttpParams().set("name", name)
+    .set("id", this.cookie.get('restaurant_id'))
+    this.http.delete(url, {headers, params}).subscribe(data => {
 
+      
+      if (data != null){
+        
+        console.log(data)
+        
+      }
+    })
+    this.menu.splice(parseInt(i), 1)
+  }
   ngOnInit() {
     // console.log("fge" + this.cookie.get('restaurant_id'))
     // this.httpService.get('/restaurant/menu/'+this.cookie.get('restaurant_id')).subscribe(data => {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../login.service';
 import {FormBuilder} from '@angular/forms';
 import {CookieService} from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class ResturantloginComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private formBuilder: FormBuilder,
-    private cookie: CookieService) { 
+    private cookie: CookieService,
+    private router: Router,) { 
       this.restaurantLoginForm = this.formBuilder.group({
         email: '',
         password: ''
@@ -35,6 +37,11 @@ export class ResturantloginComponent implements OnInit {
       if(data['auth']){
         this.cookie.set("jwttoken", data['token']);
         this.cookie.set("restaurant_id", data['_id']);
+        if (data['auth']) {
+          // this.cookie.set('jwttoken', data['token']);
+          this.router.navigate(['/restaurantviewdetails']);
+        }
+
         //console.log(data[_id])
       }
       

@@ -16,24 +16,55 @@
 <body>
 <app-restaurantdropdown></app-restaurantdropdown>
 
-
-<h3>Current Orders</h3>
-<p>below are orders that are currently being fulfilled</p>
-<p>Click on an order to reveal options</p>
-
 <!-- Place holder for list of orders -->
-<div #currentorders>
-    <div *ngIf="orders">
-        <ul>
-          <div *ngFor="let order of orders; index as i">
-            Price: {{order.price}}
-            Name Of Item: {{ order.name_of_item }}
-            Status: Fullfilled
+<div class="container">
+  <div class="container">
+    <h3>Current Orders</h3>
+    <p>Below are orders that are currently being fulfilled</p>
+    <p>Click on an order to reveal options</p>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <strong> Order Number </strong>
+    </div>
+    <div class="col-md-2">
+      <strong> Price </strong>
+    </div>
+    <div class="col-md-2">
+      <strong> Name of Item </strong>
+    </div>
+    <div class="col-md-2">
+      <strong> Status </strong>
+    </div>
+    <div class="col-md-2">
+      <strong> Completed? </strong>
+    </div>
+  </div>
+  <hr>
+  <div *ngIf="orders">
+    <ul>
+      <div *ngFor="let order of orders; index as i">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="#" routerLink="/restaurantvieworder"> {{order._id}} </a>
+          </div>
+          <div class="col-md-2">
+            $ {{order.price}}
+          </div>
+          <div class="col-md-2">
+            {{ order.name_of_item }}
+          </div>
+          <div class="col-md-2">
+            Fulfilled
+          </div>
+          <div class="col-md-2">
             <button (click)="fullfillOrder(order._id, i)">Completed</button>
           </div>
-        </ul>
+        </div>
       </div>
-
+    </ul>
+  </div>
 </div>
 
 </body>

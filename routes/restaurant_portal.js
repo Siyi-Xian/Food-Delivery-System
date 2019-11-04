@@ -170,12 +170,12 @@ router.post('/menu', upload_menu.single('image'), function(req, res){
 
 router.delete('/delete', middleware.checkToken, function(req, res){
     db.collection('restaurant_data').updateMany({
-        _id: ObjectId(req.body._id)
+        _id: ObjectId(req.query.id)
     },
     {
         $pull: {
             menu: {
-                name: req.body.name
+                name: req.query.name
             }
         }
     }

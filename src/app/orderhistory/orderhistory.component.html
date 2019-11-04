@@ -10,22 +10,59 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="login.component.css"></script>
+  <script src="orderhistory.component.css"></script>
   <script src="../../styles.css"></script>
 </head>
-<body style="background-color: #FFCA28">
+<body>
 
 
-<app-restaurantdropdown></app-restaurantdropdown>
+
 
 
 <div class="container">
+  <div class="container">
+    <h3>Order History</h3>
+    <p>Below order history from your restaurant.</p>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <strong> Order Number </strong>
+    </div>
+    <div class="col-md-2">
+      <strong> Price </strong>
+    </div>
+    <div class="col-md-2">
+      <strong> Name of Item </strong>
+    </div>
+    <div class="col-md-2">
+      <strong> Status </strong>
+    </div>
+    <div class="col-md-2">
+      <strong> Time </strong>
+    </div>
+  </div>
+  <hr>
   <div *ngIf="orders">
     <ul>
       <div *ngFor="let order of orders">
-        Price: {{order.price}}
-        Name Of Item: {{ order.name_of_item }}
-        Status: Fulfilled
+        <div class="row" style="margin-top: 5px">
+          <div class="col-md-4">
+            <a href="#" routerLink="/restaurantvieworder"> {{order._id}} </a>
+          </div>
+          <div class="col-md-2">
+            $ {{order.price}}
+          </div>
+          <div class="col-md-2">
+            {{ order.name_of_item }}
+          </div>
+          <div class="col-md-2">
+            Fulfilled
+          </div>
+          <div class="col-md-2">
+            11/03/2019
+          </div>
+        </div>
       </div>
     </ul>
   </div>
