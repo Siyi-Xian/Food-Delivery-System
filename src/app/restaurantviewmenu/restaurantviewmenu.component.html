@@ -54,8 +54,9 @@
         </div>
         <hr>
         <div class="row">
-          <a class="edit-link pull-right" href="#" routerLink="/restaurantdetails">Remove</a>
-          <a class="edit-link pull-right" href="#" routerLink="/restaurantdetails">Edit</a>
+          <button (click)="remove(item.name, i)">Completed</button>
+          <!-- <a class="edit-link pull-right" href="#" routerLink="/restaurantdetails">Remove</a> -->
+          <!-- <a class="edit-link pull-right" href="#" routerLink="/restaurantdetails">Edit</a> -->
         </div>
       </div>
     </div>
