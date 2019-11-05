@@ -15,26 +15,86 @@
 <body>
 <app-logindropdown></app-logindropdown>
 
-<!--<nav class="navbar navbar-light">-->
-<!--  &lt;!&ndash; Navbar content &ndash;&gt;-->
-<!--  &lt;!&ndash; Just an image &ndash;&gt;-->
-<!--  <a class="navbar-brand" routerLink="/public" style="padding: 0;">-->
-<!--    <img src="../../assets/img/logo.png" height="50" alt="">-->
-<!--  </a>-->
-<!--  <div class="navbar-right">-->
-<!--    <div class="dropdown">-->
-<!--      <button href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">Login/Sign up</button>-->
-<!--        <ul class="dropdown-menu">-->
-<!--          <li><a href="#" routerLink="/login">Login</a></li>-->
-<!--          <a href="#" routerLink="/registration">Registration</a>-->
-<!--          <div class="dropdown-divider"></div>-->
-<!--          <label>Restaurant Owner?</label>-->
-<!--          <li><a href="#" routerLink="/resturantlogin">Restaurant Login</a></li>-->
-<!--          <a href="#" routerLink="/restaurantreg">Register Restaurant</a>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--  </div>-->
-<!--</nav>-->
+<div class="container">
+  <div class="container">
+    <h3>Welcome back</h3>
+    <p style="font-size: 18px">Search for restaurants below</p>
+  </div>
+  <br>
+  <div class="search-container">
+    <form action="get" [formGroup]="userSearchForm" (ngSubmit)="onSubmit(userSearchForm.value)">
+      <div class="row">
+        <div class="col-md-2 col-md-offset-2">
+          <div class="input-group">
+            <input type="text" placeholder="Restaurant Name" formControlName="restaurant_name">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="input-group">
+            <input type="text" placeholder="Location" formControlName="location">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="input-group">
+            <input type="text" placeholder="Category" formControlName="food_category">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr>
+</div>
+
+<!-- placeholder for results from search query -->
+<div #result>
+  <div *ngIf="results">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-1">
+          <h4> Searching Result: </h4>
+        </div>
+        <div class="col-md-2 col-md-offset-4">
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true"
+                    aria-expanded="false">
+              <span class="glyphicon glyphicon-th-list"></span>
+              Sort By
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" (click)="updateToLocation()">Location</a></li>
+              <li><a class="dropdown-item" (click)="updateToResName()">Restaurant Name</a></li>
+              <li><a class="dropdown-item" (click)="updateToFoodCat()">Restaurant Category</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="margin-left: 0; margin-right: 20px">
+        <ul *ngFor="let result of results">
+          <div class="row">
+            <div class="col-md-5">
+              <img [src]="result.res_image" alt=""/>
+            </div>
+            <div class="col-md-7">
+              <h4><strong> {{result.name}} </strong></h4>
+              <li><strong> Food Category: </strong>{{result.food_category}}</li>
+              <li><strong> Location: </strong> <a
+                href="http://maps.google.com/?q={{result.location.replace(' ', '+')}}">{{result.location}}</a>
+              </li>
+              <li><strong> Working Hours: </strong>{{result.working_hours}}</li>
+              <li><strong> Description: </strong> Some thing write here!</li>
+            </div>
+          </div>
+          <hr>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 </body>
 </html>
 
