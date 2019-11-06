@@ -22,7 +22,8 @@ export class RegistrationComponent implements OnInit {
       this.userRegistrationForm = this.formBuilder.group({
         name: '',
         email: '',
-        password: ''
+        password: '',
+        confirmpass: ''
       })
     }
 
@@ -30,14 +31,29 @@ export class RegistrationComponent implements OnInit {
     
   }
 
+  newRest(password, confirmpass){
+    //event.preventDefault()
+    
+    if(password == confirmpass){
+      return true
+    }
+    else{
+      return false
+    }
+  }
+
   onSubmit(userData){
 
-    console.log(userData);
-    var r = this.loginService.sendRequest(userData, this.SERVER_URL);
-    r.subscribe(data => {
-      this.router.navigate(['/login']);
-    })
 
+    if(this.newRest(userData.password, userData.confirmpass)){
+      var r = this.loginService.sendRequest(userData, this.SERVER_URL);
+      r.subscribe(data => {
+        this.router.navigate(['/login']);
+      })
+    }
+    else{
+      alert("Passwords do not match");
+    }
   }
 
 }

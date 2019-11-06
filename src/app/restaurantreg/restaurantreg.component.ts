@@ -4,6 +4,7 @@ import {FormBuilder} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
+import { config } from 'rxjs';
 
 
 @Component({
@@ -25,12 +26,14 @@ export class RestaurantregComponent implements OnInit {
       name: '',
       email: '',
       password: '',
+      confirmpass: '',
       restaurant_name: ''
     })
   } 
 
   ngOnInit() {
   }
+
 
   newRest(password, confirmpass){
     //event.preventDefault()
@@ -44,12 +47,16 @@ export class RestaurantregComponent implements OnInit {
   }
 
   onSubmit(userData){
-      //console.log(userData.password)
-      
-      var r = this.loginService.sendRequest(userData, this.SERVER_URL);
-      r.subscribe(data => {
-        this.router.navigate(['/resturantlogin']);
-      })
+
+      if(this.newRest(userData.password, userData.confirmpass)){
+        var r = this.loginService.sendRequest(userData, this.SERVER_URL);
+        r.subscribe(data => {
+          this.router.navigate(['/resturantlogin']);
+        })
+      }
+      else{
+        alert("Passwords do not match");
+      }
   }
 
 }
