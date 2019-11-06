@@ -5,7 +5,7 @@
           \*****************************************************************************************************************************************************************/
         /*! no static exports found */
         /***/ (function (module, exports) {
-            module.exports = [[module.i, "/* You can add global styles to this file, and also import other style files */\r\n\r\n.login-background {\r\n  background-image: url(\"/assets/img/LoginBackground.jpg\");\r\n  background-repeat: no-repeat;\r\n  background-position: 0px 0px;\r\n  background-size: cover;\r\n}\r\n\r\nnav {\r\n  background-color: #FFCA28;\r\n}\r\n\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDhFQUE4RTs7QUFFOUU7RUFDRSx3REFBd0Q7RUFDeEQsNEJBQTRCO0VBQzVCLDRCQUE0QjtFQUM1QixzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSx5QkFBeUI7QUFDM0IiLCJmaWxlIjoic3JjL3N0eWxlcy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBZb3UgY2FuIGFkZCBnbG9iYWwgc3R5bGVzIHRvIHRoaXMgZmlsZSwgYW5kIGFsc28gaW1wb3J0IG90aGVyIHN0eWxlIGZpbGVzICovXHJcblxyXG4ubG9naW4tYmFja2dyb3VuZCB7XHJcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiL2Fzc2V0cy9pbWcvTG9naW5CYWNrZ3JvdW5kLmpwZ1wiKTtcclxuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4gIGJhY2tncm91bmQtcG9zaXRpb246IDBweCAwcHg7XHJcbiAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcclxufVxyXG5cclxubmF2IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjRkZDQTI4O1xyXG59XHJcblxyXG5cclxuIl19 */", '', '']];
+            module.exports = [[module.i, "/* You can add global styles to this file, and also import other style files */\r\n\r\nnav {\r\n  background-color: #FFCA28;\r\n}\r\n\r\nhr {\r\n  border-width: 3px;\r\n}\r\n\r\nfooter {\r\n  position: absolute;\r\n  bottom: 0;\r\n  width: 100%;\r\n  height: 1px;\r\n}\r\n\r\nbody {\r\n  height: 820px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDhFQUE4RTs7QUFFOUU7RUFDRSx5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRSxpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0FBQ2I7O0FBRUE7RUFDRSxhQUFhO0FBQ2YiLCJmaWxlIjoic3JjL3N0eWxlcy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBZb3UgY2FuIGFkZCBnbG9iYWwgc3R5bGVzIHRvIHRoaXMgZmlsZSwgYW5kIGFsc28gaW1wb3J0IG90aGVyIHN0eWxlIGZpbGVzICovXHJcblxyXG5uYXYge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNGRkNBMjg7XHJcbn1cclxuXHJcbmhyIHtcclxuICBib3JkZXItd2lkdGg6IDNweDtcclxufVxyXG5cclxuZm9vdGVyIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgYm90dG9tOiAwO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGhlaWdodDogMXB4O1xyXG59XHJcblxyXG5ib2R5IHtcclxuICBoZWlnaHQ6IDgyMHB4O1xyXG59XHJcbiJdfQ== */", '', '']];
             /***/ 
         }),
         /***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js": 
@@ -276,7 +276,7 @@
           \******************************/
         /*! no static exports found */
         /***/ (function (module, exports, __webpack_require__) {
-            module.exports = __webpack_require__(/*! C:\Users\pwmcb\Desktop\Food-Delivery-System\src\styles.css */ "./src/styles.css");
+            module.exports = __webpack_require__(/*! D:\IUB\Semester 1\Software Engineering\project\Food-Delivery-System\src\styles.css */ "./src/styles.css");
             /***/ 
         })
     }, [[3, "runtime"]]]);
