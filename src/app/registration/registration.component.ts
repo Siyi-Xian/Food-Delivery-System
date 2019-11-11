@@ -45,7 +45,7 @@ export class RegistrationComponent implements OnInit {
   onSubmit(userData){
 
 
-    if(this.newRest(userData.password, userData.confirmpass)){
+    if(this.newRest(userData.password, userData.confirmpass) && userData.password != null){
       var r = this.loginService.sendRequest(userData, this.SERVER_URL);
       r.subscribe(data => {
         this.router.navigate(['/login']);

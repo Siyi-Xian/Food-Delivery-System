@@ -13,6 +13,7 @@ const cookieParser = require('cookie-parser');
 var authentication = require('./routes/authenticate')
 var restaurant_portal = require('./routes/restaurant_portal')
 var customer_portal = require('./routes/customer_portal')
+var delivery_portal = require('./routes/delivery_portal')
 var port = process.env.PORT || 8080
 
 var cors = require('cors')
