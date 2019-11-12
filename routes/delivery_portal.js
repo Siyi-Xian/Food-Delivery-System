@@ -41,3 +41,5 @@ router.post('/details', middleware.checkToken, function(req, res){
         }
     })
 })
+
+module.exports = router;
