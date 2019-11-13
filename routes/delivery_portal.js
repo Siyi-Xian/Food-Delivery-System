@@ -42,4 +42,38 @@ router.post('/details', middleware.checkToken, function(req, res){
     })
 })
 
-module.exports = router;
+
+router.get('/display_details/:delivery_id', middleware.checkToken, function(req, res){
+    var id = req.params.delivery_id
+    // console.log(id)
+    var d = {
+        projection:{
+                name:1,
+                location: 1,
+                food_category: 1,
+                res_image: 1,
+                contact: 1,
+                working_hours: 1 
+            }
+        }
+    // db.collection('restaurant_data'). find({_id: ObjectId(id)}, d).toArray(function(err, result) {
+    db.collection('delivery_data'). findOne({_id: ObjectId(id)}, d, function(err, result) {
+        if (err){
+            console.log(err)
+            res.json({
+                message: "Failed"
+            })
+            return;
+        }
+        else{
+            console.log("Success")
+            // console.log(result)
+        
+            res.json(result)
+            return;
+        }
+    })
+});
+
+module.exports = router
+
