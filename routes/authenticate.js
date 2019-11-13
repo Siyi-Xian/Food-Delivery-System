@@ -52,6 +52,9 @@ router.post('/login/:collection_name', function(req, res){
     else if(collection_name == 'restaurant'){
         collection_name = 'restaurant_data'
     }
+    else if(collection_name=='delivery'){
+        collection_name='delivery_data'
+    }
     else{
         res.status(404).error("Page Not Found");
         return;
@@ -127,6 +130,9 @@ router.get('/verify/:email/:token/:collection_name', function(req, res){
     else if(collection_name == 'restaurant'){
         collection_name = "restaurant_data"
     }
+    else if(collection_name=='delivery'){
+        collection_name="delivery_data"
+    }
     else{
         // res.redirect('*')
         res.status(404).send("Page Not Found");
@@ -159,6 +165,9 @@ router.post('/verifyotp/:collection_name', function(req, res){
     }
     else if(collection_name == 'restaurant'){
         collection_name = "restaurant_data"
+    }
+    else if(collection_name=='delivery'){
+        collection_name='delivery_data'
     }
     else{
         res.status(404).send("Page Not Found");
@@ -215,6 +224,19 @@ router.post('/sign_up/:collection_name', function(req, res){
             "name": req.body.restaurant_name
         }
     }
+
+    else if(collection_name == 'delivery'){
+        collection_name = "delivery_data";
+        var token = Math.floor(Math.random() * (999999 - 100000 + 1) + 100000);
+        var data_to_be_inserted = {
+            "deliveryperson_name": req.body.name,
+            "email": req.body.email,
+            "password": Bcrypt.hashSync(req.body.password, 10),
+            "token": token,
+            "is_verified": false,
+            
+        }
+    }
     else{
         res.status(404).send("Page Not Found");
     }
@@ -228,7 +250,7 @@ router.post('/sign_up/:collection_name', function(req, res){
                     throw error;
                     
                 }
-                console.log("User Signer up successfully")
+                console.log("User Signed up successfully")
             });
 
             var receiver = req.body.email
