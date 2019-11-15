@@ -1891,8 +1891,7 @@ let RegistrationComponent = class RegistrationComponent {
         if (this.newRest(userData.password, userData.confirmpass) && userData.password != null) {
             var r = this.loginService.sendRequest(userData, this.SERVER_URL);
             r.subscribe(data => {
-                console.log(data);
-                //this.router.navigate(['/login']);
+                this.router.navigate(['/login']);
             });
         }
         else {

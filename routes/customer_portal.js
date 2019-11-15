@@ -92,5 +92,41 @@ router.post("/order_item", middleware.checkToken, function(req, res){
     
 })
 
+router.get("/order_history/:customer_id", middleware.checkToken, function(req, res){
+    var id = req.params.customer_id
+    db.collection("order").find({customer_id: id, status: "1"}).toArray(function(err, data){
+        if (err){
+            console.log(err)
+            res.json({
+                message: "Failed"
+            })
+            return;
+        }
+        else{
+            console.log("Success")
+            console.log(data)
+            res.json(data)
+            return;
+        }
+    })
+})
 
+router.get("/current_orders/:customer_id", middleware.checkToken, function(req, res){
+    var id = req.params.customer_id
+    db.collection("order").find({customer_id: id, status: "In progress"}).toArray(function(err, data){
+        if (err){
+            console.log(err)
+            res.json({
+                message: "Failed"
+            })
+            return;
+        }
+        else{
+            console.log("Success")
+            console.log(data)
+            res.json(data)
+            return;
+        }
+    })
+})
 module.exports = router

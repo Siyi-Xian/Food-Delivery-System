@@ -1747,11 +1747,11 @@
                     }
                 };
                 RegistrationComponent.prototype.onSubmit = function (userData) {
+                    var _this = this;
                     if (this.newRest(userData.password, userData.confirmpass) && userData.password != null) {
                         var r = this.loginService.sendRequest(userData, this.SERVER_URL);
                         r.subscribe(function (data) {
-                            console.log(data);
-                            //this.router.navigate(['/login']);
+                            _this.router.navigate(['/login']);
                         });
                     }
                     else {
