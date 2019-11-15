@@ -40,43 +40,26 @@ router.post('/order_list', middleware, function(req, res){
     })
 })
 
-router.get('/current_orders:restuarnt_id', middleware.checkToken, function(req, res){
-    var restaurant_id = req.params.restaurant_id;
+router.get('/current_orders:customer_id', middleware.checkToken, function(req, res){
+    var customer_id = req.params.customer_id;
     var projection = {
         projection: {
-            _id: 1,
             restaurant_id: 1,
-            customer_id: 1,
             delivery_id: 1,
             items: 1,
             address: 1,
             status: 1
         }
     }
-    var query = {
-        customer_id: {
-            $regex:req.query.customer_id
-        },
-        delivery_id: {
-            $regex:req.query.delivery_id
-        },
-        items: {
-            $regex:req.query.items
-        },
-        status: {
-            $regex:req.query.status
-        }
-    }
-    db.collection('order').find(query, projection).toArray(function(err, result){
-        if (err){
+    db.collection('order').find({_id: new ObjectId(customer_id)}, projection).toArray(function(err, data){
+        if(err){
+            console.log("error")
             res.json({
-                message: "Failed to load"
+                message: "No Orders"
             })
         }
         else{
-
-            res.json(result)
-            
+            res.json(data)
         }
     })
 })
