@@ -51,7 +51,7 @@ router.get('/current_orders:customer_id', middleware.checkToken, function(req, r
             status: 1
         }
     }
-    db.collection('order').find({_id: new ObjectId(customer_id)}, projection).toArray(function(err, data){
+    db.collection('order').findOne({_id: new ObjectId(customer_id)}, projection, function(err, data){
         if(err){
             console.log("error")
             res.json({
