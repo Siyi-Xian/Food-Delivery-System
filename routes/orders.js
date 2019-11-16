@@ -10,7 +10,7 @@ var router = express.Router()
 mongoose.connect('mongodb://heroku_wr9z45km:4qlbddem2aer4k5djhcrp5ph3s@ds243717.mlab.com:43717/heroku_wr9z45km', { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 
-router.post('/order_list', middleware, function(req, res){
+router.post('/order_list', middleware.checkToken, function(req, res){
     var id = req.body.id;
     var data_update = {
         $set: {
@@ -38,7 +38,7 @@ router.post('/order_list', middleware, function(req, res){
             return;
         }
     })
-})
+});
 
 router.get('/current_orders:customer_id', middleware.checkToken, function(req, res){
     var customer_id = req.params.customer_id;
