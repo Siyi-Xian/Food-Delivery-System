@@ -13,6 +13,9 @@ const cookieParser = require('cookie-parser');
 var authentication = require('./routes/authenticate')
 var restaurant_portal = require('./routes/restaurant_portal')
 var customer_portal = require('./routes/customer_portal')
+var delivery_portal = require('./routes/delivery_portal')
+var orders = require('./routes/orders')
+var chats=require('./routes/chat')
 var port = process.env.PORT || 8080
 
 var cors = require('cors')
@@ -33,8 +36,11 @@ app.use('/restaurant_images', express.static(__dirname + '/restaurant_images'));
 app.use('/menu_images', express.static(__dirname + '/menu_images'))
 // const server = 
 app.use('/restaurant', restaurant_portal);
-app.use('/authentication', authentication)
-app.use('/customer', customer_portal)
+app.use('/authentication', authentication);
+app.use('/customer', customer_portal);
+app.use('/delivery', delivery_portal);
+app.use('/orders', orders);
+app.use('/chat',chats);
 app.get("/*", function(req, res){
     res.sendFile(path.join(__dirname+ '/dist/fooddeliverysystem/index.html'))
 })

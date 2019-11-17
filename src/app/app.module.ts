@@ -37,6 +37,7 @@ import { DeliveryregComponent } from './deliveryreg/deliveryreg.component';
 import { LogindropdownComponent } from './logindropdown/logindropdown.component';
 import { RestaurantvieworderComponent } from './restaurantvieworder/restaurantvieworder.component';
 import { CustomerdropdownComponent } from './customerdropdown/customerdropdown.component';
+import { ChatfeatureComponent } from './chatfeature/chatfeature.component';
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -81,7 +82,8 @@ export function socialConfigs(){
     DeliveryregComponent,
     LogindropdownComponent,
     RestaurantvieworderComponent,
-    CustomerdropdownComponent  ],
+    CustomerdropdownComponent,
+    ChatfeatureComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

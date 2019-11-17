@@ -38,6 +38,15 @@ export class RegistrationComponent implements OnInit {
       this.router.navigate(['/login']);
     })
 
+    if(this.newRest(userData.password, userData.confirmpass) && userData.password != null){
+      var r = this.loginService.sendRequest(userData, this.SERVER_URL);
+      r.subscribe(data => {
+        this.router.navigate(['/login']);
+      })
+    }
+    else{
+      alert("Passwords do not match");
+    }
   }
 
 }
