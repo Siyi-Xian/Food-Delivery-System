@@ -195,7 +195,7 @@ router.post('/verifyotp/:collection_name', function(req, res){
     });
 });
 
-
+ 
 
 router.post('/sign_up/:collection_name', function(req, res){
     console.log(req.body)
@@ -254,7 +254,7 @@ router.post('/sign_up/:collection_name', function(req, res){
             });
 
             var receiver = req.body.email
-            var email_text = "Click on the link to verify your account " + "localhost:8080/authentication/verify/" + req.body.email + '/' + token + '/'+req.params.collection_name;
+            var email_text = "Click on the link to verify your account " + "foodoholics-backend.herokuapp.com/authentication/verify/" + req.body.email + '/' + token + '/'+req.params.collection_name;
             send_mail('foodoholics4@gmail.com', receiver, "Food-o-Holic User Verification", email_text)
             res.json({message: "User Registered and a verification email has been sent"})
         }
