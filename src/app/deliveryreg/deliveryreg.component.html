@@ -1,1 +1,48 @@
+<html>
+<head>
+  <title>
+    Log In
+  </title>
+  <!-- Bootstrap CDN scripts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="login.component.css"></script>
+  <script src="../../styles.css"></script>
+</head>
+<body>
 <app-logindropdown></app-logindropdown>
+<div class="container" style="width: 400px; margin-top: 5%; margin-bottom: 5%">
+  <div class="jumbotron" style="padding: 0; background-color: #FFF8E1">
+    <div class="container" style="text-align: center; padding: 20px; border-bottom: #FFE082 2px solid">
+      <h2>Register Now!</h2>
+    </div>
+    <div class="container" style="padding: 30px; font-size: 15px">
+      <form method="post" [formGroup]="deliveryRegistrationForm" (ngSubmit) = onSubmit(deliveryRegistrationForm.value)>
+        <div class="container" style="padding-bottom: 20px">
+          <div>Full Name::</div>
+          <div><input type = "text" required="required" formControlName="name" placeholder="John Doe" id="FullName" style="width: 100%"></div>
+        </div>
+        <div class="container" style="padding-bottom: 20px">
+          <div>Email Address:</div>
+          <div><input type = "text" required = "required" formControlName="email" placeholder="johndoe@foodoholic.com" id="Email" style="width: 100%"></div>
+        </div>
+        <div class="container" style="padding-bottom: 20px">
+          <div>Password:</div>
+          <div><input type = "password" required="required" formControlName="password" placeholder="*******************" id="password" style="width: 100%"></div>
+        </div>
+        <div class="container">
+          <div>Confirm Password:</div>
+          <div><input type = "password" required="required" formControlName="confirmpass" placeholder="*******************" id="confirmpass" style="width: 100%"></div>
+        </div>
+        <div class="container" style="padding: 20px 20px 0px 20px">
+          <button type="submit" value="submit" class="login-button btn btn-primary">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
