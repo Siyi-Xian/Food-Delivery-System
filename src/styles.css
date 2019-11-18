@@ -11,4 +11,8 @@ nav {
   background-color: #FFCA28;
 }
 
-
+.login-button {
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 200px;
+}
