@@ -44,6 +44,10 @@ export class LoginComponent implements OnInit {
 
   onSubmit(userData) {
     var r = this.loginService.sendRequest(userData, '/authentication/login/user');
+    if(this.recaptchaElement == null){
+      alert('Enter recaptcha');
+      return;
+    }
     r.subscribe(data => {
       if (data['auth']) {
         this.cookie.set('jwttoken', data['token']);
@@ -107,7 +111,7 @@ export class LoginComponent implements OnInit {
 
   renderReCaptcha(){
     window['grecaptcha'].render(this.recaptchaElement.nativeElement, {
-      'sitekey' : '6LeH9r8UAAAAALWth6G-94o1Zs6yniRys5g4D7d-',
+      'sitekey' : '6LdhGcMUAAAAAJ2eG5TNInZtPqRfS2MJE-CVeptA',
       'callback' : (response) => {
         console.log(response);
       }

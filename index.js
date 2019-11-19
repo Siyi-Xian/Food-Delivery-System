@@ -30,6 +30,7 @@ app.use(cookieParser());
 
 app.use(cors())
 
+
 app.use(express.static('dist/fooddeliverysystem'))
 // app.use(express.static(__dirname + '/menu_images'));
 app.use('/restaurant_images', express.static(__dirname + '/restaurant_images'));
@@ -48,7 +49,39 @@ app.get("/*", function(req, res){
 //     res.status(404).send("Page Not Found")
 // })
 
+//Adding recaptcha to backend
+var pub = __dirname + 'login.component.html';
+var Recaptcha = require('express-recaptcha').RecaptchaV3;
+var recaptcha = new Recaptcha('6LdhGcMUAAAAAJ2eG5TNInZtPqRfS2MJE-CVeptA', '6LdhGcMUAAAAAB_GwLXNAI6sd-VhQiasNiXwIctE', {callback: 'cb'});
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+
+app.use(express.static(pub));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+
+app.get('/', function(req, res){
+    res.render('login', { captcha:recaptcha.render() });
+  });
+
+
+
 app.listen(port, function(){
     console.log("Server listening at port " + port);
     console.log(this.address().address)
 })
+
+app.get('/fr', function(req, res){
+    res.render('login', { captcha:recaptcha.renderWith({'hl':'fr'}) });
+  });
+
+  app.post('/', function(req, res){
+    recaptcha.verify(req, function(error, data){
+      if (!req.recaptcha.error) {
+        this.router.navigate['/customer_dashbord'];
+      } else {
+        alert("Recaptcha has failed! try again")
+      }
+    });
+  });

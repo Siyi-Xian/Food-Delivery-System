@@ -35,7 +35,7 @@
               <div><input type = "password" required = "required" formControlName="password" placeholder="*******************" id="password" style="width: 100%"></div>
             </div>
             <div class="container" style="padding: 20px 20px 0px 20px">
-              <button type="submit" value = "submit" class="btn btn-primary btn-lg btn-block" (ngSubmit)="onSubmit">Login</button>
+              <button type="submit" value = "submit" class="login-button btn btn-primary" (ngSubmit)="onSubmit">Login</button>
 
               <!-- Place holder for recaptcha -->
               <div #recaptcha style="padding: 10px -10px; margin-top: 10px"></div>
@@ -47,6 +47,7 @@
                 <button id="facebook-button" class="btn btn-block btn-social btn-facebook" (click)="socialSignIn('facebook')">
                   <i class="fa fa-facebook"></i> Sign in with Facebook
                 </button>
+
               </div>
             </div>
           </form>
