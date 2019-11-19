@@ -195,6 +195,10 @@ export function socialConfigs(){
       {
         path: 'deliveryprofile',
         component: DeliveryprofileComponent
+      },
+      {
+        path: 'chatfeature',
+        component: ChatfeatureComponent
       }
     ])
   ],
