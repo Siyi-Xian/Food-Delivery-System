@@ -1384,11 +1384,13 @@
             /* harmony import */ var _login_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../login.service */ "./src/app/login.service.ts");
             /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
             /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
             var DeliveryloginComponent = /** @class */ (function () {
-                function DeliveryloginComponent(loginService, formBuilder, cookie) {
+                function DeliveryloginComponent(loginService, formBuilder, cookie, router) {
                     this.loginService = loginService;
                     this.formBuilder = formBuilder;
                     this.cookie = cookie;
+                    this.router = router;
                     this.timesSubmitted = 0;
                     this.deliveryLoginForm = this.formBuilder.group({
                         email: '',
@@ -1405,6 +1407,7 @@
                         if (data['auth']) {
                             _this.cookie.set("jwttoken", data['token']);
                             _this.cookie.set("restaurant_id", data['_id']);
+                            _this.router.navigate(['/deliveryprofile']);
                             //console.log(data[_id])
                         }
                     });
@@ -1414,7 +1417,8 @@
             DeliveryloginComponent.ctorParameters = function () { return [
                 { type: _login_service__WEBPACK_IMPORTED_MODULE_2__["LoginService"] },
                 { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
-                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"] }
+                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"] },
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
             ]; };
             DeliveryloginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
