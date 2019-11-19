@@ -29,7 +29,16 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
     
   }
-
+  newRest(password, confirmpass){
+    //event.preventDefault()
+    
+    if(password == confirmpass){
+      return true
+    }
+    else{
+      return false
+    }
+  }
   onSubmit(userData){
 
     console.log(userData);
