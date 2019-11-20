@@ -20,7 +20,8 @@ router.post('/details', middleware.checkToken, function(req, res){
             street2: req.body.street2,
             city: req.body.city,
             state: req.body.state,
-            zip_code: req.body.zip_code
+            zip_code: req.body.zip_code,
+            isBusy: false
         }
     }
     db.collection('delivery_data').updateOne({_id: ObjectId(id)}, data_update, function(err, data){

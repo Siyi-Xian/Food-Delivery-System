@@ -229,6 +229,7 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
     //res.send("done")
 });
 
+
 router.get("/order_history/:restaurant_id", middleware.checkToken, function(req, res){
     var id = req.params.restaurant_id
     db.collection("order").find({restaurant_id: id, status: "1"}).toArray(function(err, data){
