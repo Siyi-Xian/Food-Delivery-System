@@ -204,7 +204,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    public dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n\r\n<!--<nav class=\"navbar navbar-light\">-->\r\n<!--  &lt;!&ndash; Navbar content &ndash;&gt;-->\r\n<!--  &lt;!&ndash; Just an image &ndash;&gt;-->\r\n<!--  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">-->\r\n<!--    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">-->\r\n<!--  </a>-->\r\n<!--  <div class=\"navbar-right\">-->\r\n<!--    <div class=\"dropdown\">-->\r\n<!--      <button href=\"#\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Login/Sign up</button>-->\r\n<!--        <ul class=\"dropdown-menu\">-->\r\n<!--          <li><a href=\"#\" routerLink=\"/login\">Login</a></li>-->\r\n<!--          <a href=\"#\" routerLink=\"/registration\">Registration</a>-->\r\n<!--          <div class=\"dropdown-divider\"></div>-->\r\n<!--          <label>Restaurant Owner?</label>-->\r\n<!--          <li><a href=\"#\" routerLink=\"/resturantlogin\">Restaurant Login</a></li>-->\r\n<!--          <a href=\"#\" routerLink=\"/restaurantreg\">Register Restaurant</a>-->\r\n<!--        </ul>-->\r\n<!--      </div>-->\r\n<!--  </div>-->\r\n<!--</nav>-->\r\n</body>\r\n</html>\r\n\r\n\r\n\r\n\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    public dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Welcome to Food-O-Holics</h3>\r\n    <p style=\"font-size: 18px\">Search for restaurants below</p>\r\n  </div>\r\n  <br>\r\n  <div class=\"search-container\">\r\n    <form action=\"get\" [formGroup]=\"userSearchForm\" (ngSubmit)=\"onSubmit(userSearchForm.value)\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-2 col-md-offset-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Restaurant Name\" formControlName=\"restaurant_name\">\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Location\" formControlName=\"location\">\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Category\" formControlName=\"food_category\">\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <button class=\"btn btn-primary\" type=\"submit\"><i class=\"fa fa-search\"></i></button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n  <hr>\r\n</div>\r\n\r\n<div #result>\r\n  <div *ngIf=\"results\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-4 col-md-offset-1\">\r\n          <h4> Searching Result: </h4>\r\n        </div>\r\n        <div class=\"col-md-2 col-md-offset-4\">\r\n          <div class=\"dropdown\">\r\n            <button class=\"btn dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\"\r\n                    aria-expanded=\"false\">\r\n              <span class=\"glyphicon glyphicon-th-list\"></span>\r\n              Sort By\r\n            </button>\r\n            <ul class=\"dropdown-menu\">\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToLocation()\">Location</a></li>\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToResName()\">Restaurant Name</a></li>\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToFoodCat()\">Restaurant Category</a></li>\r\n            </ul>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"container\" style=\"margin-left: 0; margin-right: 20px\">\r\n        <ul *ngFor=\"let result of results\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <img [src]=\"result.res_image\" alt=\"\"/>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <h4><strong> {{result.name}} </strong></h4>\r\n              <li><strong> Food Category: </strong>{{result.food_category}}</li>\r\n              <li><strong> Location: </strong> <a\r\n                href=\"http://maps.google.com/?q={{result.location.replace(' ', '+')}}\">{{result.location}}</a>\r\n              </li>\r\n              <li><strong> Working Hours: </strong>{{result.working_hours}}</li>\r\n              <li><strong> Description: </strong> Some thing write here!</li>\r\n            </div>\r\n          </div>\r\n          <hr>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n\r\n\r\n\r\n\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/recover/recover.component.html": 
@@ -1916,13 +1916,63 @@
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PublicComponent", function () { return PublicComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
             var PublicComponent = /** @class */ (function () {
-                function PublicComponent() {
+                function PublicComponent(formBuilder, router, http, cookie) {
+                    this.formBuilder = formBuilder;
+                    this.router = router;
+                    this.http = http;
+                    this.cookie = cookie;
+                    this.userSearchForm = this.formBuilder.group({
+                        restaurant_name: '',
+                        location: '',
+                        food_category: '',
+                    });
                 }
                 PublicComponent.prototype.ngOnInit = function () {
                 };
+                PublicComponent.prototype.updateToLocation = function () {
+                    this.searchFilter = "Location";
+                    console.log(this.searchFilter);
+                };
+                PublicComponent.prototype.updateToResName = function () {
+                    this.searchFilter = "Name";
+                    console.log(this.searchFilter);
+                };
+                PublicComponent.prototype.updateToFoodCat = function () {
+                    this.searchFilter = "category";
+                    console.log(this.searchFilter);
+                };
+                PublicComponent.prototype.onSubmit = function (event) {
+                    var _this = this;
+                    var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json',
+                        jwttoken: this.cookie.get("jwttoken")
+                    });
+                    var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set("restaurant_name", event['restaurant_name'])
+                        .set("location", event['location'])
+                        .set("food_category", event['food_category']);
+                    console.log(params);
+                    this.http.get('/restaurant/restaurants_list', { headers: headers, params: params }).subscribe(function (data) {
+                        // this.detailsForm = data;
+                        console.log(data);
+                        _this.results = data;
+                    });
+                };
+                //function to render the result of the search to the website
+                PublicComponent.prototype.displayResult = function (result) {
+                    console.log(result);
+                };
                 return PublicComponent;
             }());
+            PublicComponent.ctorParameters = function () { return [
+                { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"] }
+            ]; };
             PublicComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-public',

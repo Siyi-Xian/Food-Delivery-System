@@ -204,7 +204,9 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
             food_category: req.body.food_category,
             res_image: id+'.png',
             contact:req.body.contact,
-            working_hours:req.body.working_hours
+            working_hours:req.body.working_hours,
+            Rating: 0,
+            Number_of_ratings: 0
         }
     }
     
@@ -229,6 +231,59 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
     //res.send("done")
 });
 
+router.post("/add_restaurant_rating/:restaurant_id", middleware.checkToken, function(req, res){
+    var id = req.params.restaurant_id
+    var data_update = {
+        $set: {
+            Rating: req.body.Rating,
+            Number_of_ratings: Number_of_ratings + 1
+        }
+    }
+    db.collection('restaurant_data').updateOne({_id: ObjectId(id)}, data_update, function(err, data){
+        if (err){
+            console.log(err)
+            res.json({
+                message: "Failed"
+            })
+            return;
+        }
+        else{
+            console.log("Success")
+             console.log(data)
+            res.json({
+                message: "Success"
+            })
+            return;
+        }
+    })
+
+})
+
+router.get("/restaurant_rating/:restaurant_id", middleware.checkToken, function(req, res){
+    var id = req.params.restaurant_id
+    var d = {
+        projection:{
+                Rating: 1
+            }
+        }
+
+    db.collection("restaurant_data").findOne({_id: ObjectId(id)}, d, function(err, result){
+        if (err){
+            console.log(err)
+            res.json({
+                message: "Failed"
+            })
+            return;
+        }
+        else{
+            console.log("Success")
+            // console.log(result)
+        
+            res.json(result)
+            return;
+        }
+    })
+})
 
 router.get("/order_history/:restaurant_id", middleware.checkToken, function(req, res){
     var id = req.params.restaurant_id
@@ -297,7 +352,8 @@ router.get('/display_details/:restaurant_id', middleware.checkToken, function(re
                 food_category: 1,
                 res_image: 1,
                 contact: 1,
-                working_hours: 1 
+                working_hours: 1,
+                Rating: 1
             }
         }
     // db.collection('restaurant_data'). find({_id: ObjectId(id)}, d).toArray(function(err, result) {
