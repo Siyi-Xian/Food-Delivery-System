@@ -6,6 +6,7 @@ import {CookieService} from 'ngx-cookie-service';
 import { GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angularx-social-login';
 import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 
+import { PusherService } from './pusher.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -204,6 +205,7 @@ export function socialConfigs(){
   ],
   providers: [
     CookieService,
+    PusherService,
     AuthService,{
       provide: AuthServiceConfig,
       useFactory: socialConfigs
