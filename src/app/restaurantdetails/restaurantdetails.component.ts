@@ -63,7 +63,7 @@ export class RestaurantdetailsComponent implements OnInit {
     const formData = new FormData()
     formData.append("id", this.cookie.get('restaurant_id'))
     formData.append("jwttoken", jwttoken)
-    formData.append("image", this.image, this.cookie.get('restaurant_id')+'.jpg')
+    formData.append("image", this.image, this.cookie.get('restaurant_id')+'.png')
     formData.append("name", details['name'])
     formData.append("location", details['location'])
     formData.append("food_category", details['food_category'])

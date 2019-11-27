@@ -29,6 +29,7 @@
           <div class="col-md-6">
             <img [src]="'/menu_images/' + item.image" alt="" style="width: 150px; height: 100px">
           </div>
+          
           <div class="col-md-6">
             <div class="row" style="margin: 1% 10%;">
               <div class="row">
@@ -55,7 +56,6 @@
         <hr>
         <div class="row">
            <a class="edit-link pull-right" (click)="remove(item.name, i)">Remove</a>
-           <a class="edit-link pull-right" href="#" routerLink="/restaurantmenu" (click)="remove(item.name, i)">Edit</a>
         </div>
       </div>
     </div>

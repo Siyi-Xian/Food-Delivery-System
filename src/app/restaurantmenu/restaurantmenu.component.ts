@@ -47,7 +47,7 @@ export class RestaurantmenuComponent implements OnInit {
     // menu['id'] = this.cookie.get("restaurant_id")
     // menu['image'] = this.image;
     const formData = new FormData()
-    formData.append("image", this.image, this.cookie.get("restaurant_id") + menu['name'] + ".jpg")
+    formData.append("image", this.image, this.cookie.get("restaurant_id") + menu['name'] + ".png")
     formData.append('id', this.cookie.get("restaurant_id"))
     formData.append('jwttoken', jwttoken)
     formData.append('name', menu['name'])
