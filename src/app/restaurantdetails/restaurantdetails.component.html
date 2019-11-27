@@ -59,7 +59,11 @@
                  value="{{ restaurant_details.working_hours }}"
                  id="working_hours">
         </li>
-        <li><strong> Description: </strong> Some thing write here!</li>
+        <li><strong> Description: </strong>
+          <input type="text" required="required" formControlName="description"
+                 value="{{restaurant_details.description}}"
+                 id="description">
+        </li>
       </div>
     </div>
     <hr>
