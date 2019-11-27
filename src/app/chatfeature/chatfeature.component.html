@@ -1,5 +1,54 @@
+<html>
+       
+
 <head>
 
-    
+        <title>
+                Chat Board
+         </title>
+
+    <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="chatfeature.component.css"></script>
+  <script src="../../styles.css"></script>
+    <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('49096276b737a48a5ba1', {
+      cluster: 'us2',
+      forceTLS: true
+    });
+
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('my-event', function(data) {
+      alert(JSON.stringify(data));
+    });
+  </script>
 
 </head>
+    <body>
+
+        <label for="userName">Username</label>
+        <input type="text" id="userName" [(ngModel)]="userName">
+        
+        <label for="message">Message</label>
+        <input type="text" id="message" [(ngModel)]="messageText">
+        
+        <button (click)="sendMessage(userName, messageText)">Send</button>
+
+
+    
+    <div *ngFor="let message of messages">
+        <b>{{ message.user }}</b>: {{ message.text }}
+    </div>
+      
+   </body> 
+
+   </html>
+
