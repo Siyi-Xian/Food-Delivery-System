@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
-import {FormBuilder} from "@angular/forms";
-import {Router} from "@angular/router";
-import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {CookieService} from "ngx-cookie-service";
+import { HttpParams, HttpHeaders, HttpClient } from '@angular/common/http';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-public',
@@ -11,7 +11,6 @@ import {CookieService} from "ngx-cookie-service";
   styleUrls: ['./public.component.css']
 })
 export class PublicComponent implements OnInit {
-
   userSearchForm;
   results;
   searchFilter;
@@ -21,14 +20,14 @@ export class PublicComponent implements OnInit {
     private router: Router,
     private http: HttpClient,
     private cookie: CookieService
-  ) {
+  ) { 
     this.userSearchForm = this.formBuilder.group({
       restaurant_name: '',
       location: '',
       food_category: '',
-
+      
     });
-  }
+   }
 
   ngOnInit() {
   }
@@ -52,26 +51,20 @@ export class PublicComponent implements OnInit {
     });
 
     var params = new HttpParams().set("restaurant_name", event['restaurant_name'])
-      .set("location", event['location'])
-      .set("food_category", event['food_category'])
+    .set("location", event['location'])
+    .set("food_category", event['food_category'])
     console.log(params)
     this.http.get('/restaurant/restaurants_list', {headers, params}).subscribe(data => {
       // this.detailsForm = data;
       console.log(data)
       this.results = data
     })
-
-    // var jwttoken = this.cookie.get("jwttoken")
-    //we'll need to change the endpoint to the endpoint for the search on the backend
-    // this.http.get<any>('/restaurant/restaurant_list', event).subscribe((data: any) => this.result = {data});
-    // this.displayResult(this.result);
   }
 
   //function to render the result of the search to the website
   displayResult(result){
     console.log(result);
-
+    
   }
-
 
 }
