@@ -83,7 +83,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-customerdropdown></app-customerdropdown>\r\n\r\n<div class=\"container\" style=\"margin-top: 50px\">\r\n  <div class=\"container\">\r\n    <h3>Edit Profile</h3>\r\n  </div>\r\n  <hr>\r\n  <form method=\"POST\" [formGroup]=\"userProfileForm\" (ngSubmit)=\"onSubmit(userUpdateForm.value)\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4 col-md-offset-1\">\r\n        <img class=\"img-circle\" src=\"../../assets/img/logo.png\" alt=\"\" style=\"width: 200px; height: 200px\">\r\n      </div>\r\n      <div class=\"info col-md-6 col-md-offset-1\">\r\n        <div class=\"row\">\r\n          <strong> Full Name: </strong>\r\n          <input type=\"text\" formControlName=\"name\" required=\"required\" placeholder=\"John Doe\" id=\"Name\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Email Address: </strong>\r\n          <input type=\"contact\" formControlName=\"contact\" required=\"required\" placeholder=\"food@foodoholics.com\"\r\n                 id=\"email\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Phone Number: </strong>\r\n          <input type=\"contact\" formControlName=\"contact\" required=\"required\" placeholder=\"812-999-9999\" id=\"phone\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Address: </strong>\r\n          <input type=\"text\" formControlName=\"address\" required=\"required\" placeholder=\"123 10th Street\" id=\"address\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <a class=\"btn btn-primary pull-right\" (click)=\"onUpdateName($event)\">Update</a>\r\n    </div>\r\n  </form>\r\n</div>\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-customerdropdown></app-customerdropdown>\r\n\r\n<div class=\"container\" style=\"margin-top: 50px\">\r\n  <div class=\"container\">\r\n    <h3>Edit Profile</h3>\r\n  </div>\r\n  <hr>\r\n  <form method=\"POST\" [formGroup]=\"userProfileForm\" (ngSubmit)=\"onSubmit(userProfileForm.value)\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4 col-md-offset-1\">\r\n\r\n\r\n        <!-- Change src here -->\r\n        <img class=\"img-circle\" [src]=\"customer_details.customer_image\" alt=\"\" style=\"width: 200px; height: 200px\">\r\n        <input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"customer_image\"\r\n               ng-model=\"customer_image\" base-sixty-four-input>\r\n\r\n      </div>\r\n      <div class=\"info col-md-6 col-md-offset-1\">\r\n        <div class=\"row\">\r\n          <strong> Full Name: </strong>\r\n          <input type=\"text\" formControlName=\"name\" required=\"required\" placeholder=\"John Doe\" id=\"Name\" value=\"{{ customer_details.name }}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Email Address: </strong>\r\n          <input type=\"contact\" formControlName=\"email\" required=\"required\" placeholder=\"food@foodoholics.com\" \r\n                 id=\"email\" value=\"{{customer_details.email}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Phone Number: </strong>\r\n          <input type=\"contact\" formControlName=\"contact\" required=\"required\" placeholder=\"812-999-9999\" id=\"phone\" value=\"{{customer_details.contact}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong>Street Address 1: </strong>\r\n          <input type=\"text\" formControlName=\"street1\" required=\"required\" placeholder=\"123 10th Street\" id=\"street1\" value=\"{{customer_details.street1}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong>Street Address 2: </strong>\r\n          <input type=\"text\" formControlName=\"street2\" required=\"required\" placeholder=\"123 10th Street\" id=\"street2\" value=\"{{customer_details.street2}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> City: </strong>\r\n          <input type=\"text\" formControlName=\"city\" required=\"required\" placeholder=\"Bloomington\" id=\"city\" value=\"{{customer_details.city}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n            <strong> State: </strong>\r\n            <input type=\"text\" formControlName=\"state\" required=\"required\" placeholder=\"Indiana\" id=\"state\" value=\"{{customer_details.state}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n            <strong> Zip Code: </strong>\r\n            <input type=\"text\" formControlName=\"zip_code\" required=\"required\" placeholder=\"47401\" id=\"zip_code\" value=\"{{customer_details.zip_code}}\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <button type=\"submit\" value=\"submit\" class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">\r\n      Update\r\n    </button>\r\n  </form>\r\n</div>\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/customerprofile/customerprofile.component.html": 
@@ -94,7 +94,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"customerprofile.component.csss\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-customerdropdown></app-customerdropdown>\r\n\r\n<div class=\"container\" style=\"margin-top: 50px\">\r\n  <div class=\"container\">\r\n    <h3>Profile</h3>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4 col-md-offset-1\">\r\n      <img class=\"img-circle\" src=\"../../assets/img/logo.png\" alt=\"\" style=\"width: 200px; height: 200px\">\r\n    </div>\r\n    <div class=\"info col-md-6 col-md-offset-1\">\r\n      <div class=\"row\">\r\n        <strong> Full Name: </strong>\r\n      </div>\r\n      <div class=\"row\">\r\n        <strong> Email Address: </strong>\r\n      </div>\r\n      <div class=\"row\">\r\n        <strong> Phone Number: </strong>\r\n      </div>\r\n      <div class=\"row\">\r\n        <strong> Address: </strong>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <a class=\"edit-link pull-right\" href=\"#\" routerLink=\"/customereditprofile\">Edit</a>\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"customerprofile.component.csss\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-customerdropdown></app-customerdropdown>\r\n\r\n<div class=\"container\" style=\"margin-top: 50px\">\r\n  <div class=\"container\">\r\n    <h3>Profile</h3>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4 col-md-offset-1\">\r\n      <img class=\"img-circle\" [src]=\"customer_details.customer_image\" alt=\"\" style=\"width: 200px; height: 200px\">\r\n    </div>\r\n    <div class=\"info col-md-6 col-md-offset-1\">\r\n      <div class=\"row\">\r\n        <strong> Full Name: </strong>{{customer_details.name}}\r\n      </div>\r\n      <div class=\"row\">\r\n        <strong> Email Address: </strong>{{customer_details.email}}\r\n      </div>\r\n      <div class=\"row\">\r\n        <strong> Phone Number: </strong>{{customer_details.contact}}\r\n      </div>\r\n      <div class=\"row\">\r\n        <strong> Address Street 1: </strong>{{customer_details.street1}}\r\n      </div>\r\n      <div class=\"row\">\r\n          <strong> Address Street 2: </strong>{{customer_details.street2}}\r\n      </div>\r\n      <div class=\"row\">\r\n          <strong> City: </strong>{{customer_details.city}}\r\n      </div>\r\n      <div class=\"row\">\r\n          <strong> State: </strong>{{customer_details.state}}\r\n      </div>\r\n      <div class=\"row\">\r\n          <strong> Zip Code: </strong>{{customer_details.zip_code}}\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <a class=\"edit-link pull-right\" href=\"#\" routerLink=\"/customereditprofile\">Edit</a>\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliverycurrentorders/deliverycurrentorders.component.html": 
@@ -193,7 +193,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Order History\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"orderhistory.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Order History</h3>\r\n    <p>Below order history from your restaurant.</p>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\">\r\n      <strong> Order Number </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Price </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Name of Item </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Status </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Time </strong>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div *ngIf=\"orders\">\r\n    <ul>\r\n      <div *ngFor=\"let order of orders; index as i\">\r\n        <div class=\"row\" style=\"margin-top: 5px\">\r\n          <div class=\"col-md-4\">\r\n            <a href=\"#\"> {{i + 1}} </a>\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            $ {{order.price}}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            {{ order.name_of_item }}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            Fulfilled\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            11/03/2019\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Order History\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"orderhistory.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Order History</h3>\r\n    <p>Below order history from your restaurant.</p>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\">\r\n      <strong> Order Number </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Price </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Name of Item </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Status </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Time </strong>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div *ngIf=\"orders\">\r\n    <ul>\r\n      <div *ngFor=\"let order of orders; index as i\">\r\n        <div class=\"row\" style=\"margin-top: 5px\">\r\n          <div class=\"col-md-4\">\r\n            {{i + 1}}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            $ {{order.price}}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            {{ order.name_of_item }}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            Fulfilled\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            11/03/2019\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/public/public.component.html": 
@@ -248,7 +248,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Menu\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n<!-- Place holder for list of orders -->\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Current Orders</h3>\r\n    <p>Below are orders that are currently being fulfilled</p>\r\n    <p>Click on an order to reveal options</p>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\">\r\n      <strong> Order Number </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Price </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Name of Item </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Status </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Completed? </strong>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div *ngIf=\"orders\">\r\n    <ul>\r\n      <div *ngFor=\"let order of orders; index as i\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-4\">\r\n            <a href=\"#\"> {{i + 1}} </a>\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            $ {{order.price}}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            {{ order.name_of_item }}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            {{ order.status }}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            <button (click)=\"fullfillOrder(order._id, i)\">Completed</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Menu\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n<!-- Place holder for list of orders -->\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Current Orders</h3>\r\n    <p>Below are orders that are currently being fulfilled</p>\r\n    <p>Click on an order to reveal options</p>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\">\r\n      <strong> Order Number </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Price </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Name of Item </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Status </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Completed? </strong>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div *ngIf=\"orders\">\r\n    <ul>\r\n      <div *ngFor=\"let order of orders; index as i\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-4\">\r\n            {{i + 1}}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            $ {{order.price}}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            {{ order.name_of_item }}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            {{ order.status }}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            <button (click)=\"fullfillOrder(order._id, i)\">Completed</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/restaurantdetails/restaurantdetails.component.html": 
@@ -259,7 +259,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Details\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"restaurantviewdetails.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Edit Details</h3>\r\n    <p>Please put new restaurant information here! After edit, do not forget to click update at the button.</p>\r\n  </div>\r\n  <hr>\r\n  <form mehtod=\"post\" [formGroup]=\"detailsForm\" (ngSubmit)=onSubmit(detailsForm.value)>\r\n    <div class=\"row\">\r\n      <div class=\" col-md-6\">\r\n        <img [src]=\"restaurant_details.res_image\" alt=\"\" style=\"width: 500px\"/>\r\n        <input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"res_image\"\r\n               ng-model=\"res_image\"\r\n               base-sixty-four-input>\r\n      </div>\r\n      <div class=\"form-style col-md-6\">\r\n        <h4>\r\n          <input type=\"text\" required=\"required\" formControlName=\"name\" value=\"{{ restaurant_details.name }}\"\r\n                 id=\"name\" style=\"width: 100%\">\r\n        </h4>\r\n        <li>\r\n          <strong> Contact: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"contact\" value=\"{{ restaurant_details.contact }}\"\r\n                 id=\"contact\">\r\n        </li>\r\n        <li>\r\n          <strong> Food Category: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"food_category\"\r\n                 value=\"{{ restaurant_details.food_category }}\" id=\"food_category\">\r\n        </li>\r\n        <li>\r\n          <strong> Location: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"location\"\r\n                 value=\"{{ restaurant_details.location }}\" id=\"location\">\r\n        </li>\r\n        <li>\r\n          <strong> Working Hours: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"working_hours\"\r\n                 value=\"{{ restaurant_details.working_hours }}\"\r\n                 id=\"working_hours\">\r\n        </li>\r\n        <li><strong> Description: </strong> Some thing write here!</li>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <div class=\"row\">\r\n      <button href=\"#\" routerLink=\"/restaurantviewdetails\" type=\"submit\" value=\"submit\"\r\n              class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">Update\r\n      </button>\r\n    </div>\r\n  </form>\r\n</div>\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Details\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"restaurantviewdetails.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Edit Details</h3>\r\n    <p>Please put new restaurant information here! After edit, do not forget to click update at the button.</p>\r\n  </div>\r\n  <hr>\r\n  <form mehtod=\"post\" [formGroup]=\"detailsForm\" (ngSubmit)=onSubmit(detailsForm.value)>\r\n    <div class=\"row\">\r\n      <div class=\" col-md-6\">\r\n        <img [src]=\"restaurant_details.res_image\" alt=\"\" style=\"width: 500px\"/>\r\n        <input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"res_image\"\r\n               ng-model=\"res_image\" base-sixty-four-input>\r\n      </div>\r\n      <div class=\"form-style col-md-6\">\r\n        <h4>\r\n          <input type=\"text\" required=\"required\" formControlName=\"name\" value=\"{{ restaurant_details.name }}\"\r\n                 id=\"name\" style=\"width: 100%\">\r\n        </h4>\r\n        <li>\r\n          <strong> Contact: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"contact\" value=\"{{ restaurant_details.contact }}\"\r\n                 id=\"contact\">\r\n        </li>\r\n        <li>\r\n          <strong> Food Category: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"food_category\"\r\n                 value=\"{{ restaurant_details.food_category }}\" id=\"food_category\">\r\n        </li>\r\n        <li>\r\n          <strong> Location: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"location\"\r\n                 value=\"{{ restaurant_details.location }}\" id=\"location\">\r\n        </li>\r\n        <li>\r\n          <strong> Working Hours: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"working_hours\"\r\n                 value=\"{{ restaurant_details.working_hours }}\"\r\n                 id=\"working_hours\">\r\n        </li>\r\n        <li><strong> Description: </strong> Some thing write here!</li>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <div class=\"row\">\r\n      <button type=\"submit\" value=\"submit\"\r\n              class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">Update\r\n      </button>\r\n    </div>\r\n  </form>\r\n</div>\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/restaurantdropdown/restaurantdropdown.component.html": 
@@ -1202,31 +1202,68 @@
                     this.userProfileForm = this.formbuilder.group({
                         name: '',
                         contact: '',
-                        address: '',
-                        altAddress: '',
+                        email: '',
+                        street1: '',
+                        street2: '',
                         city: '',
                         state: '',
-                        zip: ''
+                        zip_code: ''
                     });
                 }
+                CustomereditprofileComponent.prototype.onFileSelected = function (event) {
+                    //this.selectedFile = <File>event.target.files[0];
+                    // var b64;
+                    // var reader = new FileReader();
+                    // reader.onload = function(e){
+                    //   console.log("encoding image")
+                    //   b64 = btoa(e.target.toString());
+                    //   console.log(b64)
+                    // }
+                    // this.fileAsBase64 = b64;
+                    var file = event.target.files[0];
+                    this.image = file;
+                };
                 CustomereditprofileComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpHeaders"]({
+                        'Content-Type': 'application/json',
+                        jwttoken: this.cookie.get("jwttoken")
+                    });
+                    var customer_id = this.cookie.get('customer_id');
+                    var url = '/customer/display_details/' + customer_id;
+                    // var params = new HttpParams().set("id", customer_id)
+                    this.http.get(url, { headers: headers }).subscribe(function (data) {
+                        // console.log(data)
+                        if (data != null) {
+                            _this.customer_details = data['result'];
+                            _this.customer_details.customer_image = "/customer_images/" + customer_id + ".png";
+                            console.log(_this.customer_details);
+                        }
+                    });
                 };
-                CustomereditprofileComponent.prototype.onSubmit = function (event) {
+                CustomereditprofileComponent.prototype.onSubmit = function (profile) {
+                    var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpHeaders"]({
+                        // 'Content-Type': 'multipart/form-data',
+                        jwttoken: this.cookie.get("jwttoken")
+                    });
+                    var customer_id = this.cookie.get("customer_id");
+                    var jwttoken = this.cookie.get("jwttoken");
+                    // console.log(jwttoken)
+                    var formData = new FormData();
+                    formData.append("id", customer_id);
+                    formData.append("name", profile["name"]);
+                    formData.append("email", profile["email"]);
+                    formData.append("contact", profile["contact"]);
+                    formData.append("street1", profile["street1"]);
+                    formData.append("street2", profile["street2"]);
+                    formData.append("city", profile["city"]);
+                    formData.append("state", profile["state"]);
+                    formData.append("zip_code", profile["zip_code"]);
+                    formData.append("jwttoken", jwttoken);
+                    formData.append("image", this.image, this.cookie.get('customer_id') + '.png');
+                    console.log(formData.get("state"));
+                    this.http.post('/customer/details', formData, { headers: headers }).subscribe(function (res) { return console.log(res); }, function (err) { return console.log(err); });
                     this.router.navigate(['/customerprofile']);
-                };
-                CustomereditprofileComponent.prototype.onUpdateName = function (event) {
-                };
-                CustomereditprofileComponent.prototype.onUpdateContact = function (event) {
-                };
-                CustomereditprofileComponent.prototype.onUpdateAddress = function (event) {
-                };
-                CustomereditprofileComponent.prototype.onUpdateAltAddress = function (event) {
-                };
-                CustomereditprofileComponent.prototype.onUpdateCity = function (event) {
-                };
-                CustomereditprofileComponent.prototype.onUpdateState = function (event) {
-                };
-                CustomereditprofileComponent.prototype.onUpdateZip = function (event) {
                 };
                 return CustomereditprofileComponent;
             }());
@@ -1267,13 +1304,37 @@
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerprofileComponent", function () { return CustomerprofileComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
             var CustomerprofileComponent = /** @class */ (function () {
-                function CustomerprofileComponent() {
+                function CustomerprofileComponent(cookie, http) {
+                    this.cookie = cookie;
+                    this.http = http;
                 }
                 CustomerprofileComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
+                        'Content-Type': 'application/json',
+                        jwttoken: this.cookie.get("jwttoken")
+                    });
+                    var customer_id = this.cookie.get('customer_id');
+                    var url = '/customer/display_details/' + customer_id;
+                    // var params = new HttpParams().set("id", customer_id)
+                    this.http.get(url, { headers: headers }).subscribe(function (data) {
+                        // console.log(data)
+                        if (data != null) {
+                            _this.customer_details = data['result'];
+                            _this.customer_details.customer_image = "/customer_images/" + customer_id + ".png";
+                            console.log(_this.customer_details);
+                        }
+                    });
                 };
                 return CustomerprofileComponent;
             }());
+            CustomerprofileComponent.ctorParameters = function () { return [
+                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_2__["CookieService"] },
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+            ]; };
             CustomerprofileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-customerprofile',
@@ -1710,6 +1771,7 @@
                     r.subscribe(function (data) {
                         if (data['auth']) {
                             _this.cookie.set('jwttoken', data['token']);
+                            _this.cookie.set('customer_id', data['_id']);
                             _this.router.navigate(['/customerdashboard']);
                         }
                     });
@@ -2296,13 +2358,15 @@
             /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
             /* harmony import */ var _login_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../login.service */ "./src/app/login.service.ts");
             /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
             var RestaurantdetailsComponent = /** @class */ (function () {
-                function RestaurantdetailsComponent(httpService, loginService, formBuilder, cookie, http) {
+                function RestaurantdetailsComponent(httpService, loginService, formBuilder, cookie, http, router) {
                     this.httpService = httpService;
                     this.loginService = loginService;
                     this.formBuilder = formBuilder;
                     this.cookie = cookie;
                     this.http = http;
+                    this.router = router;
                     this.selectedFile = null;
                     this.detailsForm = this.formBuilder.group({
                         name: '',
@@ -2327,6 +2391,7 @@
                     this.image = file;
                 };
                 RestaurantdetailsComponent.prototype.onSubmit = function (details) {
+                    var _this = this;
                     var jwttoken = this.cookie.get('jwttoken');
                     details['jwttoken'] = jwttoken;
                     details['id'] = this.cookie.get('restaurant_id');
@@ -2335,13 +2400,13 @@
                     var formData = new FormData();
                     formData.append("id", this.cookie.get('restaurant_id'));
                     formData.append("jwttoken", jwttoken);
-                    formData.append("image", this.image, this.cookie.get('restaurant_id') + '.jpg');
+                    formData.append("image", this.image, this.cookie.get('restaurant_id') + '.png');
                     formData.append("name", details['name']);
                     formData.append("location", details['location']);
                     formData.append("food_category", details['food_category']);
                     formData.append("contact", details['contact']);
                     formData.append("working_hours", details['working_hours']);
-                    this.http.post('/restaurant/restaurant_details', formData).subscribe(function (res) { return console.log(res); }, function (err) { return console.log(err); });
+                    this.http.post('/restaurant/restaurant_details', formData).subscribe(function (res) { return _this.router.navigate(['/restaurantviewdetails']); }, function (err) { return console.log(err); });
                 };
                 RestaurantdetailsComponent.prototype.ngOnInit = function () {
                     var _this = this;
@@ -2365,7 +2430,8 @@
                 { type: _login_service__WEBPACK_IMPORTED_MODULE_4__["LoginService"] },
                 { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
                 { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] },
-                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"] }
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"] },
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] }
             ]; };
             RestaurantdetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

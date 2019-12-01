@@ -20,34 +20,56 @@
     <h3>Edit Profile</h3>
   </div>
   <hr>
-  <form method="POST" [formGroup]="userProfileForm" (ngSubmit)="onSubmit(userUpdateForm.value)">
+  <form method="POST" [formGroup]="userProfileForm" (ngSubmit)="onSubmit(userProfileForm.value)">
     <div class="row">
       <div class="col-md-4 col-md-offset-1">
-        <img class="img-circle" src="../../assets/img/logo.png" alt="" style="width: 200px; height: 200px">
+
+
+        <!-- Change src here -->
+        <img class="img-circle" [src]="customer_details.customer_image" alt="" style="width: 200px; height: 200px">
+        <input type="file" required="required" accept="image/*" (change)="onFileSelected($event)" id="customer_image"
+               ng-model="customer_image" base-sixty-four-input>
+
       </div>
       <div class="info col-md-6 col-md-offset-1">
         <div class="row">
           <strong> Full Name: </strong>
-          <input type="text" formControlName="name" required="required" placeholder="John Doe" id="Name">
+          <input type="text" formControlName="name" required="required" placeholder="John Doe" id="Name" value="{{ customer_details.name }}">
         </div>
         <div class="row">
           <strong> Email Address: </strong>
-          <input type="contact" formControlName="contact" required="required" placeholder="food@foodoholics.com"
-                 id="email">
+          <input type="contact" formControlName="email" required="required" placeholder="food@foodoholics.com" 
+                 id="email" value="{{customer_details.email}}">
         </div>
         <div class="row">
           <strong> Phone Number: </strong>
-          <input type="contact" formControlName="contact" required="required" placeholder="812-999-9999" id="phone">
+          <input type="contact" formControlName="contact" required="required" placeholder="812-999-9999" id="phone" value="{{customer_details.contact}}">
         </div>
         <div class="row">
-          <strong> Address: </strong>
-          <input type="text" formControlName="address" required="required" placeholder="123 10th Street" id="address">
+          <strong>Street Address 1: </strong>
+          <input type="text" formControlName="street1" required="required" placeholder="123 10th Street" id="street1" value="{{customer_details.street1}}">
+        </div>
+        <div class="row">
+          <strong>Street Address 2: </strong>
+          <input type="text" formControlName="street2" required="required" placeholder="123 10th Street" id="street2" value="{{customer_details.street2}}">
+        </div>
+        <div class="row">
+          <strong> City: </strong>
+          <input type="text" formControlName="city" required="required" placeholder="Bloomington" id="city" value="{{customer_details.city}}">
+        </div>
+        <div class="row">
+            <strong> State: </strong>
+            <input type="text" formControlName="state" required="required" placeholder="Indiana" id="state" value="{{customer_details.state}}">
+        </div>
+        <div class="row">
+            <strong> Zip Code: </strong>
+            <input type="text" formControlName="zip_code" required="required" placeholder="47401" id="zip_code" value="{{customer_details.zip_code}}">
         </div>
       </div>
     </div>
-    <div class="row">
-      <a class="btn btn-primary pull-right" (click)="onUpdateName($event)">Update</a>
-    </div>
+    <button type="submit" value="submit" class="btn btn-primary btn-lg btn-block pull-right" style="width: 100px; margin-right: 20px">
+      Update
+    </button>
   </form>
 </div>
 </body>

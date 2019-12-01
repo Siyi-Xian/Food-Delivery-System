@@ -3,6 +3,7 @@ import {FormBuilder} from '@angular/forms';
 import {CookieService} from 'ngx-cookie-service';
 import {LoginService} from '../login.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaurantdetails',
@@ -19,7 +20,8 @@ export class RestaurantdetailsComponent implements OnInit {
     private loginService: LoginService,
     private formBuilder: FormBuilder,
     private cookie: CookieService,
-    private http: HttpClient) {
+    private http: HttpClient,
+    private router: Router) {
     this.detailsForm = this.formBuilder.group({
       name: '',
       location: '',
@@ -71,7 +73,7 @@ export class RestaurantdetailsComponent implements OnInit {
     formData.append("working_hours", details['working_hours'])
 
     this.http.post<any>('/restaurant/restaurant_details', formData).subscribe(
-      (res)=> console.log(res),
+      (res)=> this.router.navigate(['/restaurantviewdetails']),
       (err) => console.log(err)
     )
   }

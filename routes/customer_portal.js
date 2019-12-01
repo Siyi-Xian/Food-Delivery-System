@@ -5,20 +5,31 @@ var ObjectId = require('mongoose').Types.ObjectId;
 let jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 let middleware = require('./jwtverification');
+const multer = require('multer')
 
 var router = express.Router()
 mongoose.connect('mongodb://heroku_wr9z45km:4qlbddem2aer4k5djhcrp5ph3s@ds243717.mlab.com:43717/heroku_wr9z45km', { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 
 
+const customer_image_storage = multer.diskStorage({
+    destination: (req, file, callBack)=>{
+        callBack(null, "customer_images")
+    },
+    filename: (req, file, callBack)=>{
+        callBack(null, file.originalname)
+    }
+})
+var upload_customer = multer({storage: customer_image_storage})
 
-
-router.post('/details', middleware.checkToken, function(req, res){
+router.post('/details', [middleware.checkToken, upload_customer.single('image')], function(req, res){
     var id = req.body.id
+    console.log(id)
     var data_update = {
         $set: {
             name: req.body.name,
             contact: req.body.contact,
+            email: req.body.email,
             street1: req.body.street1,
             street2: req.body.street2,
             city: req.body.city,
@@ -91,6 +102,40 @@ router.post("/order_item", middleware.checkToken, function(req, res){
     })
     
 })
+
+router.get("/display_details/:id", middleware.checkToken, function(req, res){
+    var id = req.params.id
+    console.log(id)
+    var d = {
+        projection:{
+            _id: 1,
+            name: 1,
+            email: 1,
+            street1: 1,
+            contact: 1,
+            street2: 1,
+            city: 1,
+            state: 1,
+            zip_code: 1,
+        }
+
+    }
+    db.collection("user_data").findOne({_id: ObjectId(id)}, d, function(err, result){
+        if (err){
+            console.log(err)
+            res.json({
+                message: "Failed"
+            })
+            return
+        }
+        else{
+            res.json({
+                result
+            })
+            return
+        }
+    })
+});
 
 router.get("/order_history/:customer_id", middleware.checkToken, function(req, res){
     var id = req.params.customer_id

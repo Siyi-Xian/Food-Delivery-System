@@ -35,6 +35,8 @@ app.use(express.static('dist/fooddeliverysystem'))
 // app.use(express.static(__dirname + '/menu_images'));
 app.use('/restaurant_images', express.static(__dirname + '/restaurant_images'));
 app.use('/menu_images', express.static(__dirname + '/menu_images'))
+app.use('/customer_images', express.static(__dirname + '/customer_images'))
+
 // const server = 
 app.use('/restaurant', restaurant_portal);
 app.use('/authentication', authentication);
@@ -55,7 +57,7 @@ var Recaptcha = require('express-recaptcha').RecaptchaV3;
 var recaptcha = new Recaptcha('6LdhGcMUAAAAAJ2eG5TNInZtPqRfS2MJE-CVeptA', '6LdhGcMUAAAAAB_GwLXNAI6sd-VhQiasNiXwIctE', {callback: 'cb'});
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(pub));
 app.set('views', __dirname + '/views');

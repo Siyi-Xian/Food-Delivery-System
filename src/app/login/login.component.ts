@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
     r.subscribe(data => {
       if (data['auth']) {
         this.cookie.set('jwttoken', data['token']);
+        this.cookie.set('customer_id', data['_id'])
         this.router.navigate(['/customerdashboard']);
       }
 

@@ -30,8 +30,7 @@
       <div class=" col-md-6">
         <img [src]="restaurant_details.res_image" alt="" style="width: 500px"/>
         <input type="file" required="required" accept="image/*" (change)="onFileSelected($event)" id="res_image"
-               ng-model="res_image"
-               base-sixty-four-input>
+               ng-model="res_image" base-sixty-four-input>
       </div>
       <div class="form-style col-md-6">
         <h4>
@@ -64,7 +63,7 @@
     </div>
     <hr>
     <div class="row">
-      <button href="#" routerLink="/restaurantviewdetails" type="submit" value="submit"
+      <button type="submit" value="submit"
               class="btn btn-primary btn-lg btn-block pull-right" style="width: 100px; margin-right: 20px">Update
       </button>
     </div>

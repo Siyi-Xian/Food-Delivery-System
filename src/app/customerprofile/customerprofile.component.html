@@ -22,20 +22,32 @@
   <hr>
   <div class="row">
     <div class="col-md-4 col-md-offset-1">
-      <img class="img-circle" src="../../assets/img/logo.png" alt="" style="width: 200px; height: 200px">
+      <img class="img-circle" [src]="customer_details.customer_image" alt="" style="width: 200px; height: 200px">
     </div>
     <div class="info col-md-6 col-md-offset-1">
       <div class="row">
-        <strong> Full Name: </strong>
+        <strong> Full Name: </strong>{{customer_details.name}}
       </div>
       <div class="row">
-        <strong> Email Address: </strong>
+        <strong> Email Address: </strong>{{customer_details.email}}
       </div>
       <div class="row">
-        <strong> Phone Number: </strong>
+        <strong> Phone Number: </strong>{{customer_details.contact}}
       </div>
       <div class="row">
-        <strong> Address: </strong>
+        <strong> Address Street 1: </strong>{{customer_details.street1}}
+      </div>
+      <div class="row">
+          <strong> Address Street 2: </strong>{{customer_details.street2}}
+      </div>
+      <div class="row">
+          <strong> City: </strong>{{customer_details.city}}
+      </div>
+      <div class="row">
+          <strong> State: </strong>{{customer_details.state}}
+      </div>
+      <div class="row">
+          <strong> Zip Code: </strong>{{customer_details.zip_code}}
       </div>
     </div>
   </div>

@@ -197,6 +197,7 @@ router.delete('/delete', middleware.checkToken, function(req, res){
 
 router.post('/restaurant_details', upload_restaurant.single('image'), function(req, res){
     var id = req.body.id
+    console.log(req.body)
     var data_update = {
         $set: {
             name: req.body.name,
@@ -221,7 +222,7 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
         }
         else{
             console.log("Success")
-             console.log(data)
+            console.log(data)
             res.json({
                 message: "Success"
             })
@@ -366,7 +367,7 @@ router.get('/display_details/:restaurant_id', middleware.checkToken, function(re
             return;
         }
         else{
-            console.log("Success")
+            // console.log("Success")
             // console.log(result)
         
             res.json(result)
