@@ -58,12 +58,12 @@
             <div>Please enter the 6-digit code that was sent to your email</div>
             <input type="text" required="required" placeholder="6-digit code" formControlName="otp">
             <span class="input-group-btn">
-              <button class="btn btn-secondary" (click)="veryOTPAsyn(userVerifyForm.otp)" type="button">Verify</button>
+              <button type="submit" class="btn btn-primary" (ngSubmit)="onVerify">Verify</button>
             </span>
           </form>
-          <div class="form-text error" *ngIf="userVerifyForm.touched">
-            <div *ngIf="userLoginForm.controls.otp.hasError('required')">Verifcation is required</div>
-            <div *ngIf="userLoginForm.controls.otp.hasError('invalidOtp')">Code is invalid</div>
+          <div class="form-text error" *ngIf="userVerifyForm">
+            <!--<div *ngIf="userLoginForm.controls.otp.hasError('required')">Verifcation is required</div>
+            <div *ngIf="userLoginForm.controls.otp.hasError('invalidOtp')">Code is invalid</div>-->
           </div>
         </div>
 

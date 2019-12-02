@@ -9,6 +9,7 @@ import { SocialloginService } from '../sociallogin.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -18,12 +19,17 @@ import { ElementRef } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   @ViewChild('recaptcha', {static: true}) recaptchaElement: ElementRef;
+  @ViewChild('showfile', {static: false}) OTPElement: ElementRef;
   userLoginForm;
   response: any;
 
   socialusers=new Socialusers();
 
   timesSubmitted = 0;
+
+  showFile = false;
+  userVerifyForm;
+  verifyOTP = false;
 
   constructor(
     public OAuth: AuthService,
@@ -36,6 +42,9 @@ export class LoginComponent implements OnInit {
       email: '',
       password: ''
     });
+    this.userVerifyForm = this.formBuilder.group({
+      otp: ''
+    })
   }
 
   ngOnInit() {
@@ -51,7 +60,10 @@ export class LoginComponent implements OnInit {
     r.subscribe(data => {
       if (data['auth']) {
         this.cookie.set('jwttoken', data['token']);
-        this.router.navigate(['/customerdashboard']);
+        console.log(data)
+        this.showFile = true;
+
+        //this.router.navigate(['/customerdashboard']);
       }
 
     });
@@ -118,6 +130,21 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  onVerify(userData){
+    console.log(userData['otp'])
+    console.log("verify")
+    var jwttoken = this.cookie.get("jwttoken");
+    var r = this.loginService.sendRequest(userData, '/authentication/verifyotp/user');
+    r.subscribe(data =>{
+      if (data['auth']){
+        this.router.navigate(['/customerdashboard'])
+      }
+      else{
+        alert("Invalid OTP")
+      }
+    })
+  }
+
   // logUserIn(event){
   //   event.preventDefault()
   //   console.log(event)
@@ -144,6 +171,8 @@ export class LoginComponent implements OnInit {
   console.log(email, password)
 }
 */
+
+
 
 }
 export class Socialusers{
