@@ -86,7 +86,7 @@ export class LoginComponent implements OnInit {
   }
 
   Savesresponse(socialusers: Socialusers){
-    this.SocialloginService.Savesresponse(Socialusers).subscribe((res: any) =>{
+    this.SocialloginService.Savesresponse(socialusers).subscribe((res: any) =>{
       this.socialusers=res;
       this.response = res.userDetail;
       localStorage.setItem('socialusers', JSON.stringify(this.socialusers));

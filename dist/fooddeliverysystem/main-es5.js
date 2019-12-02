@@ -50,7 +50,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<head>\r\n\r\n    \r\n\r\n</head>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n       \r\n\r\n<head>\r\n\r\n        <title>\r\n                Chat Board\r\n         </title>\r\n\r\n    <script src=\"https://js.pusher.com/5.0/pusher.min.js\"></script>\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"chatfeature.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n    <script>\r\n\r\n    // Enable pusher logging - don't include this in production\r\n    Pusher.logToConsole = true;\r\n\r\n    var pusher = new Pusher('49096276b737a48a5ba1', {\r\n      cluster: 'us2',\r\n      forceTLS: true\r\n    });\r\n\r\n    var channel = pusher.subscribe('my-channel');\r\n    channel.bind('my-event', function(data) {\r\n      alert(JSON.stringify(data));\r\n    });\r\n  </script>\r\n\r\n</head>\r\n    <body>\r\n\r\n        <label for=\"userName\">Username</label>\r\n        <input type=\"text\" id=\"userName\" [(ngModel)]=\"userName\">\r\n        \r\n        <label for=\"message\">Message</label>\r\n        <input type=\"text\" id=\"message\" [(ngModel)]=\"messageText\">\r\n        \r\n        <button (click)=\"sendMessage(userName, messageText)\">Send</button>\r\n\r\n\r\n    \r\n    <div *ngFor=\"let message of messages\">\r\n        <b>{{ message.user }}</b>: {{ message.text }}\r\n    </div>\r\n      \r\n   </body> \r\n\r\n   </html>\r\n\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/customerdashboard/customerdashboard.component.html": 
@@ -72,7 +72,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\">\r\n    <li class=\"dropdown\" style=\"width: 160px; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-cog\"></span>\r\n        Account\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\">\r\n        <li>\r\n          <a href=\"#\" routerLink=\"/customerprofile\">\r\n            <span class=\"glyphicon glyphicon-user\"></span>\r\n            Profile\r\n          </a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\" routerLink=\"/login\">\r\n            <span class=\"glyphicon glyphicon-log-out\"></span>\r\n            Logout\r\n          </a>\r\n        </li>\r\n      </ul>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\">\r\n    <li class=\"dropdown\" style=\"width: 160px; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-cog\"></span>\r\n        Account\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\">\r\n        <li>\r\n          <a href=\"#\" routerLink=\"/customerprofile\">\r\n            <span class=\"glyphicon glyphicon-user\"></span>\r\n            Profile\r\n          </a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\" routerLink=\"/login\">\r\n            <span class=\"glyphicon glyphicon-log-out\" (click)=\"logout()\"></span>\r\n            Logout\r\n          </a>\r\n        </li>\r\n      </ul>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/customereditprofile/customereditprofile.component.html": 
@@ -105,7 +105,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<p>deliverycurrentorders works!</p>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Order History\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliverycurrentorders.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-deliverydropdown></app-deliverydropdown>\r\n\r\n<!-- Place holder for list of orders -->\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Current Orders</h3>\r\n    <p>Below are orders that are currently being fulfilled</p>\r\n    <p>Click on an order to reveal options</p>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\">\r\n      <strong> Order Number </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Price </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Name of Item </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Status </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Delivered? </strong>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div *ngIf=\"orders\">\r\n    <ul>\r\n      <div *ngFor=\"let order of orders; index as i\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-4\">\r\n            <a href=\"#\" routerLink=\"/restaurantvieworder\"> {{order._id}} </a>\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            $ {{order.price}}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            {{ order.name_of_item }}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            Fulfilled\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            <button (click)=\"fullfillOrder(order._id, i)\">Delivered</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliverydropdown/deliverydropdown.component.html": 
@@ -138,7 +138,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Order History\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliveryorderhistory.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-deliverydropdown></app-deliverydropdown>\r\n\r\n<!--<div class=\"container\">-->\r\n<!--  <div class=\"container\">-->\r\n<!--    <h3>Order History</h3>-->\r\n<!--    <p>Below order history from your restaurant.</p>-->\r\n<!--  </div>-->\r\n<!--  <hr>-->\r\n<!--  <div class=\"row\">-->\r\n<!--    <div class=\"col-md-4\">-->\r\n<!--      <strong> Order Number </strong>-->\r\n<!--    </div>-->\r\n<!--    <div class=\"col-md-2\">-->\r\n<!--      <strong> Price </strong>-->\r\n<!--    </div>-->\r\n<!--    <div class=\"col-md-2\">-->\r\n<!--      <strong> Name of Item </strong>-->\r\n<!--    </div>-->\r\n<!--    <div class=\"col-md-2\">-->\r\n<!--      <strong> Status </strong>-->\r\n<!--    </div>-->\r\n<!--    <div class=\"col-md-2\">-->\r\n<!--      <strong> Time </strong>-->\r\n<!--    </div>-->\r\n<!--  </div>-->\r\n<!--  <hr>-->\r\n<!--  <div *ngIf=\"orders\">-->\r\n<!--    <ul>-->\r\n<!--      <div *ngFor=\"let order of orders\">-->\r\n<!--        <div class=\"row\" style=\"margin-top: 5px\">-->\r\n<!--          <div class=\"col-md-4\">-->\r\n<!--            <a href=\"#\" routerLink=\"/restaurantvieworder\"> {{order._id}} </a>-->\r\n<!--          </div>-->\r\n<!--          <div class=\"col-md-2\">-->\r\n<!--            $ {{order.price}}-->\r\n<!--          </div>-->\r\n<!--          <div class=\"col-md-2\">-->\r\n<!--            {{ order.name_of_item }}-->\r\n<!--          </div>-->\r\n<!--          <div class=\"col-md-2\">-->\r\n<!--            Fulfilled-->\r\n<!--          </div>-->\r\n<!--          <div class=\"col-md-2\">-->\r\n<!--            11/03/2019-->\r\n<!--          </div>-->\r\n<!--        </div>-->\r\n<!--      </div>-->\r\n<!--    </ul>-->\r\n<!--  </div>-->\r\n<!--</div>-->\r\n\r\n</body>\r\n\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Order History\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliveryorderhistory.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-deliverydropdown></app-deliverydropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Order History</h3>\r\n    <p>Below order history from your restaurant.</p>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\">\r\n      <strong> Order Number </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Price </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Name of Item </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Status </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Time </strong>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div *ngIf=\"orders\">\r\n    <ul>\r\n      <div *ngFor=\"let order of orders\">\r\n        <div class=\"row\" style=\"margin-top: 5px\">\r\n          <div class=\"col-md-4\">\r\n            <a href=\"#\" routerLink=\"/restaurantvieworder\"> {{order._id}} </a>\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            $ {{order.price}}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            {{ order.name_of_item }}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            Fulfilled\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            11/03/2019\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliveryprofile/deliveryprofile.component.html": 
@@ -149,7 +149,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<p>deliveryprofile works!</p>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Order History\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliveryprofile.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-deliverydropdown></app-deliverydropdown>\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliveryreg/deliveryreg.component.html": 
@@ -183,6 +183,17 @@
             "use strict";
             __webpack_require__.r(__webpack_exports__);
             /* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-light\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\">\r\n    <li class=\"dropdown\" style=\"width: 160px; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-log-in\"></span>\r\n        Login\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\">\r\n        <li><a href=\"#\" routerLink=\"/login\">Customers</a></li>\r\n        <li><a href=\"#\" routerLink=\"/resturantlogin\">Restaurant</a></li>\r\n        <li><a href=\"#\" routerLink=\"/deliverylogin\">Delivery Person</a></li>\r\n      </ul>\r\n    </li>\r\n    <li class=\"dropdown\" style=\"width: 160px; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-user\"></span>\r\n        Sign up\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\">\r\n        <li><a href=\"#\" routerLink=\"/registration\">Customers</a></li>\r\n        <li><a href=\"#\" routerLink=\"/restaurantreg\">Restaurant</a></li>\r\n        <li><a href=\"#\" routerLink=\"/deliveryreg\">Delivery Person</a></li>\r\n      </ul>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n");
+            /***/ 
+        }),
+        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/order/order.component.html": 
+        /*!**********************************************************************************!*\
+          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/order/order.component.html ***!
+          \**********************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("<p>order works!</p>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/orderhistory/orderhistory.component.html": 
@@ -259,7 +270,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Details\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"restaurantviewdetails.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Edit Details</h3>\r\n    <p>Please put new restaurant information here! After edit, do not forget to click update at the button.</p>\r\n  </div>\r\n  <hr>\r\n  <form mehtod=\"post\" [formGroup]=\"detailsForm\" (ngSubmit)=onSubmit(detailsForm.value)>\r\n    <div class=\"row\">\r\n      <div class=\" col-md-6\">\r\n        <img [src]=\"restaurant_details.res_image\" alt=\"\" style=\"width: 500px\"/>\r\n        <input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"res_image\"\r\n               ng-model=\"res_image\"\r\n               base-sixty-four-input>\r\n      </div>\r\n      <div class=\"form-style col-md-6\">\r\n        <h4>\r\n          <input type=\"text\" required=\"required\" formControlName=\"name\" value=\"{{ restaurant_details.name }}\"\r\n                 id=\"name\" style=\"width: 100%\">\r\n        </h4>\r\n        <li>\r\n          <strong> Contact: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"contact\" value=\"{{ restaurant_details.contact }}\"\r\n                 id=\"contact\">\r\n        </li>\r\n        <li>\r\n          <strong> Food Category: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"food_category\"\r\n                 value=\"{{ restaurant_details.food_category }}\" id=\"food_category\">\r\n        </li>\r\n        <li>\r\n          <strong> Location: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"location\"\r\n                 value=\"{{ restaurant_details.location }}\" id=\"location\">\r\n        </li>\r\n        <li>\r\n          <strong> Working Hours: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"working_hours\"\r\n                 value=\"{{ restaurant_details.working_hours }}\"\r\n                 id=\"working_hours\">\r\n        </li>\r\n        <li><strong> Description: </strong> Some thing write here!</li>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <div class=\"row\">\r\n      <button href=\"#\" routerLink=\"/restaurantviewdetails\" type=\"submit\" value=\"submit\"\r\n              class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">Update\r\n      </button>\r\n    </div>\r\n  </form>\r\n</div>\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Details\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"restaurantviewdetails.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Edit Details</h3>\r\n    <p>Please put new restaurant information here! After edit, do not forget to click update at the button.</p>\r\n  </div>\r\n  <hr>\r\n  <form mehtod=\"post\" [formGroup]=\"detailsForm\" (ngSubmit)=onSubmit(detailsForm.value)>\r\n    <div class=\"row\">\r\n      <div class=\" col-md-6\">\r\n        <img [src]=\"restaurant_details.res_image\" alt=\"\" style=\"width: 500px\"/>\r\n        <input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"res_image\"\r\n               ng-model=\"res_image\"\r\n               base-sixty-four-input>\r\n      </div>\r\n      <div class=\"form-style col-md-6\">\r\n        <h4>\r\n          <input type=\"text\" required=\"required\" formControlName=\"name\" value=\"{{ restaurant_details.name }}\"\r\n                 id=\"name\" style=\"width: 100%\">\r\n        </h4>\r\n        <li>\r\n          <strong> Contact: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"contact\" value=\"{{ restaurant_details.contact }}\"\r\n                 id=\"contact\">\r\n        </li>\r\n        <li>\r\n          <strong> Food Category: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"food_category\"\r\n                 value=\"{{ restaurant_details.food_category }}\" id=\"food_category\">\r\n        </li>\r\n        <li>\r\n          <strong> Location: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"location\"\r\n                 value=\"{{ restaurant_details.location }}\" id=\"location\">\r\n        </li>\r\n        <li>\r\n          <strong> Working Hours: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"working_hours\"\r\n                 value=\"{{ restaurant_details.working_hours }}\"\r\n                 id=\"working_hours\">\r\n        </li>\r\n        <li><strong> Description: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"description\"\r\n                 value=\"{{restaurant_details.description}}\"\r\n                 id=\"description\">\r\n        </li>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <div class=\"row\">\r\n      <button href=\"#\" routerLink=\"/restaurantviewdetails\" type=\"submit\" value=\"submit\"\r\n              class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">Update\r\n      </button>\r\n    </div>\r\n  </form>\r\n</div>\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/restaurantdropdown/restaurantdropdown.component.html": 
@@ -314,7 +325,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Details\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"restaurantviewdetails.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Restaurant Details</h3>\r\n    <p>Below is how a customer will see your Restaurant page</p>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\" col-md-6\" *ngIf=\"restaurant_details\">\r\n      <img [src]=\"restaurant_details.res_image\" alt=\"\" style=\"width: 500px\"/>\r\n    </div>\r\n    <div class=\" col-md-6\">\r\n      <ul *ngIf=\"restaurant_details\">\r\n        <h4><strong> {{restaurant_details.name}} </strong></h4>\r\n        <li><strong> Contact: </strong> <a href=\"tel:{{restaurant_details.contact}}\">{{restaurant_details.contact}}</a>\r\n        </li>\r\n        <li><strong> Food Category: </strong>{{restaurant_details.food_category}}</li>\r\n        <li><strong> Location: </strong> <a\r\n          href=\"http://maps.google.com/?q={{restaurant_details.location.replace(' ', '+')}}\">{{restaurant_details.location}}</a>\r\n        </li>\r\n        <li><strong> Working Hours: </strong>{{restaurant_details.working_hours}}</li>\r\n        <li><strong> Description: </strong> Some thing write here!</li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <a class=\"edit-link pull-right\" href=\"#\" routerLink=\"/restaurantdetails\">Edit</a>\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>\r\n\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Details\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"restaurantviewdetails.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Restaurant Details</h3>\r\n    <p>Below is how a customer will see your Restaurant page</p>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\" col-md-6\" *ngIf=\"restaurant_details\">\r\n      <img [src]=\"restaurant_details.res_image\" alt=\"\" style=\"width: 500px\"/>\r\n    </div>\r\n    <div class=\" col-md-6\">\r\n      <ul *ngIf=\"restaurant_details\">\r\n        <h4><strong> {{restaurant_details.name}} </strong></h4>\r\n        <li><strong> Contact: </strong> <a href=\"tel:{{restaurant_details.contact}}\">{{restaurant_details.contact}}</a>\r\n        </li>\r\n        <li><strong> Food Category: </strong>{{restaurant_details.food_category}}</li>\r\n        <li><strong> Location: </strong> <a\r\n          href=\"http://maps.google.com/?q={{restaurant_details.location.replace(' ', '+')}}\">{{restaurant_details.location}}</a>\r\n        </li>\r\n        <li><strong> Working Hours: </strong>{{restaurant_details.working_hours}}</li>\r\n        <li><strong> Description: </strong> {{restaurant_details.description}}</li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <a class=\"edit-link pull-right\" href=\"#\" routerLink=\"/restaurantdetails\">Edit</a>\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>\r\n\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/restaurantviewmenu/restaurantviewmenu.component.html": 
@@ -790,40 +801,42 @@
             /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
             /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
             /* harmony import */ var angularx_social_login__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angularx-social-login */ "./node_modules/angularx-social-login/angularx-social-login.js");
-            /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-            /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-            /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-            /* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./admin/admin.component */ "./src/app/admin/admin.component.ts");
-            /* harmony import */ var _public_public_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./public/public.component */ "./src/app/public/public.component.ts");
-            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-            /* harmony import */ var _registration_registration_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./registration/registration.component */ "./src/app/registration/registration.component.ts");
-            /* harmony import */ var _resturantlogin_resturantlogin_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./resturantlogin/resturantlogin.component */ "./src/app/resturantlogin/resturantlogin.component.ts");
-            /* harmony import */ var _restaurantreg_restaurantreg_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./restaurantreg/restaurantreg.component */ "./src/app/restaurantreg/restaurantreg.component.ts");
-            /* harmony import */ var _restaurant_view_restaurant_view_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./restaurant-view/restaurant-view.component */ "./src/app/restaurant-view/restaurant-view.component.ts");
-            /* harmony import */ var _orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./orderhistory/orderhistory.component */ "./src/app/orderhistory/orderhistory.component.ts");
-            /* harmony import */ var _restaurantdetails_restaurantdetails_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./restaurantdetails/restaurantdetails.component */ "./src/app/restaurantdetails/restaurantdetails.component.ts");
-            /* harmony import */ var _restaurantmenu_restaurantmenu_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./restaurantmenu/restaurantmenu.component */ "./src/app/restaurantmenu/restaurantmenu.component.ts");
-            /* harmony import */ var _restaurantstats_restaurantstats_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./restaurantstats/restaurantstats.component */ "./src/app/restaurantstats/restaurantstats.component.ts");
-            /* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/sidebar/sidebar.component.ts");
-            /* harmony import */ var _restaurantviewdetails_restaurantviewdetails_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./restaurantviewdetails/restaurantviewdetails.component */ "./src/app/restaurantviewdetails/restaurantviewdetails.component.ts");
-            /* harmony import */ var _restaurantviewmenu_restaurantviewmenu_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./restaurantviewmenu/restaurantviewmenu.component */ "./src/app/restaurantviewmenu/restaurantviewmenu.component.ts");
-            /* harmony import */ var _restaurantcurrentorders_restaurantcurrentorders_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./restaurantcurrentorders/restaurantcurrentorders.component */ "./src/app/restaurantcurrentorders/restaurantcurrentorders.component.ts");
-            /* harmony import */ var _customerdashboard_customerdashboard_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./customerdashboard/customerdashboard.component */ "./src/app/customerdashboard/customerdashboard.component.ts");
-            /* harmony import */ var _verify_verify_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./verify/verify.component */ "./src/app/verify/verify.component.ts");
-            /* harmony import */ var _recover_recover_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./recover/recover.component */ "./src/app/recover/recover.component.ts");
-            /* harmony import */ var _restaurantdropdown_restaurantdropdown_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./restaurantdropdown/restaurantdropdown.component */ "./src/app/restaurantdropdown/restaurantdropdown.component.ts");
-            /* harmony import */ var _customerprofile_customerprofile_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./customerprofile/customerprofile.component */ "./src/app/customerprofile/customerprofile.component.ts");
-            /* harmony import */ var _customereditprofile_customereditprofile_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./customereditprofile/customereditprofile.component */ "./src/app/customereditprofile/customereditprofile.component.ts");
-            /* harmony import */ var _deliverylogin_deliverylogin_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./deliverylogin/deliverylogin.component */ "./src/app/deliverylogin/deliverylogin.component.ts");
-            /* harmony import */ var _deliveryreg_deliveryreg_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./deliveryreg/deliveryreg.component */ "./src/app/deliveryreg/deliveryreg.component.ts");
-            /* harmony import */ var _logindropdown_logindropdown_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./logindropdown/logindropdown.component */ "./src/app/logindropdown/logindropdown.component.ts");
-            /* harmony import */ var _restaurantvieworder_restaurantvieworder_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./restaurantvieworder/restaurantvieworder.component */ "./src/app/restaurantvieworder/restaurantvieworder.component.ts");
-            /* harmony import */ var _customerdropdown_customerdropdown_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./customerdropdown/customerdropdown.component */ "./src/app/customerdropdown/customerdropdown.component.ts");
-            /* harmony import */ var _chatfeature_chatfeature_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./chatfeature/chatfeature.component */ "./src/app/chatfeature/chatfeature.component.ts");
-            /* harmony import */ var _deliverydropdown_deliverydropdown_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./deliverydropdown/deliverydropdown.component */ "./src/app/deliverydropdown/deliverydropdown.component.ts");
-            /* harmony import */ var _deliveryorderhistory_deliveryorderhistory_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./deliveryorderhistory/deliveryorderhistory.component */ "./src/app/deliveryorderhistory/deliveryorderhistory.component.ts");
-            /* harmony import */ var _deliverycurrentorders_deliverycurrentorders_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./deliverycurrentorders/deliverycurrentorders.component */ "./src/app/deliverycurrentorders/deliverycurrentorders.component.ts");
-            /* harmony import */ var _deliveryprofile_deliveryprofile_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./deliveryprofile/deliveryprofile.component */ "./src/app/deliveryprofile/deliveryprofile.component.ts");
+            /* harmony import */ var _pusher_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pusher.service */ "./src/app/pusher.service.ts");
+            /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+            /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+            /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+            /* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./admin/admin.component */ "./src/app/admin/admin.component.ts");
+            /* harmony import */ var _public_public_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./public/public.component */ "./src/app/public/public.component.ts");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            /* harmony import */ var _registration_registration_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./registration/registration.component */ "./src/app/registration/registration.component.ts");
+            /* harmony import */ var _resturantlogin_resturantlogin_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./resturantlogin/resturantlogin.component */ "./src/app/resturantlogin/resturantlogin.component.ts");
+            /* harmony import */ var _restaurantreg_restaurantreg_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./restaurantreg/restaurantreg.component */ "./src/app/restaurantreg/restaurantreg.component.ts");
+            /* harmony import */ var _restaurant_view_restaurant_view_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./restaurant-view/restaurant-view.component */ "./src/app/restaurant-view/restaurant-view.component.ts");
+            /* harmony import */ var _orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./orderhistory/orderhistory.component */ "./src/app/orderhistory/orderhistory.component.ts");
+            /* harmony import */ var _restaurantdetails_restaurantdetails_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./restaurantdetails/restaurantdetails.component */ "./src/app/restaurantdetails/restaurantdetails.component.ts");
+            /* harmony import */ var _restaurantmenu_restaurantmenu_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./restaurantmenu/restaurantmenu.component */ "./src/app/restaurantmenu/restaurantmenu.component.ts");
+            /* harmony import */ var _restaurantstats_restaurantstats_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./restaurantstats/restaurantstats.component */ "./src/app/restaurantstats/restaurantstats.component.ts");
+            /* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/sidebar/sidebar.component.ts");
+            /* harmony import */ var _restaurantviewdetails_restaurantviewdetails_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./restaurantviewdetails/restaurantviewdetails.component */ "./src/app/restaurantviewdetails/restaurantviewdetails.component.ts");
+            /* harmony import */ var _restaurantviewmenu_restaurantviewmenu_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./restaurantviewmenu/restaurantviewmenu.component */ "./src/app/restaurantviewmenu/restaurantviewmenu.component.ts");
+            /* harmony import */ var _restaurantcurrentorders_restaurantcurrentorders_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./restaurantcurrentorders/restaurantcurrentorders.component */ "./src/app/restaurantcurrentorders/restaurantcurrentorders.component.ts");
+            /* harmony import */ var _customerdashboard_customerdashboard_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./customerdashboard/customerdashboard.component */ "./src/app/customerdashboard/customerdashboard.component.ts");
+            /* harmony import */ var _verify_verify_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./verify/verify.component */ "./src/app/verify/verify.component.ts");
+            /* harmony import */ var _recover_recover_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./recover/recover.component */ "./src/app/recover/recover.component.ts");
+            /* harmony import */ var _restaurantdropdown_restaurantdropdown_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./restaurantdropdown/restaurantdropdown.component */ "./src/app/restaurantdropdown/restaurantdropdown.component.ts");
+            /* harmony import */ var _customerprofile_customerprofile_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./customerprofile/customerprofile.component */ "./src/app/customerprofile/customerprofile.component.ts");
+            /* harmony import */ var _customereditprofile_customereditprofile_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./customereditprofile/customereditprofile.component */ "./src/app/customereditprofile/customereditprofile.component.ts");
+            /* harmony import */ var _deliverylogin_deliverylogin_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./deliverylogin/deliverylogin.component */ "./src/app/deliverylogin/deliverylogin.component.ts");
+            /* harmony import */ var _deliveryreg_deliveryreg_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./deliveryreg/deliveryreg.component */ "./src/app/deliveryreg/deliveryreg.component.ts");
+            /* harmony import */ var _logindropdown_logindropdown_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./logindropdown/logindropdown.component */ "./src/app/logindropdown/logindropdown.component.ts");
+            /* harmony import */ var _restaurantvieworder_restaurantvieworder_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./restaurantvieworder/restaurantvieworder.component */ "./src/app/restaurantvieworder/restaurantvieworder.component.ts");
+            /* harmony import */ var _customerdropdown_customerdropdown_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./customerdropdown/customerdropdown.component */ "./src/app/customerdropdown/customerdropdown.component.ts");
+            /* harmony import */ var _chatfeature_chatfeature_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./chatfeature/chatfeature.component */ "./src/app/chatfeature/chatfeature.component.ts");
+            /* harmony import */ var _deliverydropdown_deliverydropdown_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./deliverydropdown/deliverydropdown.component */ "./src/app/deliverydropdown/deliverydropdown.component.ts");
+            /* harmony import */ var _deliveryorderhistory_deliveryorderhistory_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./deliveryorderhistory/deliveryorderhistory.component */ "./src/app/deliveryorderhistory/deliveryorderhistory.component.ts");
+            /* harmony import */ var _deliverycurrentorders_deliverycurrentorders_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./deliverycurrentorders/deliverycurrentorders.component */ "./src/app/deliverycurrentorders/deliverycurrentorders.component.ts");
+            /* harmony import */ var _deliveryprofile_deliveryprofile_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./deliveryprofile/deliveryprofile.component */ "./src/app/deliveryprofile/deliveryprofile.component.ts");
+            /* harmony import */ var _order_order_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./order/order.component */ "./src/app/order/order.component.ts");
             function socialConfigs() {
                 var config = new angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthServiceConfig"]([
                     {
@@ -845,156 +858,162 @@
             AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
                     declarations: [
-                        _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
-                        _login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"],
-                        _admin_admin_component__WEBPACK_IMPORTED_MODULE_10__["AdminComponent"],
-                        _public_public_component__WEBPACK_IMPORTED_MODULE_11__["PublicComponent"],
-                        _registration_registration_component__WEBPACK_IMPORTED_MODULE_13__["RegistrationComponent"],
-                        _resturantlogin_resturantlogin_component__WEBPACK_IMPORTED_MODULE_14__["ResturantloginComponent"],
-                        _restaurantreg_restaurantreg_component__WEBPACK_IMPORTED_MODULE_15__["RestaurantregComponent"],
-                        _restaurant_view_restaurant_view_component__WEBPACK_IMPORTED_MODULE_16__["RestaurantViewComponent"],
-                        _orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_17__["OrderhistoryComponent"],
-                        _restaurantdetails_restaurantdetails_component__WEBPACK_IMPORTED_MODULE_18__["RestaurantdetailsComponent"],
-                        _restaurantmenu_restaurantmenu_component__WEBPACK_IMPORTED_MODULE_19__["RestaurantmenuComponent"],
-                        _restaurantstats_restaurantstats_component__WEBPACK_IMPORTED_MODULE_20__["RestaurantstatsComponent"],
-                        _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_21__["SidebarComponent"],
-                        _restaurantviewdetails_restaurantviewdetails_component__WEBPACK_IMPORTED_MODULE_22__["RestaurantviewdetailsComponent"],
-                        _restaurantviewmenu_restaurantviewmenu_component__WEBPACK_IMPORTED_MODULE_23__["RestaurantviewmenuComponent"],
-                        _restaurantcurrentorders_restaurantcurrentorders_component__WEBPACK_IMPORTED_MODULE_24__["RestaurantcurrentordersComponent"],
-                        _customerdashboard_customerdashboard_component__WEBPACK_IMPORTED_MODULE_25__["CustomerdashboardComponent"],
-                        _verify_verify_component__WEBPACK_IMPORTED_MODULE_26__["VerifyComponent"],
-                        _recover_recover_component__WEBPACK_IMPORTED_MODULE_27__["RecoverComponent"],
-                        _restaurantdropdown_restaurantdropdown_component__WEBPACK_IMPORTED_MODULE_28__["RestaurantdropdownComponent"],
-                        _customerprofile_customerprofile_component__WEBPACK_IMPORTED_MODULE_29__["CustomerprofileComponent"],
-                        _customereditprofile_customereditprofile_component__WEBPACK_IMPORTED_MODULE_30__["CustomereditprofileComponent"],
-                        _deliverylogin_deliverylogin_component__WEBPACK_IMPORTED_MODULE_31__["DeliveryloginComponent"],
-                        _deliveryreg_deliveryreg_component__WEBPACK_IMPORTED_MODULE_32__["DeliveryregComponent"],
-                        _logindropdown_logindropdown_component__WEBPACK_IMPORTED_MODULE_33__["LogindropdownComponent"],
-                        _restaurantvieworder_restaurantvieworder_component__WEBPACK_IMPORTED_MODULE_34__["RestaurantvieworderComponent"],
-                        _customerdropdown_customerdropdown_component__WEBPACK_IMPORTED_MODULE_35__["CustomerdropdownComponent"],
-                        _chatfeature_chatfeature_component__WEBPACK_IMPORTED_MODULE_36__["ChatfeatureComponent"],
-                        _deliverydropdown_deliverydropdown_component__WEBPACK_IMPORTED_MODULE_37__["DeliverydropdownComponent"],
-                        _deliveryorderhistory_deliveryorderhistory_component__WEBPACK_IMPORTED_MODULE_38__["DeliveryorderhistoryComponent"],
-                        _deliverycurrentorders_deliverycurrentorders_component__WEBPACK_IMPORTED_MODULE_39__["DeliverycurrentordersComponent"],
-                        _deliveryprofile_deliveryprofile_component__WEBPACK_IMPORTED_MODULE_40__["DeliveryprofileComponent"]
+                        _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
+                        _login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"],
+                        _admin_admin_component__WEBPACK_IMPORTED_MODULE_11__["AdminComponent"],
+                        _public_public_component__WEBPACK_IMPORTED_MODULE_12__["PublicComponent"],
+                        _registration_registration_component__WEBPACK_IMPORTED_MODULE_14__["RegistrationComponent"],
+                        _resturantlogin_resturantlogin_component__WEBPACK_IMPORTED_MODULE_15__["ResturantloginComponent"],
+                        _restaurantreg_restaurantreg_component__WEBPACK_IMPORTED_MODULE_16__["RestaurantregComponent"],
+                        _restaurant_view_restaurant_view_component__WEBPACK_IMPORTED_MODULE_17__["RestaurantViewComponent"],
+                        _orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_18__["OrderhistoryComponent"],
+                        _restaurantdetails_restaurantdetails_component__WEBPACK_IMPORTED_MODULE_19__["RestaurantdetailsComponent"],
+                        _restaurantmenu_restaurantmenu_component__WEBPACK_IMPORTED_MODULE_20__["RestaurantmenuComponent"],
+                        _restaurantstats_restaurantstats_component__WEBPACK_IMPORTED_MODULE_21__["RestaurantstatsComponent"],
+                        _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_22__["SidebarComponent"],
+                        _restaurantviewdetails_restaurantviewdetails_component__WEBPACK_IMPORTED_MODULE_23__["RestaurantviewdetailsComponent"],
+                        _restaurantviewmenu_restaurantviewmenu_component__WEBPACK_IMPORTED_MODULE_24__["RestaurantviewmenuComponent"],
+                        _restaurantcurrentorders_restaurantcurrentorders_component__WEBPACK_IMPORTED_MODULE_25__["RestaurantcurrentordersComponent"],
+                        _customerdashboard_customerdashboard_component__WEBPACK_IMPORTED_MODULE_26__["CustomerdashboardComponent"],
+                        _verify_verify_component__WEBPACK_IMPORTED_MODULE_27__["VerifyComponent"],
+                        _recover_recover_component__WEBPACK_IMPORTED_MODULE_28__["RecoverComponent"],
+                        _restaurantdropdown_restaurantdropdown_component__WEBPACK_IMPORTED_MODULE_29__["RestaurantdropdownComponent"],
+                        _customerprofile_customerprofile_component__WEBPACK_IMPORTED_MODULE_30__["CustomerprofileComponent"],
+                        _customereditprofile_customereditprofile_component__WEBPACK_IMPORTED_MODULE_31__["CustomereditprofileComponent"],
+                        _deliverylogin_deliverylogin_component__WEBPACK_IMPORTED_MODULE_32__["DeliveryloginComponent"],
+                        _deliveryreg_deliveryreg_component__WEBPACK_IMPORTED_MODULE_33__["DeliveryregComponent"],
+                        _logindropdown_logindropdown_component__WEBPACK_IMPORTED_MODULE_34__["LogindropdownComponent"],
+                        _restaurantvieworder_restaurantvieworder_component__WEBPACK_IMPORTED_MODULE_35__["RestaurantvieworderComponent"],
+                        _customerdropdown_customerdropdown_component__WEBPACK_IMPORTED_MODULE_36__["CustomerdropdownComponent"],
+                        _chatfeature_chatfeature_component__WEBPACK_IMPORTED_MODULE_37__["ChatfeatureComponent"],
+                        _deliverydropdown_deliverydropdown_component__WEBPACK_IMPORTED_MODULE_38__["DeliverydropdownComponent"],
+                        _deliveryorderhistory_deliveryorderhistory_component__WEBPACK_IMPORTED_MODULE_39__["DeliveryorderhistoryComponent"],
+                        _deliverycurrentorders_deliverycurrentorders_component__WEBPACK_IMPORTED_MODULE_40__["DeliverycurrentordersComponent"],
+                        _deliveryprofile_deliveryprofile_component__WEBPACK_IMPORTED_MODULE_41__["DeliveryprofileComponent"],
+                        _order_order_component__WEBPACK_IMPORTED_MODULE_42__["OrderComponent"]
                     ],
                     imports: [
                         _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                         _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
                         _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
-                        _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
+                        _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
                         _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-                        _angular_router__WEBPACK_IMPORTED_MODULE_12__["RouterModule"].forRoot([
+                        _angular_router__WEBPACK_IMPORTED_MODULE_13__["RouterModule"].forRoot([
                             {
                                 path: '',
-                                component: _public_public_component__WEBPACK_IMPORTED_MODULE_11__["PublicComponent"]
+                                component: _public_public_component__WEBPACK_IMPORTED_MODULE_12__["PublicComponent"]
                             },
                             {
                                 path: 'login',
-                                component: _login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"]
+                                component: _login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"]
                             },
                             {
                                 path: 'public',
-                                component: _public_public_component__WEBPACK_IMPORTED_MODULE_11__["PublicComponent"]
+                                component: _public_public_component__WEBPACK_IMPORTED_MODULE_12__["PublicComponent"]
                             },
                             {
                                 path: 'registration',
-                                component: _registration_registration_component__WEBPACK_IMPORTED_MODULE_13__["RegistrationComponent"]
+                                component: _registration_registration_component__WEBPACK_IMPORTED_MODULE_14__["RegistrationComponent"]
                             },
                             {
                                 path: 'resturantlogin',
-                                component: _resturantlogin_resturantlogin_component__WEBPACK_IMPORTED_MODULE_14__["ResturantloginComponent"]
+                                component: _resturantlogin_resturantlogin_component__WEBPACK_IMPORTED_MODULE_15__["ResturantloginComponent"]
                             },
                             {
                                 path: 'restaurantreg',
-                                component: _restaurantreg_restaurantreg_component__WEBPACK_IMPORTED_MODULE_15__["RestaurantregComponent"]
+                                component: _restaurantreg_restaurantreg_component__WEBPACK_IMPORTED_MODULE_16__["RestaurantregComponent"]
                             },
                             {
                                 path: 'restaurant-view',
-                                component: _restaurant_view_restaurant_view_component__WEBPACK_IMPORTED_MODULE_16__["RestaurantViewComponent"]
+                                component: _restaurant_view_restaurant_view_component__WEBPACK_IMPORTED_MODULE_17__["RestaurantViewComponent"]
                             },
                             {
                                 path: 'orderhistory',
-                                component: _orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_17__["OrderhistoryComponent"]
+                                component: _orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_18__["OrderhistoryComponent"]
                             },
                             {
                                 path: 'restaurantdetails',
-                                component: _restaurantdetails_restaurantdetails_component__WEBPACK_IMPORTED_MODULE_18__["RestaurantdetailsComponent"]
+                                component: _restaurantdetails_restaurantdetails_component__WEBPACK_IMPORTED_MODULE_19__["RestaurantdetailsComponent"]
                             },
                             {
                                 path: 'restaurantmenu',
-                                component: _restaurantmenu_restaurantmenu_component__WEBPACK_IMPORTED_MODULE_19__["RestaurantmenuComponent"]
+                                component: _restaurantmenu_restaurantmenu_component__WEBPACK_IMPORTED_MODULE_20__["RestaurantmenuComponent"]
                             },
                             {
                                 path: 'restaurantstats',
-                                component: _restaurantstats_restaurantstats_component__WEBPACK_IMPORTED_MODULE_20__["RestaurantstatsComponent"]
+                                component: _restaurantstats_restaurantstats_component__WEBPACK_IMPORTED_MODULE_21__["RestaurantstatsComponent"]
                             },
                             {
                                 path: 'restaurantviewdetails',
-                                component: _restaurantviewdetails_restaurantviewdetails_component__WEBPACK_IMPORTED_MODULE_22__["RestaurantviewdetailsComponent"]
+                                component: _restaurantviewdetails_restaurantviewdetails_component__WEBPACK_IMPORTED_MODULE_23__["RestaurantviewdetailsComponent"]
                             },
                             {
                                 path: 'restaurantviewmenu',
-                                component: _restaurantviewmenu_restaurantviewmenu_component__WEBPACK_IMPORTED_MODULE_23__["RestaurantviewmenuComponent"]
+                                component: _restaurantviewmenu_restaurantviewmenu_component__WEBPACK_IMPORTED_MODULE_24__["RestaurantviewmenuComponent"]
                             },
                             {
                                 path: 'restaurantcurrentorders',
-                                component: _restaurantcurrentorders_restaurantcurrentorders_component__WEBPACK_IMPORTED_MODULE_24__["RestaurantcurrentordersComponent"]
+                                component: _restaurantcurrentorders_restaurantcurrentorders_component__WEBPACK_IMPORTED_MODULE_25__["RestaurantcurrentordersComponent"]
                             },
                             {
                                 path: 'customerdashboard',
-                                component: _customerdashboard_customerdashboard_component__WEBPACK_IMPORTED_MODULE_25__["CustomerdashboardComponent"]
+                                component: _customerdashboard_customerdashboard_component__WEBPACK_IMPORTED_MODULE_26__["CustomerdashboardComponent"]
                             },
                             {
                                 path: 'verify',
-                                component: _verify_verify_component__WEBPACK_IMPORTED_MODULE_26__["VerifyComponent"]
+                                component: _verify_verify_component__WEBPACK_IMPORTED_MODULE_27__["VerifyComponent"]
                             },
                             {
                                 path: 'recover',
-                                component: _recover_recover_component__WEBPACK_IMPORTED_MODULE_27__["RecoverComponent"]
+                                component: _recover_recover_component__WEBPACK_IMPORTED_MODULE_28__["RecoverComponent"]
                             },
                             {
                                 path: 'customerprofile',
-                                component: _customerprofile_customerprofile_component__WEBPACK_IMPORTED_MODULE_29__["CustomerprofileComponent"]
+                                component: _customerprofile_customerprofile_component__WEBPACK_IMPORTED_MODULE_30__["CustomerprofileComponent"]
                             },
                             {
                                 path: 'customereditprofile',
-                                component: _customereditprofile_customereditprofile_component__WEBPACK_IMPORTED_MODULE_30__["CustomereditprofileComponent"]
+                                component: _customereditprofile_customereditprofile_component__WEBPACK_IMPORTED_MODULE_31__["CustomereditprofileComponent"]
                             },
                             {
                                 path: 'deliverylogin',
-                                component: _deliverylogin_deliverylogin_component__WEBPACK_IMPORTED_MODULE_31__["DeliveryloginComponent"]
+                                component: _deliverylogin_deliverylogin_component__WEBPACK_IMPORTED_MODULE_32__["DeliveryloginComponent"]
                             },
                             {
                                 path: 'deliveryreg',
-                                component: _deliveryreg_deliveryreg_component__WEBPACK_IMPORTED_MODULE_32__["DeliveryregComponent"]
+                                component: _deliveryreg_deliveryreg_component__WEBPACK_IMPORTED_MODULE_33__["DeliveryregComponent"]
                             },
                             {
                                 path: 'deliveryorderhistory',
-                                component: _deliveryorderhistory_deliveryorderhistory_component__WEBPACK_IMPORTED_MODULE_38__["DeliveryorderhistoryComponent"]
+                                component: _deliveryorderhistory_deliveryorderhistory_component__WEBPACK_IMPORTED_MODULE_39__["DeliveryorderhistoryComponent"]
                             },
                             {
                                 path: 'deliverycurrentorders',
-                                component: _deliverycurrentorders_deliverycurrentorders_component__WEBPACK_IMPORTED_MODULE_39__["DeliverycurrentordersComponent"]
+                                component: _deliverycurrentorders_deliverycurrentorders_component__WEBPACK_IMPORTED_MODULE_40__["DeliverycurrentordersComponent"]
                             },
                             {
                                 path: 'deliveryprofile',
-                                component: _deliveryprofile_deliveryprofile_component__WEBPACK_IMPORTED_MODULE_40__["DeliveryprofileComponent"]
+                                component: _deliveryprofile_deliveryprofile_component__WEBPACK_IMPORTED_MODULE_41__["DeliveryprofileComponent"]
                             },
                             {
                                 path: 'chatfeature',
-                                component: _chatfeature_chatfeature_component__WEBPACK_IMPORTED_MODULE_36__["ChatfeatureComponent"]
+                                component: _chatfeature_chatfeature_component__WEBPACK_IMPORTED_MODULE_37__["ChatfeatureComponent"]
+                            },
+                            {
+                                path: 'order',
+                                component: _order_order_component__WEBPACK_IMPORTED_MODULE_42__["OrderComponent"]
                             }
                         ])
                     ],
                     providers: [
                         ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"],
+                        _pusher_service__WEBPACK_IMPORTED_MODULE_7__["PusherService"],
                         angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthService"], {
                             provide: angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthServiceConfig"],
                             useFactory: socialConfigs
                         }
                     ],
-                    bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
+                    bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
                 })
             ], AppModule);
             /***/ 
@@ -1021,13 +1040,31 @@
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChatfeatureComponent", function () { return ChatfeatureComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _pusher_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pusher.service */ "./src/app/pusher.service.ts");
             var ChatfeatureComponent = /** @class */ (function () {
-                function ChatfeatureComponent() {
+                function ChatfeatureComponent(pusherService) {
+                    this.pusherService = pusherService;
+                    this.messages = [];
                 }
+                ChatfeatureComponent.prototype.sendMessage = function (user, text) {
+                    var message = {
+                        user: user,
+                        text: text,
+                    };
+                    this.pusherService.messagesChannel.trigger('client-new-message', message);
+                    this.messages.push(message);
+                };
                 ChatfeatureComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    this.pusherService.messagesChannel.bind('client-new-message', function (message) {
+                        _this.messages.push(message);
+                    });
                 };
                 return ChatfeatureComponent;
             }());
+            ChatfeatureComponent.ctorParameters = function () { return [
+                { type: _pusher_service__WEBPACK_IMPORTED_MODULE_2__["PusherService"] }
+            ]; };
             ChatfeatureComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-chatfeature',
@@ -1063,8 +1100,10 @@
             /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
             /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
             /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+            /* harmony import */ var angularx_social_login__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angularx-social-login */ "./node_modules/angularx-social-login/angularx-social-login.js");
             var CustomerdashboardComponent = /** @class */ (function () {
-                function CustomerdashboardComponent(formBuilder, router, http, cookie) {
+                function CustomerdashboardComponent(OAuth, formBuilder, router, http, cookie) {
+                    this.OAuth = OAuth;
                     this.formBuilder = formBuilder;
                     this.router = router;
                     this.http = http;
@@ -1112,9 +1151,18 @@
                 CustomerdashboardComponent.prototype.displayResult = function (result) {
                     console.log(result);
                 };
+                CustomerdashboardComponent.prototype.logout = function () {
+                    var _this = this;
+                    alert(1);
+                    this.OAuth.signOut().then(function (data) {
+                        debugger;
+                        _this.router.navigate(["/Login"]);
+                    });
+                };
                 return CustomerdashboardComponent;
             }());
             CustomerdashboardComponent.ctorParameters = function () { return [
+                { type: angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthService"] },
                 { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
                 { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
                 { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
@@ -1305,13 +1353,41 @@
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DeliverycurrentordersComponent", function () { return DeliverycurrentordersComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
             var DeliverycurrentordersComponent = /** @class */ (function () {
-                function DeliverycurrentordersComponent() {
+                function DeliverycurrentordersComponent(http, cookie) {
+                    this.http = http;
+                    this.cookie = cookie;
                 }
+                DeliverycurrentordersComponent.prototype.fullfillOrder = function (id, i) {
+                    var url = "delivery/fullfillorder";
+                    var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json',
+                        jwttoken: this.cookie.get("jwttoken")
+                    });
+                    this.http.post(url, { id: id }, { headers: headers }).subscribe(function (res) { return console.log(res); }, function (err) { return console.log(err); });
+                    this.orders.splice(parseInt(i), 1);
+                };
                 DeliverycurrentordersComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    var url = '/delivery/current_orders/' + this.cookie.get('restaurant_id');
+                    var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json',
+                        jwttoken: this.cookie.get("jwttoken")
+                    });
+                    this.http.get(url, { headers: headers }).subscribe(function (data) {
+                        // this.detailsForm = data;
+                        if (data != null) {
+                            _this.orders = data;
+                            console.log(_this.orders);
+                        }
+                    });
                 };
                 return DeliverycurrentordersComponent;
             }());
+            DeliverycurrentordersComponent.ctorParameters = function () { return [
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
+            ]; };
             DeliverycurrentordersComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-deliverycurrentorders',
@@ -1455,18 +1531,18 @@
                     this.cookie = cookie;
                 }
                 DeliveryorderhistoryComponent.prototype.ngOnInit = function () {
-                    // var url='/delivery/order_history/' + this.cookie.get ('delivery_id')
-                    // let headers = new HttpHeaders({ 'Content-Type': 'application/json',
-                    //   jwttoken: this.cookie.get("jwttoken")
-                    // });
-                    // this.http.get(url, {headers}).subscribe(data => {
-                    //   // this.detailsForm = data;
-                    //
-                    //   if (data != null){
-                    //     this.orders = data
-                    //     console.log(this.orders)
-                    //   }
-                    // })
+                    var _this = this;
+                    var url = '/current_orders' + this.cookie.get('delivery_id');
+                    var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json',
+                        jwttoken: this.cookie.get("jwttoken")
+                    });
+                    this.http.get(url, { headers: headers }).subscribe(function (data) {
+                        // this.detailsForm = data;
+                        if (data != null) {
+                            _this.orders = data;
+                            console.log(_this.orders);
+                        }
+                    });
                 };
                 return DeliveryorderhistoryComponent;
             }());
@@ -1739,7 +1815,7 @@
                 };
                 LoginComponent.prototype.Savesresponse = function (socialusers) {
                     var _this = this;
-                    this.SocialloginService.Savesresponse(Socialusers).subscribe(function (res) {
+                    this.SocialloginService.Savesresponse(socialusers).subscribe(function (res) {
                         _this.socialusers = res;
                         _this.response = res.userDetail;
                         localStorage.setItem('socialusers', JSON.stringify(_this.socialusers));
@@ -1834,6 +1910,44 @@
                     styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./logindropdown.component.css */ "./src/app/logindropdown/logindropdown.component.css")).default]
                 })
             ], LogindropdownComponent);
+            /***/ 
+        }),
+        /***/ "./src/app/order/order.component.css": 
+        /*!*******************************************!*\
+          !*** ./src/app/order/order.component.css ***!
+          \*******************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL29yZGVyL29yZGVyLmNvbXBvbmVudC5jc3MifQ== */");
+            /***/ 
+        }),
+        /***/ "./src/app/order/order.component.ts": 
+        /*!******************************************!*\
+          !*** ./src/app/order/order.component.ts ***!
+          \******************************************/
+        /*! exports provided: OrderComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderComponent", function () { return OrderComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            var OrderComponent = /** @class */ (function () {
+                function OrderComponent() {
+                }
+                OrderComponent.prototype.ngOnInit = function () {
+                };
+                return OrderComponent;
+            }());
+            OrderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'app-order',
+                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./order.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/order/order.component.html")).default,
+                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./order.component.css */ "./src/app/order/order.component.css")).default]
+                })
+            ], OrderComponent);
             /***/ 
         }),
         /***/ "./src/app/orderhistory/orderhistory.component.css": 
@@ -1980,6 +2094,34 @@
                     styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./public.component.css */ "./src/app/public/public.component.css")).default]
                 })
             ], PublicComponent);
+            /***/ 
+        }),
+        /***/ "./src/app/pusher.service.ts": 
+        /*!***********************************!*\
+          !*** ./src/app/pusher.service.ts ***!
+          \***********************************/
+        /*! exports provided: PusherService */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PusherService", function () { return PusherService; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+            var PusherService = /** @class */ (function () {
+                function PusherService() {
+                    this.pusher = new Pusher(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].pusher.key, {
+                        authEndpoint: '/pusher/auth',
+                    });
+                    this.messagesChannel = this.pusher.subscribe('private-messages');
+                }
+                return PusherService;
+            }());
+            PusherService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+                    providedIn: 'root'
+                })
+            ], PusherService);
             /***/ 
         }),
         /***/ "./src/app/recover/recover.component.css": 
@@ -2333,6 +2475,7 @@
                     formData.append("food_category", details['food_category']);
                     formData.append("contact", details['contact']);
                     formData.append("working_hours", details['working_hours']);
+                    formData.append("description", details['description']);
                     this.http.post('/restaurant/restaurant_details', formData).subscribe(function (res) { return console.log(res); }, function (err) { return console.log(err); });
                 };
                 RestaurantdetailsComponent.prototype.ngOnInit = function () {
@@ -2944,7 +3087,7 @@
                     this.http = http;
                 }
                 SocialloginService.prototype.Savesresponse = function (response) {
-                    this.url = '/Api/Login/Savesresponse';
+                    this.url = 'http://foodoholic-backend.herokuapp.com/Api/Login/Savesresponse';
                     return this.http.post(this.url, response);
                 };
                 return SocialloginService;
@@ -3030,7 +3173,10 @@
             // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
             // The list of file replacements can be found in `angular.json`.
             var environment = {
-                production: false
+                production: false,
+                pusher: {
+                    key: '49096276b737a48a5ba1',
+                }
             };
             /*
              * For easier debugging in development mode, you can import the following file

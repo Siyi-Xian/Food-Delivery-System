@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { CookieService } from 'ngx-cookie-service';
-
+import { CookieService } from 'ngx-cookie-service'; 
+import { SocialLoginModule, AuthServiceConfig, AuthService } from 'angularx-social-login';  
 
 
 @Component({
@@ -18,6 +18,7 @@ export class CustomerdashboardComponent implements OnInit {
   searchFilter;
 
   constructor(
+    public OAuth: AuthService,
     private formBuilder: FormBuilder,
     private router: Router,
     private http: HttpClient,
@@ -73,5 +74,12 @@ export class CustomerdashboardComponent implements OnInit {
     console.log(result);
     
   }
+  logout() {  
+    alert(1);  
+     this.OAuth.signOut().then(data => {  
+       debugger;  
+       this.router.navigate([`/Login`]);  
+     });  
+   }  
 
 }
