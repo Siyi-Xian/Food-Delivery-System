@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService,
     private formBuilder: FormBuilder,
     private router: Router,
+    private http: HttpClient,
     private cookie: CookieService) {
     this.userLoginForm = this.formBuilder.group({
       email: '',
@@ -134,8 +135,7 @@ export class LoginComponent implements OnInit {
     console.log(userData['otp'])
     console.log("verify")
     var jwttoken = this.cookie.get("jwttoken");
-    var r = this.loginService.sendRequest(userData, '/authentication/verifyotp/user');
-    r.subscribe(data =>{
+    this.http.post('/authentication/verifyotp/user', userData).subscribe(data =>{
       if (data['auth']){
         this.router.navigate(['/customerdashboard'])
       }

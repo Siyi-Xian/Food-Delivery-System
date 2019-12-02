@@ -1910,6 +1910,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angularx_social_login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angularx-social-login */ "./node_modules/angularx-social-login/angularx-social-login.js");
 /* harmony import */ var _sociallogin_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../sociallogin.service */ "./src/app/sociallogin.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 
 
 // import { AuthService } from '../auth.service';
@@ -1920,13 +1921,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 let LoginComponent = class LoginComponent {
-    constructor(OAuth, SocialloginService, loginService, formBuilder, router, cookie) {
+    constructor(OAuth, SocialloginService, loginService, formBuilder, router, http, cookie) {
         this.OAuth = OAuth;
         this.SocialloginService = SocialloginService;
         this.loginService = loginService;
         this.formBuilder = formBuilder;
         this.router = router;
+        this.http = http;
         this.cookie = cookie;
         this.socialusers = new Socialusers();
         this.timesSubmitted = 0;
@@ -2020,8 +2023,7 @@ let LoginComponent = class LoginComponent {
         console.log(userData['otp']);
         console.log("verify");
         var jwttoken = this.cookie.get("jwttoken");
-        var r = this.loginService.sendRequest(userData, '/authenticate/verifyotp/user');
-        r.subscribe(data => {
+        this.http.post('/authentication/verifyotp/user', userData).subscribe(data => {
             if (data['auth']) {
                 this.router.navigate(['/customerdashboard']);
             }
@@ -2037,6 +2039,7 @@ LoginComponent.ctorParameters = () => [
     { type: _login_service__WEBPACK_IMPORTED_MODULE_3__["LoginService"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClient"] },
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
