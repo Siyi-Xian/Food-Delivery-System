@@ -160,6 +160,7 @@ router.get('/verify/:email/:token/:collection_name', function(req, res){
 // Continue working here
 router.post('/verifyotp/:collection_name', function(req, res){
     var collection_name = req.params.collection_name;
+    console.log("in the function")
     if(collection_name == 'user'){
         collection_name = "user_data"
     }
