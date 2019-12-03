@@ -10,7 +10,7 @@ export class PusherService {
 
   constructor() { 
     this.pusher = new Pusher(environment.pusher.key,{
-      authEndpoint: '/pusher/auth',});
+      authEndpoint: '/chat/pusher/auth',});
     this.messagesChannel = this.pusher.subscribe('private-messages');
   }
 }
