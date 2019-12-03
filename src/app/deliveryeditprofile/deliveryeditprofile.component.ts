@@ -3,11 +3,11 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
 
 @Component({
-  selector: 'app-deliveryprofile',
-  templateUrl: './deliveryprofile.component.html',
-  styleUrls: ['./deliveryprofile.component.css']
+  selector: 'app-deliveryeditprofile',
+  templateUrl: './deliveryeditprofile.component.html',
+  styleUrls: ['./deliveryeditprofile.component.css']
 })
-export class DeliveryprofileComponent implements OnInit {
+export class DeliveryeditprofileComponent implements OnInit {
 
   delivery_details
   constructor( private http:HttpClient,
@@ -32,4 +32,5 @@ export class DeliveryprofileComponent implements OnInit {
       }
     })
   }
+
 }

@@ -44,6 +44,7 @@ import { DeliveryorderhistoryComponent } from './deliveryorderhistory/deliveryor
 import { DeliverycurrentordersComponent } from './deliverycurrentorders/deliverycurrentorders.component';
 import { DeliveryprofileComponent } from './deliveryprofile/deliveryprofile.component';
 import { OrderComponent } from './order/order.component';
+import { DeliveryeditprofileComponent } from './deliveryeditprofile/deliveryeditprofile.component';
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -94,7 +95,8 @@ export function socialConfigs(){
     DeliveryorderhistoryComponent,
     DeliverycurrentordersComponent,
     DeliveryprofileComponent,
-    OrderComponent  ],
+    OrderComponent,
+    DeliveryeditprofileComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -206,6 +208,10 @@ export function socialConfigs(){
       {
         path: 'order',
         component: OrderComponent
+      },
+      {
+        path: 'deliveryeditprofile',
+        component: DeliveryeditprofileComponent
       }
     ])
   ],
