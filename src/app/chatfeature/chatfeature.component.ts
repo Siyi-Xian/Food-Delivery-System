@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PusherService } from '../pusher.service';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
 
 
 
@@ -28,7 +31,9 @@ export class ChatfeatureComponent implements OnInit {
     user: string;
     messages: Array<Message>;
   
-  constructor(private pusherService: PusherService) { 
+  constructor(private pusherService: PusherService,
+    private http: HttpClient,
+    private router: Router,) { 
     this.messages = [];
   }
 
