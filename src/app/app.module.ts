@@ -45,6 +45,7 @@ import { DeliverycurrentordersComponent } from './deliverycurrentorders/delivery
 import { DeliveryprofileComponent } from './deliveryprofile/deliveryprofile.component';
 import { OrderComponent } from './order/order.component';
 import { DeliveryeditprofileComponent } from './deliveryeditprofile/deliveryeditprofile.component';
+import {AgmCoreModule} from "@agm/core";
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -103,6 +104,9 @@ export function socialConfigs(){
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDMlEdoVdUq5SvrCUCJYQeA9vzOypKhJDY'
+    }),
 
     RouterModule.forRoot([
       {

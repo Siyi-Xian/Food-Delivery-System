@@ -5,6 +5,7 @@
   "main": "index.js",
   "proxy": "http://localhost:8080",
   "dependencies": {
+    "@agm/core": "^1.1.0",
     "@angular/animations": "~8.2.8",
     "@angular/common": "~8.2.8",
     "@angular/compiler": "~8.2.8",
