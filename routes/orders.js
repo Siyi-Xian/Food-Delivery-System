@@ -11,32 +11,29 @@ mongoose.connect('mongodb://heroku_wr9z45km:4qlbddem2aer4k5djhcrp5ph3s@ds243717.
 var db = mongoose.connection;
 
 router.post('/add_order', middleware.checkToken, function(req, res){
-    var id = req.body.id;
-    var data_update = {
-        $set: {
-            restaurant_id: req.body.restaurant_id,
-            customer_id: req.body.customer_id,
-            delivery_id: req.body.delivery_id,
-            items: req.body.items,
-            address: req.body.address,
-            status: req.body.status
-        }
+    var data = {
+        restaurant_id: req.body.restaurant_id,
+        user_id: req.body.user_id,
+        delivery_id: "null",
+        status: "In progress",
+        price: req.body.price,
+        name_of_item: req.body.name_of_item,
+        time: new Date().toLocaleString()
     }
-    db.collection('order').updateOne({_id: ObjectId(id)}, data_update, function(err, data){
+    db.collection("order").insertOne(data, function(err, data){
         if(err){
-            console.log(err)
             res.json({
                 message: "Failed"
             })
             return;
         }
         else{
-            console.log("Success")
             res.json({
                 message: "Success"
             })
             return;
         }
+
     })
 });
 

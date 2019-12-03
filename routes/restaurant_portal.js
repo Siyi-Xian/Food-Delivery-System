@@ -76,7 +76,7 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
             $regex:req.query.location
         }
     }
-    console.log(query)
+    // console.log(query)
     db.collection('restaurant_data').find(query, projection).toArray(function(err, result){
         if (err){
             res.json({
@@ -84,9 +84,7 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
             })
         }
         else{
-
             res.json(result)
-            
         }
     })
 })
@@ -307,21 +305,44 @@ router.get("/order_history/:restaurant_id", middleware.checkToken, function(req,
 
 router.post("/fullfillorder", middleware.checkToken, function(req, res){
     var id = req.body.id
-    const new_vals = {
-        $set: {
-            status: "1"
+    
+
+    proj = {
+        projection:{
+            _id: 1
         }
     }
-    db.collection("order").findOneAndUpdate({_id: new ObjectId(id)}, new_vals, function(err, data){
-        if(err){
-            console.log(err);
-            res.json({message: "Error"});
+    db.collection("delivery_data").find({}, proj).toArray(function(err, data){
+        console.log(data.length)
+        var index = Math.floor(data.length*Math.random())
+        delivery_id = data[index]["_id"]
+        delivery_id = delivery_id.toHexString()
+        const new_vals = {
+            $set: {
+                status: "1",
+                delivery_id: delivery_id
+
+            }
         }
-        else{
-            console.log(data);
-            res.json({message:"success"});
-        }
+        db.collection("order").findOneAndUpdate({_id: new ObjectId(id)}, new_vals, function(err, data){
+            if(err){
+                console.log(err);
+                res.json({message: "Error"});
+            }
+            else{
+                // console.log(data);
+                res.json({message:"success"});
+            }
+        })
     })
+
+
+    
+    // res.json("hello")
+    
+
+    // Add code to assign order to delivery person
+
 })
 
 router.get("/current_orders/:restaurant_id", middleware.checkToken, function(req, res){

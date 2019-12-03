@@ -42,6 +42,7 @@ import { DeliverydropdownComponent } from './deliverydropdown/deliverydropdown.c
 import { DeliveryorderhistoryComponent } from './deliveryorderhistory/deliveryorderhistory.component';
 import { DeliverycurrentordersComponent } from './deliverycurrentorders/deliverycurrentorders.component';
 import { DeliveryprofileComponent } from './deliveryprofile/deliveryprofile.component';
+import { DisplayMenuComponent } from './display-menu/display-menu.component';
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -91,7 +92,8 @@ export function socialConfigs(){
     DeliverydropdownComponent,
     DeliveryorderhistoryComponent,
     DeliverycurrentordersComponent,
-    DeliveryprofileComponent  ],
+    DeliveryprofileComponent,
+    DisplayMenuComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -199,6 +201,10 @@ export function socialConfigs(){
       {
         path: 'chatfeature',
         component: ChatfeatureComponent
+      },
+      {
+        path: 'displaymenu/:restaurant_id',
+        component: DisplayMenuComponent
       }
     ])
   ],

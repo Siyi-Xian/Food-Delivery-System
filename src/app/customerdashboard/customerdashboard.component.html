@@ -79,10 +79,10 @@
             </div>
             <div class="col-md-7">
                
-              <h4><strong> {{result.name}} </strong></h4>
+              <a [routerLink]="['/displaymenu', result._id]" >{{result.name}}</a>
               <li><strong> Food Category: </strong>{{result.food_category}}</li>
-              <li><strong> Location: </strong> <a
-                href="http://maps.google.com/?q={{result.location.replace(' ', '+')}}">{{result.location}}</a>
+              <li><strong> Location: </strong> 
+                <a href="http://maps.google.com/?q={{result.location.replace(' ', '+')}}">{{result.location}}</a>
               </li>
               <li><strong> Working Hours: </strong>{{result.working_hours}}</li>
             </div>

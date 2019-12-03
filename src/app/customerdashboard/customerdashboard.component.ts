@@ -21,7 +21,7 @@ export class CustomerdashboardComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private http: HttpClient,
-    private cookie: CookieService
+    private cookie: CookieService,
   ) { 
     this.userSearchForm = this.formBuilder.group({
       restaurant_name: '',
@@ -47,6 +47,10 @@ export class CustomerdashboardComponent implements OnInit {
     console.log(this.searchFilter);
   }
 
+  // openMenu(id){
+  //   console.log(id);
+    
+  // }
   onSubmit(event){
     let headers = new HttpHeaders({ 'Content-Type': 'application/json',
       jwttoken: this.cookie.get("jwttoken")
