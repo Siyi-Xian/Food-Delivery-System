@@ -28,4 +28,4 @@ router.post('/pusher/auth', (req, res) => {
     res.send(auth);
   });
 
-  module.exports = router
+  

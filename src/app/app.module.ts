@@ -6,6 +6,7 @@ import {CookieService} from 'ngx-cookie-service';
 import { GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angularx-social-login';
 import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 
+import { PusherService } from './pusher.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,6 +44,9 @@ import { DeliveryorderhistoryComponent } from './deliveryorderhistory/deliveryor
 import { DeliverycurrentordersComponent } from './deliverycurrentorders/deliverycurrentorders.component';
 import { DeliveryprofileComponent } from './deliveryprofile/deliveryprofile.component';
 import { DisplayMenuComponent } from './display-menu/display-menu.component';
+import { OrderComponent } from './order/order.component';
+import { DeliveryeditprofileComponent } from './deliveryeditprofile/deliveryeditprofile.component';
+import {AgmCoreModule} from "@agm/core";
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -93,13 +97,18 @@ export function socialConfigs(){
     DeliveryorderhistoryComponent,
     DeliverycurrentordersComponent,
     DeliveryprofileComponent,
-    DisplayMenuComponent  ],
+    DisplayMenuComponent,
+    OrderComponent,
+    DeliveryeditprofileComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDMlEdoVdUq5SvrCUCJYQeA9vzOypKhJDY'
+    }),
 
     RouterModule.forRoot([
       {
@@ -205,11 +214,20 @@ export function socialConfigs(){
       {
         path: 'displaymenu/:restaurant_id',
         component: DisplayMenuComponent
+      },
+      {
+        path: 'order',
+        component: OrderComponent
+      },
+      {
+        path: 'deliveryeditprofile',
+        component: DeliveryeditprofileComponent
       }
     ])
   ],
   providers: [
     CookieService,
+    PusherService,
     AuthService,{
       provide: AuthServiceConfig,
       useFactory: socialConfigs

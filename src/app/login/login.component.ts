@@ -9,6 +9,7 @@ import { SocialloginService } from '../sociallogin.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -18,6 +19,7 @@ import { ElementRef } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   @ViewChild('recaptcha', {static: true}) recaptchaElement: ElementRef;
+  @ViewChild('showfile', {static: false}) OTPElement: ElementRef;
   userLoginForm;
   response: any;
 
@@ -25,17 +27,25 @@ export class LoginComponent implements OnInit {
 
   timesSubmitted = 0;
 
+  showFile = false;
+  userVerifyForm;
+  verifyOTP = false;
+
   constructor(
     public OAuth: AuthService,
     private SocialloginService: SocialloginService,
     private loginService: LoginService,
     private formBuilder: FormBuilder,
     private router: Router,
+    private http: HttpClient,
     private cookie: CookieService) {
     this.userLoginForm = this.formBuilder.group({
       email: '',
       password: ''
     });
+    this.userVerifyForm = this.formBuilder.group({
+      otp: ''
+    })
   }
 
   ngOnInit() {
@@ -87,7 +97,7 @@ export class LoginComponent implements OnInit {
   }
 
   Savesresponse(socialusers: Socialusers){
-    this.SocialloginService.Savesresponse(Socialusers).subscribe((res: any) =>{
+    this.SocialloginService.Savesresponse(socialusers).subscribe((res: any) =>{
       this.socialusers=res;
       this.response = res.userDetail;
       localStorage.setItem('socialusers', JSON.stringify(this.socialusers));
@@ -119,6 +129,20 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  onVerify(userData){
+    console.log(userData['otp'])
+    console.log("verify")
+    var jwttoken = this.cookie.get("jwttoken");
+    this.http.post('/authentication/verifyotp/user', userData).subscribe(data =>{
+      if (data['auth']){
+        this.router.navigate(['/customerdashboard'])
+      }
+      else{
+        alert("Invalid OTP")
+      }
+    })
+  }
+
   // logUserIn(event){
   //   event.preventDefault()
   //   console.log(event)
@@ -145,6 +169,8 @@ export class LoginComponent implements OnInit {
   console.log(email, password)
 }
 */
+
+
 
 }
 export class Socialusers{

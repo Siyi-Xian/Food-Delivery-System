@@ -71,6 +71,7 @@ export class RestaurantdetailsComponent implements OnInit {
     formData.append("food_category", details['food_category'])
     formData.append("contact", details['contact'])
     formData.append("working_hours", details['working_hours'])
+    formData.append("description", details['description'])
 
     this.http.post<any>('/restaurant/restaurant_details', formData).subscribe(
       (res)=> this.router.navigate(['/restaurantviewdetails']),
