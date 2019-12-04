@@ -47,6 +47,8 @@ import { DisplayMenuComponent } from './display-menu/display-menu.component';
 import { OrderComponent } from './order/order.component';
 import { DeliveryeditprofileComponent } from './deliveryeditprofile/deliveryeditprofile.component';
 import {AgmCoreModule} from "@agm/core";
+import { CustomerCurrentOrdersComponent } from './customer-current-orders/customer-current-orders.component';
+import { CustomerOrderHistoryComponent } from './customer-order-history/customer-order-history.component';
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -99,7 +101,9 @@ export function socialConfigs(){
     DeliveryprofileComponent,
     DisplayMenuComponent,
     OrderComponent,
-    DeliveryeditprofileComponent  ],
+    DeliveryeditprofileComponent,
+    CustomerCurrentOrdersComponent,
+    CustomerOrderHistoryComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -111,6 +115,14 @@ export function socialConfigs(){
     }),
 
     RouterModule.forRoot([
+      {
+        path: "customerorderhistory",
+        component: CustomerOrderHistoryComponent
+      },
+      {
+        path: "customercurrentorders",
+        component: CustomerCurrentOrdersComponent
+      },
       {
         path: '',
         component: PublicComponent

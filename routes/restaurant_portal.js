@@ -233,11 +233,19 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
 router.post("/add_restaurant_rating/:restaurant_id", middleware.checkToken, function(req, res){
     var id = req.params.restaurant_id
     var data_update = {
-        $set: {
-            Rating: req.body.Rating,
-            Number_of_ratings: Number_of_ratings + 1
+        $inc: {
+            ratings: req.body.ratings,
+            num_ratings: 1
         }
     }
+    var order_rate_update = {
+        $set: {
+            ratings: req.body.ratings
+        }
+    }
+    db.collection("order").updateOne({_id: ObjectId(req.body.order_id)}, order_rate_update, function(req, res){
+        
+    })
     db.collection('restaurant_data').updateOne({_id: ObjectId(id)}, data_update, function(err, data){
         if (err){
             console.log(err)
@@ -286,7 +294,7 @@ router.get("/restaurant_rating/:restaurant_id", middleware.checkToken, function(
 
 router.get("/order_history/:restaurant_id", middleware.checkToken, function(req, res){
     var id = req.params.restaurant_id
-    db.collection("order").find({restaurant_id: id, status: "1"}).toArray(function(err, data){
+    db.collection("order").find({restaurant_id: id, status: "On the way!"}).toArray(function(err, data){
         if (err){
             console.log(err)
             res.json({
@@ -319,7 +327,7 @@ router.post("/fullfillorder", middleware.checkToken, function(req, res){
         delivery_id = delivery_id.toHexString()
         const new_vals = {
             $set: {
-                status: "1",
+                status: "On the way!",
                 delivery_id: delivery_id
 
             }

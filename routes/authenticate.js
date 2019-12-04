@@ -222,7 +222,9 @@ router.post('/sign_up/:collection_name', function(req, res){
             "password": Bcrypt.hashSync(req.body.password, 10),
             "token": token,
             "is_verified": false,
-            "name": req.body.restaurant_name
+            "name": req.body.restaurant_name,
+            "ratings": 0,
+            "num_ratings": 0
         }
     }
 

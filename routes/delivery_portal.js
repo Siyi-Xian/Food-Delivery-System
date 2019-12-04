@@ -44,7 +44,29 @@ router.post('/details', middleware.checkToken, function(req, res){
 })
 
 
-
+router.get('/current_orders:delivery_id', middleware.checkToken, function(req, res){
+    var customer_id = req.params.delivery_id;
+    var projection = {
+        projection: {
+            restaurant_id: 1,
+            customer_id: 1,
+            items: 1,
+            address: 1,
+            status: 1
+        }
+    }
+    db.collection('order').find({_id: new ObjectId(delivery_id)}, projection, function(err, data){
+        if(err){
+            console.log("error")
+            res.json({
+                message: "No Orders"
+            })
+        }
+        else{
+            res.json(data)
+        }
+    })
+})
 
 module.exports = router
 
