@@ -135,6 +135,7 @@ export class LoginComponent implements OnInit {
     console.log(userData['otp'])
     console.log("verify")
     var jwttoken = this.cookie.get("jwttoken");
+    
     this.http.post('/authentication/verifyotp/user', userData).subscribe(data =>{
       if (data['auth']){
         this.router.navigate(['/customerdashboard'])

@@ -119,6 +119,17 @@
             /* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"delivery-dropdown navbar navbar-light\" style=\"padding-right: 30px\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"width: 80%\">\r\n    <li>\r\n      <a href=\"#\" routerLink=\"/deliverycurrentorders\">\r\n        <span class=\"glyphicon glyphicon-glass\"></span>\r\n        Current Order\r\n      </a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#\" routerLink=\"/deliveryorderhistory\">\r\n        <span class=\"glyphicon glyphicon-glass\"></span>\r\n        Order History\r\n      </a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#\" routerLink=\"/deliveryprofile\">\r\n        <span class=\"glyphicon glyphicon-user\"></span>\r\n        Profile\r\n      </a>\r\n    </li>\r\n    <li style=\"width: 10%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/deliverylogin\">\r\n        <span class=\"glyphicon glyphicon-log-out\"></span>\r\n        Logout\r\n      </a>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n");
             /***/ 
         }),
+        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliveryeditprofile/deliveryeditprofile.component.html": 
+        /*!**************************************************************************************************************!*\
+          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/deliveryeditprofile/deliveryeditprofile.component.html ***!
+          \**************************************************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Delivery Profile\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliveryeditprofile.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-deliverydropdown></app-deliverydropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Delivery Details</h3>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\" col-md-6\">\r\n      <ul *ngIf=\"delivery_details\">\r\n        <h4><strong> {{delivery_details.name}} </strong></h4>\r\n        <li>\r\n          <strong> Contact: </strong> <a href=\"tel:{{delivery_details.contact}}\">{{delivery_details.contact}}</a>\r\n        </li>\r\n        <li>\r\n          <strong> Address: </strong>\r\n          {{delivery_details.street1 + delivery_details.street2 + delivery_details.city + delivery_details.state + delivery_details.zip_code}}\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <a class=\"edit-link pull-right\" href=\"#\" routerLink=\"/deliveryeditprofile\">Edit</a>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n");
+            /***/ 
+        }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliverylogin/deliverylogin.component.html": 
         /*!**************************************************************************************************!*\
           !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/deliverylogin/deliverylogin.component.html ***!
@@ -149,7 +160,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Order History\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliveryprofile.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-deliverydropdown></app-deliverydropdown>\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Delivery Profile\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliveryprofile.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-deliverydropdown></app-deliverydropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Delivery Details</h3>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\" col-md-6\">\r\n      <ul *ngIf=\"delivery_details\">\r\n        <h4><strong> {{delivery_details.name}} </strong></h4>\r\n        <li>\r\n          <strong> Contact: </strong> <a href=\"tel:{{delivery_details.contact}}\">{{delivery_details.contact}}</a>\r\n        </li>\r\n        <li>\r\n          <strong> Address: </strong>\r\n          {{delivery_details.street1 + delivery_details.street2 + delivery_details.city + delivery_details.state + delivery_details.zip_code}}\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <a class=\"edit-link pull-right\" href=\"#\" routerLink=\"/deliveryeditprofile\">Edit</a>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliveryreg/deliveryreg.component.html": 
@@ -193,7 +204,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<p>order works!</p>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<p>order works!</p>\r\n<agm-map [latitude]=\"lat\" [longitude]=\"lng\">\r\n  <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\r\n</agm-map>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/orderhistory/orderhistory.component.html": 
@@ -837,6 +848,8 @@
             /* harmony import */ var _deliverycurrentorders_deliverycurrentorders_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./deliverycurrentorders/deliverycurrentorders.component */ "./src/app/deliverycurrentorders/deliverycurrentorders.component.ts");
             /* harmony import */ var _deliveryprofile_deliveryprofile_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./deliveryprofile/deliveryprofile.component */ "./src/app/deliveryprofile/deliveryprofile.component.ts");
             /* harmony import */ var _order_order_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./order/order.component */ "./src/app/order/order.component.ts");
+            /* harmony import */ var _deliveryeditprofile_deliveryeditprofile_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./deliveryeditprofile/deliveryeditprofile.component */ "./src/app/deliveryeditprofile/deliveryeditprofile.component.ts");
+            /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/fesm2015/agm-core.js");
             function socialConfigs() {
                 var config = new angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthServiceConfig"]([
                     {
@@ -890,7 +903,8 @@
                         _deliveryorderhistory_deliveryorderhistory_component__WEBPACK_IMPORTED_MODULE_39__["DeliveryorderhistoryComponent"],
                         _deliverycurrentorders_deliverycurrentorders_component__WEBPACK_IMPORTED_MODULE_40__["DeliverycurrentordersComponent"],
                         _deliveryprofile_deliveryprofile_component__WEBPACK_IMPORTED_MODULE_41__["DeliveryprofileComponent"],
-                        _order_order_component__WEBPACK_IMPORTED_MODULE_42__["OrderComponent"]
+                        _order_order_component__WEBPACK_IMPORTED_MODULE_42__["OrderComponent"],
+                        _deliveryeditprofile_deliveryeditprofile_component__WEBPACK_IMPORTED_MODULE_43__["DeliveryeditprofileComponent"]
                     ],
                     imports: [
                         _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -898,6 +912,9 @@
                         _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
                         _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
                         _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+                        _agm_core__WEBPACK_IMPORTED_MODULE_44__["AgmCoreModule"].forRoot({
+                            apiKey: 'AIzaSyDMlEdoVdUq5SvrCUCJYQeA9vzOypKhJDY'
+                        }),
                         _angular_router__WEBPACK_IMPORTED_MODULE_13__["RouterModule"].forRoot([
                             {
                                 path: '',
@@ -1002,6 +1019,10 @@
                             {
                                 path: 'order',
                                 component: _order_order_component__WEBPACK_IMPORTED_MODULE_42__["OrderComponent"]
+                            },
+                            {
+                                path: 'deliveryeditprofile',
+                                component: _deliveryeditprofile_deliveryeditprofile_component__WEBPACK_IMPORTED_MODULE_43__["DeliveryeditprofileComponent"]
                             }
                         ])
                     ],
@@ -1441,6 +1462,65 @@
             ], DeliverydropdownComponent);
             /***/ 
         }),
+        /***/ "./src/app/deliveryeditprofile/deliveryeditprofile.component.css": 
+        /*!***********************************************************************!*\
+          !*** ./src/app/deliveryeditprofile/deliveryeditprofile.component.css ***!
+          \***********************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RlbGl2ZXJ5ZWRpdHByb2ZpbGUvZGVsaXZlcnllZGl0cHJvZmlsZS5jb21wb25lbnQuY3NzIn0= */");
+            /***/ 
+        }),
+        /***/ "./src/app/deliveryeditprofile/deliveryeditprofile.component.ts": 
+        /*!**********************************************************************!*\
+          !*** ./src/app/deliveryeditprofile/deliveryeditprofile.component.ts ***!
+          \**********************************************************************/
+        /*! exports provided: DeliveryeditprofileComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DeliveryeditprofileComponent", function () { return DeliveryeditprofileComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+            var DeliveryeditprofileComponent = /** @class */ (function () {
+                function DeliveryeditprofileComponent(http, cookie) {
+                    this.http = http;
+                    this.cookie = cookie;
+                }
+                DeliveryeditprofileComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                        'Content-Type': 'application/json',
+                        jwttoken: this.cookie.get("jwttoken")
+                    });
+                    var url = '/restaurant/display_details/' + this.cookie.get('restaurant_id');
+                    this.http.get(url, { headers: headers }).subscribe(function (data) {
+                        // this.detailsForm = data;
+                        if (data != null) {
+                            _this.delivery_details = data;
+                            console.log(data);
+                        }
+                    });
+                };
+                return DeliveryeditprofileComponent;
+            }());
+            DeliveryeditprofileComponent.ctorParameters = function () { return [
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
+            ]; };
+            DeliveryeditprofileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'app-deliveryeditprofile',
+                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./deliveryeditprofile.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliveryeditprofile/deliveryeditprofile.component.html")).default,
+                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./deliveryeditprofile.component.css */ "./src/app/deliveryeditprofile/deliveryeditprofile.component.css")).default]
+                })
+            ], DeliveryeditprofileComponent);
+            /***/ 
+        }),
         /***/ "./src/app/deliverylogin/deliverylogin.component.css": 
         /*!***********************************************************!*\
           !*** ./src/app/deliverylogin/deliverylogin.component.css ***!
@@ -1587,13 +1667,34 @@
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DeliveryprofileComponent", function () { return DeliveryprofileComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
             var DeliveryprofileComponent = /** @class */ (function () {
-                function DeliveryprofileComponent() {
+                function DeliveryprofileComponent(http, cookie) {
+                    this.http = http;
+                    this.cookie = cookie;
                 }
                 DeliveryprofileComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                        'Content-Type': 'application/json',
+                        jwttoken: this.cookie.get("jwttoken")
+                    });
+                    var url = '/restaurant/display_details/' + this.cookie.get('restaurant_id');
+                    this.http.get(url, { headers: headers }).subscribe(function (data) {
+                        // this.detailsForm = data;
+                        if (data != null) {
+                            _this.delivery_details = data;
+                            console.log(data);
+                        }
+                    });
                 };
                 return DeliveryprofileComponent;
             }());
+            DeliveryprofileComponent.ctorParameters = function () { return [
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
+            ]; };
             DeliveryprofileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-deliveryprofile',
@@ -1953,7 +2054,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL29yZGVyL29yZGVyLmNvbXBvbmVudC5jc3MifQ== */");
+            /* harmony default export */ __webpack_exports__["default"] = ("agm-map {\r\n  height: 300px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvb3JkZXIvb3JkZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7QUFDZiIsImZpbGUiOiJzcmMvYXBwL29yZGVyL29yZGVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhZ20tbWFwIHtcclxuICBoZWlnaHQ6IDMwMHB4O1xyXG59XHJcbiJdfQ== */");
             /***/ 
         }),
         /***/ "./src/app/order/order.component.ts": 
@@ -1969,6 +2070,7 @@
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             var OrderComponent = /** @class */ (function () {
                 function OrderComponent() {
+                    this.lng = 7.809007;
                 }
                 OrderComponent.prototype.ngOnInit = function () {
                 };
