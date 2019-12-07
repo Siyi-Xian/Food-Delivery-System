@@ -52,6 +52,22 @@
 
       </form>
     </div>
+
+    <div *ngIf="showFile">
+      <form method="post" [formGroup]="deliveryVerifyForm" (ngSubmit) = "onVerify(deliveryVerifyForm.value)">
+        <div>Please enter the 6-digit code that was sent to your email</div>
+        <input type="text" required="required" placeholder="6-digit code" formControlName="otp">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" (ngSubmit)="onVerify">Verify</button>
+        </span>
+      </form>
+      <div class="form-text error" *ngIf="deliveryVerifyForm">
+        <!--<div *ngIf="userLoginForm.controls.otp.hasError('required')">Verifcation is required</div>
+        <div *ngIf="userLoginForm.controls.otp.hasError('invalidOtp')">Code is invalid</div>-->
+      </div>
+    </div>
+
+
     <div class="container" style="border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px">
       <div class="row" style="font-style: italic; text-align: center"><b>Want to be a delivery person?</b></div>
       <div class="row">We Hire You! <a routerLink="/deliveryreg">Join today</a>, registered to be a delivery person of Food-O-Holic today!</div>

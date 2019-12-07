@@ -214,22 +214,25 @@ router.post('/verifyotp/:collection_name', function(req, res){
         res.status(404).send("Page Not Found");
         return;
     }
-    var query = {
-        $and: [
-            {_id: req.body._id},
-            {otp: req.body.otp}
-        ]
-    }
+    var otp = req.body.otp
     db.collection(collection_name).findOne({_id: new ObjectId(req.body._id)}, function(err, data){
         if(err){
             res.send({auth: "false"})
         }
         else{
-            let token = jwt.sign({_id: data._id}, config.secret, {expiresIn: '168h'});
-            res.send({
-                auth: "true",
-                jwttoken: token
-        })  
+            if (data['otp'] == otp){
+                let token = jwt.sign({_id: data._id}, config.secret, {expiresIn: '168h'});
+                res.send({
+                    auth: "true",
+                    jwttoken: token
+                })  
+            }
+            else{
+                res.json({
+                    auth: "false"
+                })
+            }
+            
             
         }
         console.log(data)

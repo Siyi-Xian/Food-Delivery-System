@@ -17,8 +17,8 @@ export class DeliveryloginComponent implements OnInit {
   @ViewChild('recaptcha', {static: true}) recaptchaElement: ElementRef;
   deliveryLoginForm;
   forgot_message = ""
-
-
+  showFile = false;
+  deliveryVerifyForm
 
   constructor(
     private loginService: LoginService,
@@ -29,6 +29,9 @@ export class DeliveryloginComponent implements OnInit {
     this.deliveryLoginForm = this.formBuilder.group({
       email: '',
       password: ''
+    })
+    this.deliveryVerifyForm = this.formBuilder.group({
+      otp: ''
     })
   }
   timesSubmitted = 0
@@ -49,6 +52,21 @@ export class DeliveryloginComponent implements OnInit {
     )
     console.log(data)
   }
+
+  onVerify(deliveryData){
+    deliveryData['_id'] = this.cookie.get("delivery_id")
+    // console.log("verify")
+    var jwttoken = this.cookie.get("jwttoken");
+    this.http.post('/authentication/verifyotp/delivery', deliveryData).subscribe(data =>{
+      if (data['auth']){
+        this.router.navigate(['/deliveryprofile'])
+      }
+      else{
+        alert("Invalid OTP")
+      }
+    })
+  }
+
   onSubmit(userData){
     var r = this.loginService.sendRequest(userData, "/authentication/login/delivery");
     if(this.recaptchaElement == null){
@@ -60,7 +78,8 @@ export class DeliveryloginComponent implements OnInit {
       if(data['auth']){
         this.cookie.set("jwttoken", data['token']);
         this.cookie.set("delivery_id", data['_id']);
-        this.router.navigate(['/deliveryprofile']);
+        this.showFile = true
+        // this.router.navigate(['/deliveryprofile']);
         //console.log(data[_id])
       }
 

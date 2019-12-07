@@ -52,6 +52,21 @@
 
       </form>
     </div>
+
+    <div *ngIf="showFile">
+      <form method="post" [formGroup]="restaurantVerifyForm" (ngSubmit) = "onVerify(restaurantVerifyForm.value)">
+        <div>Please enter the 6-digit code that was sent to your email</div>
+        <input type="text" required="required" placeholder="6-digit code" formControlName="otp">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" (ngSubmit)="onVerify">Verify</button>
+        </span>
+      </form>
+      <div class="form-text error" *ngIf="restaurantVerifyForm">
+        <!--<div *ngIf="userLoginForm.controls.otp.hasError('required')">Verifcation is required</div>
+        <div *ngIf="userLoginForm.controls.otp.hasError('invalidOtp')">Code is invalid</div>-->
+      </div>
+    </div>
+
     <div class="container" style="border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px">
       <div class="row" style="font-style: italic; text-align: center"><b>Want us to deliver your food?</b></div>
       <div class="row"><a routerLink="/restaurantreg">Create a restaurant account</a>, registered to be a restaurant owner on Food-O-Holic today!</div>

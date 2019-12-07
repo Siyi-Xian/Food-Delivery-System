@@ -160,7 +160,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    Log In\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n<div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n  <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n    <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n      <h2>Delivery Login</h2>\r\n    </div>\r\n    <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n      <form method=\"post\" [formGroup]=\"deliveryLoginForm\" (ngSubmit) = \"onSubmit(deliveryLoginForm.value)\">\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          {{ forgot_message }}\r\n          <div>Your Email:</div>\r\n          <div><input type = \"text\" required = \"required\" formControlName=\"email\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-6\">Your Password:</div>\r\n            <div class=\"col-md-6\" style=\"text-align: right\"><a (click)=\"recover()\">Forgot?</a></div>\r\n          </div>\r\n          <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n          <button type=\"submit\" value = \"submit\" class=\"btn btn-primary btn-lg btn-block\">Login</button>\r\n        </div>\r\n        <!-- Place holder for recaptcha -->\r\n        <div #recaptcha style=\"padding: 10px -10px; margin-top: 10px\"></div>\r\n\r\n        <div class=\"container\" style=\"margin-top: 10px; padding: 10px 27px 5px 27px\">\r\n          <button id=\"google-button\" class=\"btn btn-block btn-social btn-google\" style=\"margin-bottom: 15px\" (click)=\"socialSignIn('google')\">\r\n            <i class=\"fa fa-google\"></i> Sign in with Google\r\n          </button>\r\n          <button id=\"facebook-button\" class=\"btn btn-block btn-social btn-facebook\" (click)=\"socialSignIn('facebook')\">\r\n            <i class=\"fa fa-facebook\"></i> Sign in with Facebook\r\n          </button>\r\n          \r\n\r\n        </div>\r\n\r\n      </form>\r\n    </div>\r\n    <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n      <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>Want to be a delivery person?</b></div>\r\n      <div class=\"row\">We Hire You! <a routerLink=\"/deliveryreg\">Join today</a>, registered to be a delivery person of Food-O-Holic today!</div>\r\n    </div>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    Log In\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n<div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n  <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n    <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n      <h2>Delivery Login</h2>\r\n    </div>\r\n    <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n      <form method=\"post\" [formGroup]=\"deliveryLoginForm\" (ngSubmit) = \"onSubmit(deliveryLoginForm.value)\">\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          {{ forgot_message }}\r\n          <div>Your Email:</div>\r\n          <div><input type = \"text\" required = \"required\" formControlName=\"email\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-6\">Your Password:</div>\r\n            <div class=\"col-md-6\" style=\"text-align: right\"><a (click)=\"recover()\">Forgot?</a></div>\r\n          </div>\r\n          <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n          <button type=\"submit\" value = \"submit\" class=\"btn btn-primary btn-lg btn-block\">Login</button>\r\n        </div>\r\n        <!-- Place holder for recaptcha -->\r\n        <div #recaptcha style=\"padding: 10px -10px; margin-top: 10px\"></div>\r\n\r\n        <div class=\"container\" style=\"margin-top: 10px; padding: 10px 27px 5px 27px\">\r\n          <button id=\"google-button\" class=\"btn btn-block btn-social btn-google\" style=\"margin-bottom: 15px\" (click)=\"socialSignIn('google')\">\r\n            <i class=\"fa fa-google\"></i> Sign in with Google\r\n          </button>\r\n          <button id=\"facebook-button\" class=\"btn btn-block btn-social btn-facebook\" (click)=\"socialSignIn('facebook')\">\r\n            <i class=\"fa fa-facebook\"></i> Sign in with Facebook\r\n          </button>\r\n          \r\n\r\n        </div>\r\n\r\n      </form>\r\n    </div>\r\n\r\n    <div *ngIf=\"showFile\">\r\n      <form method=\"post\" [formGroup]=\"deliveryVerifyForm\" (ngSubmit) = \"onVerify(deliveryVerifyForm.value)\">\r\n        <div>Please enter the 6-digit code that was sent to your email</div>\r\n        <input type=\"text\" required=\"required\" placeholder=\"6-digit code\" formControlName=\"otp\">\r\n        <span class=\"input-group-btn\">\r\n          <button type=\"submit\" class=\"btn btn-primary\" (ngSubmit)=\"onVerify\">Verify</button>\r\n        </span>\r\n      </form>\r\n      <div class=\"form-text error\" *ngIf=\"deliveryVerifyForm\">\r\n        <!--<div *ngIf=\"userLoginForm.controls.otp.hasError('required')\">Verifcation is required</div>\r\n        <div *ngIf=\"userLoginForm.controls.otp.hasError('invalidOtp')\">Code is invalid</div>-->\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n      <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>Want to be a delivery person?</b></div>\r\n      <div class=\"row\">We Hire You! <a routerLink=\"/deliveryreg\">Join today</a>, registered to be a delivery person of Food-O-Holic today!</div>\r\n    </div>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliveryorderhistory/deliveryorderhistory.component.html": 
@@ -402,7 +402,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    Log In\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n<div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n  <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n    <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n      <h2>Restaurant Login</h2>\r\n    </div>\r\n    <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n      <form method=\"post\" [formGroup]=\"restaurantLoginForm\" (ngSubmit) = \"onSubmit(restaurantLoginForm.value)\">\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          {{ forgot_message }}\r\n          <div>Your Email:</div>\r\n          <div><input type = \"text\" required = \"required\" formControlName=\"email\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-6\">Your Password:</div>\r\n            <div class=\"col-md-6\" style=\"text-align: right\"><a (click)=\"recover()\">Forgot?</a></div>\r\n          </div>\r\n          <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n          <button type=\"submit\" value = \"submit\" class=\"login-button btn btn-primary\">Login</button>\r\n\r\n           <!-- Place holder for recaptcha -->\r\n           <div #recaptcha style=\"padding: 10px -10px; margin-top: 10px\"></div>\r\n\r\n           <div class=\"container\" style=\"margin-top: 10px; padding: 10px 27px 5px 27px\">\r\n             <button id=\"google-button\" class=\"btn btn-block btn-social btn-google\" style=\"margin-bottom: 15px\" (click)=\"socialSignIn('google')\">\r\n               <i class=\"fa fa-google\"></i> Sign in with Google\r\n             </button>\r\n             <button id=\"facebook-button\" class=\"btn btn-block btn-social btn-facebook\" (click)=\"socialSignIn('facebook')\">\r\n               <i class=\"fa fa-facebook\"></i> Sign in with Facebook\r\n             </button>\r\n\r\n           </div>\r\n        </div>\r\n\r\n      </form>\r\n    </div>\r\n    <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n      <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>Want us to deliver your food?</b></div>\r\n      <div class=\"row\"><a routerLink=\"/restaurantreg\">Create a restaurant account</a>, registered to be a restaurant owner on Food-O-Holic today!</div>\r\n    </div>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    Log In\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n<div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n  <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n    <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n      <h2>Restaurant Login</h2>\r\n    </div>\r\n    <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n      <form method=\"post\" [formGroup]=\"restaurantLoginForm\" (ngSubmit) = \"onSubmit(restaurantLoginForm.value)\">\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          {{ forgot_message }}\r\n          <div>Your Email:</div>\r\n          <div><input type = \"text\" required = \"required\" formControlName=\"email\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-6\">Your Password:</div>\r\n            <div class=\"col-md-6\" style=\"text-align: right\"><a (click)=\"recover()\">Forgot?</a></div>\r\n          </div>\r\n          <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n          <button type=\"submit\" value = \"submit\" class=\"login-button btn btn-primary\">Login</button>\r\n\r\n           <!-- Place holder for recaptcha -->\r\n           <div #recaptcha style=\"padding: 10px -10px; margin-top: 10px\"></div>\r\n\r\n           <div class=\"container\" style=\"margin-top: 10px; padding: 10px 27px 5px 27px\">\r\n             <button id=\"google-button\" class=\"btn btn-block btn-social btn-google\" style=\"margin-bottom: 15px\" (click)=\"socialSignIn('google')\">\r\n               <i class=\"fa fa-google\"></i> Sign in with Google\r\n             </button>\r\n             <button id=\"facebook-button\" class=\"btn btn-block btn-social btn-facebook\" (click)=\"socialSignIn('facebook')\">\r\n               <i class=\"fa fa-facebook\"></i> Sign in with Facebook\r\n             </button>\r\n\r\n           </div>\r\n        </div>\r\n\r\n      </form>\r\n    </div>\r\n\r\n    <div *ngIf=\"showFile\">\r\n      <form method=\"post\" [formGroup]=\"restaurantVerifyForm\" (ngSubmit) = \"onVerify(restaurantVerifyForm.value)\">\r\n        <div>Please enter the 6-digit code that was sent to your email</div>\r\n        <input type=\"text\" required=\"required\" placeholder=\"6-digit code\" formControlName=\"otp\">\r\n        <span class=\"input-group-btn\">\r\n          <button type=\"submit\" class=\"btn btn-primary\" (ngSubmit)=\"onVerify\">Verify</button>\r\n        </span>\r\n      </form>\r\n      <div class=\"form-text error\" *ngIf=\"restaurantVerifyForm\">\r\n        <!--<div *ngIf=\"userLoginForm.controls.otp.hasError('required')\">Verifcation is required</div>\r\n        <div *ngIf=\"userLoginForm.controls.otp.hasError('invalidOtp')\">Code is invalid</div>-->\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n      <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>Want us to deliver your food?</b></div>\r\n      <div class=\"row\"><a routerLink=\"/restaurantreg\">Create a restaurant account</a>, registered to be a restaurant owner on Food-O-Holic today!</div>\r\n    </div>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/sidebar/sidebar.component.html": 
@@ -1904,10 +1904,14 @@
                     this.router = router;
                     this.http = http;
                     this.forgot_message = "";
+                    this.showFile = false;
                     this.timesSubmitted = 0;
                     this.deliveryLoginForm = this.formBuilder.group({
                         email: '',
                         password: ''
+                    });
+                    this.deliveryVerifyForm = this.formBuilder.group({
+                        otp: ''
                     });
                 }
                 DeliveryloginComponent.prototype.ngOnInit = function () {
@@ -1924,6 +1928,20 @@
                     this.http.post(url, data).subscribe(function (res) { return _this.forgot_message = "Password resetted"; }, function (err) { return console.log(err); });
                     console.log(data);
                 };
+                DeliveryloginComponent.prototype.onVerify = function (deliveryData) {
+                    var _this = this;
+                    deliveryData['_id'] = this.cookie.get("delivery_id");
+                    // console.log("verify")
+                    var jwttoken = this.cookie.get("jwttoken");
+                    this.http.post('/authentication/verifyotp/delivery', deliveryData).subscribe(function (data) {
+                        if (data['auth']) {
+                            _this.router.navigate(['/deliveryprofile']);
+                        }
+                        else {
+                            alert("Invalid OTP");
+                        }
+                    });
+                };
                 DeliveryloginComponent.prototype.onSubmit = function (userData) {
                     var _this = this;
                     var r = this.loginService.sendRequest(userData, "/authentication/login/delivery");
@@ -1936,7 +1954,8 @@
                         if (data['auth']) {
                             _this.cookie.set("jwttoken", data['token']);
                             _this.cookie.set("delivery_id", data['_id']);
-                            _this.router.navigate(['/deliveryprofile']);
+                            _this.showFile = true;
+                            // this.router.navigate(['/deliveryprofile']);
                             //console.log(data[_id])
                         }
                     });
@@ -2422,21 +2441,25 @@
                         if (data['auth']) {
                             _this.cookie.set('jwttoken', data['token']);
                             _this.cookie.set('customer_id', data['_id']);
-                            _this.router.navigate(['/customerdashboard']);
+                            _this.showFile = true;
+                            // this.router.navigate(['/customerdashboard']);
                         }
                     });
-                    // this.cookie.set("userid", "123")
-                    // console.log(this.response)
-                    /*
-                    const payload = {
-                      jwttoken: this.cookie.get('jwttoken')
-                    };
-                    console.log(payload);
-                    console.log(this.cookie.get('jwttoken'));
-                    r = this.loginService.sendRequest(payload, '/authentication/verifyotp');
-                    r.subscribe(data => {
-                      console.log(data);
-                    });*/
+                };
+                LoginComponent.prototype.onVerify = function (userData) {
+                    var _this = this;
+                    console.log(userData['otp']);
+                    userData['_id'] = this.cookie.get("customer_id");
+                    // console.log("verify")
+                    var jwttoken = this.cookie.get("jwttoken");
+                    this.http.post('/authentication/verifyotp/user', userData).subscribe(function (data) {
+                        if (data['auth']) {
+                            _this.router.navigate(['/customerdashboard']);
+                        }
+                        else {
+                            alert("Invalid OTP");
+                        }
+                    });
                 };
                 LoginComponent.prototype.recover = function () {
                     var _this = this;
@@ -2494,20 +2517,6 @@
                         'sitekey': '6LdhGcMUAAAAAJ2eG5TNInZtPqRfS2MJE-CVeptA',
                         'callback': function (response) {
                             console.log(response);
-                        }
-                    });
-                };
-                LoginComponent.prototype.onVerify = function (userData) {
-                    var _this = this;
-                    console.log(userData['otp']);
-                    console.log("verify");
-                    var jwttoken = this.cookie.get("jwttoken");
-                    this.http.post('/authentication/verifyotp/user', userData).subscribe(function (data) {
-                        if (data['auth']) {
-                            _this.router.navigate(['/customerdashboard']);
-                        }
-                        else {
-                            alert("Invalid OTP");
                         }
                     });
                 };
@@ -3665,10 +3674,14 @@
                     this.router = router;
                     this.http = http;
                     this.forgot_message = "";
+                    this.showFile = false;
                     this.timesSubmitted = 0;
                     this.restaurantLoginForm = this.formBuilder.group({
                         email: '',
                         password: ''
+                    });
+                    this.restaurantVerifyForm = this.formBuilder.group({
+                        otp: ''
                     });
                 }
                 ResturantloginComponent.prototype.ngOnInit = function () {
@@ -3685,6 +3698,20 @@
                     this.http.post(url, data).subscribe(function (res) { return _this.forgot_message = "Password resetted"; }, function (err) { return console.log(err); });
                     console.log(data);
                 };
+                ResturantloginComponent.prototype.onVerify = function (restaurantData) {
+                    var _this = this;
+                    restaurantData['_id'] = this.cookie.get("restaurant_id");
+                    // console.log("verify")
+                    var jwttoken = this.cookie.get("jwttoken");
+                    this.http.post('/authentication/verifyotp/restaurant', restaurantData).subscribe(function (data) {
+                        if (data['auth']) {
+                            _this.router.navigate(['/restaurantviewdetails']);
+                        }
+                        else {
+                            alert("Invalid OTP");
+                        }
+                    });
+                };
                 ResturantloginComponent.prototype.onSubmit = function (userData) {
                     var _this = this;
                     var r = this.loginService.sendRequest(userData, "/authentication/login/restaurant");
@@ -3697,10 +3724,7 @@
                         if (data['auth']) {
                             _this.cookie.set("jwttoken", data['token']);
                             _this.cookie.set("restaurant_id", data['_id']);
-                            if (data['auth']) {
-                                // this.cookie.set('jwttoken', data['token']);
-                                _this.router.navigate(['/restaurantviewdetails']);
-                            }
+                            _this.showFile = true;
                             //console.log(data[_id])
                         }
                     });
