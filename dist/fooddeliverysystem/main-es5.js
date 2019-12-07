@@ -127,7 +127,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Order History\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliverycurrentorders.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-deliverydropdown></app-deliverydropdown>\r\n\r\n<!-- Place holder for list of orders -->\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Current Orders</h3>\r\n    <p>Below are orders that are currently being fulfilled</p>\r\n    <p>Click on an order to reveal options</p>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\">\r\n      <strong> Order Number </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Price </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Name of Item </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Status </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Delivered? </strong>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div *ngIf=\"orders\">\r\n    <ul>\r\n      <div *ngFor=\"let order of orders; index as i\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-4\">\r\n            <a href=\"#\" routerLink=\"/restaurantvieworder\"> {{order._id}} </a>\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            $ {{order.price}}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            {{ order.name_of_item }}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            Fulfilled\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            <button (click)=\"fullfillOrder(order._id, i)\">Delivered</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Order History\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliverycurrentorders.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-deliverydropdown></app-deliverydropdown>\r\n\r\n<!-- Place holder for list of orders -->\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Current Orders</h3>\r\n    <p>Below are orders that are currently being fulfilled</p>\r\n    <p>Click on an order to reveal options</p>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\">\r\n      <strong> Order Number </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Price </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Name of Item </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Status </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Delivered? </strong>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div *ngIf=\"orders\">\r\n    <ul>\r\n      <div *ngFor=\"let order of orders; index as i\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-4\">\r\n            <a href=\"#\" routerLink=\"/restaurantvieworder\"> {{i+1}} </a>\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            $ {{order.price}}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            {{ order.name_of_item }}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            Fulfilled\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            <button (click)=\"fullfillOrder(order._id, i)\">Delivered</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliverydropdown/deliverydropdown.component.html": 
@@ -171,7 +171,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Order History\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliveryorderhistory.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-deliverydropdown></app-deliverydropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Order History</h3>\r\n    <p>Below order history from your restaurant.</p>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\">\r\n      <strong> Order Number </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Price </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Name of Item </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Status </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Time </strong>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div *ngIf=\"orders\">\r\n    <ul>\r\n      <div *ngFor=\"let order of orders\">\r\n        <div class=\"row\" style=\"margin-top: 5px\">\r\n          <div class=\"col-md-4\">\r\n            <a href=\"#\" routerLink=\"/restaurantvieworder\"> {{order._id}} </a>\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            $ {{order.price}}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            {{ order.name_of_item }}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            Fulfilled\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            11/03/2019\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Order History\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliveryorderhistory.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-deliverydropdown></app-deliverydropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Order History</h3>\r\n    <p>Below order history from your restaurant.</p>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\">\r\n      <strong> Order Number </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Price </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Name of Item </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Status </strong>\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n      <strong> Time </strong>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div *ngIf=\"orders\">\r\n    <ul>\r\n      <div *ngFor=\"let order of orders; index as i\">\r\n        <div class=\"row\" style=\"margin-top: 5px\">\r\n          <div class=\"col-md-4\">\r\n            <a href=\"#\" routerLink=\"/restaurantvieworder\"> {{ i+1 }} </a>\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            $ {{order.price}}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            {{ order.name_of_item }}\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            Fulfilled\r\n          </div>\r\n          <div class=\"col-md-2\">\r\n            {{ order.time }}\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliveryprofile/deliveryprofile.component.html": 
@@ -182,7 +182,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Delivery Profile\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliveryprofile.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-deliverydropdown></app-deliverydropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Delivery Details</h3>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\" col-md-6\">\r\n      <ul *ngIf=\"delivery_details\">\r\n        <h4><strong> {{delivery_details.name}} </strong></h4>\r\n        <li>\r\n          <strong> Contact: </strong> <a href=\"tel:{{delivery_details.contact}}\">{{delivery_details.contact}}</a>\r\n        </li>\r\n        <li>\r\n          <strong> Address: </strong>\r\n          {{delivery_details.street1 + delivery_details.street2 + delivery_details.city + delivery_details.state + delivery_details.zip_code}}\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <a class=\"edit-link pull-right\" href=\"#\" routerLink=\"/deliveryeditprofile\">Edit</a>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Delivery Profile\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliveryprofile.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-deliverydropdown></app-deliverydropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Delivery Details</h3>\r\n  </div>\r\n  <hr>\r\n  <!-- <div class=\"row\">\r\n    <div class=\" col-md-6\">\r\n      <ul *ngIf=\"delivery_details\">\r\n        <h4><strong> {{delivery_details.name}} </strong></h4>\r\n        <li>\r\n          <strong> Contact: </strong> <a href=\"tel:{{delivery_details.contact}}\">{{delivery_details.contact}}</a>\r\n        </li>\r\n        <li>\r\n          <strong> Address: </strong>\r\n          {{delivery_details.street1 + delivery_details.street2 + delivery_details.city + delivery_details.state + delivery_details.zip_code}}\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div> -->\r\n\r\n\r\n  <form method=\"POST\" [formGroup]=\"deliveryProfileForm\" (ngSubmit)=\"onSubmit(deliveryProfileForm.value)\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4 col-md-offset-1\">\r\n        <!-- Change src here -->\r\n        <img class=\"img-circle\" [src]=\"delivery_details.delivery_image\" alt=\"\" style=\"width: 200px; height: 200px\">\r\n        <input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"delivery_image\"\r\n               ng-model=\"delivery_image\" base-sixty-four-input>\r\n\r\n      </div>\r\n      <div class=\"info col-md-6 col-md-offset-1\">\r\n        <div class=\"row\">\r\n          <strong> Full Name: </strong>\r\n          <input type=\"text\" formControlName=\"name\" required=\"required\" placeholder=\"John Doe\" id=\"Name\" value=\"{{ delivery_details.name }}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Email Address: </strong>\r\n          <input type=\"contact\" formControlName=\"email\" required=\"required\" placeholder=\"food@foodoholics.com\" \r\n                 id=\"email\" value=\"{{delivery_details.email}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Phone Number: </strong>\r\n          <input type=\"contact\" formControlName=\"contact\" required=\"required\" placeholder=\"812-999-9999\" id=\"phone\" value=\"{{delivery_details.contact}}\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <button type=\"submit\" value=\"submit\" class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">\r\n      Save\r\n    </button>\r\n  </form>\r\n  <hr>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliveryreg/deliveryreg.component.html": 
@@ -1652,7 +1652,7 @@
                 };
                 DeliverycurrentordersComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    var url = '/delivery/current_orders/' + this.cookie.get('restaurant_id');
+                    var url = '/delivery/current_orders/' + this.cookie.get('delivery_id');
                     var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json',
                         jwttoken: this.cookie.get("jwttoken")
                     });
@@ -1818,12 +1818,12 @@
                 };
                 DeliveryloginComponent.prototype.onSubmit = function (userData) {
                     var _this = this;
-                    var r = this.loginService.sendRequest(userData, "/authentication/login/restaurant");
+                    var r = this.loginService.sendRequest(userData, "/authentication/login/delivery");
                     r.subscribe(function (data) {
                         console.log(data);
                         if (data['auth']) {
                             _this.cookie.set("jwttoken", data['token']);
-                            _this.cookie.set("restaurant_id", data['_id']);
+                            _this.cookie.set("delivery_id", data['_id']);
                             _this.router.navigate(['/deliveryprofile']);
                             //console.log(data[_id])
                         }
@@ -1877,7 +1877,7 @@
                 }
                 DeliveryorderhistoryComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    var url = '/current_orders' + this.cookie.get('delivery_id');
+                    var url = '/delivery/order_history/' + this.cookie.get('delivery_id');
                     var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json',
                         jwttoken: this.cookie.get("jwttoken")
                     });
@@ -1928,30 +1928,60 @@
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
             /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+            /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
             var DeliveryprofileComponent = /** @class */ (function () {
-                function DeliveryprofileComponent(http, cookie) {
+                function DeliveryprofileComponent(http, formbuilder, cookie) {
                     this.http = http;
+                    this.formbuilder = formbuilder;
                     this.cookie = cookie;
+                    this.deliveryProfileForm = this.formbuilder.group({
+                        name: '',
+                        contact: '',
+                        email: ''
+                    });
                 }
+                DeliveryprofileComponent.prototype.onFileSelected = function (event) {
+                    var file = event.target.files[0];
+                    this.image = file;
+                };
                 DeliveryprofileComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
                         'Content-Type': 'application/json',
                         jwttoken: this.cookie.get("jwttoken")
                     });
-                    var url = '/restaurant/display_details/' + this.cookie.get('restaurant_id');
+                    var delivery_id = this.cookie.get('delivery_id');
+                    var url = '/delivery/display_details/' + this.cookie.get('delivery_id');
                     this.http.get(url, { headers: headers }).subscribe(function (data) {
                         // this.detailsForm = data;
                         if (data != null) {
-                            _this.delivery_details = data;
-                            console.log(data);
+                            _this.delivery_details = data['result'];
+                            _this.delivery_details.delivery_image = "/delivery_images/" + delivery_id + ".png";
+                            console.log(_this.delivery_details);
                         }
                     });
+                };
+                DeliveryprofileComponent.prototype.onSubmit = function (profile) {
+                    var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                        // 'Content-Type': 'multipart/form-data',
+                        jwttoken: this.cookie.get("jwttoken")
+                    });
+                    var jwttoken = this.cookie.get("jwttoken");
+                    var delivery_id = this.cookie.get("delivery_id");
+                    var formData = new FormData();
+                    formData.append("id", delivery_id);
+                    formData.append("name", profile["name"]);
+                    formData.append("email", profile["email"]);
+                    formData.append("contact", profile["contact"]);
+                    formData.append("jwttoken", jwttoken);
+                    formData.append("image", this.image, this.cookie.get('delivery_id') + '.png');
+                    this.http.post('/delivery/details', formData, { headers: headers }).subscribe(function (res) { return console.log(res); }, function (err) { return console.log(err); });
                 };
                 return DeliveryprofileComponent;
             }());
             DeliveryprofileComponent.ctorParameters = function () { return [
                 { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+                { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] },
                 { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
             ]; };
             DeliveryprofileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -2066,11 +2096,12 @@
             /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
             /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
             var DisplayMenuComponent = /** @class */ (function () {
-                function DisplayMenuComponent(route, httpService, cookie, http) {
+                function DisplayMenuComponent(route, httpService, cookie, http, router) {
                     this.route = route;
                     this.httpService = httpService;
                     this.cookie = cookie;
                     this.http = http;
+                    this.router = router;
                 }
                 DisplayMenuComponent.prototype.ngOnInit = function () {
                     var _this = this;
@@ -2095,6 +2126,7 @@
                     });
                 };
                 DisplayMenuComponent.prototype.orderItem = function (item) {
+                    var _this = this;
                     var data = {
                         "restaurant_id": this.restaurant_id,
                         "user_id": this.cookie.get("customer_id"),
@@ -2105,7 +2137,7 @@
                     var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpHeaders"]({ 'Content-Type': 'application/json',
                         jwttoken: this.cookie.get("jwttoken")
                     });
-                    this.http.post(url, data, { headers: headers }).subscribe(function (res) { return console.log(res); }, function (err) { return console.log(err); });
+                    this.http.post(url, data, { headers: headers }).subscribe(function (res) { return _this.router.navigate(['/customercurrentorders']); }, function (err) { return console.log(err); });
                 };
                 return DisplayMenuComponent;
             }());
@@ -2113,7 +2145,8 @@
                 { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
                 { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
                 { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] },
-                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
             ]; };
             DisplayMenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
