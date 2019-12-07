@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import {CookieService} from 'ngx-cookie-service';
 import {HttpClient,HttpHeaders, HttpParams} from '@angular/common/http';
 
@@ -20,7 +20,8 @@ export class DisplayMenuComponent implements OnInit {
     private route: ActivatedRoute,
     private httpService:HttpClient,
     private cookie: CookieService,
-    private http: HttpClient) {
+    private http: HttpClient,
+    private router: Router) {
     
 
   }
@@ -64,7 +65,7 @@ export class DisplayMenuComponent implements OnInit {
         jwttoken: this.cookie.get("jwttoken")
       });
       this.http.post(url, data, {headers}).subscribe(
-        (res)=> console.log(res),
+        (res)=> this.router.navigate(['/customercurrentorders']),
         (err) => console.log(err)
       )
     
