@@ -10,7 +10,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Socialusers } from '../socialusers' 
 
 @Component({
   selector: 'app-login',
@@ -109,9 +109,12 @@ export class LoginComponent implements OnInit {
       this.Savesresponse(socialusers);
     });
   }
+  
 
   Savesresponse(socialusers: Socialusers){
     this.SocialloginService.Savesresponse(socialusers).subscribe((res: any) =>{
+      debugger;
+      console.log(res);
       this.socialusers=res;
       this.response = res.userDetail;
       localStorage.setItem('socialusers', JSON.stringify(this.socialusers));
@@ -186,14 +189,5 @@ export class LoginComponent implements OnInit {
 
 
 
-}
-export class Socialusers{
-  provider: string;
-  id: string;
-  email: string;
-  name: string;
-  //image: string;
-  token?: string;
-  idToken?: string;
 }
 
