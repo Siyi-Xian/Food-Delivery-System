@@ -3,7 +3,9 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service'; 
-import { SocialLoginModule, AuthServiceConfig, AuthService } from 'angularx-social-login';  
+import { SocialLoginModule, AuthServiceConfig, AuthService } from 'angularx-social-login'; 
+import { SocialloginService } from '../sociallogin.service';   
+import { Socialusers } from '../socialusers'  
 
 declare var webkitSpeechRecognition: any
 @Component({
@@ -12,7 +14,7 @@ declare var webkitSpeechRecognition: any
   styleUrls: ['./customerdashboard.component.css']
 })
 export class CustomerdashboardComponent implements OnInit {
-  
+  socialusers = new Socialusers(); 
   userSearchForm;
   results;
   searchFilter;
@@ -34,7 +36,11 @@ export class CustomerdashboardComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.socialusers = JSON.parse(localStorage.getItem('socialusers'));  
+    console.log(this.socialusers.email);  
   }
+
+  
 
 
   voiceSearchName(){

@@ -219,6 +219,11 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
     var data_update = {
         $set: {
             name: req.body.name.toLowerCase(),
+            street1: req.body.street1,
+            street2: req.body.street2,
+            //city: req.body.city,
+            state: req.body.state,
+            zip_code: req.body.zip_code,
             location: req.body.location.toLowerCase(),
             food_category: req.body.food_category.toLowerCase(),
             res_image: id+'.png',
