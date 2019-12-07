@@ -21,7 +21,7 @@
     <h3>Delivery Details</h3>
   </div>
   <hr>
-  <div class="row">
+  <!-- <div class="row">
     <div class=" col-md-6">
       <ul *ngIf="delivery_details">
         <h4><strong> {{delivery_details.name}} </strong></h4>
@@ -34,11 +34,39 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> -->
+
+
+  <form method="POST" [formGroup]="deliveryProfileForm" (ngSubmit)="onSubmit(deliveryProfileForm.value)">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-1">
+        <!-- Change src here -->
+        <img class="img-circle" [src]="delivery_details.delivery_image" alt="" style="width: 200px; height: 200px">
+        <input type="file" required="required" accept="image/*" (change)="onFileSelected($event)" id="delivery_image"
+               ng-model="delivery_image" base-sixty-four-input>
+
+      </div>
+      <div class="info col-md-6 col-md-offset-1">
+        <div class="row">
+          <strong> Full Name: </strong>
+          <input type="text" formControlName="name" required="required" placeholder="John Doe" id="Name" value="{{ delivery_details.name }}">
+        </div>
+        <div class="row">
+          <strong> Email Address: </strong>
+          <input type="contact" formControlName="email" required="required" placeholder="food@foodoholics.com" 
+                 id="email" value="{{delivery_details.email}}">
+        </div>
+        <div class="row">
+          <strong> Phone Number: </strong>
+          <input type="contact" formControlName="contact" required="required" placeholder="812-999-9999" id="phone" value="{{delivery_details.contact}}">
+        </div>
+      </div>
+    </div>
+    <button type="submit" value="submit" class="btn btn-primary btn-lg btn-block pull-right" style="width: 100px; margin-right: 20px">
+      Save
+    </button>
+  </form>
   <hr>
-  <div class="row">
-    <a class="edit-link pull-right" href="#" routerLink="/deliveryeditprofile">Edit</a>
-  </div>
 </div>
 
 </body>
