@@ -43,10 +43,10 @@
   <hr>
   <div *ngIf="orders">
     <ul>
-      <div *ngFor="let order of orders">
+      <div *ngFor="let order of orders; index as i">
         <div class="row" style="margin-top: 5px">
           <div class="col-md-4">
-            <a href="#" routerLink="/restaurantvieworder"> {{order._id}} </a>
+            <a href="#" routerLink="/restaurantvieworder"> {{ i+1 }} </a>
           </div>
           <div class="col-md-2">
             $ {{order.price}}
@@ -58,7 +58,7 @@
             Fulfilled
           </div>
           <div class="col-md-2">
-            11/03/2019
+            {{ order.time }}
           </div>
         </div>
       </div>

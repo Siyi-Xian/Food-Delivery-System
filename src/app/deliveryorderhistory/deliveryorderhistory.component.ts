@@ -14,7 +14,7 @@ export class DeliveryorderhistoryComponent implements OnInit {
               private cookie:CookieService) { }
 
   ngOnInit() {
-    var url='/current_orders' + this.cookie.get ('delivery_id')
+    var url='/delivery/order_history/' + this.cookie.get ('delivery_id')
     let headers = new HttpHeaders({ 'Content-Type': 'application/json',
       jwttoken: this.cookie.get("jwttoken")
     });
