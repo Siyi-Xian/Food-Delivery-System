@@ -34,6 +34,19 @@
         </div>
         <div class="container" style="padding: 20px 20px 0px 20px">
           <button type="submit" value = "submit" class="login-button btn btn-primary">Login</button>
+
+           <!-- Place holder for recaptcha -->
+           <div #recaptcha style="padding: 10px -10px; margin-top: 10px"></div>
+
+           <div class="container" style="margin-top: 10px; padding: 10px 27px 5px 27px">
+             <button id="google-button" class="btn btn-block btn-social btn-google" style="margin-bottom: 15px" (click)="socialSignIn('google')">
+               <i class="fa fa-google"></i> Sign in with Google
+             </button>
+             <button id="facebook-button" class="btn btn-block btn-social btn-facebook" (click)="socialSignIn('facebook')">
+               <i class="fa fa-facebook"></i> Sign in with Facebook
+             </button>
+
+           </div>
         </div>
 
       </form>
