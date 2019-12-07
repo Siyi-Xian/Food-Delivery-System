@@ -36,6 +36,7 @@ app.use(express.static('dist/fooddeliverysystem'))
 app.use('/restaurant_images', express.static(__dirname + '/restaurant_images'));
 app.use('/menu_images', express.static(__dirname + '/menu_images'))
 app.use('/customer_images', express.static(__dirname + '/customer_images'))
+app.use('/delivery_images', express.static(__dirname + '/delivery_images'))
 
 // const server = 
 app.use('/restaurant', restaurant_portal);
