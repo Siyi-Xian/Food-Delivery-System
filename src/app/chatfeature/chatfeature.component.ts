@@ -1,61 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { PusherService } from '../pusher.service';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-
-
-
-
-interface Message{
-  text: string;
-  user: string;
-
-}
+import { Component } from '@angular/core';
+import { ChatService } from '../chat.service';
 
 @Component({
   selector: 'app-chatfeature',
   templateUrl: './chatfeature.component.html',
   styleUrls: ['./chatfeature.component.css']
-  
 })
+export class ChatfeatureComponent {
+  message: string;
+  messages: string[] = [];
 
-
-
-
-
-
-export class ChatfeatureComponent implements OnInit {
-
-  
-    text: string;
-    user: string;
-    messages: Array<Message>;
-  
-  constructor(private pusherService: PusherService,
-    private http: HttpClient,
-    private router: Router,) { 
-    this.messages = [];
+  constructor(private chatService: ChatService) {
   }
 
-
-  
-
-
-
-  sendMessage(user: string, text: string) {
-    const message: Message = {
-       user: user,
-       text: text,
-    }
-    this.pusherService.messagesChannel.trigger('client-new-message', message);
-    this.messages.push(message);
+  sendMessage() {
+    this.chatService.sendMessage(this.message);
+    this.message = '';
   }
-  
+
   ngOnInit() {
-
-    this.pusherService.messagesChannel.bind('client-new-message', (message) => {
-      this.messages.push(message);
-    });
+    this.chatService
+      .getMessages()
+      .subscribe((message: string) => {
+        this.messages.push(message);
+      });
   }
 
 }

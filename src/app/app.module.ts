@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 import { GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angularx-social-login';
 import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
-
+import { ChatService } from './chat.service';
 import { PusherService } from './pusher.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -239,7 +239,8 @@ export function socialConfigs(){
   ],
   providers: [
     CookieService,
-    PusherService,
+    ChatService,
+    //PusherService,
     AuthService,{
       provide: AuthServiceConfig,
       useFactory: socialConfigs
@@ -247,4 +248,8 @@ export function socialConfigs(){
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+
+
+}

@@ -9,6 +9,23 @@ var path = require('path')
 var http = require('http')
 const cookieParser = require('cookie-parser');
 
+let server = http.Server(app);
+let socketIO = require('socket.io');
+let io = socketIO(server);
+
+const Chatport = process.env.PORT || 3000;
+
+io.on('connection', (socket)=>{
+  console.log('user connected');
+
+  socket.on('new-message', (message)=>{
+    io.emit(message);
+  });
+});
+
+server.listen(Chatport, ()=> {
+  console.log('Chat started on port: '+ Chatport);
+});
 
 var authentication = require('./routes/authenticate')
 var restaurant_portal = require('./routes/restaurant_portal')

@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n       \r\n\r\n<head>\r\n\r\n        <title>\r\n                Chat Board\r\n         </title>\r\n\r\n    <script src=\"https://js.pusher.com/5.0/pusher.min.js\"></script>\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n    <script>\r\n\r\n    // Enable pusher logging - don't include this in production\r\n    Pusher.logToConsole = true;\r\n\r\n    var pusher = new Pusher('49096276b737a48a5ba1', {\r\n      cluster: 'us2',\r\n      forceTLS: true\r\n    });\r\n\r\n    var channel = pusher.subscribe('my-channel');\r\n    channel.bind('my-event', function(data) {\r\n      alert(JSON.stringify(data));\r\n    });\r\n  </script>\r\n\r\n</head>\r\n    <body>\r\n\r\n        <label for=\"userName\">Username</label>\r\n        <input type=\"text\" id=\"userName\" [(ngModel)]=\"userName\">\r\n        \r\n        <label for=\"message\">Message</label>\r\n        <input type=\"text\" id=\"message\" [(ngModel)]=\"messageText\">\r\n        \r\n        <button (click)=\"sendMessage(userName, messageText)\">Send</button>\r\n\r\n\r\n    \r\n    <div *ngFor=\"let message of messages\">\r\n        <b>{{ message.user }}</b>: {{ message.text }}\r\n    </div>\r\n      \r\n   </body> \r\n\r\n   </html>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n       \r\n\r\n<head>\r\n\r\n        <title>\r\n                Chat Board\r\n         </title>\r\n\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n\r\n</head>\r\n    <body>\r\n\r\n        <div *ngFor=\"let message of messages\">\r\n            {{message}}\r\n        </div>\r\n\r\n      <input [(ngModel)]=\"message\" (keyup)=\"$event.keyCode == 13 && sendMessage()\" />\r\n      <button class=\"btn btn-primary\" (click)=\"sendMessage()\">Send</button>\r\n   </body> \r\n\r\n   </html>\r\n\r\n");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\n<head>\n  <title>\n    customer dashboard\n  </title>\n  <!-- Bootstrap CDN scripts -->\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\n  <script src=\"customerdashboard.component.css\"></script>\n  <script src=\"../../styles.css\"></script>\n</head>\n<body>\n<app-customerdropdown></app-customerdropdown>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-4\">\n            <strong> Order Number </strong>\n        </div>\n        <div class=\"col-md-2\">\n            <strong> Price </strong>\n        </div>\n        <div class=\"col-md-2\">\n            <strong> Name of Item </strong>\n        </div>\n        <div class=\"col-md-2\">\n            <strong> Status </strong>\n        </div>\n        <div class=\"col-md-2\">\n            <strong> Time </strong>\n        </div>\n    </div>\n    <hr>\n    <div *ngIf=\"orders\">\n        <ul>\n            <div *ngFor=\"let order of orders; index as i\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                    {{i + 1}}\n                    </div>\n                    <div class=\"col-md-2\">\n                    $ {{order.price}}\n                    </div>\n                    <div class=\"col-md-2\">\n                    {{ order.name_of_item }}\n                    </div>\n                    <div class=\"col-md-2\">\n                    {{ order.status }}\n                    </div>\n                    <div class=\"col-md-2\">\n                    <!-- <button (click)=\"fullfillOrder(order._id, i)\">Completed</button> -->\n                    {{order.time}}\n                    </div>\n                </div>\n            </div>\n        </ul>\n    </div>\n</div>\n\n    \n    \n\n</body>\n</html>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"customerdashboard.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-customerdropdown></app-customerdropdown>\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-4\">\r\n            <strong> Order Number </strong>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n            <strong> Price </strong>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n            <strong> Name of Item </strong>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n            <strong> Status </strong>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n            <strong> Time </strong>\r\n        </div>\r\n    </div>\r\n    <hr>\r\n    <div *ngIf=\"orders\">\r\n        <ul>\r\n            <div *ngFor=\"let order of orders; index as i\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-4\">\r\n                    {{i + 1}}\r\n                    </div>\r\n                    <div class=\"col-md-2\">\r\n                    $ {{order.price}}\r\n                    </div>\r\n                    <div class=\"col-md-2\">\r\n                    {{ order.name_of_item }}\r\n                    </div>\r\n                    <div class=\"col-md-2\">\r\n                    {{ order.status }}\r\n                    </div>\r\n                    <div class=\"col-md-2\">\r\n                    <!-- <button (click)=\"fullfillOrder(order._id, i)\">Completed</button> -->\r\n                    {{order.time}}\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </ul>\r\n    </div>\r\n</div>\r\n\r\n    \r\n    \r\n\r\n</body>\r\n</html>\r\n");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\n<head>\n  <title>\n    customer dashboard\n  </title>\n  <!-- Bootstrap CDN scripts -->\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\n  <script src=\"customerdashboard.component.css\"></script>\n  <script src=\"../../styles.css\"></script>\n</head>\n<body>\n<app-customerdropdown></app-customerdropdown>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-4\">\n            <strong> Order Number </strong>\n        </div>\n        <div class=\"col-md-2\">\n            <strong> Price </strong>\n        </div>\n        <div class=\"col-md-2\">\n            <strong> Name of Item </strong>\n        </div>\n        <!-- <div class=\"col-md-2\">\n            <strong> Status </strong>\n        </div> -->\n        <div class=\"col-md-2\">\n            <strong> Time </strong>\n        </div>\n        <div class=\"col-md-2\">\n            <strong> Rate out of 5 </strong>\n        </div>\n    </div>\n    <hr>\n    <div *ngIf=\"orders\">\n        <ul>\n            <div *ngFor=\"let order of orders; index as i\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                    {{i + 1}}\n                    </div>\n                    <div class=\"col-md-2\">\n                    $ {{order.price}}\n                    </div>\n                    <div class=\"col-md-2\">\n                    {{ order.name_of_item }}\n                    </div>\n                    <!-- <div class=\"col-md-2\">\n                    {{ order.status }}\n                    </div> -->\n                    <div class=\"col-md-2\">\n                    <!-- <button (click)=\"fullfillOrder(order._id, i)\">Completed</button> -->\n                    {{order.time}}\n                    </div>\n                    <div class=\"col-md-2\">\n                        {{order.ratings}}\n                        <form mehtod=\"post\" [formGroup]=\"ratingForm\" (ngSubmit)=\"onRate(ratingForm.value, order)\">\n                            <input type=\"number\" required=\"required\" formControlName=\"ratings\" value=\"{{ order.ratings }}\">\n                            <br>\n                            <button type=\"submit\" value=\"submit\"\n                                    class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">Rate\n                            </button>\n                        </form>\n                    </div>\n                </div>\n            </div>\n        </ul>\n        <br>\n        <br>\n    </div>\n</div>\n\n    \n    \n\n</body>\n</html>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"customerdashboard.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-customerdropdown></app-customerdropdown>\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-4\">\r\n            <strong> Order Number </strong>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n            <strong> Price </strong>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n            <strong> Name of Item </strong>\r\n        </div>\r\n        <!-- <div class=\"col-md-2\">\r\n            <strong> Status </strong>\r\n        </div> -->\r\n        <div class=\"col-md-2\">\r\n            <strong> Time </strong>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n            <strong> Rate out of 5 </strong>\r\n        </div>\r\n    </div>\r\n    <hr>\r\n    <div *ngIf=\"orders\">\r\n        <ul>\r\n            <div *ngFor=\"let order of orders; index as i\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-4\">\r\n                    {{i + 1}}\r\n                    </div>\r\n                    <div class=\"col-md-2\">\r\n                    $ {{order.price}}\r\n                    </div>\r\n                    <div class=\"col-md-2\">\r\n                    {{ order.name_of_item }}\r\n                    </div>\r\n                    <!-- <div class=\"col-md-2\">\r\n                    {{ order.status }}\r\n                    </div> -->\r\n                    <div class=\"col-md-2\">\r\n                    <!-- <button (click)=\"fullfillOrder(order._id, i)\">Completed</button> -->\r\n                    {{order.time}}\r\n                    </div>\r\n                    <div class=\"col-md-2\">\r\n                        {{order.ratings}}\r\n                        <form mehtod=\"post\" [formGroup]=\"ratingForm\" (ngSubmit)=\"onRate(ratingForm.value, order)\">\r\n                            <input type=\"number\" required=\"required\" formControlName=\"ratings\" value=\"{{ order.ratings }}\">\r\n                            <br>\r\n                            <button type=\"submit\" value=\"submit\"\r\n                                    class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">Rate\r\n                            </button>\r\n                        </form>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </ul>\r\n        <br>\r\n        <br>\r\n    </div>\r\n</div>\r\n\r\n    \r\n    \r\n\r\n</body>\r\n</html>\r\n");
 
 /***/ }),
 
@@ -869,7 +869,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
 /* harmony import */ var angularx_social_login__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angularx-social-login */ "./node_modules/angularx-social-login/angularx-social-login.js");
-/* harmony import */ var _pusher_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pusher.service */ "./src/app/pusher.service.ts");
+/* harmony import */ var _chat_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./chat.service */ "./src/app/chat.service.ts");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
@@ -1150,7 +1150,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         ],
         providers: [
             ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"],
-            _pusher_service__WEBPACK_IMPORTED_MODULE_7__["PusherService"],
+            _chat_service__WEBPACK_IMPORTED_MODULE_7__["ChatService"],
+            //PusherService,
             angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthService"], {
                 provide: angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthServiceConfig"],
                 useFactory: socialConfigs
@@ -1160,6 +1161,43 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     })
 ], AppModule);
 
+
+
+/***/ }),
+
+/***/ "./src/app/chat.service.ts":
+/*!*********************************!*\
+  !*** ./src/app/chat.service.ts ***!
+  \*********************************/
+/*! exports provided: ChatService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChatService", function() { return ChatService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.io-client/lib/index.js");
+/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+class ChatService {
+    constructor() {
+        this.url = "http://localhost:3000";
+        this.getMessages = () => {
+            return rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"].create((observer) => {
+                this.socket.on('new-message', (message) => {
+                    observer.next(message);
+                });
+            });
+        };
+        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_1__(this.url);
+    }
+    sendMessage(message) {
+        this.socket.emit('new-message', message);
+    }
+}
 
 
 /***/ }),
@@ -1189,39 +1227,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChatfeatureComponent", function() { return ChatfeatureComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _pusher_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pusher.service */ "./src/app/pusher.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-
-
+/* harmony import */ var _chat_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../chat.service */ "./src/app/chat.service.ts");
 
 
 
 let ChatfeatureComponent = class ChatfeatureComponent {
-    constructor(pusherService, http, router) {
-        this.pusherService = pusherService;
-        this.http = http;
-        this.router = router;
+    constructor(chatService) {
+        this.chatService = chatService;
         this.messages = [];
     }
-    sendMessage(user, text) {
-        const message = {
-            user: user,
-            text: text,
-        };
-        this.pusherService.messagesChannel.trigger('client-new-message', message);
-        this.messages.push(message);
+    sendMessage() {
+        this.chatService.sendMessage(this.message);
+        this.message = '';
     }
     ngOnInit() {
-        this.pusherService.messagesChannel.bind('client-new-message', (message) => {
+        this.chatService
+            .getMessages()
+            .subscribe((message) => {
             this.messages.push(message);
         });
     }
 };
 ChatfeatureComponent.ctorParameters = () => [
-    { type: _pusher_service__WEBPACK_IMPORTED_MODULE_2__["PusherService"] },
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: _chat_service__WEBPACK_IMPORTED_MODULE_2__["ChatService"] }
 ];
 ChatfeatureComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2525,6 +2553,7 @@ let LoginComponent = class LoginComponent {
         console.log(userData['otp']);
         console.log("verify");
         var jwttoken = this.cookie.get("jwttoken");
+        this.router.navigate(['/customerdashboard']);
         this.http.post('/authentication/verifyotp/user', userData).subscribe(data => {
             if (data['auth']) {
                 this.router.navigate(['/customerdashboard']);
@@ -2813,40 +2842,6 @@ PublicComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./public.component.css */ "./src/app/public/public.component.css")).default]
     })
 ], PublicComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/pusher.service.ts":
-/*!***********************************!*\
-  !*** ./src/app/pusher.service.ts ***!
-  \***********************************/
-/*! exports provided: PusherService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PusherService", function() { return PusherService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-
-
-
-let PusherService = class PusherService {
-    constructor() {
-        this.pusher = new Pusher(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].pusher.key, {
-            authEndpoint: '/chat/pusher/auth',
-        });
-        this.messagesChannel = this.pusher.subscribe('private-messages');
-    }
-};
-PusherService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    })
-], PusherService);
 
 
 
@@ -4088,8 +4083,19 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\IUB\Semester 1\Software Engineering\project\Food-Delivery-System\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\pwmcb\Desktop\Food-Delivery-System\src\main.ts */"./src/main.ts");
 
+
+/***/ }),
+
+/***/ 1:
+/*!********************!*\
+  !*** ws (ignored) ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ })
 
