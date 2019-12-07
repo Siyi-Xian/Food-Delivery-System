@@ -6,7 +6,8 @@ import {CookieService} from 'ngx-cookie-service';
 import { GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angularx-social-login';
 import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 
-import { PusherService } from './pusher.service';
+import { ChatService } from './services/chat.service';
+import { PusherService } from './services/pusher.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,6 +50,8 @@ import { DeliveryeditprofileComponent } from './deliveryeditprofile/deliveryedit
 import {AgmCoreModule} from "@agm/core";
 import { CustomerCurrentOrdersComponent } from './customer-current-orders/customer-current-orders.component';
 import { CustomerOrderHistoryComponent } from './customer-order-history/customer-order-history.component';
+import { MyDetailsComponent } from './my-details/my-details.component';
+import { GroupChatComponent } from './group-chat/group-chat.component';
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -103,7 +106,9 @@ export function socialConfigs(){
     OrderComponent,
     DeliveryeditprofileComponent,
     CustomerCurrentOrdersComponent,
-    CustomerOrderHistoryComponent  ],
+    CustomerOrderHistoryComponent,
+    MyDetailsComponent,
+    GroupChatComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -239,6 +244,7 @@ export function socialConfigs(){
   ],
   providers: [
     CookieService,
+    ChatService,
     PusherService,
     AuthService,{
       provide: AuthServiceConfig,

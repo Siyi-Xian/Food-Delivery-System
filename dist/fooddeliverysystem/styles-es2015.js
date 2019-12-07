@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = [[module.i, "/* You can add global styles to this file, and also import other style files */\r\n\r\nnav {\r\n  background-color: #FFCA28;\r\n}\r\n\r\n.login-button {\r\n  margin-left: 15%;\r\n  margin-right: 15%;\r\n  width: 200px;\r\n}\r\n\r\n.delivery-dropdown li{\r\n  width: 10%; text-align: center\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDhFQUE4RTs7QUFFOUU7RUFDRSx5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLFVBQVUsRUFBRTtBQUNkIiwiZmlsZSI6InNyYy9zdHlsZXMuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogWW91IGNhbiBhZGQgZ2xvYmFsIHN0eWxlcyB0byB0aGlzIGZpbGUsIGFuZCBhbHNvIGltcG9ydCBvdGhlciBzdHlsZSBmaWxlcyAqL1xyXG5cclxubmF2IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjRkZDQTI4O1xyXG59XHJcblxyXG4ubG9naW4tYnV0dG9uIHtcclxuICBtYXJnaW4tbGVmdDogMTUlO1xyXG4gIG1hcmdpbi1yaWdodDogMTUlO1xyXG4gIHdpZHRoOiAyMDBweDtcclxufVxyXG5cclxuLmRlbGl2ZXJ5LWRyb3Bkb3duIGxpe1xyXG4gIHdpZHRoOiAxMCU7IHRleHQtYWxpZ246IGNlbnRlclxyXG59XHJcbiJdfQ== */", '', '']]
+module.exports = [[module.i, "/* You can add global styles to this file, and also import other style files */\r\n\r\n.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }\r\n\r\nnav {\r\n  background-color: #FFCA28;\r\n}\r\n\r\n.login-button {\r\n  margin-left: 15%;\r\n  margin-right: 15%;\r\n  width: 200px;\r\n}\r\n\r\n.delivery-dropdown li{\r\n  width: 10%; text-align: center\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDhFQUE4RTs7QUFFOUUsY0FBYyw4Q0FBOEMsRUFBRTs7QUFFOUQ7RUFDRSx5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLFVBQVUsRUFBRTtBQUNkIiwiZmlsZSI6InNyYy9zdHlsZXMuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogWW91IGNhbiBhZGQgZ2xvYmFsIHN0eWxlcyB0byB0aGlzIGZpbGUsIGFuZCBhbHNvIGltcG9ydCBvdGhlciBzdHlsZSBmaWxlcyAqL1xyXG5cclxuLmJveC1zaGFkb3cgeyBib3gtc2hhZG93OiAwIC4yNXJlbSAuNzVyZW0gcmdiYSgwLCAwLCAwLCAuMDUpOyB9XHJcblxyXG5uYXYge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNGRkNBMjg7XHJcbn1cclxuXHJcbi5sb2dpbi1idXR0b24ge1xyXG4gIG1hcmdpbi1sZWZ0OiAxNSU7XHJcbiAgbWFyZ2luLXJpZ2h0OiAxNSU7XHJcbiAgd2lkdGg6IDIwMHB4O1xyXG59XHJcblxyXG4uZGVsaXZlcnktZHJvcGRvd24gbGl7XHJcbiAgd2lkdGg6IDEwJTsgdGV4dC1hbGlnbjogY2VudGVyXHJcbn1cclxuIl19 */", '', '']]
 
 /***/ }),
 
@@ -338,7 +338,7 @@ if (content.locals) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\IUB\Semester 1\Software Engineering\project\Food-Delivery-System\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Users\pwmcb\Desktop\Food-Delivery-System\src\styles.css */"./src/styles.css");
 
 
 /***/ })
