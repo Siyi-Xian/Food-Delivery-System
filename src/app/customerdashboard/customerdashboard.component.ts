@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
@@ -16,7 +16,7 @@ export class CustomerdashboardComponent implements OnInit {
   userSearchForm;
   results;
   searchFilter;
-  @ViewChild('restaurant_name',{static: true}) restaurant_name
+  // @ViewChild('restaurant_name',{static: true}) restaurant_name
 
   constructor(
     public OAuth: AuthService,
@@ -116,7 +116,7 @@ export class CustomerdashboardComponent implements OnInit {
   }
   updateToRatings(){
     this.results.sort(function(a, b){
-      return b.ratings - a.ratings;
+      return b.ratings/b.num_ratings - a.ratings/a.num_ratings;
   });
   }
   updateToLocation(){
@@ -150,11 +150,6 @@ export class CustomerdashboardComponent implements OnInit {
       console.log(data)
       this.results = data
     })
-
-    // var jwttoken = this.cookie.get("jwttoken")
-    //we'll need to change the endpoint to the endpoint for the search on the backend
-    // this.http.get<any>('/restaurant/restaurant_list', event).subscribe((data: any) => this.result = {data});
-    // this.displayResult(this.result);
   }
 
   //function to render the result of the search to the website
