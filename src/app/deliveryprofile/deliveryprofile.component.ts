@@ -19,7 +19,8 @@ export class DeliveryprofileComponent implements OnInit {
       this.deliveryProfileForm = this.formbuilder.group({
         name: '',
         contact: '',
-        email:''
+        email:'',
+        password: ''
       })
 
     }
@@ -42,6 +43,9 @@ export class DeliveryprofileComponent implements OnInit {
       if (data != null) {
         this.delivery_details = data['result']
         this.delivery_details.delivery_image = "/delivery_images/" + delivery_id+".png"
+        this.deliveryProfileForm.get('name').setValue(this.delivery_details['name'])
+        this.deliveryProfileForm.get('email').setValue(this.delivery_details['email'])
+        this.deliveryProfileForm.get('contact').setValue(this.delivery_details['contact'])
         console.log(this.delivery_details)
       }
     })
@@ -59,6 +63,7 @@ export class DeliveryprofileComponent implements OnInit {
     formData.append("name", profile["name"])
     formData.append("email", profile["email"])
     formData.append("contact", profile["contact"])
+    formData.append("password", profile["password"])
     formData.append("jwttoken", jwttoken)
     formData.append("image", this.image, this.cookie.get('delivery_id')+'.png')
     this.http.post<any>('/delivery/details', formData, {headers}).subscribe(
