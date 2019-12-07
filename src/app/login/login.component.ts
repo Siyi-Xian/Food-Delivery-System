@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   socialusers=new Socialusers();
 
   timesSubmitted = 0;
-
+  forgot_message = ""
   showFile = false;
   userVerifyForm;
   verifyOTP = false;
@@ -49,10 +49,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.forgot_message = ""
     this.addRecaptchaScript();
   }
 
   onSubmit(userData) {
+    console.log(userData)
     var r = this.loginService.sendRequest(userData, '/authentication/login/user');
     if(this.recaptchaElement == null){
       alert('Enter recaptcha');
@@ -64,6 +66,7 @@ export class LoginComponent implements OnInit {
         this.cookie.set('customer_id', data['_id'])
         this.router.navigate(['/customerdashboard']);
       }
+      
 
     });
     // this.cookie.set("userid", "123")
@@ -79,7 +82,18 @@ export class LoginComponent implements OnInit {
       console.log(data);
     });*/
   }
-
+  recover(){
+    var data = this.userLoginForm.get('email').value
+    data = {
+      'email': data
+    }
+    var url = "/authentication/recover/user"
+    this.http.post(url, data).subscribe(
+      (res)=> this.forgot_message="Password resetted",
+      (err) => console.log(err)
+    )
+    console.log(data)
+  }
   public socialSignIn(socialProvider: string){
     let socialPlatormProvider;
     if(socialProvider == 'google'){
