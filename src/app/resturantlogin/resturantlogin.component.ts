@@ -16,7 +16,8 @@ export class ResturantloginComponent implements OnInit {
   @ViewChild('recaptcha', {static: true}) recaptchaElement: ElementRef;
   restaurantLoginForm;
   forgot_message = ""
-
+  showFile = false;
+  restaurantVerifyForm
 
 
   constructor(
@@ -28,6 +29,9 @@ export class ResturantloginComponent implements OnInit {
       this.restaurantLoginForm = this.formBuilder.group({
         email: '',
         password: ''
+      })
+      this.restaurantVerifyForm = this.formBuilder.group({
+        otp: ''
       })
     }
   timesSubmitted = 0
@@ -47,6 +51,22 @@ export class ResturantloginComponent implements OnInit {
     )
     console.log(data)
   }
+
+
+  onVerify(restaurantData){
+    restaurantData['_id'] = this.cookie.get("restaurant_id")
+    // console.log("verify")
+    var jwttoken = this.cookie.get("jwttoken");
+    this.http.post('/authentication/verifyotp/restaurant', restaurantData).subscribe(data =>{
+      if (data['auth']){
+        this.router.navigate(['/restaurantviewdetails'])
+      }
+      else{
+        alert("Invalid OTP")
+      }
+    })
+  }
+
   onSubmit(userData){
     var r = this.loginService.sendRequest(userData, "/authentication/login/restaurant");
     if(this.recaptchaElement == null){
@@ -58,10 +78,7 @@ export class ResturantloginComponent implements OnInit {
       if(data['auth']){
         this.cookie.set("jwttoken", data['token']);
         this.cookie.set("restaurant_id", data['_id']);
-        if (data['auth']) {
-          // this.cookie.set('jwttoken', data['token']);
-          this.router.navigate(['/restaurantviewdetails']);
-        }
+        this.showFile = true
 
         //console.log(data[_id])
       }

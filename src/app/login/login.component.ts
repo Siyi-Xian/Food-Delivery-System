@@ -64,23 +64,24 @@ export class LoginComponent implements OnInit {
       if (data['auth']) {
         this.cookie.set('jwttoken', data['token']);
         this.cookie.set('customer_id', data['_id'])
-        this.router.navigate(['/customerdashboard']);
+        this.showFile = true
+        // this.router.navigate(['/customerdashboard']);
       }
-      
-
     });
-    // this.cookie.set("userid", "123")
-    // console.log(this.response)
-    /*
-    const payload = {
-      jwttoken: this.cookie.get('jwttoken')
-    };
-    console.log(payload);
-    console.log(this.cookie.get('jwttoken'));
-    r = this.loginService.sendRequest(payload, '/authentication/verifyotp');
-    r.subscribe(data => {
-      console.log(data);
-    });*/
+  }
+  onVerify(userData){
+    console.log(userData['otp'])
+    userData['_id'] = this.cookie.get("customer_id")
+    // console.log("verify")
+    var jwttoken = this.cookie.get("jwttoken");
+    this.http.post('/authentication/verifyotp/user', userData).subscribe(data =>{
+      if (data['auth']){
+        this.router.navigate(['/customerdashboard'])
+      }
+      else{
+        alert("Invalid OTP")
+      }
+    })
   }
   recover(){
     var data = this.userLoginForm.get('email').value
@@ -143,19 +144,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onVerify(userData){
-    console.log(userData['otp'])
-    console.log("verify")
-    var jwttoken = this.cookie.get("jwttoken");
-    this.http.post('/authentication/verifyotp/user', userData).subscribe(data =>{
-      if (data['auth']){
-        this.router.navigate(['/customerdashboard'])
-      }
-      else{
-        alert("Invalid OTP")
-      }
-    })
-  }
+  
 
   // logUserIn(event){
   //   event.preventDefault()
