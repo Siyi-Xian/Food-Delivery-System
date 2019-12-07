@@ -3,6 +3,8 @@ var express = require('express')
 const mongoose = require("mongoose");
 const bodyParser=require("body-parser");
 var nodemailer = require('nodemailer');
+var crypto = require("crypto");
+
 var ObjectId = require('mongoose').Types.ObjectId; 
 const Bcrypt = require("bcryptjs");
 let jwt = require('jsonwebtoken');
@@ -41,6 +43,44 @@ function send_mail(from, receiver, subject, message){
         }
     })
 }
+
+router.post("/recover/:collection_name", function(req, res){
+    var collection_name = req.params.collection_name;
+    var email = req.body.email
+    if(collection_name == 'user'){
+        collection_name = 'user_data';
+    }
+    else if(collection_name == 'restaurant'){
+        collection_name = 'restaurant_data'
+    }
+    else if(collection_name=='delivery'){
+        collection_name='delivery_data'
+    }
+    else{
+        res.status(404).error("Page Not Found");
+        return;
+    }
+    random_password = crypto.randomBytes(20).toString('hex');
+    data_update = {
+        $set: {
+            password: Bcrypt.hashSync(random_password, 10)
+        }
+    }
+    db.collection(collection_name).updateOne({email: email}, data_update, function(err, data){
+        if (err){
+            console.log(err)
+        }
+        else{
+            email_text = "You new password is " + random_password
+            send_mail('foodoholics4@gmail.com', email, "Food-o-Holic New Password", email_text)
+
+            res.json({
+                "message": "Password resetted and sent via email"
+            })
+        }
+    })
+
+})
 
 router.post('/login/:collection_name', function(req, res){
     // const pass = Bcrypt.hashSync(req.body.password, 10)
