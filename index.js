@@ -69,6 +69,41 @@ app.get('/', function(req, res){
   });
 
 
+//Adding recaptcha to backend for restaurant
+var pub2 = __dirname + 'restaurantlogin.component.html';
+var Recaptcha = require('express-recaptcha').RecaptchaV3;
+var recaptcha = new Recaptcha('6LdhGcMUAAAAAJ2eG5TNInZtPqRfS2MJE-CVeptA', '6LdhGcMUAAAAAB_GwLXNAI6sd-VhQiasNiXwIctE', {callback: 'cb'});
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static(pub2));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+
+app.get('/', function(req, res){
+    res.render('restaurantlogin', { captcha:recaptcha.render() });
+  });
+
+//Adding recaptcha to backend for restaurant
+var pub3 = __dirname + 'deliverylogin.component.html';
+var Recaptcha = require('express-recaptcha').RecaptchaV3;
+var recaptcha = new Recaptcha('6LdhGcMUAAAAAJ2eG5TNInZtPqRfS2MJE-CVeptA', '6LdhGcMUAAAAAB_GwLXNAI6sd-VhQiasNiXwIctE', {callback: 'cb'});
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static(pub3));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+
+app.get('/', function(req, res){
+    res.render('deliverylogin', { captcha:recaptcha.render() });
+  });
+
+
+
+
 
 app.listen(port, function(){
     console.log("Server listening at port " + port);
