@@ -31,12 +31,12 @@ export class DeliveryloginComponent implements OnInit {
   }
 
   onSubmit(userData){
-    var r = this.loginService.sendRequest(userData, "/authentication/login/restaurant");
+    var r = this.loginService.sendRequest(userData, "/authentication/login/delivery");
     r.subscribe(data => {
       console.log(data)
       if(data['auth']){
         this.cookie.set("jwttoken", data['token']);
-        this.cookie.set("restaurant_id", data['_id']);
+        this.cookie.set("delivery_id", data['_id']);
         this.router.navigate(['/deliveryprofile']);
         //console.log(data[_id])
       }
