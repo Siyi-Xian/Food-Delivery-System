@@ -26,7 +26,7 @@ export class DeliverycurrentordersComponent implements OnInit {
   }
 
   ngOnInit() {
-    var url='/delivery/current_orders/' + this.cookie.get ('restaurant_id')
+    var url='/delivery/current_orders/' + this.cookie.get ('delivery_id')
     let headers = new HttpHeaders({ 'Content-Type': 'application/json',
       jwttoken: this.cookie.get("jwttoken")
     });

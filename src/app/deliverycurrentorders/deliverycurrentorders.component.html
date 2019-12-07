@@ -47,7 +47,7 @@
       <div *ngFor="let order of orders; index as i">
         <div class="row">
           <div class="col-md-4">
-            <a href="#" routerLink="/restaurantvieworder"> {{order._id}} </a>
+            <a href="#" routerLink="/restaurantvieworder"> {{i+1}} </a>
           </div>
           <div class="col-md-2">
             $ {{order.price}}
