@@ -29,7 +29,8 @@ export class RestaurantdetailsComponent implements OnInit {
       res_image: '',
       contact: '',
       working_hours: '',
-      description:''
+      description:'',
+      password: ''
     });
 
   }
@@ -58,11 +59,6 @@ export class RestaurantdetailsComponent implements OnInit {
     var jwttoken = this.cookie.get('jwttoken');
     details['jwttoken'] = jwttoken;
     details['id'] = this.cookie.get('restaurant_id');
-
-
-    // details['res_image'] = this.fileAsBase64;
-    // console.log(details['res_image'])
-
     const formData = new FormData()
     formData.append("id", this.cookie.get('restaurant_id'))
     formData.append("jwttoken", jwttoken)
@@ -73,6 +69,7 @@ export class RestaurantdetailsComponent implements OnInit {
     formData.append("contact", details['contact'])
     formData.append("working_hours", details['working_hours'])
     formData.append("description", details['description'])
+    formData.append("password", details['password'])
 
     this.http.post<any>('/restaurant/restaurant_details', formData).subscribe(
       (res)=> this.router.navigate(['/restaurantviewdetails']),

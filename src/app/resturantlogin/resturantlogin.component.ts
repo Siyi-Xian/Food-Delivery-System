@@ -15,6 +15,7 @@ import { HttpClient } from '@angular/common/http';
 export class ResturantloginComponent implements OnInit {
   @ViewChild('recaptcha', {static: true}) recaptchaElement: ElementRef;
   restaurantLoginForm;
+  forgot_message = ""
 
 
 
@@ -22,7 +23,8 @@ export class ResturantloginComponent implements OnInit {
     private loginService: LoginService,
     private formBuilder: FormBuilder,
     private cookie: CookieService,
-    private router: Router,) { 
+    private router: Router,
+    private http: HttpClient) { 
       this.restaurantLoginForm = this.formBuilder.group({
         email: '',
         password: ''
@@ -30,9 +32,21 @@ export class ResturantloginComponent implements OnInit {
     }
   timesSubmitted = 0
   ngOnInit() {
+    this.forgot_message = ""
     this.addRecaptchaScript();
   }
-
+  recover(){
+    var data = this.restaurantLoginForm.get('email').value
+    data = {
+      'email': data
+    }
+    var url = "/authentication/recover/restaurant"
+    this.http.post(url, data).subscribe(
+      (res)=> this.forgot_message="Password resetted",
+      (err) => console.log(err)
+    )
+    console.log(data)
+  }
   onSubmit(userData){
     var r = this.loginService.sendRequest(userData, "/authentication/login/restaurant");
     if(this.recaptchaElement == null){

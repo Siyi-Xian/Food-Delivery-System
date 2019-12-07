@@ -22,13 +22,14 @@
     <div class="container" style="padding: 30px; font-size: 15px">
       <form method="post" [formGroup]="restaurantLoginForm" (ngSubmit) = "onSubmit(restaurantLoginForm.value)">
         <div class="container" style="padding-bottom: 20px">
+          {{ forgot_message }}
           <div>Your Email:</div>
           <div><input type = "text" required = "required" formControlName="email" placeholder="example@foodoholic.com" id="Email" style="width: 100%"></div>
         </div>
         <div class="container">
           <div class="row">
             <div class="col-md-6">Your Password:</div>
-            <div class="col-md-6" style="text-align: right"><a routerLink="/recover">Forgot?</a></div>
+            <div class="col-md-6" style="text-align: right"><a (click)="recover()">Forgot?</a></div>
           </div>
           <div><input type = "password" required = "required" formControlName="password" placeholder="*******************" id="password" style="width: 100%"></div>
         </div>
