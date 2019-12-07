@@ -28,7 +28,8 @@ export class RestaurantdetailsComponent implements OnInit {
       food_category: '',
       res_image: '',
       contact: '',
-      working_hours: ''
+      working_hours: '',
+      description:''
     });
 
   }
@@ -94,6 +95,12 @@ export class RestaurantdetailsComponent implements OnInit {
       if (data != null){
         this.restaurant_details = data
         this.restaurant_details.res_image = "/restaurant_images/" + this.restaurant_details.res_image
+        this.detailsForm.get('name').setValue(data['name'])
+        this.detailsForm.get('food_category').setValue(data['food_category'])
+        this.detailsForm.get('location').setValue(data['location'])
+        this.detailsForm.get('working_hours').setValue(data['working_hours'])
+        this.detailsForm.get('description').setValue(data['description'])
+        this.detailsForm.get('contact').setValue(data['contact'])
         console.log(data)
       }
     });

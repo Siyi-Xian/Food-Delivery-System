@@ -32,6 +32,15 @@ var upload_menu = multer({storage: menu_image_storage})
 var upload_restaurant = multer({storage: restaurant_image_storage})
 
 
+function toTitleCase(str) {
+    return str.replace(
+        /\w\S*/g,
+        function(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }
+    );
+}
+
 router.get("/display_menu/:restaurant_id", middleware.checkToken, function(req, res){
     var restaurant_id = req.params.restaurant_id
     var projection = {
@@ -61,7 +70,10 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
             food_category: 1,
             location: 1,
             working_hours: 1,
-            res_image: 1
+            res_image: 1,
+            ratings: 1,
+            num_ratings: 1,
+            description: 1
             
         }
     }
@@ -84,6 +96,7 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
             })
         }
         else{
+            
             res.json(result)
         }
     })
@@ -198,14 +211,15 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
     console.log(req.body)
     var data_update = {
         $set: {
-            name: req.body.name,
-            location: req.body.location,
-            food_category: req.body.food_category,
+            name: req.body.name.toLowerCase(),
+            location: req.body.location.toLowerCase(),
+            food_category: req.body.food_category.toLowerCase(),
             res_image: id+'.png',
             contact:req.body.contact,
             working_hours:req.body.working_hours,
             Rating: 0,
-            Number_of_ratings: 0
+            Number_of_ratings: 0,
+            description: req.body.description
         }
     }
     
@@ -220,7 +234,7 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
         }
         else{
             console.log("Success")
-            console.log(data)
+            // console.log(data)
             res.json({
                 message: "Success"
             })
@@ -383,7 +397,8 @@ router.get('/display_details/:restaurant_id', middleware.checkToken, function(re
                 res_image: 1,
                 contact: 1,
                 working_hours: 1,
-                Rating: 1
+                Rating: 1,
+                description: 1
             }
         }
     // db.collection('restaurant_data'). find({_id: ObjectId(id)}, d).toArray(function(err, result) {
@@ -398,7 +413,9 @@ router.get('/display_details/:restaurant_id', middleware.checkToken, function(re
         else{
             // console.log("Success")
             // console.log(result)
-        
+            result['name'] = toTitleCase(result['name'])
+            result['location'] = toTitleCase(result['location'])
+            result['food_category'] = toTitleCase(result['food_category'])
             res.json(result)
             return;
         }

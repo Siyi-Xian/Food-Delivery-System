@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"customerdashboard.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-customerdropdown></app-customerdropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Welcome back</h3>\r\n    <a routerLink=\"/chatfeature\">Chat Board</a>\r\n    <p style=\"font-size: 18px\">Search for restaurants below</p>\r\n  </div>\r\n  <br>\r\n  <div class=\"search-container\">\r\n    <form action=\"get\" [formGroup]=\"userSearchForm\" (ngSubmit)=\"onSubmit(userSearchForm.value)\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-2 col-md-offset-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Restaurant Name\" formControlName=\"restaurant_name\">\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Location\" formControlName=\"location\">\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Category\" formControlName=\"food_category\">\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <button class=\"btn btn-primary\" type=\"submit\"><i class=\"fa fa-search\"></i></button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n  <hr>\r\n</div>\r\n\r\n<!-- placeholder for results from search query -->\r\n<div #result>\r\n  <div *ngIf=\"results\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-4 col-md-offset-1\">\r\n          <h4> Searching Result: </h4>\r\n        </div>\r\n        <div class=\"col-md-2 col-md-offset-4\">\r\n          <div class=\"dropdown\">\r\n            <button class=\"btn dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\"\r\n                    aria-expanded=\"false\">\r\n              <span class=\"glyphicon glyphicon-th-list\"></span>\r\n              Sort By\r\n            </button>\r\n            <ul class=\"dropdown-menu\">\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToLocation()\">Location</a></li>\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToResName()\">Restaurant Name</a></li>\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToFoodCat()\">Restaurant Category</a></li>\r\n            </ul>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"container\" style=\"margin-left: 0; margin-right: 20px\">\r\n        <ul *ngFor=\"let result of results\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <img [src]=\"'/restaurant_images/'+result.res_image\" alt=\"\">\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n               \r\n              <a [routerLink]=\"['/displaymenu', result._id]\" >{{result.name}}</a>\r\n              <li><strong> Food Category: </strong>{{result.food_category}}</li>\r\n              <li><strong> Location: </strong> \r\n                <a href=\"http://maps.google.com/?q={{result.location.replace(' ', '+')}}\">{{result.location}}</a>\r\n              </li>\r\n              <li><strong> Working Hours: </strong>{{result.working_hours}}</li>\r\n            </div>\r\n          </div>\r\n          <hr>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>\r\n</html>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"customerdashboard.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-customerdropdown></app-customerdropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Welcome back</h3>\r\n    <a routerLink=\"/chatfeature\">Chat Board</a>\r\n    <p style=\"font-size: 18px\">Search for restaurants below</p>\r\n  </div>\r\n  <br>\r\n  <div class=\"search-container\">\r\n    <form action=\"get\" [formGroup]=\"userSearchForm\" (ngSubmit)=\"onSubmit(userSearchForm.value)\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-2 col-md-offset-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Restaurant Name\" formControlName=\"restaurant_name\">\r\n            <div class=\"fa fa-microphone\" (click) = \"voiceSearchName()\">\r\n            \r\n            </div>\r\n          </div>\r\n          \r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Location\" formControlName=\"location\">\r\n            <div class=\"fa fa-microphone\" (click) = \"voiceSearchLocation()\">\r\n            \r\n            </div>\r\n          </div>\r\n          \r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Category\" formControlName=\"food_category\">\r\n            <div class=\"fa fa-microphone\" (click) = \"voiceSearchCategory()\">\r\n            \r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <button class=\"btn btn-primary\" type=\"submit\"><i class=\"fa fa-search\"></i></button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n  <hr>\r\n</div>\r\n\r\n<!-- placeholder for results from search query -->\r\n<div #result>\r\n  <div *ngIf=\"results\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-4 col-md-offset-1\">\r\n          <h4> Searching Result: </h4>\r\n        </div>\r\n        <div class=\"col-md-2 col-md-offset-4\">\r\n          <div class=\"dropdown\">\r\n            <button class=\"btn dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\"\r\n                    aria-expanded=\"false\">\r\n              <span class=\"glyphicon glyphicon-th-list\"></span>\r\n              Sort By\r\n            </button>\r\n            <ul class=\"dropdown-menu\">\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToRatings()\">Ratings</a></li>\r\n              <!-- <li><a class=\"dropdown-item\" (click)=\"updateToLocation()\">Location</a></li>\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToResName()\">Restaurant Name</a></li>\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToFoodCat()\">Restaurant Category</a></li> -->\r\n            </ul>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"container\" style=\"margin-left: 0; margin-right: 20px\">\r\n        <ul *ngFor=\"let result of results\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <img [src]=\"'/restaurant_images/'+result.res_image\" alt=\"\">\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n               \r\n              <a [routerLink]=\"['/displaymenu', result._id]\" >{{result.name | titlecase}}</a>\r\n              <li><strong> Food Category: </strong>{{result.food_category | titlecase}}</li>\r\n              <li><strong> Location: </strong> \r\n                <a href=\"http://maps.google.com/?q={{result.location.replace(' ', '+')}}\">{{result.location | titlecase}}</a>\r\n              </li>\r\n              <li><strong> Working Hours: </strong>{{result.working_hours | titlecase}}</li>\r\n              <li><strong> Contact: </strong>{{result.contact | titlecase}}</li>\r\n              <li><strong> Ratings: </strong>{{result.ratings/result.num_ratings}}</li>\r\n              <li><strong> Description: </strong>{{result.description | titlecase}}</li>\r\n            </div>\r\n          </div>\r\n          <hr>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>\r\n</html>\r\n");
 
 /***/ }),
 
@@ -383,7 +383,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-light\" style=\"padding-right: 30px\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"width: 80%\">\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-glass\"></span>\r\n        Orders\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\" style=\"width: 100%\">\r\n        <li><a href=\"#\" routerLink=\"/restaurantcurrentorders\">Current Orders</a></li>\r\n        <li><a href=\"#\" routerLink=\"/orderhistory\">Order History</a></li>\r\n      </ul>\r\n    </li>\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-menu-hamburger\"></span>\r\n        Menu\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\" style=\"width: 100%\">\r\n        <li><a href=\"#\" routerLink=\"/restaurantviewmenu\">View Menu</a></li>\r\n        <li><a href=\"#\" routerLink=\"/restaurantmenu\">Add items to menu</a></li>\r\n      </ul>\r\n    </li>\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/restaurantviewdetails\">\r\n        <span class=\"glyphicon glyphicon-user\"></span>\r\n        Restaurant Details\r\n      </a>\r\n    </li>\r\n    <li style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/restaurantstats\">\r\n        <span class=\"glyphicon glyphicon-object-align-bottom\"></span>\r\n        Statistics\r\n      </a>\r\n    </li>\r\n    <li style=\"width: 10%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/resturantlogin\">\r\n        <span class=\"glyphicon glyphicon-log-out\"></span>\r\n        Logout\r\n      </a>\r\n    </li>\r\n\r\n  </ul>\r\n</nav>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-light\" style=\"padding-right: 30px\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"width: 80%\">\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-glass\"></span>\r\n        Orders\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\" style=\"width: 100%\">\r\n        <li><a href=\"#\" routerLink=\"/restaurantcurrentorders\">Current Orders</a></li>\r\n        <li><a href=\"#\" routerLink=\"/orderhistory\">Order History</a></li>\r\n      </ul>\r\n    </li>\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-menu-hamburger\"></span>\r\n        Menu\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\" style=\"width: 100%\">\r\n        <li><a href=\"#\" routerLink=\"/restaurantviewmenu\">View Menu</a></li>\r\n        <li><a href=\"#\" routerLink=\"/restaurantmenu\">Add items to menu</a></li>\r\n      </ul>\r\n    </li>\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/restaurantviewdetails\">\r\n        <span class=\"glyphicon glyphicon-user\"></span>\r\n        Restaurant Details\r\n      </a>\r\n    </li>\r\n    <!-- <li style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/restaurantstats\">\r\n        <span class=\"glyphicon glyphicon-object-align-bottom\"></span>\r\n        Statistics\r\n      </a>\r\n    </li> -->\r\n    <li style=\"width: 10%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/resturantlogin\">\r\n        <span class=\"glyphicon glyphicon-log-out\"></span>\r\n        Logout\r\n      </a>\r\n    </li>\r\n\r\n  </ul>\r\n</nav>\r\n");
 
 /***/ }),
 
@@ -1444,6 +1444,86 @@ let CustomerdashboardComponent = class CustomerdashboardComponent {
     }
     ngOnInit() {
     }
+    voiceSearchName() {
+        // console.log("hello")
+        if ('webkitSpeechRecognition' in window) {
+            this.userSearchForm.get('restaurant_name').setValue("");
+            console.log("hello");
+            const vSearch = new webkitSpeechRecognition();
+            vSearch.continuous = false;
+            vSearch.interimresults = false;
+            vSearch.lang = "en-US";
+            vSearch.start();
+            const userSearchForm = this.userSearchForm;
+            vSearch.onresult = function (e) {
+                console.log(e.results[0][0].transcript);
+                userSearchForm.get('restaurant_name').setValue(e.results[0][0].transcript);
+                vSearch.stop();
+            };
+            vSearch.onerror = function (e) {
+                console.log(e);
+                vSearch.stop();
+            };
+        }
+        else {
+            console.log("Speech Recognition Not Supported in your Browser");
+        }
+    }
+    voiceSearchCategory() {
+        // console.log("hello")
+        if ('webkitSpeechRecognition' in window) {
+            this.userSearchForm.get('food_category').setValue("");
+            console.log("hello");
+            const vSearch = new webkitSpeechRecognition();
+            vSearch.continuous = false;
+            vSearch.interimresults = false;
+            vSearch.lang = "en-US";
+            vSearch.start();
+            const userSearchForm = this.userSearchForm;
+            vSearch.onresult = function (e) {
+                console.log(e.results[0][0].transcript);
+                userSearchForm.get('food_category').setValue(e.results[0][0].transcript);
+                vSearch.stop();
+            };
+            vSearch.onerror = function (e) {
+                console.log(e);
+                vSearch.stop();
+            };
+        }
+        else {
+            console.log("Speech Recognition Not Supported in your Browser");
+        }
+    }
+    voiceSearchLocation() {
+        // console.log("hello")
+        if ('webkitSpeechRecognition' in window) {
+            this.userSearchForm.get('location').setValue("");
+            console.log("hello");
+            const vSearch = new webkitSpeechRecognition();
+            vSearch.continuous = false;
+            vSearch.interimresults = false;
+            vSearch.lang = "en-US";
+            vSearch.start();
+            const userSearchForm = this.userSearchForm;
+            vSearch.onresult = function (e) {
+                console.log(e.results[0][0].transcript);
+                userSearchForm.get('location').setValue(e.results[0][0].transcript);
+                vSearch.stop();
+            };
+            vSearch.onerror = function (e) {
+                console.log(e);
+                vSearch.stop();
+            };
+        }
+        else {
+            console.log("Speech Recognition Not Supported in your Browser");
+        }
+    }
+    updateToRatings() {
+        this.results.sort(function (a, b) {
+            return b.ratings - a.ratings;
+        });
+    }
     updateToLocation() {
         this.searchFilter = "Location";
         console.log(this.searchFilter);
@@ -1496,6 +1576,9 @@ CustomerdashboardComponent.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('restaurant_name', { static: true })
+], CustomerdashboardComponent.prototype, "restaurant_name", void 0);
 CustomerdashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-customerdashboard',
@@ -3253,7 +3336,8 @@ let RestaurantdetailsComponent = class RestaurantdetailsComponent {
             food_category: '',
             res_image: '',
             contact: '',
-            working_hours: ''
+            working_hours: '',
+            description: ''
         });
     }
     onFileSelected(event) {
@@ -3297,6 +3381,12 @@ let RestaurantdetailsComponent = class RestaurantdetailsComponent {
             if (data != null) {
                 this.restaurant_details = data;
                 this.restaurant_details.res_image = "/restaurant_images/" + this.restaurant_details.res_image;
+                this.detailsForm.get('name').setValue(data['name']);
+                this.detailsForm.get('food_category').setValue(data['food_category']);
+                this.detailsForm.get('location').setValue(data['location']);
+                this.detailsForm.get('working_hours').setValue(data['working_hours']);
+                this.detailsForm.get('description').setValue(data['description']);
+                this.detailsForm.get('contact').setValue(data['contact']);
                 console.log(data);
             }
         });
