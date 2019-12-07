@@ -28,16 +28,27 @@
         <div class="col-md-2 col-md-offset-2">
           <div class="input-group">
             <input type="text" placeholder="Restaurant Name" formControlName="restaurant_name">
+            <div class="fa fa-microphone" (click) = "voiceSearchName()">
+            
+            </div>
           </div>
+          
         </div>
         <div class="col-md-2">
           <div class="input-group">
             <input type="text" placeholder="Location" formControlName="location">
+            <div class="fa fa-microphone" (click) = "voiceSearchLocation()">
+            
+            </div>
           </div>
+          
         </div>
         <div class="col-md-2">
           <div class="input-group">
             <input type="text" placeholder="Category" formControlName="food_category">
+            <div class="fa fa-microphone" (click) = "voiceSearchCategory()">
+            
+            </div>
           </div>
         </div>
         <div class="col-md-2">
@@ -64,9 +75,10 @@
               Sort By
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" (click)="updateToLocation()">Location</a></li>
+              <li><a class="dropdown-item" (click)="updateToRatings()">Ratings</a></li>
+              <!-- <li><a class="dropdown-item" (click)="updateToLocation()">Location</a></li>
               <li><a class="dropdown-item" (click)="updateToResName()">Restaurant Name</a></li>
-              <li><a class="dropdown-item" (click)="updateToFoodCat()">Restaurant Category</a></li>
+              <li><a class="dropdown-item" (click)="updateToFoodCat()">Restaurant Category</a></li> -->
             </ul>
           </div>
         </div>
@@ -75,16 +87,19 @@
         <ul *ngFor="let result of results">
           <div class="row">
             <div class="col-md-5">
-              <img [src]="result.res_image" alt=""/>
+              <img [src]="'/restaurant_images/'+result.res_image" alt="">
             </div>
             <div class="col-md-7">
-              <h4><strong> {{result.name}} </strong></h4>
-              <li><strong> Food Category: </strong>{{result.food_category}}</li>
-              <li><strong> Location: </strong> <a
-                href="http://maps.google.com/?q={{result.location.replace(' ', '+')}}">{{result.location}}</a>
+               
+              <a [routerLink]="['/login']" >{{result.name | titlecase}}</a>
+              <li><strong> Food Category: </strong>{{result.food_category | titlecase}}</li>
+              <li><strong> Location: </strong> 
+                <a href="http://maps.google.com/?q={{result.location.replace(' ', '+')}}">{{result.location | titlecase}}</a>
               </li>
-              <li><strong> Working Hours: </strong>{{result.working_hours}}</li>
-              <li><strong> Description: </strong> Some thing write here!</li>
+              <li><strong> Working Hours: </strong>{{result.working_hours | titlecase}}</li>
+              <li><strong> Contact: </strong>{{result.contact | titlecase}}</li>
+              <li><strong> Ratings: </strong>{{result.ratings/result.num_ratings}}</li>
+              <li><strong> Description: </strong>{{result.description | titlecase}}</li>
             </div>
           </div>
           <hr>

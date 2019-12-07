@@ -305,7 +305,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    public dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"public.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n<!--  <script src=\"../backgroup-image.css\"></script>-->\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Welcome to Food-O-Holics</h3>\r\n    <p style=\"font-size: 18px\">Search for restaurants below</p>\r\n  </div>\r\n  <br>\r\n  <div class=\"search-container\">\r\n    <form action=\"get\" [formGroup]=\"userSearchForm\" (ngSubmit)=\"onSubmit(userSearchForm.value)\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-2 col-md-offset-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Restaurant Name\" formControlName=\"restaurant_name\">\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Location\" formControlName=\"location\">\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Category\" formControlName=\"food_category\">\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <button class=\"btn btn-primary\" type=\"submit\"><i class=\"fa fa-search\"></i></button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n  <hr>\r\n</div>\r\n\r\n<div #result>\r\n  <div *ngIf=\"results\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-4 col-md-offset-1\">\r\n          <h4> Searching Result: </h4>\r\n        </div>\r\n        <div class=\"col-md-2 col-md-offset-4\">\r\n          <div class=\"dropdown\">\r\n            <button class=\"btn dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\"\r\n                    aria-expanded=\"false\">\r\n              <span class=\"glyphicon glyphicon-th-list\"></span>\r\n              Sort By\r\n            </button>\r\n            <ul class=\"dropdown-menu\">\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToLocation()\">Location</a></li>\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToResName()\">Restaurant Name</a></li>\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToFoodCat()\">Restaurant Category</a></li>\r\n            </ul>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"container\" style=\"margin-left: 0; margin-right: 20px\">\r\n        <ul *ngFor=\"let result of results\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <img [src]=\"result.res_image\" alt=\"\"/>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <h4><strong> {{result.name}} </strong></h4>\r\n              <li><strong> Food Category: </strong>{{result.food_category}}</li>\r\n              <li><strong> Location: </strong> <a\r\n                href=\"http://maps.google.com/?q={{result.location.replace(' ', '+')}}\">{{result.location}}</a>\r\n              </li>\r\n              <li><strong> Working Hours: </strong>{{result.working_hours}}</li>\r\n              <li><strong> Description: </strong> Some thing write here!</li>\r\n            </div>\r\n          </div>\r\n          <hr>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n\r\n\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    public dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"public.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n<!--  <script src=\"../backgroup-image.css\"></script>-->\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Welcome to Food-O-Holics</h3>\r\n    <p style=\"font-size: 18px\">Search for restaurants below</p>\r\n  </div>\r\n  <br>\r\n  <div class=\"search-container\">\r\n    <form action=\"get\" [formGroup]=\"userSearchForm\" (ngSubmit)=\"onSubmit(userSearchForm.value)\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-2 col-md-offset-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Restaurant Name\" formControlName=\"restaurant_name\">\r\n            <div class=\"fa fa-microphone\" (click) = \"voiceSearchName()\">\r\n            \r\n            </div>\r\n          </div>\r\n          \r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Location\" formControlName=\"location\">\r\n            <div class=\"fa fa-microphone\" (click) = \"voiceSearchLocation()\">\r\n            \r\n            </div>\r\n          </div>\r\n          \r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <div class=\"input-group\">\r\n            <input type=\"text\" placeholder=\"Category\" formControlName=\"food_category\">\r\n            <div class=\"fa fa-microphone\" (click) = \"voiceSearchCategory()\">\r\n            \r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-2\">\r\n          <button class=\"btn btn-primary\" type=\"submit\"><i class=\"fa fa-search\"></i></button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n  <hr>\r\n</div>\r\n\r\n<div #result>\r\n  <div *ngIf=\"results\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-4 col-md-offset-1\">\r\n          <h4> Searching Result: </h4>\r\n        </div>\r\n        <div class=\"col-md-2 col-md-offset-4\">\r\n          <div class=\"dropdown\">\r\n            <button class=\"btn dropdown-toggle\" data-toggle=\"dropdown\" type=\"button\" aria-haspopup=\"true\"\r\n                    aria-expanded=\"false\">\r\n              <span class=\"glyphicon glyphicon-th-list\"></span>\r\n              Sort By\r\n            </button>\r\n            <ul class=\"dropdown-menu\">\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToRatings()\">Ratings</a></li>\r\n              <!-- <li><a class=\"dropdown-item\" (click)=\"updateToLocation()\">Location</a></li>\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToResName()\">Restaurant Name</a></li>\r\n              <li><a class=\"dropdown-item\" (click)=\"updateToFoodCat()\">Restaurant Category</a></li> -->\r\n            </ul>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"container\" style=\"margin-left: 0; margin-right: 20px\">\r\n        <ul *ngFor=\"let result of results\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <img [src]=\"'/restaurant_images/'+result.res_image\" alt=\"\">\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n               \r\n              <a [routerLink]=\"['/login']\" >{{result.name | titlecase}}</a>\r\n              <li><strong> Food Category: </strong>{{result.food_category | titlecase}}</li>\r\n              <li><strong> Location: </strong> \r\n                <a href=\"http://maps.google.com/?q={{result.location.replace(' ', '+')}}\">{{result.location | titlecase}}</a>\r\n              </li>\r\n              <li><strong> Working Hours: </strong>{{result.working_hours | titlecase}}</li>\r\n              <li><strong> Contact: </strong>{{result.contact | titlecase}}</li>\r\n              <li><strong> Ratings: </strong>{{result.ratings/result.num_ratings}}</li>\r\n              <li><strong> Description: </strong>{{result.description | titlecase}}</li>\r\n            </div>\r\n          </div>\r\n          <hr>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n\r\n\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -1430,6 +1430,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let CustomerdashboardComponent = class CustomerdashboardComponent {
+    // @ViewChild('restaurant_name',{static: true}) restaurant_name
     constructor(OAuth, formBuilder, router, http, cookie) {
         this.OAuth = OAuth;
         this.formBuilder = formBuilder;
@@ -1521,7 +1522,7 @@ let CustomerdashboardComponent = class CustomerdashboardComponent {
     }
     updateToRatings() {
         this.results.sort(function (a, b) {
-            return b.ratings - a.ratings;
+            return b.ratings / b.num_ratings - a.ratings / a.num_ratings;
         });
     }
     updateToLocation() {
@@ -1552,10 +1553,6 @@ let CustomerdashboardComponent = class CustomerdashboardComponent {
             console.log(data);
             this.results = data;
         });
-        // var jwttoken = this.cookie.get("jwttoken")
-        //we'll need to change the endpoint to the endpoint for the search on the backend
-        // this.http.get<any>('/restaurant/restaurant_list', event).subscribe((data: any) => this.result = {data});
-        // this.displayResult(this.result);
     }
     //function to render the result of the search to the website
     displayResult(result) {
@@ -1576,9 +1573,6 @@ CustomerdashboardComponent.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"] }
 ];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('restaurant_name', { static: true })
-], CustomerdashboardComponent.prototype, "restaurant_name", void 0);
 CustomerdashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-customerdashboard',
@@ -2928,7 +2922,7 @@ OrderhistoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("/*body{*/\r\n/*  background-image: url(\"../../assets/img/LoginBackground.jpg\");*/\r\n/*  background-repeat: no-repeat;*/\r\n/*  background-position: 0px 0px;*/\r\n/*  background-size: cover;*/\r\n/*}*/\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHVibGljL3B1YmxpYy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLFFBQVE7QUFDUixtRUFBbUU7QUFDbkUsa0NBQWtDO0FBQ2xDLGtDQUFrQztBQUNsQyw0QkFBNEI7QUFDNUIsSUFBSSIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9wdWJsaWMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qYm9keXsqL1xyXG4vKiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiLi4vLi4vYXNzZXRzL2ltZy9Mb2dpbkJhY2tncm91bmQuanBnXCIpOyovXHJcbi8qICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0OyovXHJcbi8qICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiAwcHggMHB4OyovXHJcbi8qICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyOyovXHJcbi8qfSovXHJcbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("p {\r\n    font-size: 16px;\r\n  }\r\n  \r\n  a {\r\n    margin-right: 50px;\r\n    font-size: 16px;\r\n  }\r\n  \r\n  hr {\r\n    border-width: 3px;\r\n  }\r\n  \r\n  .input-group input{\r\n    width: 190px;\r\n    border-radius: 5px;\r\n    border: 1px solid gray;\r\n    font-size: 18px;\r\n    margin-top: 3px;\r\n  }\r\n  \r\n  img {\r\n    width: 360px;\r\n    height: 280px;\r\n  }\r\n  \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHVibGljL3B1YmxpYy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTtFQUNqQjs7RUFFQTtJQUNFLGtCQUFrQjtJQUNsQixlQUFlO0VBQ2pCOztFQUVBO0lBQ0UsaUJBQWlCO0VBQ25COztFQUVBO0lBQ0UsWUFBWTtJQUNaLGtCQUFrQjtJQUNsQixzQkFBc0I7SUFDdEIsZUFBZTtJQUNmLGVBQWU7RUFDakI7O0VBRUE7SUFDRSxZQUFZO0lBQ1osYUFBYTtFQUNmIiwiZmlsZSI6InNyYy9hcHAvcHVibGljL3B1YmxpYy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsicCB7XHJcbiAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgfVxyXG4gIFxyXG4gIGEge1xyXG4gICAgbWFyZ2luLXJpZ2h0OiA1MHB4O1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gIH1cclxuICBcclxuICBociB7XHJcbiAgICBib3JkZXItd2lkdGg6IDNweDtcclxuICB9XHJcbiAgXHJcbiAgLmlucHV0LWdyb3VwIGlucHV0e1xyXG4gICAgd2lkdGg6IDE5MHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgZ3JheTtcclxuICAgIGZvbnQtc2l6ZTogMThweDtcclxuICAgIG1hcmdpbi10b3A6IDNweDtcclxuICB9XHJcbiAgXHJcbiAgaW1nIHtcclxuICAgIHdpZHRoOiAzNjBweDtcclxuICAgIGhlaWdodDogMjgwcHg7XHJcbiAgfVxyXG4gICJdfQ== */");
 
 /***/ }),
 
@@ -2955,6 +2949,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let PublicComponent = class PublicComponent {
+    // @ViewChild('restaurant_name',{static: true}) restaurant_name
     constructor(formBuilder, router, http, cookie) {
         this.formBuilder = formBuilder;
         this.router = router;
@@ -2967,6 +2962,86 @@ let PublicComponent = class PublicComponent {
         });
     }
     ngOnInit() {
+    }
+    voiceSearchName() {
+        // console.log("hello")
+        if ('webkitSpeechRecognition' in window) {
+            this.userSearchForm.get('restaurant_name').setValue("");
+            console.log("hello");
+            const vSearch = new webkitSpeechRecognition();
+            vSearch.continuous = false;
+            vSearch.interimresults = false;
+            vSearch.lang = "en-US";
+            vSearch.start();
+            const userSearchForm = this.userSearchForm;
+            vSearch.onresult = function (e) {
+                console.log(e.results[0][0].transcript);
+                userSearchForm.get('restaurant_name').setValue(e.results[0][0].transcript);
+                vSearch.stop();
+            };
+            vSearch.onerror = function (e) {
+                console.log(e);
+                vSearch.stop();
+            };
+        }
+        else {
+            console.log("Speech Recognition Not Supported in your Browser");
+        }
+    }
+    voiceSearchCategory() {
+        // console.log("hello")
+        if ('webkitSpeechRecognition' in window) {
+            this.userSearchForm.get('food_category').setValue("");
+            console.log("hello");
+            const vSearch = new webkitSpeechRecognition();
+            vSearch.continuous = false;
+            vSearch.interimresults = false;
+            vSearch.lang = "en-US";
+            vSearch.start();
+            const userSearchForm = this.userSearchForm;
+            vSearch.onresult = function (e) {
+                console.log(e.results[0][0].transcript);
+                userSearchForm.get('food_category').setValue(e.results[0][0].transcript);
+                vSearch.stop();
+            };
+            vSearch.onerror = function (e) {
+                console.log(e);
+                vSearch.stop();
+            };
+        }
+        else {
+            console.log("Speech Recognition Not Supported in your Browser");
+        }
+    }
+    voiceSearchLocation() {
+        // console.log("hello")
+        if ('webkitSpeechRecognition' in window) {
+            this.userSearchForm.get('location').setValue("");
+            console.log("hello");
+            const vSearch = new webkitSpeechRecognition();
+            vSearch.continuous = false;
+            vSearch.interimresults = false;
+            vSearch.lang = "en-US";
+            vSearch.start();
+            const userSearchForm = this.userSearchForm;
+            vSearch.onresult = function (e) {
+                console.log(e.results[0][0].transcript);
+                userSearchForm.get('location').setValue(e.results[0][0].transcript);
+                vSearch.stop();
+            };
+            vSearch.onerror = function (e) {
+                console.log(e);
+                vSearch.stop();
+            };
+        }
+        else {
+            console.log("Speech Recognition Not Supported in your Browser");
+        }
+    }
+    updateToRatings() {
+        this.results.sort(function (a, b) {
+            return b.ratings / b.num_ratings - a.ratings / a.num_ratings;
+        });
     }
     updateToLocation() {
         this.searchFilter = "Location";
