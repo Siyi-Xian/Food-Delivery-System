@@ -8,6 +8,45 @@ let jwt = require('jsonwebtoken');
 var path = require('path')
 var http = require('http')
 const cookieParser = require('cookie-parser');
+const cors = require('cors')
+
+var Pusher = require('pusher');
+require('dotenv').config()
+const shortId = require('shortid');
+const app = express();
+app.use(cors())
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
+
+const pusher = new Pusher({
+  appId: '914053',
+  key: 'a2dc9ba2d47e27762a7f',
+  secret: '2340f0bba22c0480cd2e',
+  cluster: 'us2',
+  encrypted: true
+})
+
+app.post('/message', async (req, res) =>{
+  const chat = {
+    ...req.body,
+    id: shortId.generate(),
+    createdAt: new Date().toISOString()
+  }
+  pusher.trigger('chat-group', 'chat', chat)
+  res.send(chat)
+})
+
+app.post('/join', (req, res) =>{
+  const chat = {
+    ...req.body,
+    id: shortId.generate(),
+    type: 'joined',
+    createdAt: new Date().toISOString()
+  }
+  pusher.trigger('chat-group', 'chat', chat)
+  res.send(chat)
+})
+app.listen(process.env.PORT || 2000, () => console.log('listening at 2000'))
 
 
 var authentication = require('./routes/authenticate')
@@ -18,9 +57,7 @@ var orders = require('./routes/orders')
 var chats=require('./routes/chat')
 var port = process.env.PORT || 8080
 
-var cors = require('cors')
 
-var app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ 
     extended: true
