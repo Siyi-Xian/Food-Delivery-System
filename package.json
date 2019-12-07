@@ -28,6 +28,7 @@
     "express": "^4.17.1",
     "express-recaptcha": "^5.0.1",
     "font-awesome": "^4.7.0",
+    "googleapis": "^45.0.0",
     "gridfs-stream": "^1.1.1",
     "install": "^0.13.0",
     "jquery": "^3.4.1",
