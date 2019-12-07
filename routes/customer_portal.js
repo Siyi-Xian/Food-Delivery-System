@@ -6,6 +6,7 @@ let jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 let middleware = require('./jwtverification');
 const multer = require('multer')
+const Bcrypt = require("bcryptjs");
 
 var router = express.Router()
 mongoose.connect('mongodb://heroku_wr9z45km:4qlbddem2aer4k5djhcrp5ph3s@ds243717.mlab.com:43717/heroku_wr9z45km', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -25,6 +26,9 @@ var upload_customer = multer({storage: customer_image_storage})
 router.post('/details', [middleware.checkToken, upload_customer.single('image')], function(req, res){
     var id = req.body.id
     console.log(id)
+    pass = req.body.password
+    console.log(pass)
+    pass = Bcrypt.hashSync(pass, 10)
     var data_update = {
         $set: {
             name: req.body.name,
@@ -34,7 +38,8 @@ router.post('/details', [middleware.checkToken, upload_customer.single('image')]
             street2: req.body.street2,
             city: req.body.city,
             state: req.body.state,
-            zip_code: req.body.zip_code
+            zip_code: req.body.zip_code,
+            password: pass
         }
     }
     db.collection('user_data').updateOne({_id: ObjectId(id)}, data_update, function(err, data){

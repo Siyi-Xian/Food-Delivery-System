@@ -105,7 +105,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-customerdropdown></app-customerdropdown>\r\n\r\n<div class=\"container\" style=\"margin-top: 50px\">\r\n  <div class=\"container\">\r\n    <h3>Edit Profile</h3>\r\n  </div>\r\n  <hr>\r\n  <form method=\"POST\" [formGroup]=\"userProfileForm\" (ngSubmit)=\"onSubmit(userProfileForm.value)\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4 col-md-offset-1\">\r\n\r\n\r\n        <!-- Change src here -->\r\n        <img class=\"img-circle\" [src]=\"customer_details.customer_image\" alt=\"\" style=\"width: 200px; height: 200px\">\r\n        <input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"customer_image\"\r\n               ng-model=\"customer_image\" base-sixty-four-input>\r\n\r\n      </div>\r\n      <div class=\"info col-md-6 col-md-offset-1\">\r\n        <div class=\"row\">\r\n          <strong> Full Name: </strong>\r\n          <input type=\"text\" formControlName=\"name\" required=\"required\" placeholder=\"John Doe\" id=\"Name\" value=\"{{ customer_details.name }}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Email Address: </strong>\r\n          <input type=\"contact\" formControlName=\"email\" required=\"required\" placeholder=\"food@foodoholics.com\" \r\n                 id=\"email\" value=\"{{customer_details.email}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Phone Number: </strong>\r\n          <input type=\"contact\" formControlName=\"contact\" required=\"required\" placeholder=\"812-999-9999\" id=\"phone\" value=\"{{customer_details.contact}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong>Street Address 1: </strong>\r\n          <input type=\"text\" formControlName=\"street1\" required=\"required\" placeholder=\"123 10th Street\" id=\"street1\" value=\"{{customer_details.street1}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong>Street Address 2: </strong>\r\n          <input type=\"text\" formControlName=\"street2\" required=\"required\" placeholder=\"123 10th Street\" id=\"street2\" value=\"{{customer_details.street2}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> City: </strong>\r\n          <input type=\"text\" formControlName=\"city\" required=\"required\" placeholder=\"Bloomington\" id=\"city\" value=\"{{customer_details.city}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n            <strong> State: </strong>\r\n            <input type=\"text\" formControlName=\"state\" required=\"required\" placeholder=\"Indiana\" id=\"state\" value=\"{{customer_details.state}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n            <strong> Zip Code: </strong>\r\n            <input type=\"text\" formControlName=\"zip_code\" required=\"required\" placeholder=\"47401\" id=\"zip_code\" value=\"{{customer_details.zip_code}}\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <button type=\"submit\" value=\"submit\" class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">\r\n      Update\r\n    </button>\r\n  </form>\r\n</div>\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-customerdropdown></app-customerdropdown>\r\n\r\n<div class=\"container\" style=\"margin-top: 50px\">\r\n  <div class=\"container\">\r\n    <h3>Edit Profile</h3>\r\n  </div>\r\n  <hr>\r\n  <form method=\"POST\" [formGroup]=\"userProfileForm\" (ngSubmit)=\"onSubmit(userProfileForm.value)\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4 col-md-offset-1\">\r\n\r\n\r\n        <!-- Change src here -->\r\n        <img class=\"img-circle\" [src]=\"customer_details.customer_image\" alt=\"\" style=\"width: 200px; height: 200px\">\r\n        <input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"customer_image\"\r\n               ng-model=\"customer_image\" base-sixty-four-input>\r\n\r\n      </div>\r\n      <div class=\"info col-md-6 col-md-offset-1\">\r\n        <div class=\"row\">\r\n          <strong> Full Name: </strong>\r\n          <input type=\"text\" formControlName=\"name\" required=\"required\" placeholder=\"John Doe\" id=\"Name\" value=\"{{ customer_details.name }}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Email Address: </strong>\r\n          <input type=\"contact\" formControlName=\"email\" required=\"required\" placeholder=\"food@foodoholics.com\" \r\n                 id=\"email\" value=\"{{customer_details.email}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Phone Number: </strong>\r\n          <input type=\"contact\" formControlName=\"contact\" required=\"required\" placeholder=\"812-999-9999\" id=\"phone\" value=\"{{customer_details.contact}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong>Street Address 1: </strong>\r\n          <input type=\"text\" formControlName=\"street1\" required=\"required\" placeholder=\"123 10th Street\" id=\"street1\" value=\"{{customer_details.street1}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong>Street Address 2: </strong>\r\n          <input type=\"text\" formControlName=\"street2\" required=\"required\" placeholder=\"123 10th Street\" id=\"street2\" value=\"{{customer_details.street2}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> City: </strong>\r\n          <input type=\"text\" formControlName=\"city\" required=\"required\" placeholder=\"Bloomington\" id=\"city\" value=\"{{customer_details.city}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n            <strong> State: </strong>\r\n            <input type=\"text\" formControlName=\"state\" required=\"required\" placeholder=\"Indiana\" id=\"state\" value=\"{{customer_details.state}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n            <strong> Zip Code: </strong>\r\n            <input type=\"text\" formControlName=\"zip_code\" required=\"required\" placeholder=\"47401\" id=\"zip_code\" value=\"{{customer_details.zip_code}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Password: </strong>\r\n          <input type=\"password\" formControlName=\"password\" required=\"required\" placeholder=\"*********\" id=\"password\" value=\"\">\r\n      </div>\r\n      </div>\r\n    </div>\r\n    <button type=\"submit\" value=\"submit\" class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">\r\n      Update\r\n    </button>\r\n  </form>\r\n</div>\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/customerprofile/customerprofile.component.html": 
@@ -160,7 +160,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    Log In\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n<div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n  <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n    <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n      <h2>Delivery Login</h2>\r\n    </div>\r\n    <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n      <form method=\"post\" [formGroup]=\"deliveryLoginForm\" (ngSubmit) = \"onSubmit(deliveryLoginForm.value)\">\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          <div>Your Email:</div>\r\n          <div><input type = \"text\" required = \"required\" formControlName=\"email\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-6\">Your Password:</div>\r\n            <div class=\"col-md-6\" style=\"text-align: right\"><a routerLink=\"/recover\">Forgot?</a></div>\r\n          </div>\r\n          <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n          <button type=\"submit\" value = \"submit\" class=\"btn btn-primary btn-lg btn-block\">Login</button>\r\n        </div>\r\n\r\n      </form>\r\n    </div>\r\n    <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n      <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>Want to be a delivery person?</b></div>\r\n      <div class=\"row\">We Hire You! <a routerLink=\"/deliveryreg\">Join today</a>, registered to be a delivery person of Food-O-Holic today!</div>\r\n    </div>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    Log In\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n<div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n  <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n    <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n      <h2>Delivery Login</h2>\r\n    </div>\r\n    <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n      <form method=\"post\" [formGroup]=\"deliveryLoginForm\" (ngSubmit) = \"onSubmit(deliveryLoginForm.value)\">\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          {{ forgot_message }}\r\n          <div>Your Email:</div>\r\n          <div><input type = \"text\" required = \"required\" formControlName=\"email\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-6\">Your Password:</div>\r\n            <div class=\"col-md-6\" style=\"text-align: right\"><a (click)=\"recover()\">Forgot?</a></div>\r\n          </div>\r\n          <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n          <button type=\"submit\" value = \"submit\" class=\"btn btn-primary btn-lg btn-block\">Login</button>\r\n        </div>\r\n        <!-- Place holder for recaptcha -->\r\n        <div #recaptcha style=\"padding: 10px -10px; margin-top: 10px\"></div>\r\n\r\n        <div class=\"container\" style=\"margin-top: 10px; padding: 10px 27px 5px 27px\">\r\n          <button id=\"google-button\" class=\"btn btn-block btn-social btn-google\" style=\"margin-bottom: 15px\" (click)=\"socialSignIn('google')\">\r\n            <i class=\"fa fa-google\"></i> Sign in with Google\r\n          </button>\r\n          <button id=\"facebook-button\" class=\"btn btn-block btn-social btn-facebook\" (click)=\"socialSignIn('facebook')\">\r\n            <i class=\"fa fa-facebook\"></i> Sign in with Facebook\r\n          </button>\r\n          \r\n\r\n        </div>\r\n\r\n      </form>\r\n    </div>\r\n    <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n      <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>Want to be a delivery person?</b></div>\r\n      <div class=\"row\">We Hire You! <a routerLink=\"/deliveryreg\">Join today</a>, registered to be a delivery person of Food-O-Holic today!</div>\r\n    </div>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliveryorderhistory/deliveryorderhistory.component.html": 
@@ -182,7 +182,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Delivery Profile\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliveryprofile.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-deliverydropdown></app-deliverydropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Delivery Details</h3>\r\n  </div>\r\n  <hr>\r\n  <!-- <div class=\"row\">\r\n    <div class=\" col-md-6\">\r\n      <ul *ngIf=\"delivery_details\">\r\n        <h4><strong> {{delivery_details.name}} </strong></h4>\r\n        <li>\r\n          <strong> Contact: </strong> <a href=\"tel:{{delivery_details.contact}}\">{{delivery_details.contact}}</a>\r\n        </li>\r\n        <li>\r\n          <strong> Address: </strong>\r\n          {{delivery_details.street1 + delivery_details.street2 + delivery_details.city + delivery_details.state + delivery_details.zip_code}}\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div> -->\r\n\r\n\r\n  <form method=\"POST\" [formGroup]=\"deliveryProfileForm\" (ngSubmit)=\"onSubmit(deliveryProfileForm.value)\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4 col-md-offset-1\">\r\n        <!-- Change src here -->\r\n        <img class=\"img-circle\" [src]=\"delivery_details.delivery_image\" alt=\"\" style=\"width: 200px; height: 200px\">\r\n        <input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"delivery_image\"\r\n               ng-model=\"delivery_image\" base-sixty-four-input>\r\n\r\n      </div>\r\n      <div class=\"info col-md-6 col-md-offset-1\">\r\n        <div class=\"row\">\r\n          <strong> Full Name: </strong>\r\n          <input type=\"text\" formControlName=\"name\" required=\"required\" placeholder=\"John Doe\" id=\"Name\" value=\"{{ delivery_details.name }}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Email Address: </strong>\r\n          <input type=\"contact\" formControlName=\"email\" required=\"required\" placeholder=\"food@foodoholics.com\" \r\n                 id=\"email\" value=\"{{delivery_details.email}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Phone Number: </strong>\r\n          <input type=\"contact\" formControlName=\"contact\" required=\"required\" placeholder=\"812-999-9999\" id=\"phone\" value=\"{{delivery_details.contact}}\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <button type=\"submit\" value=\"submit\" class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">\r\n      Save\r\n    </button>\r\n  </form>\r\n  <hr>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Delivery Profile\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"deliveryprofile.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-deliverydropdown></app-deliverydropdown>\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Delivery Details</h3>\r\n  </div>\r\n  <hr>\r\n  <!-- <div class=\"row\">\r\n    <div class=\" col-md-6\">\r\n      <ul *ngIf=\"delivery_details\">\r\n        <h4><strong> {{delivery_details.name}} </strong></h4>\r\n        <li>\r\n          <strong> Contact: </strong> <a href=\"tel:{{delivery_details.contact}}\">{{delivery_details.contact}}</a>\r\n        </li>\r\n        <li>\r\n          <strong> Address: </strong>\r\n          {{delivery_details.street1 + delivery_details.street2 + delivery_details.city + delivery_details.state + delivery_details.zip_code}}\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div> -->\r\n\r\n\r\n  <form method=\"POST\" [formGroup]=\"deliveryProfileForm\" (ngSubmit)=\"onSubmit(deliveryProfileForm.value)\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4 col-md-offset-1\">\r\n        <!-- Change src here -->\r\n        <img class=\"img-circle\" [src]=\"delivery_details.delivery_image\" alt=\"\" style=\"width: 200px; height: 200px\">\r\n        <input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"delivery_image\"\r\n               ng-model=\"delivery_image\" base-sixty-four-input>\r\n\r\n      </div>\r\n      <div class=\"info col-md-6 col-md-offset-1\">\r\n        <div class=\"row\">\r\n          <strong> Full Name: </strong>\r\n          <input type=\"text\" formControlName=\"name\" required=\"required\" placeholder=\"John Doe\" id=\"Name\" value=\"{{ delivery_details.name }}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Email Address: </strong>\r\n          <input type=\"contact\" formControlName=\"email\" required=\"required\" placeholder=\"food@foodoholics.com\" \r\n                 id=\"email\" value=\"{{delivery_details.email}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Phone Number: </strong>\r\n          <input type=\"contact\" formControlName=\"contact\" required=\"required\" placeholder=\"812-999-9999\" id=\"phone\" value=\"{{delivery_details.contact}}\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <strong> Password: </strong>\r\n          <input type=\"password\" formControlName=\"password\" required=\"required\" placeholder=\"*********\" id=\"password\" value=\"\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <button type=\"submit\" value=\"submit\" class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">\r\n      Save\r\n    </button>\r\n  </form>\r\n  <hr>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliveryreg/deliveryreg.component.html": 
@@ -215,7 +215,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n  <head>\r\n    <title>\r\n      Log In\r\n    </title>\r\n    <!-- Bootstrap CDN scripts -->\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n    <script src=\"login.component.css\"></script>\r\n    <script src=\"../../styles.css\"></script>\r\n    <script src=\"../backgroup-image.css\"></script>\r\n  </head>\r\n  <body>\r\n  <app-logindropdown></app-logindropdown>\r\n  <div>\r\n    <div class=\"container\" style=\"width: 430px; margin-top: 5%; margin-bottom: 5%\">\r\n      <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n        <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n          <h2>Log In</h2>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n          <form method=\"post\" [formGroup]=\"userLoginForm\" (ngSubmit) = \"onSubmit(userLoginForm.value)\">\r\n            <div class=\"container\" style=\"padding-bottom: 20px\">\r\n              <div>Your Email:</div>\r\n              <div><input type = \"email\" formControlName=\"email\" required = \"required\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n            </div>\r\n            <div class=\"container\">\r\n              <div class=\"row\">\r\n                <div class=\"col-md-6\">Your Password:</div>\r\n                <div class=\"col-md-6\" style=\"text-align: right\"><a routerLink=\"/recover\">Forgot?</a></div>\r\n              </div>\r\n              <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n            </div>\r\n            <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n              <button type=\"submit\" value = \"submit\" class=\"login-button btn btn-primary\" (ngSubmit)=\"onSubmit\">Login</button>\r\n\r\n              <!-- Place holder for recaptcha -->\r\n              <div #recaptcha style=\"padding: 10px -10px; margin-top: 10px\"></div>\r\n\r\n              <div class=\"container\" style=\"margin-top: 10px; padding: 10px 27px 5px 27px\">\r\n                <button id=\"google-button\" class=\"btn btn-block btn-social btn-google\" style=\"margin-bottom: 15px\" (click)=\"socialSignIn('google')\">\r\n                  <i class=\"fa fa-google\"></i> Sign in with Google\r\n                </button>\r\n                <button id=\"facebook-button\" class=\"btn btn-block btn-social btn-facebook\" (click)=\"socialSignIn('facebook')\">\r\n                  <i class=\"fa fa-facebook\"></i> Sign in with Facebook\r\n                </button>\r\n\r\n              </div>\r\n            </div>\r\n          </form>\r\n        </div>\r\n\r\n\r\n        <div *ngIf=\"showFile\">\r\n          <form method=\"post\" [formGroup]=\"userVerifyForm\" (ngSubmit) = \"onVerify(userVerifyForm.value)\">\r\n            <div>Please enter the 6-digit code that was sent to your email</div>\r\n            <input type=\"text\" required=\"required\" placeholder=\"6-digit code\" formControlName=\"otp\">\r\n            <span class=\"input-group-btn\">\r\n              <button type=\"submit\" class=\"btn btn-primary\" (ngSubmit)=\"onVerify\">Verify</button>\r\n            </span>\r\n          </form>\r\n          <div class=\"form-text error\" *ngIf=\"userVerifyForm\">\r\n            <!--<div *ngIf=\"userLoginForm.controls.otp.hasError('required')\">Verifcation is required</div>\r\n            <div *ngIf=\"userLoginForm.controls.otp.hasError('invalidOtp')\">Code is invalid</div>-->\r\n          </div>\r\n        </div>\r\n\r\n\r\n        <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n          <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>New to Food-O-Holic?</b></div>\r\n          <div class=\"row\"><a routerLink=\"/registration\">Create an account</a>, it only takes a few seconds.</div>\r\n          <div class=\"row\"><a routerLink=\"/recover\">Forgot Password</a>.</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n  <head>\r\n    <title>\r\n      Log In\r\n    </title>\r\n    <!-- Bootstrap CDN scripts -->\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n    <script src=\"login.component.css\"></script>\r\n    <script src=\"../../styles.css\"></script>\r\n    <script src=\"../backgroup-image.css\"></script>\r\n  </head>\r\n  <body>\r\n  <app-logindropdown></app-logindropdown>\r\n  <div>\r\n    <div class=\"container\" style=\"width: 430px; margin-top: 5%; margin-bottom: 5%\">\r\n      <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n        <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n          <h2>Log In</h2>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n          <form method=\"post\" [formGroup]=\"userLoginForm\" (ngSubmit) = \"onSubmit(userLoginForm.value)\">\r\n            <div class=\"container\" style=\"padding-bottom: 20px\">\r\n              {{ forgot_message }}\r\n              <div>Your Email:</div>\r\n              <div><input type = \"email\" formControlName=\"email\" required = \"required\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n            </div>\r\n            <div class=\"container\">\r\n              <div class=\"row\">\r\n                <div class=\"col-md-6\">Your Password:</div>\r\n                <div class=\"col-md-6\" style=\"text-align: right\"><a (click)=\"recover()\">Forgot?</a></div>\r\n              </div>\r\n              <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n            </div>\r\n            <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n              <button type=\"submit\" value = \"submit\" class=\"login-button btn btn-primary\" (ngSubmit)=\"onSubmit\">Login</button>\r\n\r\n              <!-- Place holder for recaptcha -->\r\n              <div #recaptcha style=\"padding: 10px -10px; margin-top: 10px\"></div>\r\n\r\n              <div class=\"container\" style=\"margin-top: 10px; padding: 10px 27px 5px 27px\">\r\n                <button id=\"google-button\" class=\"btn btn-block btn-social btn-google\" style=\"margin-bottom: 15px\" (click)=\"socialSignIn('google')\">\r\n                  <i class=\"fa fa-google\"></i> Sign in with Google\r\n                </button>\r\n                <button id=\"facebook-button\" class=\"btn btn-block btn-social btn-facebook\" (click)=\"socialSignIn('facebook')\">\r\n                  <i class=\"fa fa-facebook\"></i> Sign in with Facebook\r\n                </button>\r\n\r\n              </div>\r\n            </div>\r\n          </form>\r\n        </div>\r\n\r\n\r\n        <div *ngIf=\"showFile\">\r\n          <form method=\"post\" [formGroup]=\"userVerifyForm\" (ngSubmit) = \"onVerify(userVerifyForm.value)\">\r\n            <div>Please enter the 6-digit code that was sent to your email</div>\r\n            <input type=\"text\" required=\"required\" placeholder=\"6-digit code\" formControlName=\"otp\">\r\n            <span class=\"input-group-btn\">\r\n              <button type=\"submit\" class=\"btn btn-primary\" (ngSubmit)=\"onVerify\">Verify</button>\r\n            </span>\r\n          </form>\r\n          <div class=\"form-text error\" *ngIf=\"userVerifyForm\">\r\n            <!--<div *ngIf=\"userLoginForm.controls.otp.hasError('required')\">Verifcation is required</div>\r\n            <div *ngIf=\"userLoginForm.controls.otp.hasError('invalidOtp')\">Code is invalid</div>-->\r\n          </div>\r\n        </div>\r\n\r\n\r\n        <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n          <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>New to Food-O-Holic?</b></div>\r\n          <div class=\"row\"><a routerLink=\"/registration\">Create an account</a>, it only takes a few seconds.</div>\r\n          <div class=\"row\"><a routerLink=\"/recover\">Forgot Password</a>.</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/logindropdown/logindropdown.component.html": 
@@ -281,7 +281,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    Log In\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n<div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n  <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n    <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n      <h2>Register Now!</h2>\r\n    </div>\r\n    <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n      <form method=\"post\"  [formGroup]=\"userRegistrationForm\" (ngSubmit) = onSubmit(userRegistrationForm.value)>\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          <div>Full Name::</div>\r\n          <div><input type = \"text\" required=\"required\" formControlName=\"name\" placeholder=\"John Doe\" id=\"FullName\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          <div>Email Address:</div>\r\n          <div><input type = \"text\" required = \"required\" formControlName=\"email\" placeholder=\"johndoe@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          <div>Password:</div>\r\n          <div><input type = \"password\" required=\"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\">\r\n          <div>Confirm Password:</div>\r\n          <div><input type = \"password\" required=\"required\" formControlName=\"confirmpass\" placeholder=\"*******************\" id=\"confirmpass\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n          <button type=\"submit\" value=\"submit\" class=\"login-button btn btn-primary\">Register</button>\r\n        </div>\r\n      </form>\r\n    </div>\r\n    <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 120px;font-size: 15px\">\r\n      <div class=\"row\" style=\"font-style: italic\"><b>Already a member?</b></div>\r\n      <div class=\"row\"><a routerLink=\"/login\">Log In</a> Here!</div>\r\n    </div>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    Log In\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n<div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n  <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n    <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n      <h2>Register Now!</h2>\r\n    </div>\r\n    <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n      <form method=\"post\"  [formGroup]=\"userRegistrationForm\" (ngSubmit) = onSubmit(userRegistrationForm.value)>\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          <div>Full Name:</div>\r\n          <div><input type = \"text\" required=\"required\" formControlName=\"name\" placeholder=\"John Doe\" id=\"FullName\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          <div>Email Address:</div>\r\n          <div><input type = \"text\" required = \"required\" formControlName=\"email\" placeholder=\"johndoe@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n        </div>  \r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          <div>Password:</div>\r\n          <div><input type = \"password\" required=\"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\">\r\n          <div>Confirm Password:</div>\r\n          <div><input type = \"password\" required=\"required\" formControlName=\"confirmpass\" placeholder=\"*******************\" id=\"confirmpass\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n          <button type=\"submit\" value=\"submit\" class=\"login-button btn btn-primary\">Register</button>\r\n        </div>\r\n      </form>\r\n    </div>\r\n    <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 120px;font-size: 15px\">\r\n      <div class=\"row\" style=\"font-style: italic\"><b>Already a member?</b></div>\r\n      <div class=\"row\" style=\"text-align:justify;\"><a routerLink=\"/login\">Log In</a> Here!</div>\r\n    </div>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/restaurant-view/restaurant-view.component.html": 
@@ -314,7 +314,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Details\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"restaurantviewdetails.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Edit Details</h3>\r\n    <p>Please put new restaurant information here! After edit, do not forget to click update at the button.</p>\r\n  </div>\r\n  <hr>\r\n  <form mehtod=\"post\" [formGroup]=\"detailsForm\" (ngSubmit)=onSubmit(detailsForm.value)>\r\n    <div class=\"row\">\r\n      <div class=\" col-md-6\">\r\n        <img [src]=\"restaurant_details.res_image\" alt=\"\" style=\"width: 500px\"/>\r\n        <input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"res_image\"\r\n               ng-model=\"res_image\" base-sixty-four-input>\r\n      </div>\r\n      <div class=\"form-style col-md-6\">\r\n        <h4>\r\n          <input type=\"text\" required=\"required\" formControlName=\"name\" value=\"{{ restaurant_details.name }}\"\r\n                 id=\"name\" style=\"width: 100%\">\r\n        </h4>\r\n        <li>\r\n          <strong> Contact: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"contact\" value=\"{{ restaurant_details.contact }}\"\r\n                 id=\"contact\">\r\n        </li>\r\n        <li>\r\n          <strong> Food Category: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"food_category\"\r\n                 value=\"{{ restaurant_details.food_category }}\" id=\"food_category\">\r\n        </li>\r\n        <li>\r\n          <strong> Location: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"location\"\r\n                 value=\"{{ restaurant_details.location }}\" id=\"location\">\r\n        </li>\r\n        <li>\r\n          <strong> Working Hours: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"working_hours\"\r\n                 value=\"{{ restaurant_details.working_hours }}\"\r\n                 id=\"working_hours\">\r\n        </li>\r\n        <li><strong> Description: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"description\"\r\n                 value=\"{{restaurant_details.description}}\"\r\n                 id=\"description\">\r\n        </li>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <div class=\"row\">\r\n      <button type=\"submit\" value=\"submit\"\r\n              class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">Update\r\n      </button>\r\n    </div>\r\n  </form>\r\n</div>\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n\r\n<head>\r\n  <title>\r\n    Restaurant Details\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"restaurantviewdetails.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n\r\n<app-restaurantdropdown></app-restaurantdropdown>\r\n\r\n\r\n<div class=\"container\">\r\n  <div class=\"container\">\r\n    <h3>Edit Details</h3>\r\n    <p>Please put new restaurant information here! After edit, do not forget to click update at the button.</p>\r\n  </div>\r\n  <hr>\r\n  <form mehtod=\"post\" [formGroup]=\"detailsForm\" (ngSubmit)=onSubmit(detailsForm.value)>\r\n    <div class=\"row\">\r\n      <div class=\" col-md-6\">\r\n        <img [src]=\"restaurant_details.res_image\" alt=\"\" style=\"width: 500px\"/>\r\n        <input type=\"file\" required=\"required\" accept=\"image/*\" (change)=\"onFileSelected($event)\" id=\"res_image\"\r\n               ng-model=\"res_image\" base-sixty-four-input>\r\n      </div>\r\n      <div class=\"form-style col-md-6\">\r\n        <h4>\r\n          <input type=\"text\" required=\"required\" formControlName=\"name\" value=\"{{ restaurant_details.name }}\"\r\n                 id=\"name\" style=\"width: 100%\">\r\n        </h4>\r\n        <li>\r\n          <strong> Contact: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"contact\" value=\"{{ restaurant_details.contact }}\"\r\n                 id=\"contact\">\r\n        </li>\r\n        <li>\r\n          <strong> Food Category: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"food_category\"\r\n                 value=\"{{ restaurant_details.food_category }}\" id=\"food_category\">\r\n        </li>\r\n        <li>\r\n          <strong> Location: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"location\"\r\n                 value=\"{{ restaurant_details.location }}\" id=\"location\">\r\n        </li>\r\n        <li>\r\n          <strong> Working Hours: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"working_hours\"\r\n                 value=\"{{ restaurant_details.working_hours }}\"\r\n                 id=\"working_hours\">\r\n        </li>\r\n        <li><strong> Description: </strong>\r\n          <input type=\"text\" required=\"required\" formControlName=\"description\"\r\n                 value=\"{{restaurant_details.description}}\"\r\n                 id=\"description\">\r\n        </li>\r\n        <li><strong> Password: </strong>\r\n          <input type=\"password\" formControlName=\"password\" required=\"required\" placeholder=\"*********\" id=\"password\" value=\"\">\r\n        </li>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <div class=\"row\">\r\n      <button type=\"submit\" value=\"submit\"\r\n              class=\"btn btn-primary btn-lg btn-block pull-right\" style=\"width: 100px; margin-right: 20px\">Update\r\n      </button>\r\n    </div>\r\n  </form>\r\n</div>\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/restaurantdropdown/restaurantdropdown.component.html": 
@@ -402,7 +402,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    Log In\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n<div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n  <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n    <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n      <h2>Restaurant Login</h2>\r\n    </div>\r\n    <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n      <form method=\"post\" [formGroup]=\"restaurantLoginForm\" (ngSubmit) = \"onSubmit(restaurantLoginForm.value)\">\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          <div>Your Email:</div>\r\n          <div><input type = \"text\" required = \"required\" formControlName=\"email\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-6\">Your Password:</div>\r\n            <div class=\"col-md-6\" style=\"text-align: right\"><a routerLink=\"/recover\">Forgot?</a></div>\r\n          </div>\r\n          <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n          <button type=\"submit\" value = \"submit\" class=\"login-button btn btn-primary\">Login</button>\r\n        </div>\r\n\r\n      </form>\r\n    </div>\r\n    <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n      <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>Want us to deliver your food?</b></div>\r\n      <div class=\"row\"><a routerLink=\"/restaurantreg\">Create a restaurant account</a>, registered to be a restaurant owner on Food-O-Holic today!</div>\r\n    </div>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    Log In\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-logindropdown></app-logindropdown>\r\n<div class=\"container\" style=\"width: 400px; margin-top: 5%; margin-bottom: 5%\">\r\n  <div class=\"jumbotron\" style=\"padding: 0; background-color: #FFF8E1\">\r\n    <div class=\"container\" style=\"text-align: center; padding: 20px; border-bottom: #FFE082 2px solid\">\r\n      <h2>Restaurant Login</h2>\r\n    </div>\r\n    <div class=\"container\" style=\"padding: 30px; font-size: 15px\">\r\n      <form method=\"post\" [formGroup]=\"restaurantLoginForm\" (ngSubmit) = \"onSubmit(restaurantLoginForm.value)\">\r\n        <div class=\"container\" style=\"padding-bottom: 20px\">\r\n          {{ forgot_message }}\r\n          <div>Your Email:</div>\r\n          <div><input type = \"text\" required = \"required\" formControlName=\"email\" placeholder=\"example@foodoholic.com\" id=\"Email\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-6\">Your Password:</div>\r\n            <div class=\"col-md-6\" style=\"text-align: right\"><a (click)=\"recover()\">Forgot?</a></div>\r\n          </div>\r\n          <div><input type = \"password\" required = \"required\" formControlName=\"password\" placeholder=\"*******************\" id=\"password\" style=\"width: 100%\"></div>\r\n        </div>\r\n        <div class=\"container\" style=\"padding: 20px 20px 0px 20px\">\r\n          <button type=\"submit\" value = \"submit\" class=\"login-button btn btn-primary\">Login</button>\r\n\r\n           <!-- Place holder for recaptcha -->\r\n           <div #recaptcha style=\"padding: 10px -10px; margin-top: 10px\"></div>\r\n\r\n           <div class=\"container\" style=\"margin-top: 10px; padding: 10px 27px 5px 27px\">\r\n             <button id=\"google-button\" class=\"btn btn-block btn-social btn-google\" style=\"margin-bottom: 15px\" (click)=\"socialSignIn('google')\">\r\n               <i class=\"fa fa-google\"></i> Sign in with Google\r\n             </button>\r\n             <button id=\"facebook-button\" class=\"btn btn-block btn-social btn-facebook\" (click)=\"socialSignIn('facebook')\">\r\n               <i class=\"fa fa-facebook\"></i> Sign in with Facebook\r\n             </button>\r\n\r\n           </div>\r\n        </div>\r\n\r\n      </form>\r\n    </div>\r\n    <div class=\"container\" style=\"border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px\">\r\n      <div class=\"row\" style=\"font-style: italic; text-align: center\"><b>Want us to deliver your food?</b></div>\r\n      <div class=\"row\"><a routerLink=\"/restaurantreg\">Create a restaurant account</a>, registered to be a restaurant owner on Food-O-Holic today!</div>\r\n    </div>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/sidebar/sidebar.component.html": 
@@ -1559,7 +1559,8 @@
                         street2: '',
                         city: '',
                         state: '',
-                        zip_code: ''
+                        zip_code: '',
+                        password: ''
                     });
                 }
                 CustomereditprofileComponent.prototype.onFileSelected = function (event) {
@@ -1590,6 +1591,14 @@
                             _this.customer_details = data['result'];
                             _this.customer_details.customer_image = "/customer_images/" + customer_id + ".png";
                             console.log(_this.customer_details);
+                            _this.userProfileForm.get('name').setValue(_this.customer_details['name']);
+                            _this.userProfileForm.get('contact').setValue(_this.customer_details['contact']);
+                            _this.userProfileForm.get('email').setValue(_this.customer_details['email']);
+                            _this.userProfileForm.get('street1').setValue(_this.customer_details['street1']);
+                            _this.userProfileForm.get('street2').setValue(_this.customer_details['street2']);
+                            _this.userProfileForm.get('city').setValue(_this.customer_details['city']);
+                            _this.userProfileForm.get('state').setValue(_this.customer_details['state']);
+                            _this.userProfileForm.get('zip_code').setValue(_this.customer_details['zip_code']);
                         }
                     });
                 };
@@ -1600,7 +1609,7 @@
                     });
                     var customer_id = this.cookie.get("customer_id");
                     var jwttoken = this.cookie.get("jwttoken");
-                    // console.log(jwttoken)
+                    console.log(profile['password']);
                     var formData = new FormData();
                     formData.append("id", customer_id);
                     formData.append("name", profile["name"]);
@@ -1611,9 +1620,10 @@
                     formData.append("city", profile["city"]);
                     formData.append("state", profile["state"]);
                     formData.append("zip_code", profile["zip_code"]);
+                    formData.append("password", profile["password"]);
                     formData.append("jwttoken", jwttoken);
                     formData.append("image", this.image, this.cookie.get('customer_id') + '.png');
-                    console.log(formData.get("state"));
+                    // console.log(formData.get("state"));
                     this.http.post('/customer/details', formData, { headers: headers }).subscribe(function (res) { return console.log(res); }, function (err) { return console.log(err); });
                     this.router.navigate(['/customerprofile']);
                 };
@@ -1885,12 +1895,15 @@
             /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
             /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
             /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
             var DeliveryloginComponent = /** @class */ (function () {
-                function DeliveryloginComponent(loginService, formBuilder, cookie, router) {
+                function DeliveryloginComponent(loginService, formBuilder, cookie, router, http) {
                     this.loginService = loginService;
                     this.formBuilder = formBuilder;
                     this.cookie = cookie;
                     this.router = router;
+                    this.http = http;
+                    this.forgot_message = "";
                     this.timesSubmitted = 0;
                     this.deliveryLoginForm = this.formBuilder.group({
                         email: '',
@@ -1898,10 +1911,26 @@
                     });
                 }
                 DeliveryloginComponent.prototype.ngOnInit = function () {
+                    this.forgot_message = "";
+                    this.addRecaptchaScript();
+                };
+                DeliveryloginComponent.prototype.recover = function () {
+                    var _this = this;
+                    var data = this.deliveryLoginForm.get('email').value;
+                    data = {
+                        'email': data
+                    };
+                    var url = "/authentication/recover/delivery";
+                    this.http.post(url, data).subscribe(function (res) { return _this.forgot_message = "Password resetted"; }, function (err) { return console.log(err); });
+                    console.log(data);
                 };
                 DeliveryloginComponent.prototype.onSubmit = function (userData) {
                     var _this = this;
                     var r = this.loginService.sendRequest(userData, "/authentication/login/delivery");
+                    if (this.recaptchaElement == null) {
+                        alert('Enter recaptcha');
+                        return;
+                    }
                     r.subscribe(function (data) {
                         console.log(data);
                         if (data['auth']) {
@@ -1912,14 +1941,43 @@
                         }
                     });
                 };
+                DeliveryloginComponent.prototype.addRecaptchaScript = function () {
+                    var _this = this;
+                    window['grecaptchaCallback'] = function () {
+                        _this.renderReCaptcha();
+                    };
+                    (function (d, s, id, obj) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) {
+                            obj.renderReCaptcha();
+                            return;
+                        }
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'recaptcha-jssdk', this));
+                };
+                DeliveryloginComponent.prototype.renderReCaptcha = function () {
+                    window['grecaptcha'].render(this.recaptchaElement.nativeElement, {
+                        'sitekey': '6LdhGcMUAAAAAJ2eG5TNInZtPqRfS2MJE-CVeptA',
+                        'callback': function (response) {
+                            console.log(response);
+                        }
+                    });
+                };
                 return DeliveryloginComponent;
             }());
             DeliveryloginComponent.ctorParameters = function () { return [
                 { type: _login_service__WEBPACK_IMPORTED_MODULE_2__["LoginService"] },
                 { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
                 { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"] },
-                { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClient"] }
             ]; };
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('recaptcha', { static: true })
+            ], DeliveryloginComponent.prototype, "recaptchaElement", void 0);
             DeliveryloginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-deliverylogin',
@@ -2020,7 +2078,8 @@
                     this.deliveryProfileForm = this.formbuilder.group({
                         name: '',
                         contact: '',
-                        email: ''
+                        email: '',
+                        password: ''
                     });
                 }
                 DeliveryprofileComponent.prototype.onFileSelected = function (event) {
@@ -2040,6 +2099,9 @@
                         if (data != null) {
                             _this.delivery_details = data['result'];
                             _this.delivery_details.delivery_image = "/delivery_images/" + delivery_id + ".png";
+                            _this.deliveryProfileForm.get('name').setValue(_this.delivery_details['name']);
+                            _this.deliveryProfileForm.get('email').setValue(_this.delivery_details['email']);
+                            _this.deliveryProfileForm.get('contact').setValue(_this.delivery_details['contact']);
                             console.log(_this.delivery_details);
                         }
                     });
@@ -2056,6 +2118,7 @@
                     formData.append("name", profile["name"]);
                     formData.append("email", profile["email"]);
                     formData.append("contact", profile["contact"]);
+                    formData.append("password", profile["password"]);
                     formData.append("jwttoken", jwttoken);
                     formData.append("image", this.image, this.cookie.get('delivery_id') + '.png');
                     this.http.post('/delivery/details', formData, { headers: headers }).subscribe(function (res) { return console.log(res); }, function (err) { return console.log(err); });
@@ -2332,6 +2395,7 @@
                     this.cookie = cookie;
                     this.socialusers = new Socialusers();
                     this.timesSubmitted = 0;
+                    this.forgot_message = "";
                     this.showFile = false;
                     this.verifyOTP = false;
                     this.userLoginForm = this.formBuilder.group({
@@ -2343,10 +2407,12 @@
                     });
                 }
                 LoginComponent.prototype.ngOnInit = function () {
+                    this.forgot_message = "";
                     this.addRecaptchaScript();
                 };
                 LoginComponent.prototype.onSubmit = function (userData) {
                     var _this = this;
+                    console.log(userData);
                     var r = this.loginService.sendRequest(userData, '/authentication/login/user');
                     if (this.recaptchaElement == null) {
                         alert('Enter recaptcha');
@@ -2371,6 +2437,16 @@
                     r.subscribe(data => {
                       console.log(data);
                     });*/
+                };
+                LoginComponent.prototype.recover = function () {
+                    var _this = this;
+                    var data = this.userLoginForm.get('email').value;
+                    data = {
+                        'email': data
+                    };
+                    var url = "/authentication/recover/user";
+                    this.http.post(url, data).subscribe(function (res) { return _this.forgot_message = "Password resetted"; }, function (err) { return console.log(err); });
+                    console.log(data);
                 };
                 LoginComponent.prototype.socialSignIn = function (socialProvider) {
                     var _this = this;
@@ -3044,7 +3120,8 @@
                         res_image: '',
                         contact: '',
                         working_hours: '',
-                        description: ''
+                        description: '',
+                        password: ''
                     });
                 }
                 RestaurantdetailsComponent.prototype.onFileSelected = function (event) {
@@ -3065,8 +3142,6 @@
                     var jwttoken = this.cookie.get('jwttoken');
                     details['jwttoken'] = jwttoken;
                     details['id'] = this.cookie.get('restaurant_id');
-                    // details['res_image'] = this.fileAsBase64;
-                    // console.log(details['res_image'])
                     var formData = new FormData();
                     formData.append("id", this.cookie.get('restaurant_id'));
                     formData.append("jwttoken", jwttoken);
@@ -3077,6 +3152,7 @@
                     formData.append("contact", details['contact']);
                     formData.append("working_hours", details['working_hours']);
                     formData.append("description", details['description']);
+                    formData.append("password", details['password']);
                     this.http.post('/restaurant/restaurant_details', formData).subscribe(function (res) { return _this.router.navigate(['/restaurantviewdetails']); }, function (err) { return console.log(err); });
                 };
                 RestaurantdetailsComponent.prototype.ngOnInit = function () {
@@ -3580,12 +3656,15 @@
             /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
             /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
             /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
             var ResturantloginComponent = /** @class */ (function () {
-                function ResturantloginComponent(loginService, formBuilder, cookie, router) {
+                function ResturantloginComponent(loginService, formBuilder, cookie, router, http) {
                     this.loginService = loginService;
                     this.formBuilder = formBuilder;
                     this.cookie = cookie;
                     this.router = router;
+                    this.http = http;
+                    this.forgot_message = "";
                     this.timesSubmitted = 0;
                     this.restaurantLoginForm = this.formBuilder.group({
                         email: '',
@@ -3593,10 +3672,26 @@
                     });
                 }
                 ResturantloginComponent.prototype.ngOnInit = function () {
+                    this.forgot_message = "";
+                    this.addRecaptchaScript();
+                };
+                ResturantloginComponent.prototype.recover = function () {
+                    var _this = this;
+                    var data = this.restaurantLoginForm.get('email').value;
+                    data = {
+                        'email': data
+                    };
+                    var url = "/authentication/recover/restaurant";
+                    this.http.post(url, data).subscribe(function (res) { return _this.forgot_message = "Password resetted"; }, function (err) { return console.log(err); });
+                    console.log(data);
                 };
                 ResturantloginComponent.prototype.onSubmit = function (userData) {
                     var _this = this;
                     var r = this.loginService.sendRequest(userData, "/authentication/login/restaurant");
+                    if (this.recaptchaElement == null) {
+                        alert('Enter recaptcha');
+                        return;
+                    }
                     r.subscribe(function (data) {
                         console.log(data);
                         if (data['auth']) {
@@ -3610,13 +3705,30 @@
                         }
                     });
                 };
-                ResturantloginComponent.prototype.logRestIn = function (event) {
-                    event.preventDefault();
-                    console.log(event);
-                    this.timesSubmitted += 1;
-                    if (this.timesSubmitted > 1) {
-                        console.log("captcha has been prompted");
-                    }
+                ResturantloginComponent.prototype.addRecaptchaScript = function () {
+                    var _this = this;
+                    window['grecaptchaCallback'] = function () {
+                        _this.renderReCaptcha();
+                    };
+                    (function (d, s, id, obj) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) {
+                            obj.renderReCaptcha();
+                            return;
+                        }
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'recaptcha-jssdk', this));
+                };
+                ResturantloginComponent.prototype.renderReCaptcha = function () {
+                    window['grecaptcha'].render(this.recaptchaElement.nativeElement, {
+                        'sitekey': '6LdhGcMUAAAAAJ2eG5TNInZtPqRfS2MJE-CVeptA',
+                        'callback': function (response) {
+                            console.log(response);
+                        }
+                    });
                 };
                 return ResturantloginComponent;
             }());
@@ -3624,8 +3736,12 @@
                 { type: _login_service__WEBPACK_IMPORTED_MODULE_2__["LoginService"] },
                 { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
                 { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"] },
-                { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClient"] }
             ]; };
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('recaptcha', { static: true })
+            ], ResturantloginComponent.prototype, "recaptchaElement", void 0);
             ResturantloginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-resturantlogin',

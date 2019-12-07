@@ -7,6 +7,8 @@ const cookieParser = require('cookie-parser');
 let middleware = require('./jwtverification');
 const multer = require('multer')
 var fs = require('fs')
+const Bcrypt = require("bcryptjs");
+
 var router = express.Router()
 mongoose.connect('mongodb://heroku_wr9z45km:4qlbddem2aer4k5djhcrp5ph3s@ds243717.mlab.com:43717/heroku_wr9z45km', { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
@@ -61,6 +63,9 @@ router.get("/display_menu/:restaurant_id", middleware.checkToken, function(req, 
     })
 })
 router.get('/restaurants_list', middleware.checkToken, function(req, res){
+
+
+
     // console.log(req)
     var projection = {
         projection: {
@@ -79,13 +84,13 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
     }
     var query = {
         name: {
-            $regex:req.query.restaurant_name
+            $regex:req.query.restaurant_name.toLowerCase()
         },
         food_category: {
-            $regex:req.query.food_category
+            $regex:req.query.food_category.toLowerCase()
         },
         location: {
-            $regex:req.query.location
+            $regex:req.query.location.toLowerCase()
         }
     }
     // console.log(query)
@@ -209,6 +214,8 @@ router.delete('/delete', middleware.checkToken, function(req, res){
 router.post('/restaurant_details', upload_restaurant.single('image'), function(req, res){
     var id = req.body.id
     console.log(req.body)
+    pass = req.body.password
+    pass = Bcrypt.hashSync(pass, 10)
     var data_update = {
         $set: {
             name: req.body.name.toLowerCase(),
@@ -219,7 +226,8 @@ router.post('/restaurant_details', upload_restaurant.single('image'), function(r
             working_hours:req.body.working_hours,
             Rating: 0,
             Number_of_ratings: 0,
-            description: req.body.description
+            description: req.body.description,
+            password: pass
         }
     }
     

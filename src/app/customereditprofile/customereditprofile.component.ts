@@ -28,7 +28,8 @@ export class CustomereditprofileComponent implements OnInit {
       street2: '',
       city: '',
       state: '',
-      zip_code: ''
+      zip_code: '',
+      password: ''
     })
   }
   image
@@ -62,8 +63,18 @@ export class CustomereditprofileComponent implements OnInit {
       if (data != null){
         
         this.customer_details = data['result']
+      
         this.customer_details.customer_image = "/customer_images/" + customer_id+".png"
         console.log(this.customer_details)
+        this.userProfileForm.get('name').setValue(this.customer_details['name'])
+        this.userProfileForm.get('contact').setValue(this.customer_details['contact'])
+        this.userProfileForm.get('email').setValue(this.customer_details['email'])
+        this.userProfileForm.get('street1').setValue(this.customer_details['street1'])
+        this.userProfileForm.get('street2').setValue(this.customer_details['street2'])
+        this.userProfileForm.get('city').setValue(this.customer_details['city'])
+        this.userProfileForm.get('state').setValue(this.customer_details['state'])
+        this.userProfileForm.get('zip_code').setValue(this.customer_details['zip_code'])
+
       }
     });
   }
@@ -79,7 +90,7 @@ export class CustomereditprofileComponent implements OnInit {
 
 
     var jwttoken = this.cookie.get("jwttoken")
-    // console.log(jwttoken)
+    console.log(profile['password'])
     const formData = new FormData()
     formData.append("id", customer_id);
     formData.append("name", profile["name"])
@@ -90,9 +101,10 @@ export class CustomereditprofileComponent implements OnInit {
     formData.append("city", profile["city"])
     formData.append("state", profile["state"])
     formData.append("zip_code", profile["zip_code"])
+    formData.append("password", profile["password"])
     formData.append("jwttoken", jwttoken)
     formData.append("image", this.image, this.cookie.get('customer_id')+'.png')
-    console.log(formData.get("state"));
+    // console.log(formData.get("state"));
     
     this.http.post<any>('/customer/details', formData, {headers}).subscribe(
       (res)=> console.log(res),
