@@ -49,6 +49,7 @@ import { DeliveryeditprofileComponent } from './deliveryeditprofile/deliveryedit
 import {AgmCoreModule} from "@agm/core";
 import { CustomerCurrentOrdersComponent } from './customer-current-orders/customer-current-orders.component';
 import { CustomerOrderHistoryComponent } from './customer-order-history/customer-order-history.component';
+import { CustomerRecommendationsComponent } from './customer-recommendations/customer-recommendations.component';
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -103,7 +104,8 @@ export function socialConfigs(){
     OrderComponent,
     DeliveryeditprofileComponent,
     CustomerCurrentOrdersComponent,
-    CustomerOrderHistoryComponent  ],
+    CustomerOrderHistoryComponent,
+    CustomerRecommendationsComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -118,6 +120,10 @@ export function socialConfigs(){
       {
         path: "customerorderhistory",
         component: CustomerOrderHistoryComponent
+      },
+      {
+        path: "customerrecommendations",
+        component: CustomerRecommendationsComponent
       },
       {
         path: "customercurrentorders",

@@ -215,6 +215,66 @@ router.delete('/delete', middleware.checkToken, function(req, res){
     })
 });
 
+router.get("/restaurant_recommendations", middleware.checkToken, function(req, res){
+    var id = req.query.customer_id
+    console.log(id)
+    var projection = {
+        projection: {
+            preference: 1
+            
+        }
+    }
+    db.collection('user_data').findOne({_id: new ObjectId(id)}, projection, function(err, data){
+        if (err){
+            res.json({
+                message: "Failed"
+            })
+            return;
+        }
+        else{
+            console.log(data)
+            var projection = {
+                projection: {
+                    _id: 1,
+                    name: 1,
+                    contact: 1,
+                    food_category: 1,
+                    location: 1,
+                    working_hours: 1,
+                    res_image: 1,
+                    ratings: 1,
+                    num_ratings: 1,
+                    description: 1,
+                    street1: 1,
+                    street2: 1,
+                    state: 1,
+                    zip_code: 1
+                    
+                }
+            }
+            var query = {
+                food_category: {
+                    $regex:data['preference'].toLowerCase()
+                }
+            }
+            // console.log(query)
+            db.collection('restaurant_data').find(query, projection).toArray(function(err, result){
+                if (err){
+                    res.json({
+                        message: "Failed to load"
+                    })
+                }
+                else{
+                    
+                    res.json(result)
+                }
+            })
+        }
+        
+    })
+
+})
+
 router.post('/restaurant_details', upload_restaurant.single('image'), function(req, res){
     var id = req.body.id
     console.log(req.body)

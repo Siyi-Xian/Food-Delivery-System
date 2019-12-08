@@ -1,7 +1,7 @@
 <html>
 <head>
   <title>
-    public dashboard
+    Customer Dashboard
   </title>
   <!-- Bootstrap CDN scripts -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -9,57 +9,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="public.component.css"></script>
+  <script src="customerdashboard.component.css"></script>
   <script src="../../styles.css"></script>
-<!--  <script src="../backgroup-image.css"></script>-->
 </head>
 <body>
-<app-logindropdown></app-logindropdown>
+<app-customerdropdown></app-customerdropdown>
 
 <div class="container">
   <div class="container">
-    <h3>Welcome to Food-O-Holics</h3>
+    <h3>Welcome back</h3>
     <p style="font-size: 18px">Search for restaurants below</p>
   </div>
   <br>
-  <div class="search-container">
-    <form action="get" [formGroup]="userSearchForm" (ngSubmit)="onSubmit(userSearchForm.value)">
-      <div class="row">
-        <div class="col-md-2 col-md-offset-2">
-          <div class="input-group">
-            <input type="text" placeholder="Restaurant Name" formControlName="restaurant_name">
-            <div class="fa fa-microphone" (click) = "voiceSearchName()">
-            
-            </div>
-          </div>
-          
-        </div>
-        <div class="col-md-2">
-          <div class="input-group">
-            <input type="text" placeholder="Location" formControlName="location">
-            <div class="fa fa-microphone" (click) = "voiceSearchLocation()">
-            
-            </div>
-          </div>
-          
-        </div>
-        <div class="col-md-2">
-          <div class="input-group">
-            <input type="text" placeholder="Category" formControlName="food_category">
-            <div class="fa fa-microphone" (click) = "voiceSearchCategory()">
-            
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
-        </div>
-      </div>
-    </form>
-  </div>
-  <hr>
 </div>
 
+<!-- placeholder for results from search query -->
 <div #result>
   <div *ngIf="results">
     <div class="container">
@@ -91,7 +55,7 @@
             </div>
             <div class="col-md-7">
                
-              <a [routerLink]="['/login']" >{{result.name | titlecase}}</a>
+              <a [routerLink]="['/displaymenu', result._id]" >{{result.name | titlecase}}</a>
               <li><strong> Food Category: </strong>{{result.food_category | titlecase}}</li>
               <li><strong> Address: </strong> <a
                 href="http://maps.google.com/?q={{result.street1.replace(' ', '+')}}">{{result.street1 | titlecase}}, {{result.street2 | titlecase}}</a>
@@ -115,9 +79,6 @@
   </div>
 </div>
 
+
 </body>
 </html>
-
-
-
-
