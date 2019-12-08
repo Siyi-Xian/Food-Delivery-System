@@ -494,9 +494,10 @@ router.get('/display_details/:restaurant_id', middleware.checkToken, function(re
         else{
             // console.log("Success")
             // console.log(result)
-            result['name'] = toTitleCase(result['name'])
-            result['location'] = toTitleCase(result['location'])
-            result['food_category'] = toTitleCase(result['food_category'])
+            // if(result['location'] !==)
+            // result['name'] = toTitleCase(result['name'])
+            // result['location'] = toTitleCase(result['location'])
+            // result['food_category'] = toTitleCase(result['food_category'])
             res.json(result)
             return;
         }
