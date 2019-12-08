@@ -3,6 +3,7 @@ import {FormBuilder} from '@angular/forms';
 import {CookieService} from 'ngx-cookie-service';
 import {LoginService} from '../login.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaurantmenu',
@@ -16,7 +17,8 @@ export class RestaurantmenuComponent implements OnInit {
   constructor(private loginService: LoginService,
     private formBuilder: FormBuilder,
     private cookie: CookieService,
-    private http: HttpClient) {
+    private http: HttpClient,
+    private router: Router,) {
       this.menuForm = this.formBuilder.group({
         name: "",
         cost: "",
@@ -55,7 +57,7 @@ export class RestaurantmenuComponent implements OnInit {
     formData.append('description', menu['description'])
     
     this.http.post<any>('/restaurant/menu', formData).subscribe(
-      (res)=> console.log(res),
+      (res)=> this.router.navigate(['/restaurantviewmenu']),
       (err) => console.log(err)
     )
     // var r = this.loginService.sendRequest(menu, "/restaurant/menu");
