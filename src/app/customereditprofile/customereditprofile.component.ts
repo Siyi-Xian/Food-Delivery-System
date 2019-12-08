@@ -29,7 +29,8 @@ export class CustomereditprofileComponent implements OnInit {
       city: '',
       state: '',
       zip_code: '',
-      password: ''
+      password: '',
+      preference: ''
     })
   }
   image
@@ -74,6 +75,7 @@ export class CustomereditprofileComponent implements OnInit {
         this.userProfileForm.get('city').setValue(this.customer_details['city'])
         this.userProfileForm.get('state').setValue(this.customer_details['state'])
         this.userProfileForm.get('zip_code').setValue(this.customer_details['zip_code'])
+        this.userProfileForm.get('preference').setValue(this.customer_details['preference'])
 
       }
     });
@@ -103,6 +105,7 @@ export class CustomereditprofileComponent implements OnInit {
     formData.append("zip_code", profile["zip_code"])
     formData.append("password", profile["password"])
     formData.append("jwttoken", jwttoken)
+    formData.append('preference', profile['preference'])
     formData.append("image", this.image, this.cookie.get('customer_id')+'.png')
     // console.log(formData.get("state"));
     

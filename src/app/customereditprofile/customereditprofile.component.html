@@ -37,6 +37,10 @@
           <input type="text" formControlName="name" required="required" placeholder="John Doe" id="Name" value="{{ customer_details.name }}">
         </div>
         <div class="row">
+          <strong> Food Preference: </strong>
+          <input type="text" formControlName="preference" required="required" placeholder="Italian" id="preference" value="{{ customer_details.preference }}">
+        </div>
+        <div class="row">
           <strong> Email Address: </strong>
           <input type="contact" formControlName="email" required="required" placeholder="food@foodoholics.com" 
                  id="email" value="{{customer_details.email}}">

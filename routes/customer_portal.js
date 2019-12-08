@@ -39,7 +39,8 @@ router.post('/details', [middleware.checkToken, upload_customer.single('image')]
             city: req.body.city,
             state: req.body.state,
             zip_code: req.body.zip_code,
-            password: pass
+            password: pass,
+            preference: req.body.preference.toLowerCase()
         }
     }
     db.collection('user_data').updateOne({_id: ObjectId(id)}, data_update, function(err, data){
@@ -166,6 +167,7 @@ router.get("/display_details/:id", middleware.checkToken, function(req, res){
             city: 1,
             state: 1,
             zip_code: 1,
+            preference: 1
         }
 
     }
