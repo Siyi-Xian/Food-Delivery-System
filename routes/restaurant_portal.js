@@ -62,7 +62,7 @@ router.get("/display_menu/:restaurant_id", middleware.checkToken, function(req, 
         }
     })
 })
-router.get('/restaurants_list', middleware.checkToken, function(req, res){
+router.get('/restaurants_list', function(req, res){
 
 
 
@@ -78,7 +78,11 @@ router.get('/restaurants_list', middleware.checkToken, function(req, res){
             res_image: 1,
             ratings: 1,
             num_ratings: 1,
-            description: 1
+            description: 1,
+            street1: 1,
+            street2: 1,
+            state: 1,
+            zip_code: 1
             
         }
     }
@@ -404,16 +408,20 @@ router.get('/display_details/:restaurant_id', middleware.checkToken, function(re
     // console.log(id)
     var d = {
         projection:{
-                name:1,
-                location: 1,
-                food_category: 1,
-                res_image: 1,
-                contact: 1,
-                working_hours: 1,
-                Rating: 1,
-                description: 1
-            }
+            name:1,
+            location: 1,
+            food_category: 1,
+            res_image: 1,
+            contact: 1,
+            working_hours: 1,
+            Rating: 1,
+            description: 1,
+            street1: 1,
+            street2: 1,
+            state: 1,
+            zip_code: 1
         }
+    }
     // db.collection('restaurant_data'). find({_id: ObjectId(id)}, d).toArray(function(err, result) {
     db.collection('restaurant_data'). findOne({_id: ObjectId(id)}, d, function(err, result) {
         if (err){

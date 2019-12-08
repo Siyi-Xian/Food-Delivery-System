@@ -36,8 +36,8 @@ export class CustomerdashboardComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.socialusers = JSON.parse(localStorage.getItem('socialusers'));  
-    console.log(this.socialusers.email);  
+    // this.socialusers = JSON.parse(localStorage.getItem('socialusers'));  
+    // console.log(this.socialusers.email);  
   }
 
   

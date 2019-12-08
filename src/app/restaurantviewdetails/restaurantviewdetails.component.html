@@ -35,9 +35,14 @@
         <li><strong> Contact: </strong> <a href="tel:{{restaurant_details.contact}}">{{restaurant_details.contact}}</a>
         </li>
         <li><strong> Food Category: </strong>{{restaurant_details.food_category}}</li>
-        <li><strong> Location: </strong> <a
+        <li><strong> Address: </strong> <a
+          href="http://maps.google.com/?q={{restaurant_details.street1.replace(' ', '+')}}">{{restaurant_details.street1}}, {{restaurant_details.street2}}</a>
+        </li>
+        <li><strong> City: </strong> <a
           href="http://maps.google.com/?q={{restaurant_details.location.replace(' ', '+')}}">{{restaurant_details.location}}</a>
         </li>
+        <li><strong> State: </strong>{{restaurant_details.state}}</li>
+        <li><strong> Zip Code: </strong>{{restaurant_details.zip_code}}</li>
         <li><strong> Working Hours: </strong>{{restaurant_details.working_hours}}</li>
         <li><strong> Description: </strong> {{restaurant_details.description}}</li>
       </ul>

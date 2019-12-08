@@ -30,7 +30,11 @@ export class RestaurantdetailsComponent implements OnInit {
       contact: '',
       working_hours: '',
       description:'',
-      password: ''
+      password: '',
+      state: '',
+      street1: '',
+      street2: '',
+      zip_code: ''
     });
 
   }
@@ -70,6 +74,10 @@ export class RestaurantdetailsComponent implements OnInit {
     formData.append("working_hours", details['working_hours'])
     formData.append("description", details['description'])
     formData.append("password", details['password'])
+    formData.append("street1", details['street1'])
+    formData.append("street2", details['street2'])
+    formData.append("state", details['state'])
+    formData.append("zip_code", details['zip_code'])
 
     this.http.post<any>('/restaurant/restaurant_details', formData).subscribe(
       (res)=> this.router.navigate(['/restaurantviewdetails']),
@@ -98,6 +106,10 @@ export class RestaurantdetailsComponent implements OnInit {
         this.detailsForm.get('working_hours').setValue(data['working_hours'])
         this.detailsForm.get('description').setValue(data['description'])
         this.detailsForm.get('contact').setValue(data['contact'])
+        this.detailsForm.get('street1').setValue(data['street1'])
+        this.detailsForm.get('street2').setValue(data['street2'])
+        this.detailsForm.get('zip_code').setValue(data['zip_code'])
+        this.detailsForm.get('state').setValue(data['state'])
         console.log(data)
       }
     });

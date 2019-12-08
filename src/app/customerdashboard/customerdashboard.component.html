@@ -94,9 +94,14 @@
                
               <a [routerLink]="['/displaymenu', result._id]" >{{result.name | titlecase}}</a>
               <li><strong> Food Category: </strong>{{result.food_category | titlecase}}</li>
-              <li><strong> Location: </strong> 
-                <a href="http://maps.google.com/?q={{result.location.replace(' ', '+')}}">{{result.location | titlecase}}</a>
+              <li><strong> Address: </strong> <a
+                href="http://maps.google.com/?q={{result.street1.replace(' ', '+')}}">{{result.street1}}, {{result.street2}}</a>
               </li>
+              <li><strong> City: </strong> <a
+                href="http://maps.google.com/?q={{result.location.replace(' ', '+')}}">{{result.location}}</a>
+              </li>
+              <li><strong> State: </strong>{{result.state}}</li>
+              <li><strong> Zip Code: </strong>{{result.zip_code}}</li>
               <li><strong> Working Hours: </strong>{{result.working_hours | titlecase}}</li>
               <li><strong> Contact: </strong>{{result.contact | titlecase}}</li>
               <li><strong> Ratings: </strong>{{result.ratings/result.num_ratings}}</li>

@@ -48,10 +48,36 @@
                  value="{{ restaurant_details.food_category }}" id="food_category">
         </li>
         <li>
-          <strong> Location: </strong>
+          <strong> Street 1: </strong>
+          <input type="text" required="required" formControlName="street1"
+                 value="{{ restaurant_details.street1 }}" id="street1">
+        </li>
+        <li>
+          <strong> Street 2: </strong>
+          <input type="text" required="required" formControlName="street2"
+                 value="{{ restaurant_details.street2 }}" id="street2">
+        </li>
+
+        
+
+        <li>
+          <strong> City: </strong>
           <input type="text" required="required" formControlName="location"
                  value="{{ restaurant_details.location }}" id="location">
         </li>
+
+        <li>
+          <strong> State: </strong>
+          <input type="text" required="required" formControlName="state"
+                 value="{{ restaurant_details.state }}" id="state">
+        </li>
+
+        <li>
+          <strong> Zip Code: </strong>
+          <input type="text" required="required" formControlName="zip_code"
+                 value="{{ restaurant_details.zip_code }}" id="zip_code">
+        </li>
+        
         <li>
           <strong> Working Hours: </strong>
           <input type="text" required="required" formControlName="working_hours"
