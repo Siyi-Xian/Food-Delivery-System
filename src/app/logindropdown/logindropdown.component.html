@@ -1,29 +1,29 @@
-<nav class="navbar navbar-light">
+<nav class="navbar navbar-light navbar-fixed-top navbar-expand-lg  bg-light static-top mb-5 shadow">
   <!-- Navbar content -->
   <!-- Just an image -->
   <a class="navbar-brand" routerLink="/public" style="padding: 0;">
-    <img src="../../assets/img/logo.png" height="50" alt="">
+    <img src="../../assets/img/logo.png" height="60" alt="">
   </a>
-  <ul class="nav navbar-nav navbar-right">
-    <li class="dropdown" style="width: 160px; text-align: center">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <span class="glyphicon glyphicon-log-in"></span>
+  <ul class="nav navbar-nav navbar-right" >
+    <li class="dropdown" style="width: 160px; height:60px; text-align: center; ">
+      <button  class=" btn btn-warning navbar-btn  dropdown-toggle" data-toggle="dropdown" style=" size: 90px;  margin-top: 10px;margin-bottom: 10px; color: #000;">
+        <span class="glyphicon glyphicon-log-in" style="color: black;"></span>
         Login
-        <b class="caret"></b>
-      </a>
-      <ul class="dropdown-menu">
+        <b class="caret" style="color: black;" ></b>
+      </button>
+      <ul class="dropdown-menu" >
         <li><a href="#" routerLink="/login">Customers</a></li>
         <li><a href="#" routerLink="/resturantlogin">Restaurant</a></li>
         <li><a href="#" routerLink="/deliverylogin">Delivery Person</a></li>
       </ul>
     </li>
-    <li class="dropdown" style="width: 160px; text-align: center">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <span class="glyphicon glyphicon-user"></span>
+    <li class="dropdown" style="width: 160px; text-align: center;" >
+      <button  class=" btn btn-warning navbar-btn  dropdown-toggle" data-toggle="dropdown" style="size: 90px;  margin-top: 10px;margin-bottom: 10px;color: black;">
+        <span class="glyphicon glyphicon-user" style="color: black;" ></span>
         Sign up
-        <b class="caret"></b>
-      </a>
-      <ul class="dropdown-menu">
+        <b class="caret" style="color: black;"></b>
+      </button>
+      <ul class="dropdown-menu" >
         <li><a href="#" routerLink="/registration">Customers</a></li>
         <li><a href="#" routerLink="/restaurantreg">Restaurant</a></li>
         <li><a href="#" routerLink="/deliveryreg">Delivery Person</a></li>
