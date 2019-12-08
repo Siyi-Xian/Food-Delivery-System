@@ -24,14 +24,17 @@
   </div>
   <hr>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-2">
       <strong> Order Number </strong>
     </div>
     <div class="col-md-2">
-      <strong> Price </strong>
+      <strong> Item </strong>
     </div>
     <div class="col-md-2">
       <strong> Name of Item </strong>
+    </div>
+    <div class="col-md-2">
+      <strong> Price </strong>
     </div>
     <div class="col-md-2">
       <strong> Status </strong>
@@ -45,14 +48,17 @@
     <ul>
       <div *ngFor="let order of orders; index as i">
         <div class="row" style="margin-top: 5px">
-          <div class="col-md-4">
+          <div class="col-md-2">
             <a href="#" routerLink="/restaurantvieworder"> {{ i+1 }} </a>
           </div>
           <div class="col-md-2">
-            $ {{order.price}}
+              <img [src]="'/menu_images/' + order.restaurant_id+order.name_of_item+'.png'" alt="" style="width: 150px; height: 100px">
           </div>
           <div class="col-md-2">
             {{ order.name_of_item }}
+          </div>
+          <div class="col-md-2">
+            $ {{order.price}}
           </div>
           <div class="col-md-2">
             Fulfilled
