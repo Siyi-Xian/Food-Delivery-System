@@ -9,17 +9,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="login.component.css"></script>
+  <script src="deliverylogin.component.css"></script>
   <script src="../../styles.css"></script>
 </head>
 <body>
 <app-logindropdown></app-logindropdown>
 <div class="container" style="width: 400px; margin-top: 5%; margin-bottom: 5%">
-  <div class="jumbotron" style="padding: 0; background-color: #FFF8E1">
-    <div class="container" style="text-align: center; padding: 20px; border-bottom: #FFE082 2px solid">
+  <div class="jumbotron" style="padding: 0;background: linear-gradient(to right,#ffea61,#ffffb7)
+  ;">
+    <div class="container" style="text-align: center; padding: 20px; border-bottom:rgb(252, 189, 0)2px solid">
       <h2>Delivery Login</h2>
     </div>
-    <div class="container" style="padding: 30px; font-size: 15px">
+    <div class="container" style="padding: 30px; font-size: 15px;">
       <form method="post" [formGroup]="deliveryLoginForm" (ngSubmit) = "onSubmit(deliveryLoginForm.value)">
         <div class="container" style="padding-bottom: 20px">
           {{ forgot_message }}
@@ -37,7 +38,7 @@
           <button type="submit" value = "submit" class="btn btn-primary btn-lg btn-block">Login</button>
         </div>
         <!-- Place holder for recaptcha -->
-        <div #recaptcha style="padding: 10px -10px; margin-top: 10px"></div>
+        <div #recaptcha style="padding: 15px -15px; margin-top: 10px;"></div>
 
         <div class="container" style="margin-top: 10px; padding: 10px 27px 5px 27px">
           <button id="google-button" class="btn btn-block btn-social btn-google" style="margin-bottom: 15px" (click)="socialSignIn('google')">
@@ -56,9 +57,9 @@
     <div *ngIf="showFile">
       <form method="post" [formGroup]="deliveryVerifyForm" (ngSubmit) = "onVerify(deliveryVerifyForm.value)">
         <div>Please enter the 6-digit code that was sent to your email</div>
-        <input type="text" required="required" placeholder="6-digit code" formControlName="otp">
+        <input type="text" required="required" placeholder="6-digit code" formControlName="otp" > 
         <span class="input-group-btn">
-          <button type="submit" class="btn btn-primary" (ngSubmit)="onVerify">Verify</button>
+          <button type="submit" style="text-align: center"      class="btn btn-primary"  (ngSubmit)="onVerify" style="text-align: right">Verify</button>
         </span>
       </form>
       <div class="form-text error" *ngIf="deliveryVerifyForm">
@@ -68,9 +69,9 @@
     </div>
 
 
-    <div class="container" style="border-top: #FFE082 2px solid; padding: 30px 40px 40px 40px; font-size: 15px">
+    <div class="container" style="border-top:rgb(252, 189, 0) 2px solid; padding: 30px 40px 40px 40px; font-size: 15px">
       <div class="row" style="font-style: italic; text-align: center"><b>Want to be a delivery person?</b></div>
-      <div class="row">We Hire You! <a routerLink="/deliveryreg">Join today</a>, registered to be a delivery person of Food-O-Holic today!</div>
+      <div class="row">We Hire You! <a routerLink="/deliveryreg">Join today</a>, Register to be a delivery person of Food-O-Holic today!</div>
     </div>
   </div>
 </div>
