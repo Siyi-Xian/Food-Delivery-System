@@ -50,7 +50,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n       \r\n\r\n<head>\r\n\r\n        <title>\r\n                Chat Board\r\n         </title>\r\n\r\n    <script src=\"https://js.pusher.com/5.0/pusher.min.js\"></script>\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"login.component.css\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n    <script>\r\n\r\n    // Enable pusher logging - don't include this in production\r\n    Pusher.logToConsole = true;\r\n\r\n    var pusher = new Pusher('49096276b737a48a5ba1', {\r\n      cluster: 'us2',\r\n      forceTLS: true\r\n    });\r\n\r\n    var channel = pusher.subscribe('my-channel');\r\n    channel.bind('my-event', function(data) {\r\n      alert(JSON.stringify(data));\r\n    });\r\n  </script>\r\n\r\n</head>\r\n    <body>\r\n\r\n        <label for=\"userName\">Username</label>\r\n        <input type=\"text\" id=\"userName\" [(ngModel)]=\"userName\">\r\n        \r\n        <label for=\"message\">Message</label>\r\n        <input type=\"text\" id=\"message\" [(ngModel)]=\"messageText\">\r\n        \r\n        <button (click)=\"sendMessage(userName, messageText)\">Send</button>\r\n\r\n\r\n    \r\n    <div *ngFor=\"let message of messages\">\r\n        <b>{{ message.user }}</b>: {{ message.text }}\r\n    </div>\r\n      \r\n   </body> \r\n\r\n   </html>\r\n\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\n\n<head>\n    <title>\n      Delivery Profile\n    </title>\n    <!-- Bootstrap CDN scripts -->\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\n    <script src=\"deliveryeditprofile.component.css\"></script>\n    <script src=\"../../styles.css\"></script>\n</head>\n<body>\n<app-restaurantdropdown></app-restaurantdropdown>\n\n\n<div class=\"App\">\n    <aside class=\"sidebar\">\n      <section  *ngIf=\"!currentUser\" class=\"join-chat\">\n        <h2>Join Chat</h2>\n        <form (ngSubmit)=\"addUser()\">\n          <input placeholder=\"Enter your username\" type=\"text\" name=\"username\" [(ngModel)]=\"username\" />\n        </form>\n      </section>\n      <section class=\"online-members\">\n        <h2>Room Users</h2>\n        <ul class=\"user-list\">\n          <li *ngFor=\"let user of users\">\n            <span class=\"presence {{ user.presence.state }}\"></span>\n            <span>{{ user.name }}</span>\n          </li>\n        </ul>\n      </section>\n    </aside>\n    <main class=\"chat-window\">\n      <header class=\"chat-header\">\n        <h1>Chat</h1>\n        <span class=\"participants\"></span>\n      </header>\n      <section class=\"chat-session\">\n        <ul class=\"message-list\">\n          <li class=\"user-message\" *ngFor=\"let message of messages\">\n            <span class=\"user-id\">{{ message.senderId }}</span>\n            <span>{{ message.text }}</span>\n          </li>\n        </ul>\n      </section>\n      <footer class=\"chat-footer\">\n        <form (ngSubmit)='sendMessage()'>\n          <input placeholder=\"Type a message. Hit Enter to send\" type=\"text\" name=\"message\" [(ngModel)]=\"message\">\n        </form>\n      </footer>\n    </main>\n</div>\n</body>\n</html>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/customer-current-orders/customer-current-orders.component.html": 
@@ -130,6 +130,17 @@
             /* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n  <title>\r\n    customer dashboard\r\n  </title>\r\n  <!-- Bootstrap CDN scripts -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n  <script src=\"customerprofile.component.csss\"></script>\r\n  <script src=\"../../styles.css\"></script>\r\n</head>\r\n<body>\r\n<app-customerdropdown></app-customerdropdown>\r\n\r\n<div class=\"container\" style=\"margin-top: 50px\">\r\n  <div class=\"container\">\r\n    <h3>Profile</h3>\r\n  </div>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4 col-md-offset-1\">\r\n      <img class=\"img-circle\" [src]=\"customer_details.customer_image\" alt=\"\" style=\"width: 200px; height: 200px\">\r\n    </div>\r\n    <div class=\"info col-md-6 col-md-offset-1\">\r\n      <div class=\"row\">\r\n        <strong> Full Name: </strong>{{customer_details.name}}\r\n      </div>\r\n      <div class=\"row\">\r\n        <strong> Food Preference: </strong>{{customer_details.preference | titlecase}}\r\n      </div>\r\n      <div class=\"row\">\r\n        <strong> Email Address: </strong>{{customer_details.email}}\r\n      </div>\r\n      <div class=\"row\">\r\n        <strong> Phone Number: </strong>{{customer_details.contact}}\r\n      </div>\r\n      <div class=\"row\">\r\n        <strong> Address Street 1: </strong>{{customer_details.street1}}\r\n      </div>\r\n      <div class=\"row\">\r\n          <strong> Address Street 2: </strong>{{customer_details.street2}}\r\n      </div>\r\n      <div class=\"row\">\r\n          <strong> City: </strong>{{customer_details.city}}\r\n      </div>\r\n      <div class=\"row\">\r\n          <strong> State: </strong>{{customer_details.state}}\r\n      </div>\r\n      <div class=\"row\">\r\n          <strong> Zip Code: </strong>{{customer_details.zip_code}}\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <a class=\"edit-link pull-right\" href=\"#\" routerLink=\"/customereditprofile\">Edit</a>\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>\r\n</html>\r\n");
             /***/ 
         }),
+        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliverychatfeature/deliverychatfeature.component.html": 
+        /*!**************************************************************************************************************!*\
+          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/deliverychatfeature/deliverychatfeature.component.html ***!
+          \**************************************************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("<html>\n\n<head>\n    <title>\n      Delivery Profile\n    </title>\n    <!-- Bootstrap CDN scripts -->\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css\">\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\n    <script src=\"deliveryeditprofile.component.css\"></script>\n    <script src=\"../../styles.css\"></script>\n</head>\n<body>\n<app-deliverydropdown></app-deliverydropdown>\n\n\n<div class=\"App\">\n    <aside class=\"sidebar\">\n      <section  *ngIf=\"!currentUser\" class=\"join-chat\">\n        <h2>Join Chat</h2>\n        <form (ngSubmit)=\"addUser()\">\n          <input placeholder=\"Enter your username\" type=\"text\" name=\"username\" [(ngModel)]=\"username\" />\n        </form>\n      </section>\n      <section class=\"online-members\">\n        <h2>Room Users</h2>\n        <ul class=\"user-list\">\n          <li *ngFor=\"let user of users\">\n            <span class=\"presence {{ user.presence.state }}\"></span>\n            <span>{{ user.name }}</span>\n          </li>\n        </ul>\n      </section>\n    </aside>\n    <main class=\"chat-window\">\n      <header class=\"chat-header\">\n        <h1>Chat</h1>\n        <span class=\"participants\"></span>\n      </header>\n      <section class=\"chat-session\">\n        <ul class=\"message-list\">\n          <li class=\"user-message\" *ngFor=\"let message of messages\">\n            <span class=\"user-id\">{{ message.senderId }}</span>\n            <span>{{ message.text }}</span>\n          </li>\n        </ul>\n      </section>\n      <footer class=\"chat-footer\">\n        <form (ngSubmit)='sendMessage()'>\n          <input placeholder=\"Type a message. Hit Enter to send\" type=\"text\" name=\"message\" [(ngModel)]=\"message\">\n        </form>\n      </footer>\n    </main>\n</div>\n</body>\n</html>\n");
+            /***/ 
+        }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliverycurrentorders/deliverycurrentorders.component.html": 
         /*!******************************************************************************************************************!*\
           !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/deliverycurrentorders/deliverycurrentorders.component.html ***!
@@ -149,7 +160,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"delivery-dropdown navbar navbar-light\" style=\"padding-right: 30px\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"width: 80%\">\r\n    <li>\r\n      <a href=\"#\" routerLink=\"/deliverycurrentorders\">\r\n        <span class=\"glyphicon glyphicon-glass\"></span>\r\n        Current Order\r\n      </a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#\" routerLink=\"/deliveryorderhistory\">\r\n        <span class=\"glyphicon glyphicon-glass\"></span>\r\n        Order History\r\n      </a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#\" routerLink=\"/deliveryprofile\">\r\n        <span class=\"glyphicon glyphicon-user\"></span>\r\n        Profile\r\n      </a>\r\n    </li>\r\n    <li style=\"width: 10%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/deliverylogin\">\r\n        <span class=\"glyphicon glyphicon-log-out\"></span>\r\n        Logout\r\n      </a>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"delivery-dropdown navbar navbar-light\" style=\"padding-right: 30px\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"width: 80%\">\r\n    <li>\r\n      <a href=\"#\" routerLink=\"/deliverycurrentorders\">\r\n        <span class=\"glyphicon glyphicon-glass\"></span>\r\n        Current Order\r\n      </a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#\" routerLink=\"/deliveryorderhistory\">\r\n        <span class=\"glyphicon glyphicon-glass\"></span>\r\n        Order History\r\n      </a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#\" routerLink=\"/deliverychatfeature\">\r\n        <span class=\"glyphicon glyphicon-glass\"></span>\r\n        Chat\r\n      </a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#\" routerLink=\"/deliveryprofile\">\r\n        <span class=\"glyphicon glyphicon-user\"></span>\r\n        Profile\r\n      </a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#\" routerLink=\"/deliverylogin\">\r\n        <span class=\"glyphicon glyphicon-log-out\"></span>\r\n        Logout\r\n      </a>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliveryeditprofile/deliveryeditprofile.component.html": 
@@ -336,7 +347,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-light\" style=\"padding-right: 30px\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"width: 80%\">\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-glass\"></span>\r\n        Orders\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\" style=\"width: 100%\">\r\n        <li><a href=\"#\" routerLink=\"/restaurantcurrentorders\">Current Orders</a></li>\r\n        <li><a href=\"#\" routerLink=\"/orderhistory\">Order History</a></li>\r\n      </ul>\r\n    </li>\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-menu-hamburger\"></span>\r\n        Menu\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\" style=\"width: 100%\">\r\n        <li><a href=\"#\" routerLink=\"/restaurantviewmenu\">View Menu</a></li>\r\n        <li><a href=\"#\" routerLink=\"/restaurantmenu\">Add items to menu</a></li>\r\n      </ul>\r\n    </li>\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/restaurantviewdetails\">\r\n        <span class=\"glyphicon glyphicon-user\"></span>\r\n        Restaurant Details\r\n      </a>\r\n    </li>\r\n    <!-- <li style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/restaurantstats\">\r\n        <span class=\"glyphicon glyphicon-object-align-bottom\"></span>\r\n        Statistics\r\n      </a>\r\n    </li> -->\r\n    <li style=\"width: 10%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/resturantlogin\">\r\n        <span class=\"glyphicon glyphicon-log-out\"></span>\r\n        Logout\r\n      </a>\r\n    </li>\r\n\r\n  </ul>\r\n</nav>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-light\" style=\"padding-right: 30px\">\r\n  <!-- Navbar content -->\r\n  <!-- Just an image -->\r\n  <a class=\"navbar-brand\" routerLink=\"/public\" style=\"padding: 0;\">\r\n    <img src=\"../../assets/img/logo.png\" height=\"50\" alt=\"\">\r\n  </a>\r\n  <ul class=\"nav navbar-nav navbar-right\" style=\"width: 80%\">\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-glass\"></span>\r\n        Orders\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\" style=\"width: 100%\">\r\n        <li><a href=\"#\" routerLink=\"/restaurantcurrentorders\">Current Orders</a></li>\r\n        <li><a href=\"#\" routerLink=\"/orderhistory\">Order History</a></li>\r\n      </ul>\r\n    </li>\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n        <span class=\"glyphicon glyphicon-menu-hamburger\"></span>\r\n        Menu\r\n        <b class=\"caret\"></b>\r\n      </a>\r\n      <ul class=\"dropdown-menu\" style=\"width: 100%\">\r\n        <li><a href=\"#\" routerLink=\"/restaurantviewmenu\">View Menu</a></li>\r\n        <li><a href=\"#\" routerLink=\"/restaurantmenu\">Add items to menu</a></li>\r\n      </ul>\r\n    </li>\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/restaurantviewdetails\">\r\n        <span class=\"glyphicon glyphicon-user\"></span>\r\n        Restaurant Details\r\n      </a>\r\n    </li>\r\n    <li class=\"dropdown\" style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/chatfeature\">\r\n        <span class=\"glyphicon glyphicon-user\"></span>\r\n        Chat\r\n      </a>\r\n    </li>\r\n    <!-- <li style=\"width: 22.5%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/restaurantstats\">\r\n        <span class=\"glyphicon glyphicon-object-align-bottom\"></span>\r\n        Statistics\r\n      </a>\r\n    </li> -->\r\n    <li style=\"width: 10%; text-align: center\">\r\n      <a href=\"#\" routerLink=\"/resturantlogin\">\r\n        <span class=\"glyphicon glyphicon-log-out\"></span>\r\n        Logout\r\n      </a>\r\n    </li>\r\n\r\n  </ul>\r\n</nav>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/restaurantmenu/restaurantmenu.component.html": 
@@ -898,6 +909,7 @@
             /* harmony import */ var _customer_current_orders_customer_current_orders_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./customer-current-orders/customer-current-orders.component */ "./src/app/customer-current-orders/customer-current-orders.component.ts");
             /* harmony import */ var _customer_order_history_customer_order_history_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./customer-order-history/customer-order-history.component */ "./src/app/customer-order-history/customer-order-history.component.ts");
             /* harmony import */ var _customer_recommendations_customer_recommendations_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./customer-recommendations/customer-recommendations.component */ "./src/app/customer-recommendations/customer-recommendations.component.ts");
+            /* harmony import */ var _deliverychatfeature_deliverychatfeature_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./deliverychatfeature/deliverychatfeature.component */ "./src/app/deliverychatfeature/deliverychatfeature.component.ts");
             function socialConfigs() {
                 var config = new angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthServiceConfig"]([
                     {
@@ -956,7 +968,8 @@
                         _deliveryeditprofile_deliveryeditprofile_component__WEBPACK_IMPORTED_MODULE_44__["DeliveryeditprofileComponent"],
                         _customer_current_orders_customer_current_orders_component__WEBPACK_IMPORTED_MODULE_46__["CustomerCurrentOrdersComponent"],
                         _customer_order_history_customer_order_history_component__WEBPACK_IMPORTED_MODULE_47__["CustomerOrderHistoryComponent"],
-                        _customer_recommendations_customer_recommendations_component__WEBPACK_IMPORTED_MODULE_48__["CustomerRecommendationsComponent"]
+                        _customer_recommendations_customer_recommendations_component__WEBPACK_IMPORTED_MODULE_48__["CustomerRecommendationsComponent"],
+                        _deliverychatfeature_deliverychatfeature_component__WEBPACK_IMPORTED_MODULE_49__["DeliverychatfeatureComponent"]
                     ],
                     imports: [
                         _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1081,6 +1094,10 @@
                                 component: _chatfeature_chatfeature_component__WEBPACK_IMPORTED_MODULE_37__["ChatfeatureComponent"]
                             },
                             {
+                                path: 'deliverychatfeature',
+                                component: _deliverychatfeature_deliverychatfeature_component__WEBPACK_IMPORTED_MODULE_49__["DeliverychatfeatureComponent"]
+                            },
+                            {
                                 path: 'displaymenu/:restaurant_id',
                                 component: _display_menu_display_menu_component__WEBPACK_IMPORTED_MODULE_42__["DisplayMenuComponent"]
                             },
@@ -1115,7 +1132,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NoYXRmZWF0dXJlL2NoYXRmZWF0dXJlLmNvbXBvbmVudC5jc3MifQ== */");
+            /* harmony default export */ __webpack_exports__["default"] = ("html {\r\n    box-sizing: border-box;\r\n  }\r\n\r\n  *, *::before, *::after {\r\n    box-sizing: inherit;\r\n    margin: 0;\r\n    padding: 0;\r\n  }\r\n\r\n  body {\r\n    font-family: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif;\r\n  }\r\n\r\n  .App {\r\n    width: 100%;\r\n    max-width: 960px;\r\n    height: 500px;\r\n    margin: 0 auto;\r\n    display: flex;\r\n    border: 1px solid #ccc;\r\n    margin-top: 30px;\r\n  }\r\n\r\n  ul {\r\n    list-style: none;\r\n  }\r\n\r\n  .sidebar {\r\n    flex-basis: 30%;\r\n    background-color: #300d4f;\r\n    color: #fff;\r\n    padding: 5px 10px;\r\n  }\r\n\r\n  .sidebar section {\r\n    margin-bottom: 20px;\r\n  }\r\n\r\n  .sidebar h2 {\r\n    margin-bottom: 10px;\r\n  }\r\n\r\n  .user-list li {\r\n    margin-bottom: 10px;\r\n    font-size: 16px;\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  .presence {\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n    background-color: #fff;\r\n    margin-right: 10px;\r\n    border-radius: 50%;\r\n  }\r\n\r\n  .presence.online {\r\n    background-color: green;\r\n  }\r\n\r\n  .chat-window {\r\n    flex-grow: 1;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n  }\r\n\r\n  .chat-window > * {\r\n    padding: 10px 20px;\r\n  }\r\n\r\n  .chat-header, .chat-footer {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  .chat-header {\r\n    border-bottom: 1px solid #ccc;\r\n  }\r\n\r\n  .chat-session {\r\n    flex-grow: 1;\r\n    display: flex;\r\n    overflow: hidden;\r\n  }\r\n\r\n  .message-list {\r\n    flex-grow: 1;\r\n    overflow-y: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: flex-end;\r\n  }\r\n\r\n  .user-message {\r\n    margin-top: 10px;\r\n  }\r\n\r\n  .user-message span {\r\n    display: block;\r\n  }\r\n\r\n  .user-id {\r\n    font-weight: bold;\r\n    margin-bottom: 3px;\r\n  }\r\n\r\n  .chat-footer {\r\n    border-top: 1px solid #ccc;\r\n  }\r\n\r\n  .chat-footer form, .chat-footer input {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhdGZlYXR1cmUvY2hhdGZlYXR1cmUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHNCQUFzQjtFQUN4Qjs7RUFFQTtJQUNFLG1CQUFtQjtJQUNuQixTQUFTO0lBQ1QsVUFBVTtFQUNaOztFQUVBO0lBQ0Usd0hBQXdIO0VBQzFIOztFQUVBO0lBQ0UsV0FBVztJQUNYLGdCQUFnQjtJQUNoQixhQUFhO0lBQ2IsY0FBYztJQUNkLGFBQWE7SUFDYixzQkFBc0I7SUFDdEIsZ0JBQWdCO0VBQ2xCOztFQUVBO0lBQ0UsZ0JBQWdCO0VBQ2xCOztFQUVBO0lBQ0UsZUFBZTtJQUNmLHlCQUF5QjtJQUN6QixXQUFXO0lBQ1gsaUJBQWlCO0VBQ25COztFQUVBO0lBQ0UsbUJBQW1CO0VBQ3JCOztFQUVBO0lBQ0UsbUJBQW1CO0VBQ3JCOztFQUVBO0lBQ0UsbUJBQW1CO0lBQ25CLGVBQWU7SUFDZixhQUFhO0lBQ2IsbUJBQW1CO0VBQ3JCOztFQUVBO0lBQ0UscUJBQXFCO0lBQ3JCLFdBQVc7SUFDWCxZQUFZO0lBQ1osc0JBQXNCO0lBQ3RCLGtCQUFrQjtJQUNsQixrQkFBa0I7RUFDcEI7O0VBRUE7SUFDRSx1QkFBdUI7RUFDekI7O0VBRUE7SUFDRSxZQUFZO0lBQ1osYUFBYTtJQUNiLHNCQUFzQjtJQUN0Qiw4QkFBOEI7RUFDaEM7O0VBRUE7SUFDRSxrQkFBa0I7RUFDcEI7O0VBRUE7SUFDRSxhQUFhO0lBQ2IsbUJBQW1CO0VBQ3JCOztFQUVBO0lBQ0UsNkJBQTZCO0VBQy9COztFQUVBO0lBQ0UsWUFBWTtJQUNaLGFBQWE7SUFDYixnQkFBZ0I7RUFDbEI7O0VBRUE7SUFDRSxZQUFZO0lBQ1osZ0JBQWdCO0lBQ2hCLGFBQWE7SUFDYixzQkFBc0I7SUFDdEIseUJBQXlCO0VBQzNCOztFQUVBO0lBQ0UsZ0JBQWdCO0VBQ2xCOztFQUVBO0lBQ0UsY0FBYztFQUNoQjs7RUFFQTtJQUNFLGlCQUFpQjtJQUNqQixrQkFBa0I7RUFDcEI7O0VBRUE7SUFDRSwwQkFBMEI7RUFDNUI7O0VBRUE7SUFDRSxXQUFXO0VBQ2IiLCJmaWxlIjoic3JjL2FwcC9jaGF0ZmVhdHVyZS9jaGF0ZmVhdHVyZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaHRtbCB7XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gIH1cclxuXHJcbiAgKiwgKjo6YmVmb3JlLCAqOjphZnRlciB7XHJcbiAgICBib3gtc2l6aW5nOiBpbmhlcml0O1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgcGFkZGluZzogMDtcclxuICB9XHJcblxyXG4gIGJvZHkge1xyXG4gICAgZm9udC1mYW1pbHk6IC1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LFwiU2Vnb2UgVUlcIixSb2JvdG8sT3h5Z2VuLVNhbnMsVWJ1bnR1LENhbnRhcmVsbCxcIkhlbHZldGljYSBOZXVlXCIsc2Fucy1zZXJpZjtcclxuICB9XHJcblxyXG4gIC5BcHAge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXgtd2lkdGg6IDk2MHB4O1xyXG4gICAgaGVpZ2h0OiA1MDBweDtcclxuICAgIG1hcmdpbjogMCBhdXRvO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XHJcbiAgICBtYXJnaW4tdG9wOiAzMHB4O1xyXG4gIH1cclxuXHJcbiAgdWwge1xyXG4gICAgbGlzdC1zdHlsZTogbm9uZTtcclxuICB9XHJcblxyXG4gIC5zaWRlYmFyIHtcclxuICAgIGZsZXgtYmFzaXM6IDMwJTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMzMDBkNGY7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIHBhZGRpbmc6IDVweCAxMHB4O1xyXG4gIH1cclxuXHJcbiAgLnNpZGViYXIgc2VjdGlvbiB7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG4gIH1cclxuXHJcbiAgLnNpZGViYXIgaDIge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxuICB9XHJcblxyXG4gIC51c2VyLWxpc3QgbGkge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxuICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIH1cclxuXHJcbiAgLnByZXNlbmNlIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHdpZHRoOiAyMHB4O1xyXG4gICAgaGVpZ2h0OiAyMHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuICAgIG1hcmdpbi1yaWdodDogMTBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICB9XHJcblxyXG4gIC5wcmVzZW5jZS5vbmxpbmUge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JlZW47XHJcbiAgfVxyXG5cclxuICAuY2hhdC13aW5kb3cge1xyXG4gICAgZmxleC1ncm93OiAxO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgfVxyXG5cclxuICAuY2hhdC13aW5kb3cgPiAqIHtcclxuICAgIHBhZGRpbmc6IDEwcHggMjBweDtcclxuICB9XHJcblxyXG4gIC5jaGF0LWhlYWRlciwgLmNoYXQtZm9vdGVyIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIH1cclxuXHJcbiAgLmNoYXQtaGVhZGVyIHtcclxuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjY2NjO1xyXG4gIH1cclxuXHJcbiAgLmNoYXQtc2Vzc2lvbiB7XHJcbiAgICBmbGV4LWdyb3c6IDE7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICB9XHJcblxyXG4gIC5tZXNzYWdlLWxpc3Qge1xyXG4gICAgZmxleC1ncm93OiAxO1xyXG4gICAgb3ZlcmZsb3cteTogYXV0bztcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBmbGV4LWVuZDtcclxuICB9XHJcblxyXG4gIC51c2VyLW1lc3NhZ2Uge1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICB9XHJcblxyXG4gIC51c2VyLW1lc3NhZ2Ugc3BhbiB7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICB9XHJcblxyXG4gIC51c2VyLWlkIHtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogM3B4O1xyXG4gIH1cclxuXHJcbiAgLmNoYXQtZm9vdGVyIHtcclxuICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCAjY2NjO1xyXG4gIH1cclxuXHJcbiAgLmNoYXQtZm9vdGVyIGZvcm0sIC5jaGF0LWZvb3RlciBpbnB1dCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9Il19 */");
             /***/ 
         }),
         /***/ "./src/app/chatfeature/chatfeature.component.ts": 
@@ -1129,36 +1146,94 @@
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChatfeatureComponent", function () { return ChatfeatureComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-            /* harmony import */ var _pusher_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pusher.service */ "./src/app/pusher.service.ts");
-            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            /* harmony import */ var _pusher_chatkit_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pusher/chatkit-client */ "./node_modules/@pusher/chatkit-client/dist/web/chatkit.js");
+            /* harmony import */ var _pusher_chatkit_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/ __webpack_require__.n(_pusher_chatkit_client__WEBPACK_IMPORTED_MODULE_2__);
+            /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+            /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/ __webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+            /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
             var ChatfeatureComponent = /** @class */ (function () {
-                function ChatfeatureComponent(pusherService, http, router) {
-                    this.pusherService = pusherService;
-                    this.http = http;
-                    this.router = router;
+                function ChatfeatureComponent(cookie) {
+                    this.cookie = cookie;
+                    this.title = 'Angular Chatroom';
                     this.messages = [];
+                    this.users = [];
+                    this._username = '';
+                    this._message = '';
                 }
-                ChatfeatureComponent.prototype.sendMessage = function (user, text) {
-                    var message = {
-                        user: user,
-                        text: text,
-                    };
-                    this.pusherService.messagesChannel.trigger('client-new-message', message);
-                    this.messages.push(message);
+                Object.defineProperty(ChatfeatureComponent.prototype, "username", {
+                    get: function () {
+                        return this._username;
+                    },
+                    set: function (value) {
+                        this._username = value;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(ChatfeatureComponent.prototype, "message", {
+                    get: function () {
+                        return this._message;
+                    },
+                    set: function (value) {
+                        this._message = value;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                ChatfeatureComponent.prototype.sendMessage = function () {
+                    var _a = this, message = _a.message, currentUser = _a.currentUser;
+                    currentUser.sendMessage({
+                        text: message,
+                        roomId: '6a16e7b9-87da-4c82-a6b8-48d9115814b8',
+                    });
+                    this.message = '';
+                };
+                ChatfeatureComponent.prototype.addUser = function () {
+                    var _this = this;
+                    var username = this.cookie.get("name");
+                    console.log({ username: username });
+                    axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('http://localhost:8080/chat/users', { username: username })
+                        .then(function () {
+                        var tokenProvider = new _pusher_chatkit_client__WEBPACK_IMPORTED_MODULE_2___default.a.TokenProvider({
+                            url: 'http://localhost:8080/chat/authenticate'
+                        });
+                        var chatManager = new _pusher_chatkit_client__WEBPACK_IMPORTED_MODULE_2___default.a.ChatManager({
+                            instanceLocator: 'v1:us1:dcb29a79-09aa-41bb-a0ec-fdb33220fb0a',
+                            userId: username,
+                            tokenProvider: tokenProvider
+                        });
+                        return chatManager
+                            .connect()
+                            .then(function (currentUser) {
+                            currentUser.subscribeToRoom({
+                                roomId: '6a16e7b9-87da-4c82-a6b8-48d9115814b8',
+                                messageLimit: 100,
+                                hooks: {
+                                    onMessage: function (message) {
+                                        _this.messages.push(message);
+                                    },
+                                    onPresenceChanged: function (state, user) {
+                                        _this.users = currentUser.users.sort(function (a, b) {
+                                            if (a.presence.state === 'online')
+                                                return -1;
+                                            return 1;
+                                        });
+                                    },
+                                },
+                            });
+                            _this.currentUser = currentUser;
+                            _this.users = currentUser.users;
+                        });
+                    })
+                        .catch(function (error) { return console.error(error); });
                 };
                 ChatfeatureComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    this.pusherService.messagesChannel.bind('client-new-message', function (message) {
-                        _this.messages.push(message);
-                    });
+                    this.addUser();
                 };
                 return ChatfeatureComponent;
             }());
             ChatfeatureComponent.ctorParameters = function () { return [
-                { type: _pusher_service__WEBPACK_IMPORTED_MODULE_2__["PusherService"] },
-                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
-                { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"] }
             ]; };
             ChatfeatureComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1780,6 +1855,126 @@
             ], CustomerprofileComponent);
             /***/ 
         }),
+        /***/ "./src/app/deliverychatfeature/deliverychatfeature.component.css": 
+        /*!***********************************************************************!*\
+          !*** ./src/app/deliverychatfeature/deliverychatfeature.component.css ***!
+          \***********************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("html {\r\n    box-sizing: border-box;\r\n  }\r\n\r\n  *, *::before, *::after {\r\n    box-sizing: inherit;\r\n    margin: 0;\r\n    padding: 0;\r\n  }\r\n\r\n  body {\r\n    font-family: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif;\r\n  }\r\n\r\n  .App {\r\n    width: 100%;\r\n    max-width: 960px;\r\n    height: 500px;\r\n    margin: 0 auto;\r\n    display: flex;\r\n    border: 1px solid #ccc;\r\n    margin-top: 30px;\r\n  }\r\n\r\n  ul {\r\n    list-style: none;\r\n  }\r\n\r\n  .sidebar {\r\n    flex-basis: 30%;\r\n    background-color: #300d4f;\r\n    color: #fff;\r\n    padding: 5px 10px;\r\n  }\r\n\r\n  .sidebar section {\r\n    margin-bottom: 20px;\r\n  }\r\n\r\n  .sidebar h2 {\r\n    margin-bottom: 10px;\r\n  }\r\n\r\n  .user-list li {\r\n    margin-bottom: 10px;\r\n    font-size: 16px;\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  .presence {\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n    background-color: #fff;\r\n    margin-right: 10px;\r\n    border-radius: 50%;\r\n  }\r\n\r\n  .presence.online {\r\n    background-color: green;\r\n  }\r\n\r\n  .chat-window {\r\n    flex-grow: 1;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n  }\r\n\r\n  .chat-window > * {\r\n    padding: 10px 20px;\r\n  }\r\n\r\n  .chat-header, .chat-footer {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  .chat-header {\r\n    border-bottom: 1px solid #ccc;\r\n  }\r\n\r\n  .chat-session {\r\n    flex-grow: 1;\r\n    display: flex;\r\n    overflow: hidden;\r\n  }\r\n\r\n  .message-list {\r\n    flex-grow: 1;\r\n    overflow-y: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: flex-end;\r\n  }\r\n\r\n  .user-message {\r\n    margin-top: 10px;\r\n  }\r\n\r\n  .user-message span {\r\n    display: block;\r\n  }\r\n\r\n  .user-id {\r\n    font-weight: bold;\r\n    margin-bottom: 3px;\r\n  }\r\n\r\n  .chat-footer {\r\n    border-top: 1px solid #ccc;\r\n  }\r\n\r\n  .chat-footer form, .chat-footer input {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGVsaXZlcnljaGF0ZmVhdHVyZS9kZWxpdmVyeWNoYXRmZWF0dXJlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxzQkFBc0I7RUFDeEI7O0VBRUE7SUFDRSxtQkFBbUI7SUFDbkIsU0FBUztJQUNULFVBQVU7RUFDWjs7RUFFQTtJQUNFLHdIQUF3SDtFQUMxSDs7RUFFQTtJQUNFLFdBQVc7SUFDWCxnQkFBZ0I7SUFDaEIsYUFBYTtJQUNiLGNBQWM7SUFDZCxhQUFhO0lBQ2Isc0JBQXNCO0lBQ3RCLGdCQUFnQjtFQUNsQjs7RUFFQTtJQUNFLGdCQUFnQjtFQUNsQjs7RUFFQTtJQUNFLGVBQWU7SUFDZix5QkFBeUI7SUFDekIsV0FBVztJQUNYLGlCQUFpQjtFQUNuQjs7RUFFQTtJQUNFLG1CQUFtQjtFQUNyQjs7RUFFQTtJQUNFLG1CQUFtQjtFQUNyQjs7RUFFQTtJQUNFLG1CQUFtQjtJQUNuQixlQUFlO0lBQ2YsYUFBYTtJQUNiLG1CQUFtQjtFQUNyQjs7RUFFQTtJQUNFLHFCQUFxQjtJQUNyQixXQUFXO0lBQ1gsWUFBWTtJQUNaLHNCQUFzQjtJQUN0QixrQkFBa0I7SUFDbEIsa0JBQWtCO0VBQ3BCOztFQUVBO0lBQ0UsdUJBQXVCO0VBQ3pCOztFQUVBO0lBQ0UsWUFBWTtJQUNaLGFBQWE7SUFDYixzQkFBc0I7SUFDdEIsOEJBQThCO0VBQ2hDOztFQUVBO0lBQ0Usa0JBQWtCO0VBQ3BCOztFQUVBO0lBQ0UsYUFBYTtJQUNiLG1CQUFtQjtFQUNyQjs7RUFFQTtJQUNFLDZCQUE2QjtFQUMvQjs7RUFFQTtJQUNFLFlBQVk7SUFDWixhQUFhO0lBQ2IsZ0JBQWdCO0VBQ2xCOztFQUVBO0lBQ0UsWUFBWTtJQUNaLGdCQUFnQjtJQUNoQixhQUFhO0lBQ2Isc0JBQXNCO0lBQ3RCLHlCQUF5QjtFQUMzQjs7RUFFQTtJQUNFLGdCQUFnQjtFQUNsQjs7RUFFQTtJQUNFLGNBQWM7RUFDaEI7O0VBRUE7SUFDRSxpQkFBaUI7SUFDakIsa0JBQWtCO0VBQ3BCOztFQUVBO0lBQ0UsMEJBQTBCO0VBQzVCOztFQUVBO0lBQ0UsV0FBVztFQUNiIiwiZmlsZSI6InNyYy9hcHAvZGVsaXZlcnljaGF0ZmVhdHVyZS9kZWxpdmVyeWNoYXRmZWF0dXJlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJodG1sIHtcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgfVxyXG5cclxuICAqLCAqOjpiZWZvcmUsICo6OmFmdGVyIHtcclxuICAgIGJveC1zaXppbmc6IGluaGVyaXQ7XHJcbiAgICBtYXJnaW46IDA7XHJcbiAgICBwYWRkaW5nOiAwO1xyXG4gIH1cclxuXHJcbiAgYm9keSB7XHJcbiAgICBmb250LWZhbWlseTogLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsXCJTZWdvZSBVSVwiLFJvYm90byxPeHlnZW4tU2FucyxVYnVudHUsQ2FudGFyZWxsLFwiSGVsdmV0aWNhIE5ldWVcIixzYW5zLXNlcmlmO1xyXG4gIH1cclxuXHJcbiAgLkFwcCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG1heC13aWR0aDogOTYwcHg7XHJcbiAgICBoZWlnaHQ6IDUwMHB4O1xyXG4gICAgbWFyZ2luOiAwIGF1dG87XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcclxuICAgIG1hcmdpbi10b3A6IDMwcHg7XHJcbiAgfVxyXG5cclxuICB1bCB7XHJcbiAgICBsaXN0LXN0eWxlOiBub25lO1xyXG4gIH1cclxuXHJcbiAgLnNpZGViYXIge1xyXG4gICAgZmxleC1iYXNpczogMzAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzMwMGQ0ZjtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgcGFkZGluZzogNXB4IDEwcHg7XHJcbiAgfVxyXG5cclxuICAuc2lkZWJhciBzZWN0aW9uIHtcclxuICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XHJcbiAgfVxyXG5cclxuICAuc2lkZWJhciBoMiB7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG4gIH1cclxuXHJcbiAgLnVzZXItbGlzdCBsaSB7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgfVxyXG5cclxuICAucHJlc2VuY2Uge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgd2lkdGg6IDIwcHg7XHJcbiAgICBoZWlnaHQ6IDIwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gIH1cclxuXHJcbiAgLnByZXNlbmNlLm9ubGluZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmVlbjtcclxuICB9XHJcblxyXG4gIC5jaGF0LXdpbmRvdyB7XHJcbiAgICBmbGV4LWdyb3c6IDE7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICB9XHJcblxyXG4gIC5jaGF0LXdpbmRvdyA+ICoge1xyXG4gICAgcGFkZGluZzogMTBweCAyMHB4O1xyXG4gIH1cclxuXHJcbiAgLmNoYXQtaGVhZGVyLCAuY2hhdC1mb290ZXIge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgfVxyXG5cclxuICAuY2hhdC1oZWFkZXIge1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNjY2M7XHJcbiAgfVxyXG5cclxuICAuY2hhdC1zZXNzaW9uIHtcclxuICAgIGZsZXgtZ3JvdzogMTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gIH1cclxuXHJcbiAgLm1lc3NhZ2UtbGlzdCB7XHJcbiAgICBmbGV4LWdyb3c6IDE7XHJcbiAgICBvdmVyZmxvdy15OiBhdXRvO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xyXG4gIH1cclxuXHJcbiAgLnVzZXItbWVzc2FnZSB7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gIH1cclxuXHJcbiAgLnVzZXItbWVzc2FnZSBzcGFuIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gIH1cclxuXHJcbiAgLnVzZXItaWQge1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAzcHg7XHJcbiAgfVxyXG5cclxuICAuY2hhdC1mb290ZXIge1xyXG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNjY2M7XHJcbiAgfVxyXG5cclxuICAuY2hhdC1mb290ZXIgZm9ybSwgLmNoYXQtZm9vdGVyIGlucHV0IHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH0iXX0= */");
+            /***/ 
+        }),
+        /***/ "./src/app/deliverychatfeature/deliverychatfeature.component.ts": 
+        /*!**********************************************************************!*\
+          !*** ./src/app/deliverychatfeature/deliverychatfeature.component.ts ***!
+          \**********************************************************************/
+        /*! exports provided: DeliverychatfeatureComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DeliverychatfeatureComponent", function () { return DeliverychatfeatureComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+            /* harmony import */ var _pusher_chatkit_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @pusher/chatkit-client */ "./node_modules/@pusher/chatkit-client/dist/web/chatkit.js");
+            /* harmony import */ var _pusher_chatkit_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/ __webpack_require__.n(_pusher_chatkit_client__WEBPACK_IMPORTED_MODULE_3__);
+            /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+            /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/ __webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+            var DeliverychatfeatureComponent = /** @class */ (function () {
+                function DeliverychatfeatureComponent(cookie) {
+                    this.cookie = cookie;
+                    this.title = 'Angular Chatroom';
+                    this.messages = [];
+                    this.users = [];
+                    this._username = '';
+                    this._message = '';
+                }
+                Object.defineProperty(DeliverychatfeatureComponent.prototype, "username", {
+                    get: function () {
+                        return this._username;
+                    },
+                    set: function (value) {
+                        this._username = value;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(DeliverychatfeatureComponent.prototype, "message", {
+                    get: function () {
+                        return this._message;
+                    },
+                    set: function (value) {
+                        this._message = value;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                DeliverychatfeatureComponent.prototype.sendMessage = function () {
+                    var _a = this, message = _a.message, currentUser = _a.currentUser;
+                    currentUser.sendMessage({
+                        text: message,
+                        roomId: '6a16e7b9-87da-4c82-a6b8-48d9115814b8',
+                    });
+                    this.message = '';
+                };
+                DeliverychatfeatureComponent.prototype.addUser = function () {
+                    var _this = this;
+                    var username = this.cookie.get("name");
+                    console.log({ username: username });
+                    axios__WEBPACK_IMPORTED_MODULE_4___default.a.post('http://localhost:8080/chat/users', { username: username })
+                        .then(function () {
+                        var tokenProvider = new _pusher_chatkit_client__WEBPACK_IMPORTED_MODULE_3___default.a.TokenProvider({
+                            url: 'http://localhost:8080/chat/authenticate'
+                        });
+                        var chatManager = new _pusher_chatkit_client__WEBPACK_IMPORTED_MODULE_3___default.a.ChatManager({
+                            instanceLocator: 'v1:us1:dcb29a79-09aa-41bb-a0ec-fdb33220fb0a',
+                            userId: username,
+                            tokenProvider: tokenProvider
+                        });
+                        return chatManager
+                            .connect()
+                            .then(function (currentUser) {
+                            currentUser.subscribeToRoom({
+                                roomId: '6a16e7b9-87da-4c82-a6b8-48d9115814b8',
+                                messageLimit: 100,
+                                hooks: {
+                                    onMessage: function (message) {
+                                        _this.messages.push(message);
+                                    },
+                                    onPresenceChanged: function (state, user) {
+                                        _this.users = currentUser.users.sort(function (a, b) {
+                                            if (a.presence.state === 'online')
+                                                return -1;
+                                            return 1;
+                                        });
+                                    },
+                                },
+                            });
+                            _this.currentUser = currentUser;
+                            _this.users = currentUser.users;
+                        });
+                    })
+                        .catch(function (error) { return console.error(error); });
+                };
+                DeliverychatfeatureComponent.prototype.ngOnInit = function () {
+                    this.addUser();
+                };
+                return DeliverychatfeatureComponent;
+            }());
+            DeliverychatfeatureComponent.ctorParameters = function () { return [
+                { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_2__["CookieService"] }
+            ]; };
+            DeliverychatfeatureComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'app-deliverychatfeature',
+                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./deliverychatfeature.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/deliverychatfeature/deliverychatfeature.component.html")).default,
+                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./deliverychatfeature.component.css */ "./src/app/deliverychatfeature/deliverychatfeature.component.css")).default]
+                })
+            ], DeliverychatfeatureComponent);
+            /***/ 
+        }),
         /***/ "./src/app/deliverycurrentorders/deliverycurrentorders.component.css": 
         /*!***************************************************************************!*\
           !*** ./src/app/deliverycurrentorders/deliverycurrentorders.component.css ***!
@@ -1854,7 +2049,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("li {\r\n  width: 30%; text-align: center\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGVsaXZlcnlkcm9wZG93bi9kZWxpdmVyeWRyb3Bkb3duLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxVQUFVLEVBQUU7QUFDZCIsImZpbGUiOiJzcmMvYXBwL2RlbGl2ZXJ5ZHJvcGRvd24vZGVsaXZlcnlkcm9wZG93bi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsibGkge1xyXG4gIHdpZHRoOiAzMCU7IHRleHQtYWxpZ246IGNlbnRlclxyXG59XHJcbiJdfQ== */");
+            /* harmony default export */ __webpack_exports__["default"] = ("li {\r\n  width: 20%; text-align: center\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGVsaXZlcnlkcm9wZG93bi9kZWxpdmVyeWRyb3Bkb3duLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxVQUFVLEVBQUU7QUFDZCIsImZpbGUiOiJzcmMvYXBwL2RlbGl2ZXJ5ZHJvcGRvd24vZGVsaXZlcnlkcm9wZG93bi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsibGkge1xyXG4gIHdpZHRoOiAyMCU7IHRleHQtYWxpZ246IGNlbnRlclxyXG59XHJcbiJdfQ== */");
             /***/ 
         }),
         /***/ "./src/app/deliverydropdown/deliverydropdown.component.ts": 
@@ -2028,6 +2223,7 @@
                         if (data['auth']) {
                             _this.cookie.set("jwttoken", data['token']);
                             _this.cookie.set("delivery_id", data['_id']);
+                            _this.cookie.set("name", data["name"]);
                             _this.showFile = true;
                             // this.router.navigate(['/deliveryprofile']);
                             //console.log(data[_id])
@@ -2515,6 +2711,7 @@
                         if (data['auth']) {
                             _this.cookie.set('jwttoken', data['token']);
                             _this.cookie.set('customer_id', data['_id']);
+                            _this.cookie.set("name", data["name"]);
                             _this.showFile = true;
                             // this.router.navigate(['/customerdashboard']);
                         }
@@ -3888,6 +4085,7 @@
                         if (data['auth']) {
                             _this.cookie.set("jwttoken", data['token']);
                             _this.cookie.set("restaurant_id", data['_id']);
+                            _this.cookie.set("name", data["name"]);
                             _this.showFile = true;
                             //console.log(data[_id])
                         }

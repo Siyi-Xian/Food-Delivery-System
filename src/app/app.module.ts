@@ -50,6 +50,7 @@ import {AgmCoreModule} from "@agm/core";
 import { CustomerCurrentOrdersComponent } from './customer-current-orders/customer-current-orders.component';
 import { CustomerOrderHistoryComponent } from './customer-order-history/customer-order-history.component';
 import { CustomerRecommendationsComponent } from './customer-recommendations/customer-recommendations.component';
+import { DeliverychatfeatureComponent } from './deliverychatfeature/deliverychatfeature.component';
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -105,7 +106,8 @@ export function socialConfigs(){
     DeliveryeditprofileComponent,
     CustomerCurrentOrdersComponent,
     CustomerOrderHistoryComponent,
-    CustomerRecommendationsComponent  ],
+    CustomerRecommendationsComponent,
+    DeliverychatfeatureComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -228,6 +230,10 @@ export function socialConfigs(){
       {
         path: 'chatfeature',
         component: ChatfeatureComponent
+      },
+      {
+        path: 'deliverychatfeature',
+        component: DeliverychatfeatureComponent
       },
       {
         path: 'displaymenu/:restaurant_id',

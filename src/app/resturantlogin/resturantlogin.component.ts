@@ -78,6 +78,7 @@ export class ResturantloginComponent implements OnInit {
       if(data['auth']){
         this.cookie.set("jwttoken", data['token']);
         this.cookie.set("restaurant_id", data['_id']);
+        this.cookie.set("name", data["name"])
         this.showFile = true
 
         //console.log(data[_id])

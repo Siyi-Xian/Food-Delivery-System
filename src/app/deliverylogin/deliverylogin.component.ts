@@ -78,6 +78,7 @@ export class DeliveryloginComponent implements OnInit {
       if(data['auth']){
         this.cookie.set("jwttoken", data['token']);
         this.cookie.set("delivery_id", data['_id']);
+        this.cookie.set("name", data["name"])
         this.showFile = true
         // this.router.navigate(['/deliveryprofile']);
         //console.log(data[_id])

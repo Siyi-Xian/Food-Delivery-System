@@ -141,6 +141,7 @@ router.post('/login/:collection_name', function(req, res){
                     auth: true,
                     message: 'Auth Successful',
                     _id: data._id,
+                    name: data.name,
                     token: token
 
                 });
@@ -275,7 +276,7 @@ router.post('/sign_up/:collection_name', function(req, res){
         collection_name = "delivery_data";
         var token = Math.floor(Math.random() * (999999 - 100000 + 1) + 100000);
         var data_to_be_inserted = {
-            "deliveryperson_name": req.body.name,
+            "name": req.body.name,
             "email": req.body.email,
             "password": Bcrypt.hashSync(req.body.password, 10),
             "token": token,

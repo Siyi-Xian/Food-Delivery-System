@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
+import { ChatManager, TokenProvider } from '@pusher/chatkit-client'
 
 @Component({
   selector: 'app-restaurantcurrentorders',

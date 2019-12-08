@@ -15,7 +15,7 @@ var restaurant_portal = require('./routes/restaurant_portal')
 var customer_portal = require('./routes/customer_portal')
 var delivery_portal = require('./routes/delivery_portal')
 var orders = require('./routes/orders')
-var chats=require('./routes/chat')
+var chats=require('./routes/chatpusher')
 var port = process.env.PORT || 8080
 
 var cors = require('cors')
