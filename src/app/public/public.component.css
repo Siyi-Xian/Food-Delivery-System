@@ -1,53 +1,35 @@
+  
 p {
-    font-size: 16px;
-  }
-  
-  a {
-    margin-right: 50px;
-    font-size: 16px;
-  }
-  
-  hr {
-    border-width: 3px;
-  }
+  font-size: 16px;
+}
+
+a {
+  margin-right: 50px;
+  font-size: 16px;
+}
+
+hr {
+  border-width: 3px;
+}
 
 body{
-  
- /* background:linear-gradient(0.25turn, #00dbde, #fc00ff);*/
+
+/* background:linear-gradient(0.25turn, #00dbde, #fc00ff);*/
 /*background-image: url("../../assets/img/food1.jpg");*/
 /*background: transparent;*/
-/*background: linear-gradient(to right, #ffd8cb,#f9d29d);*/
-
+/* background: linear-gradient(to right, #ffd8cb,#f9d29d); */
 
 }
-  
-  .input-group input{
-    width: 190px;
-    border-radius: 5px;
-    border: 1px solid gray;
-    font-size: 18px;
-    margin-top: 3px;
-  }
-  
-  img {
-    width: 360px;
-    height: 280px;
-  }
-  
-  body{
- 
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
- 
- 
-  
-  min-height: 2000px;
-  margin-left: auto;
-  background-origin: content-box;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  
-  -o-background-size: cover;
+
+.input-group input{
+  width: 190px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 18px;
+  margin-top: 3px;
+}
+
+img {
+  width: 360px;
+  height: 280px;
 }
