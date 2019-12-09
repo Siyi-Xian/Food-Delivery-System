@@ -5,3 +5,14 @@ hr {
 .row strong {
   margin: 20px;
 }
+
+div ul{
+  display: table;
+  width: 100%;
+  list-style: none;
+}
+
+div ul div {
+  display: table-cell;
+  text-align: center;
+  }

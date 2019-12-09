@@ -45,11 +45,12 @@
 }
 
 body{
-  background-image: url("../../assets/img/background1.jpeg") ;
+  background-image: url("../../assets/img/background1.jpeg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   
+ 
   min-height: 2000px;
   margin-left: auto;
   background-origin: content-box;
@@ -58,4 +59,10 @@ body{
   -moz-background-size: cover;
   
   -o-background-size: cover;
+}
+
+html{
+  margin-top:30px;
+
+padding:3px;
 }
