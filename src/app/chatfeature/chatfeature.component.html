@@ -43,7 +43,7 @@
       <section class="chat-session">
         <ul class="message-list">
           <li class="user-message" *ngFor="let message of messages">
-            <span class="user-id">{{ message.senderId }}</span>
+            <span class="user-id">{{ message.senderId | titlecase}}</span>
             <span>{{ message.text }}</span>
           </li>
         </ul>

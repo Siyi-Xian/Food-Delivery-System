@@ -51,6 +51,8 @@ import { CustomerCurrentOrdersComponent } from './customer-current-orders/custom
 import { CustomerOrderHistoryComponent } from './customer-order-history/customer-order-history.component';
 import { CustomerRecommendationsComponent } from './customer-recommendations/customer-recommendations.component';
 import { DeliverychatfeatureComponent } from './deliverychatfeature/deliverychatfeature.component';
+import { PrivatechatComponent } from './privatechat/privatechat.component';
+import { DeliveryprivatechatComponent } from './deliveryprivatechat/deliveryprivatechat.component';
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -107,7 +109,9 @@ export function socialConfigs(){
     CustomerCurrentOrdersComponent,
     CustomerOrderHistoryComponent,
     CustomerRecommendationsComponent,
-    DeliverychatfeatureComponent  ],
+    DeliverychatfeatureComponent,
+    PrivatechatComponent,
+    DeliveryprivatechatComponent  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -246,6 +250,14 @@ export function socialConfigs(){
       {
         path: 'deliveryeditprofile',
         component: DeliveryeditprofileComponent
+      },
+      {
+        path: 'privatechat/:order_id',
+        component: PrivatechatComponent
+      },
+      {
+        path: "deliveryprivatechat/:order_id",
+        component: DeliveryprivatechatComponent
       }
     ])
   ],

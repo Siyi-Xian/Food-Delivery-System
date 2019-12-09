@@ -16,6 +16,7 @@ var customer_portal = require('./routes/customer_portal')
 var delivery_portal = require('./routes/delivery_portal')
 var orders = require('./routes/orders')
 var chats=require('./routes/chatpusher')
+var privatechat = require('./routes/privatechat')
 var port = process.env.PORT || 8080
 
 var cors = require('cors')
@@ -45,6 +46,7 @@ app.use('/customer', customer_portal);
 app.use('/delivery', delivery_portal);
 app.use('/orders', orders);
 app.use('/chat',chats);
+app.use('/privatechat',privatechat);
 app.get("/*", function(req, res){
     res.sendFile(path.join(__dirname+ '/dist/fooddeliverysystem/index.html'))
 })

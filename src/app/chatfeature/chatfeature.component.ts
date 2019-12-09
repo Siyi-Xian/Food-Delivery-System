@@ -34,7 +34,7 @@ export class ChatfeatureComponent implements OnInit {
     const { message, currentUser } = this;
     currentUser.sendMessage({
       text: message,
-      roomId: '6a16e7b9-87da-4c82-a6b8-48d9115814b8',
+      roomId: '0dae596e-50f4-4411-95d5-2014421936fc',
     });
     this.message = '';
   }
@@ -44,10 +44,10 @@ export class ChatfeatureComponent implements OnInit {
   addUser() {
     const username = this.cookie.get("name");
     console.log({username})
-    axios.post('http://localhost:8080/chat/users', { username })
+    axios.post('/chat/users', { username })
       .then(() => {
         const tokenProvider = new Chatkit.TokenProvider({
-          url: 'http://localhost:8080/chat/authenticate'
+          url: '/chat/authenticate'
         });
 
         const chatManager = new Chatkit.ChatManager({
@@ -60,7 +60,7 @@ export class ChatfeatureComponent implements OnInit {
           .connect()
           .then(currentUser => {
             currentUser.subscribeToRoom({
-              roomId: '6a16e7b9-87da-4c82-a6b8-48d9115814b8',
+              roomId: '0dae596e-50f4-4411-95d5-2014421936fc',
               messageLimit: 100,
               hooks: {
                 onMessage: message => {
