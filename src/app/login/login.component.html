@@ -16,7 +16,7 @@
   <body>
   <app-logindropdown></app-logindropdown>
   <div>
-    <div class="container" style="width: 430px; margin-top: 5%; margin-bottom: 5%">
+    <div class="container" style="width: 430px; margin-top: 2%; margin-bottom: 2%">
       <div class="jumbotron" style="padding: 0;background: linear-gradient(to right,#ffea61,#ffffb7)">
         <div class="container" style="text-align: center; padding: 20px; border-bottom: rgb(247, 187, 9) 2px solid">
           <h2>Log In</h2>
@@ -36,7 +36,7 @@
               <div><input type = "password" required = "required" formControlName="password" placeholder="*******************" id="password" style="width: 100%"></div>
             </div>
             <div class="container" style="padding: 20px 20px 0px 20px">
-              <button type="submit" value = "submit" class="login-button btn btn-primary" (ngSubmit)="onSubmit">Login</button>
+              <button type="submit" value = "submit" class=" btn btn-primary btn-lg btn-block" (ngSubmit)="onSubmit">Login</button>
 
               <!-- Place holder for recaptcha -->
               <div #recaptcha style="padding: 15px -15px; margin-top: 10px"></div>
@@ -55,13 +55,13 @@
         </div>
 
 
-        <div *ngIf="showFile">
+        <div *ngIf="showFile" class="container" style="padding-bottom: 20px">
           <form method="post" [formGroup]="userVerifyForm" (ngSubmit) = "onVerify(userVerifyForm.value)">
-            <div>Please enter the 6-digit code that was sent to your email</div>
-            <input type="text" required="required" placeholder="6-digit code" formControlName="otp">
-            <span class="input-group-btn">
-              <button type="submit" class="btn btn-primary" (ngSubmit)="onVerify">Verify</button>
-            </span>
+            <div class="container" style="text-align: center;">Please enter the 6-digit OTP</div>
+            <input type="text" required="required" placeholder="6-digit otp" formControlName="otp" style="width: 100% ;align-content: center;text-align: center;">
+            <div class="container" style="padding: 20px 20px 0px 20px">
+              <button type="submit"  style="text-align: center"  class="btn btn-primary  btn-block"  (ngSubmit)="onVerify">Verify</button>
+            </div>
           </form>
           <div class="form-text error" *ngIf="userVerifyForm">
             <!--<div *ngIf="userLoginForm.controls.otp.hasError('required')">Verifcation is required</div>
