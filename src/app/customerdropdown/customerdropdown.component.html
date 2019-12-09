@@ -1,56 +1,56 @@
-<nav class="navbar navbar-light">
+<nav class="navbar navbar-light  navbar-fixed-top navbar-expand-lg  bg-light static-top mb-5 shadow">
   <!-- Navbar content -->
   <!-- Just an image -->
   <a class="navbar-brand" routerLink="/public" style="padding: 0;">
-    <img src="../../assets/img/logo.png" height="50" alt="">
+    <img src="../../assets/img/logo.png" height="60" alt="">
   </a>
-  <ul class="nav navbar-nav navbar-right">
+  <ul class="nav navbar-nav navbar-right" style="width: 80% ; height:60px; text-align: center;">
     <li class="" style="width: 200px; text-align: center">
-        <a href="#" routerLink="/customerdashboard">
-          <span class="glyphicon glyphicon-cog"></span>
+        <button  class=" btn btn-warning navbar-btn " routerLink="/customerdashboard"style=" size: 90px;  margin-top: 10px;margin-bottom: 10px; color: #000;">
+          <span class="glyphicon glyphicon-cog"style="color: black;" ></span>
           Search Restaurants
           <b class=""></b>
-        </a>
+        </button>
     </li>
     <li class="" style="width: 200px; text-align: center">
-      <a href="#" routerLink="/customerrecommendations">
-        <span class="glyphicon glyphicon-cog"></span>
+        <button  class=" btn btn-warning navbar-btn " routerLink="/customerrecommendations" style=" size: 90px;  margin-top: 10px;margin-bottom: 10px; color: #000;">
+        <span class="glyphicon glyphicon-cog"style="color: black;"></span>
         Recommendations
         <b class=""></b>
-      </a>
+        </button>
     </li>
     <li class="" style="width: 160px; text-align: center">
-        <a href="#" routerLink="/customercurrentorders">
-          <span class="glyphicon glyphicon-cog"></span>
+        <button  class=" btn btn-warning navbar-btn " routerLink="/customercurrentorders" style=" size: 90px;  margin-top: 10px;margin-bottom: 10px; color: #000;">
+          <span class="glyphicon glyphicon-cog"style="color: black;"></span>
           Current Orders
           <b class=""></b>
-        </a>
+        </button>
     </li>
     <li class="" style="width: 160px; text-align: center">
-        <a href="#" routerLink="/customerorderhistory">
-          <span class="glyphicon glyphicon-cog"></span>
+        <button  class=" btn btn-warning navbar-btn " routerLink="/customerorderhistory" style=" size: 90px;  margin-top: 10px;margin-bottom: 10px; color: #000;">
+          <span class="glyphicon glyphicon-cog" style="color: black;"></span>
           Order History
           <b class=""></b>
-        </a>
+        </button>
     </li>
     <li class="dropdown" style="width: 160px; text-align: center">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <span class="glyphicon glyphicon-cog"></span>
+        <button  class=" btn btn-warning navbar-btn dropdown-toggle" data-toggle="dropdown"  style=" size: 90px;  margin-top: 10px;margin-bottom: 10px; color: #000;">
+        <span class="glyphicon glyphicon-cog" style="color: black;"></span>
         Account
         <b class="caret"></b>
-      </a>
+        </button>
       <ul class="dropdown-menu">
         <li>
-          <a href="#" routerLink="/customerprofile">
-            <span class="glyphicon glyphicon-user"></span>
+            <button  class=" btn btn-warning navbar-btn "routerLink="/customerprofile" style=" size: 90px;  margin-top: 10px;margin-bottom: 10px; color: #000;">
+            <span class="glyphicon glyphicon-user" style="color: black;"></span>
             Profile
-          </a>
+            </button>
         </li>
         <li>
-          <a href="#" routerLink="/login">
-            <span class="glyphicon glyphicon-log-out" (click)="logout()"></span>
+            <button  class=" btn btn-warning navbar-btn " routerLink="/login" style=" size: 90px;  margin-top: 10px;margin-bottom: 10px; color: #000;">
+            <span class="glyphicon glyphicon-log-out" style="color: black;" (click)="logout()"></span>
             Logout
-          </a>
+            </button>
         </li>
       </ul>
     </li>
