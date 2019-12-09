@@ -6,3 +6,6 @@ hr {
     margin: 20px;
 }
   
+body{
+    background: linear-gradient(180deg, rgba(255,0,0,0), #f53803);
+}
