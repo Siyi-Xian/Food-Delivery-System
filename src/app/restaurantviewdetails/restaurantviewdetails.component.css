@@ -14,3 +14,7 @@ hr {
 .edit-link {
   margin-right: 50px;
 }
+
+body{
+  background: linear-gradient(180deg, rgba(255,0,0,0), #f53803);
+}
