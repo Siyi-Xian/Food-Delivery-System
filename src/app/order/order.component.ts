@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
+import { Router, ActivatedRoute } from "@angular/router";
 
 
 @Component({
@@ -16,32 +17,8 @@ export class OrderComponent implements OnInit {
   // initial center position for the map
   lat = 39.172981;
   lng = -86.523010;
-
-  // restaurant = [
-  //   {
-  //     location: {
-  //       lat: 39.170957,
-  //       lng: -86.516549,
-  //       label: 'D',
-  //       draggable: false
-  //     }
-  //   }
-  // ]
-  //
-  // destination: marker = {
-  //   lat: 39.172981,
-  //   lng: -86.523010,
-  //   label: 'R',
-  //   draggable: true
-  // }
-  //
-  // delivery: marker = {
-  //   lat: this.lat,
-  //   lng: this.lng,
-  //   label: 'D',
-  //   draggable: false
-  // }
-
+  customer_id
+  restaurant_id
   customer_details
   restaurant_details
   origin: marker = {
@@ -51,10 +28,16 @@ export class OrderComponent implements OnInit {
   }
 
   constructor(private http: HttpClient,
-              private cookie: CookieService) {
+              private route: ActivatedRoute,
+              private cookie: CookieService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
+    this.customer_id = this.route.snapshot.params['customer_id']
+    this.restaurant_id = this.route.snapshot.params['restaurant_id']
+    console.log(this.customer_id)
+    console.log(this.restaurant_id)
     if (navigator) {
       navigator.geolocation.getCurrentPosition(pos => {
         this.lng = +pos.coords.longitude;
@@ -69,19 +52,18 @@ export class OrderComponent implements OnInit {
       jwttoken: this.cookie.get("jwttoken")
     });
 
-    var url = '/restaurant/display_details/' + this.cookie.get('restaurant_id')
+    var url = '/restaurant/display_details/' + this.restaurant_id
 
     this.http.get(url, {headers}).subscribe(data => {
       // this.detailsForm = data;
 
       if (data != null) {
         this.restaurant_details = data
-        console.log(data)
+        console.log(this.restaurant_details)
       }
     });
 
-    var customer_id = this.cookie.get('customer_id')
-    var url = '/customer/display_details/' + customer_id
+    var url = '/customer/display_details/' + this.customer_id
     // var params = new HttpParams().set("id", customer_id)
     this.http.get(url, {headers}).subscribe(data => {
       // console.log(data)

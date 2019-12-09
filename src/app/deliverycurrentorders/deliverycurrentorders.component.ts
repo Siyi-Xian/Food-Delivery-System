@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-deliverycurrentorders',
@@ -10,8 +11,12 @@ import {CookieService} from "ngx-cookie-service";
 export class DeliverycurrentordersComponent implements OnInit {
 
   constructor(private http:HttpClient,
-              private cookie:CookieService) { }
+              private cookie:CookieService,
+              private router: Router) { }
   orders
+
+
+
 
   fullfillOrder(id, i){
     var url = "delivery/fullfillorder"
