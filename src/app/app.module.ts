@@ -126,6 +126,10 @@ export function socialConfigs(){
 
     RouterModule.forRoot([
       {
+        path: "orderaddress/:restaurant_id/:customer_id",
+        component: OrderComponent
+      },
+      {
         path: "customerorderhistory",
         component: CustomerOrderHistoryComponent
       },

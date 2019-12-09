@@ -38,7 +38,7 @@
       <strong> Price </strong>
     </div>
     <div class="col-md-2">
-      <strong> Status </strong>
+      <strong> Address </strong>
     </div>
     <div class="col-md-2">
       <strong> Delivered? </strong>
@@ -65,7 +65,9 @@
             $ {{order.price}}
           </div>
           <div class="col-md-2">
-            Fulfilled
+            <a [routerLink]="['/orderaddress', order.restaurant_id, order.user_id]" >
+              {{i + 1}}
+            </a>
           </div>
           <div class="col-md-2">
             <button (click)="fullfillOrder(order._id, i)">Delivered</button>
