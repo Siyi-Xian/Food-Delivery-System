@@ -10,6 +10,15 @@ p {
   hr {
     border-width: 3px;
   }
+
+body{
+  
+ /* background:linear-gradient(0.25turn, #00dbde, #fc00ff);*/
+/*background-image: url("../../assets/img/food1.jpg");*/
+/*background: transparent;*/
+background: linear-gradient(to right, #ffd8cb,#f9d29d);
+
+}
   
   .input-group input{
     width: 190px;
@@ -24,3 +33,20 @@ p {
     height: 280px;
   }
   
+  body{
+ 
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+ 
+ 
+  
+  min-height: 2000px;
+  margin-left: auto;
+  background-origin: content-box;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  
+  -o-background-size: cover;
+}
