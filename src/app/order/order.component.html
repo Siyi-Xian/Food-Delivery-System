@@ -1,4 +1,21 @@
 <p>order works!</p>
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+<agm-map
+  [latitude]="lat"
+  [longitude]="lng">
+
+  <!--  <agm-marker-->
+  <!--    [latitude]="origin.lat"-->
+  <!--    [longitude]="origin.lng"-->
+  <!--    [label]="origin.label"-->
+  <!--    [markerDraggable]="origin.draggable">-->
+
+  <!--    <agm-info-window>-->
+  <!--      <strong>Restaurant Address</strong>-->
+  <!--    </agm-info-window>-->
+
+  <!--  </agm-marker>-->
+
+  <agm-direction [origin]="delivery" [destination]="destination" [waypoints]="restaurant">
+  </agm-direction>
+
 </agm-map>

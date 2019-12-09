@@ -46,11 +46,12 @@ import { DeliveryprofileComponent } from './deliveryprofile/deliveryprofile.comp
 import { DisplayMenuComponent } from './display-menu/display-menu.component';
 import { OrderComponent } from './order/order.component';
 import { DeliveryeditprofileComponent } from './deliveryeditprofile/deliveryeditprofile.component';
-import {AgmCoreModule} from "@agm/core";
+import {AgmCoreModule, AgmGeocoder} from "@agm/core";
 import { CustomerCurrentOrdersComponent } from './customer-current-orders/customer-current-orders.component';
 import { CustomerOrderHistoryComponent } from './customer-order-history/customer-order-history.component';
 import { CustomerRecommendationsComponent } from './customer-recommendations/customer-recommendations.component';
 import { DeliverychatfeatureComponent } from './deliverychatfeature/deliverychatfeature.component';
+import {AgmDirectionModule} from "agm-direction";
 
 export function socialConfigs(){
   const config = new AuthServiceConfig([
@@ -117,6 +118,7 @@ export function socialConfigs(){
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDMlEdoVdUq5SvrCUCJYQeA9vzOypKhJDY'
     }),
+    AgmDirectionModule,
 
     RouterModule.forRoot([
       {
