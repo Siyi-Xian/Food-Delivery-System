@@ -17,16 +17,16 @@
 <app-deliverydropdown></app-deliverydropdown>
 
 
-<div class="App">
+<div class="App" style="padding: 20px 20px 0px 20px;margin-top: 5%; margin-bottom: 5%">
     <aside class="sidebar">
       <section  *ngIf="!currentUser" class="join-chat">
-        <h2>Join Chat</h2>
+        <h2 style="color:maroon;font-size: 50px; text-align: center; font-style:italic; font-weight: bold;">Join Chat</h2>
         <form (ngSubmit)="addUser()">
           <input placeholder="Enter your username" type="text" name="username" [(ngModel)]="username" />
         </form>
       </section>
       <section class="online-members">
-        <h2>Room Users</h2>
+        <h2 style="color:maroon;font-size: 50px; text-align: center; font-style:italic; font-weight: bold;">Room Users</h2>
         <ul class="user-list">
           <li *ngFor="let user of users">
             <span class="presence {{ user.presence.state }}"></span>
