@@ -19,10 +19,10 @@
 <app-restaurantdropdown></app-restaurantdropdown>
 
 
-<div class="container">
+<div class="container"  style="padding: 20px 20px 0px 20px;margin-top: 5%; margin-bottom: 5%">
   <div class="container">
-    <h3>Edit Details</h3>
-    <p>Please put new restaurant information here! After edit, do not forget to click update at the button.</p>
+    <h3 style="color:maroon;font-size: 50px; text-align: center; font-style:italic; font-weight: bold;">Edit Details</h3>
+    <p style=" font-size: 20px; color:maroon;text-align: justify;font-style:italic ;"> Please put new restaurant information here! After edit, do not forget to click update at the button.</p>
   </div>
   <hr>
   <form mehtod="post" [formGroup]="detailsForm" (ngSubmit)=onSubmit(detailsForm.value)>
