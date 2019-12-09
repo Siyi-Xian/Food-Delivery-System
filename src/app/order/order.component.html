@@ -1,4 +1,88 @@
-<p>order works!</p>
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
+<html>
+<head>
+  <title>
+    public dashboard
+  </title>
+  <!-- Bootstrap CDN scripts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="order.component.css"></script>
+  <script src="../../styles.css"></script>
+  <!--  <script src="../backgroup-image.css"></script>-->
+</head>
+<body>
+<nav class="navbar navbar-light navbar-fixed-top navbar-expand-lg  bg-light static-top mb-5 shadow">
+  <!-- Navbar content -->
+  <!-- Just an image -->
+  <a class="navbar-brand" routerLink="/public" style="padding: 0;">
+    <img src="../../assets/img/logo.png" height="60" alt="">
+  </a>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <h4>Restaurant Location</h4>
+      </div>
+      <div class="row">
+        {{restaurant_details.street1 + ' ' +
+      restaurant_details.street2 + ', ' +
+      restaurant_details.state + ', ' +
+      restaurant_details.zip_code}}
+      </div>
+      <div class="row">
+        <a href="https://www.google.com/maps/dir/?api=1&destination={{restaurant_details.street1+'+'+
+      restaurant_details.street2+'+'+
+      restaurant_details.state+'+'+
+      restaurant_details.zip_code}}" target="_blank">Direction</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <h4>Delivery Address</h4>
+      </div>
+      <div class="row">
+        {{customer_details.street1 + ' ' +
+      customer_details.street2 + ', ' +
+      customer_details.state + ', ' +
+      customer_details.zip_code}}
+      </div>
+      <div class="row">
+        <a href="https://www.google.com/maps/dir/?api=1&destination={{customer_details.street1+'+'+
+      customer_details.street2+'+'+
+      customer_details.state+'+'+
+      customer_details.zip_code}}" target="_blank">Direction</a>
+      </div>
+    </div>
+
+  </div>
+  <hr>
+  <div class="row">
+    <h4>Your location</h4>
+  </div>
+  <div class="map-view row">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
+
+      <agm-marker
+        [latitude]="origin.lat"
+        [longitude]="origin.lng"
+        [markerDraggable]="origin.draggable">
+
+        <agm-info-window>
+          <strong>Your Location</strong>
+        </agm-info-window>
+
+      </agm-marker>
+
+      <!--          <agm-direction [origin]="delivery" [destination]="destination" [waypoints]="restaurant">-->
+      <!--          </agm-direction>-->
+
+    </agm-map>
+  </div>
+</div>
+</body>
+</html>
