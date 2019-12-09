@@ -1,4 +1,18 @@
 agm-map {
-  height: 600px;
-  width: 500px;
+  height: 500px;
+}
+
+.container {
+  margin-top: 80px;
+  text-align: center;
+}
+
+hr {
+  border-width: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.map-view {
+  padding: 30px;
 }
