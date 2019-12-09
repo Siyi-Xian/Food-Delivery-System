@@ -14,7 +14,7 @@
 </head>
 <body>
 <app-logindropdown></app-logindropdown>
-<div class="container" style="width: 400px; margin-top: 5%; margin-bottom: 5%">
+<div class="container" style="width: 400px; margin-top: 2%; margin-bottom: 2%">
   <div class="jumbotron" style="padding: 0;background: linear-gradient(to right,#ffea61,#ffffb7)
   ;">
     <div class="container" style="text-align: center; padding: 20px; border-bottom:rgb(252, 189, 0)2px solid">
@@ -54,13 +54,15 @@
       </form>
     </div>
 
-    <div *ngIf="showFile">
+    <div *ngIf="showFile" class="container" style="padding-bottom: 20px">
       <form method="post" [formGroup]="deliveryVerifyForm" (ngSubmit) = "onVerify(deliveryVerifyForm.value)">
-        <div>Please enter the 6-digit code that was sent to your email</div>
-        <input type="text" required="required" placeholder="6-digit code" formControlName="otp" > 
-        <span class="input-group-btn">
-          <button type="submit" style="text-align: center"      class="btn btn-primary"  (ngSubmit)="onVerify" style="text-align: right">Verify</button>
-        </span>
+        <div class="container" style="text-align: center;">Please enter the 6-digit OTP</div>
+        <div>
+        <input type="text" required="required" placeholder="6-digit otp" formControlName="otp" style="width: 100% ;align-content: center;text-align: center;" > 
+      </div>
+        <div class="container" style="padding: 20px 20px 0px 20px">
+          <button type="submit" style="text-align: center"  class="btn btn-primary  btn-block"  (ngSubmit)="onVerify" style="text-align: right">Verify</button>
+    </div>
       </form>
       <div class="form-text error" *ngIf="deliveryVerifyForm">
         <!--<div *ngIf="userLoginForm.controls.otp.hasError('required')">Verifcation is required</div>
@@ -71,7 +73,7 @@
 
     <div class="container" style="border-top:rgb(252, 189, 0) 2px solid; padding: 30px 40px 40px 40px; font-size: 15px">
       <div class="row" style="font-style: italic; text-align: center"><b>Want to be a delivery person?</b></div>
-      <div class="row">We Hire You! <a routerLink="/deliveryreg">Join today</a>, Register to be a delivery person of Food-O-Holic today!</div>
+      <div class="row" style="text-align:center;">We Hire You! <a routerLink="/deliveryreg">Join today</a>, Register to be a delivery person of Food-O-Holic today!</div>
     </div>
   </div>
 </div>
