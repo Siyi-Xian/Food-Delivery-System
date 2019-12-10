@@ -12,16 +12,6 @@ hr {
   border-width: 3px;
 }
 
-body{
-
-/* background:linear-gradient(0.25turn, #00dbde, #fc00ff);*/
-/*background-image: url("../../assets/img/food1.jpg");*/
-/*background: transparent;*/
-/* background: linear-gradient(to right, #ffd8cb,#f9d29d); */
-background: linear-gradient(180deg, rgba(255,0,0,0), #f53803);
-
-
-}
 
 .input-group input{
   width: 190px;
